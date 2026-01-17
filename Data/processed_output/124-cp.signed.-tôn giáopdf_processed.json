@@ -1,0 +1,592 @@
+{
+  "metadata": {
+    "loai_van_ban": "NGHỊ ĐỊNH",
+    "so_hieu": "190/2025/NQ-QH",
+    "trich_yeu": "",
+    "co_quan_ban_hanh": "CHÍNH PHỦ",
+    "ngay_ban_hanh": "11/6/2025",
+    "so_trang": 29,
+    "loai_pdf": "scan"
+  },
+  "phan_mo_dau": {
+    "so_hieu": "190/2025/NQ-QH",
+    "ngay_thang_nam": "",
+    "co_quan_ban_hanh": "CHÍNH PHỦ"
+  },
+  "can_cu_phap_ly": [],
+  "chuong": [
+    {
+      "so_chuong": "I",
+      "ten_chuong": "QUY ĐỊNH CHUNG",
+      "dieu": [
+        {
+          "so_dieu": "1",
+          "noi_dung": "Phạm vi điều chỉnh Nghị định này quy định về:",
+          "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Thẳm quyền, trình tự, thủ tục thực hiện nhiệm vụ, quyền hạn của cơ quan, người có thẩm quyền trong lĩnh vực công tác dân tộc, tín ngưỡng, tôn giáo được quy định tại luật, nghị quyết của Quốc hội, pháp lệnh, nghị quyết của Ủy ban Thường vụ Quốc hội, nghị định của Chính phủ, quyết định của Thủ tướng Chính phủ cần điều chỉnh để thực hiện phân quyền, phân cấp.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Phân định thẩm quyền của chính quyền địa phương theo mô hình tổ chức chính quyền địa phương 02 cấp trong lĩnh vực công tác dân tộc, tín ngưỡng, tôn giáo; trình tự, thủ tục thực hiện các nhiệm vụ khi được phân định thẩm quyền.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "2",
+          "noi_dung": "Nguyên tắc phân quyền, phân cấp; phân định thẩm quyền 1. Bảo đảm phù hợp với quy định của Hiến pháp; phù hợp với các nguyêl tắc, quy định về phân quyền, phân cấp, phân định thắm quyền của Luật Tổ chức Chính phủ năm 2025, Luật Tổ chức chính quyền địa phương năm 2025 và quy định có liên quan.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Bảo đảm nhân cÁ cấp triệt để các nhiệm vụ giữa cơ quan nhà nước ở trung: tương với chính quyền địa phường; bảo đảm quyền quản lý thống nhất của Chính phủ, quyền điều hành của người đứng đầu Chính phủ đối với lĩnh vực quản lý nhà nước về công tác dân tộc, tín ngưỡng, tôn giáo và phát huy tính chủ động, sáng tạo, tự chịu trách nhiệm của chính quyền địa phương trong thực hiện nhiệm vụ quản lý” nhà nước trong lĩnh vực bông tác dân tộc, tín ngưỡng, tôn giáo.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Bảo đảm phân định nhiệm vụ, quyền hạn giữa các cấp chính quyền địa phương; bảo đảm phù hợp với nhiệm vụ, quyền hạn và năng lực của cơ quan, người có thẩm quyền thực hiện nhiệm vụ, quyền hạn được phân định.",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Bảo đảm phân định rõ thẩm quyền của Hội đồng nhân dân, Ủy ban nhân dân, Chủ tịch Ủy ban nhân dân; phân định rõ thẩm quyền chung của Ủy ban nhân dân và thẩm quyền riêng của Chủ tịch Ủy ban nhân dân.",
+              "diem": []
+            },
+            {
+              "so_khoan": "5",
+              "noi_dung": "Bảo đảm Chính phủ, Thủ tướng Chính phủ, các Bộ, cơ quan ngang Bộ tập trung thực hiện nhiệm vụ quản lý nhà nước ở tầm vĩ mô; xây dựng thể chế, chiện lược, quy hoạch, kế hoạch đồng bộ, thống nhất, giữ vai trò kiến tạo và tăng cường thanh tra, kiểm tra, giám sát.",
+              "diem": []
+            },
+            {
+              "so_khoan": "6",
+              "noi_dung": "Xác định rõ nội dung và phạm vì, nhiệm VỤ, quyền hạn mà chính quyền địa phương được quyết định, tổ chức thực hiện và chịu trách nhiệm về kết quả; không trùng lặp, chồng chéo về nhiệm vụ, quyền hạn giữa chính quyền địa phương các cấp và giữa các cơ quan, tổ chức thuộc chính quyền địa phương.",
+              "diem": []
+            },
+            {
+              "so_khoan": "7",
+              "noi_dung": "Bảo đảm cơ sở pháp lý cho hoạt động bình thường, liên tục, thông suốt của các cơ quan; không để gián đoạn công việc, không để chồng chéo, trùng lắp hoặc bỏ sót chức năng, nhiệm vụ, lĩnh vực, địa bàn; đáp ứng yêu cầu quản trị địa phương; ứng dụng khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số.",
+              "diem": []
+            },
+            {
+              "so_khoan": "8",
+              "noi_dung": "Bảo đảm quyền con người, quyền công dân; bảo đảm công khai, mũi h bạch, tạo điều kiện thuận lợi cho cá nhân, tổ chức trong việc tiếp cận thông tin, thực hiện các quyền, nghĩa vụ và các thủ tục theo quy định của pháp luật; không làm ảnh hưởng đến hoại động bình thường của xã hội, người dân và doanh nghiệp.",
+              "diem": []
+            },
+            {
+              "so_khoan": "9",
+              "noi_dung": "Bảo đảm không làm ảnh hưởng đến việc thực hiện các điều ước quốc! lế, thỏa thuận quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên.",
+              "diem": []
+            },
+            {
+              "so_khoan": "10",
+              "noi_dung": "Nguồn lực thực hiện nhiệm vụ được phân quyền, phân cấp và thẩm quyền được phân định do ngân sách nhà nước bảo đảm theo quy định. 3 Chương JJ PHÂN QUYỀN TRONG LĨNH VỤC CÔNG TÁC DẪN TỘC, TÍN NGƯỠNG, TỒN GIÁO Mục 1 PHÂN QUYỀN TRONG LĨNH VỰC CÔNG TÁC DẪN TỘC Điều á. Báo cáo Quốc hội kết quả thực hiện Chương trình mục tiêu quốc gia phát triển kinh tế - xã hội vùng đồng bào dân tộc. thiểu số và miền núi giai đoạn 2021 - 2030 Việc hằng năm báo cáo trước Quốc hội tại kỳ họp cuối năm về kết quả thực hiện Chương trình mục tiêu quốc gia phát triển kinh tế - xã hội vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2030 quy định tại khoản 5 Điều 2 Nghị quyết số 88/2019/QH14 ngày 18 tháng 11 năm 2019 của Quốc hội phê duyệt Đề án tổng thể phát triển kinh tế - xã hội vùng đồng bào dân tộc thiểu số và miện núi giai đoạn 2021 - 2030 và khoản 5 Điều 2 Nghị quyết số 120/2020/QH14 ngày 19 tháng 6 năm 2020 của Quốc hội phê duyệt chủ trương đầu tư Chương trình tựC tiêu quốc gia phát triển kinh tế - xã hội vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2030 thuộc nhiệm vụ thực hiện của Bộ Dân tộc và Tôn giáo. Mục 2 PHÂN QUYỀN TRONG LĨNH VỰC TÍN NGƯỠNG, TỒN GIÁO",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "4",
+          "noi_dung": "Tiếp nhận thông báo kết quả đào tạo của cơ sở đào tạo tôn giáo 1. Việc tiếp nhận văn bản thông báo kết quả đào tạo của từng khóa học của cơ sở đào tạo tôn giáo quy định tại khoản 4 Điều 39 Luật Tín ngưỡng, tôn giáo thuộc nhiệm vụ thực hiện của Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương (sau đây gọi là Ủy ban nhân dân cấp tỉnh).",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục tiếp nhận thông báo kết quả đào tạo của cơ sở đảo tạo tôn giáo quy định tại Mục 1 Phụ lục I kèm theo Nghị định này.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "5",
+          "noi_dung": "Trả lời nhóm người nước ngoài: sinh hoạt tôn giáo tập trung mời chức sắc, nhà tu hành là người nước ngoài đến giảng đạo 1. Việc trả lời nhóm người nước ngoài sinh hoạt tôn giáo tập trung mời chức sắc, nhà tu hành là người nước ngoài đến giảng đạo quy định tại khoản 5 Điều 48 Luật Tín ngưỡng, tôn giáo thuộc thẩm quyền thực hiện của Ủy ban nhân dân cấp tỉnh.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục trả lời nhóm người nước ngoài sinh hoạt tôn giáo tập trung mời chức sắc, nhà tu hành là người nước ngoài đến giảng đạo quy định tại Mục II Phụ lục 1 kèm theo Nghị định này. lo, 4",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "6",
+          "noi_dung": "Trả lời việc người nước ngoài học tại cơ sở đào tạo tôn giáo ở Việt Nam 1. Việc trả lời người nước ngoài học tại cơ sở đào tạo tôn giáo Ở Việt Na quy định tại khoản 3 Điều 49 Luật Tín ngưỡng, tôn giáo thuộc thẩm quyền thực hiện của Ủy ban nhân dân cấp tỉnh.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục trả lời việc người nước ngoài học tại cơ sở đào tạo tô giáo ở Việt Nam quy định tại Mục IJI Phụ lục I kèm theo Nghị định này.",
+              "diem": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "so_chuong": "II",
+      "ten_chuong": "PHÂN CẤP QUẢN LÝ NHÀ NƯỚC",
+      "dieu": [
+        {
+          "so_dieu": "7",
+          "noi_dung": "Phê duyệt danh sách xã khu vực II, HI, I và công nhận thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2025 1. Việc phê duyệt danh sách xã khu vực II, H, J và công nhận thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2025 quy định tại khoản 4 Điều 7 Quyết định số 33/2020/QĐ-TTg ngày 12 tháng 11 năm 2020 của Thủ tướng Chính phủ về tiêu chí phân định vùng đồng bào dân tộc thiểu số và miền núi theo trình độ phát triển giai đoạn 2021 - 2025 (sau đây gọi là Quyết định số 33/2020/QĐ-TTg) thuộc thẩm quyền thực hiện của Ủy ban nhân dân cấp tỉnh.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục xác định xã khu vực III, JI, I và thôn đặc biệt khó khă thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2025 quy định tại Mục IV Phụ lục I kèm theo Nghị định này.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Hồ sơ xác định xã khu vực III, II, I và thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2025 quy định tại Mục V Phụ lục I kèm theo Nghị định này.",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Trách nhiệm của Ủy ban nhân dân các cấp trong việc phê duyệt danh sách xã khu vực TI, II, I và công nhận thôn đặc biệt khó khăn thuộc vùng đồng bào dần tộc thiểu số và miền núi giai đoạn 2021 - 2025: a) Ủy ban nhân dân cấp tỉnh căn cứ tiêu chí \"quy định tại Quyết định % 33/2020/QĐ-TTg chỉ đạo Ủy ban nhân dân cấp xã tổ chức rà soát, lập danh sách xã khu vực II,IL I và thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiệu số và miền núi giai đoạn 2021-2025 gửi Ủy ban nhân dân tỉnh xem xét, phê duyệt. b) Ủy ban nhân dân cấp xã có trách nhiệm: Căn cứ các tiêu chí quy định tại Quyết định số 33/2020/QĐ-TTyg, tổ chức rà soát, lập hồ sơ xác định danh sách xã khu vực II, II, I và thôn đặc biệt khó khăn vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2025 gửi Ủy ban nhận dân cấp tỉnh theo quy định; 5 - Cung cấp và chịu trách nhiệm về tính chính xác của các tài liệu, số liệu có liên quan trong quá trình kiểm tra, rà soát xác định xã khu vực II, II, JI và thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2025.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "8",
+          "noi_dung": "Sửa đối, bổ sung danh sách xã khu vực TH, II, I và thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2025 1. Việc sửa đổi, bố sung danh sách xã khu vực J1, U, I và thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2025 quy định tại điểm b và c khoản 1 Điều 10 Quyết định số 33/2020/QĐ-TTg thuộc thẩm quyền thực hiện của Ủy ban nhân dân cấp tỉnh.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục, hồ sơ sửa đổi, bổ sung danh sách xã khu vực II,IL,I và thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2025 thực hiện như trình tự, thủ tục xác định xã khu vực IHJL, 1 và công nhận thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi quy định tại khoản 2 và khoản 3 Điều 7 Nghị định này.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "9",
+          "noi_dung": "Phê duyệt danh sách các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thù giai đoạn 2021 - 2025 1. Việc phê duyệt danh sách các dân tộc còn gặp nhiều khó khăn, có khó ' khăn đặc thù giai đoạn 2021 - 2025 quy định tại khoản 4 Điều 4 Quyết định số 39/2020/QĐ-TTg ngày 31 tháng 12 năm 2020 của Thủ tướng Chính phủ về tiêu chí xác định các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thủ giai đoạn 2021 - 2025 (sau đây gọi là Quyết định số 39/2020/QĐ-TTg) thuộc thẩm quyền thực hiện của Bộ trưởng Bộ Dân tộc và Tôn giáo.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục phê duyệt danh sách các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thù giai đoạn 2021 - 2025 quy định tại Mục VI Phụ lục Ï kèm theo Nghị định này. 3, Hồ sơ xác định các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thù giai đoạn 2021 - 2025 quy định tại Mục VII Phụ lụcI kèm theo Nghị định này.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "10",
+          "noi_dung": "Sửa đồi, bỗ sung danh sách các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thù giai đoạn 2021 - 2025 1. Việc sửa đổi, bổ sung danh sách các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thù giai đoạn 2021 - 2025 quy định tại điểm b khoản 1 Điều 7 Quyết định số 39/2020/QĐ-TTg thuộc thẩm quyền thực hiện của Bộ trưởng Dân tộc và Tôn giáo.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục, hồ sơ sửa đổi, bổ sung danh sách các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thù giai đoạn 2021 - 2025 thực hiện như trình tự, thủ tục, hồ sơ phê duyệt danh sách các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thù giai đoạn 2021 - 2025 quy định tại khoản 2 và khoản 3 Điều 9 Nghị định này. 6 Điều HU. Sửa đổi, bỗ sung danh sách các xã thuộc vùng đồng bào dân tộc thiểu số và miền núi do hoàn thành xây dựng nông thôn mới; chia, tách, sắp nhập địa giới; thành lập mới hoặc hiệu chỉnh tên gọi của đơn vị hành chính 1. Việc sửa đổi, bố sung danh sách các xã thuộc vùng đồng bào dân tộc thiểu số và miền núi do hoàn thành xây dựng nông thôn mới; chia, tách, sáp nhập địa giới; thành lập mới hoặc hiệu chỉnh tên gọi của đơn vị hành chính quy định tại Điều 2 Quyết định số 861/QĐ-TTg ngày 04 tháng 6 năm 2021 của Thủ tướng Chính phủ về việc phê duyệt danh sách các xã khu vực JI, khu vực JH, khu vực thuộc vùng đồng bào dần tộc thiểu số và miền núi giai đoạn 2021 - 2025 thuộc thẩm quyền thực hiện của Ủy ban nhân dân cấp tỉnh.:",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Căn cứ quyết định của cấp có thẩm quyền về việc công nhận xã đạt chuẩn nông thôn mới; chia, tách, sáp nhập địa giới; thành lập mới hoặc hiệu chính tên gọi của đơn vị hành chính, Ủy ban nhân dân cấp tỉnh quyết định sửa đổi, bổ sung danh sách các xã thuộc vùng đồng bào dân tộc thiểu số và miền núi.",
+              "diem": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "so_chuong": "III",
+      "ten_chuong": "PHÂN ĐỊNH THẲM QUYỀN",
+      "dieu": [
+        {
+          "so_dieu": "12",
+          "noi_dung": "Công nhận, đưa ra khỏi danh sách và thay thế, bỗ sung người có uy tín trong đồng bảo dân tộc thiểu số 1. Việc công nhận, đưa ra khỏi danh sách và thay thế, bổ sung người có by tín trong đồng bào dân tộc thiểu số (sau đây gọi là người có uy tín) quy định tại điểm e khoản 1 và điểm đ khoản 3 Điều 6 Quyết định số 12/2018/QĐ-TTg ngày 06 tháng 3 năm 2018 của Thủ tướng Chính phủ về tiêu chí lựa chọn, công nhìn người có uy tín và chính sách đối với người có uy tín trong đồng bào dân tộc thiểu số (được sửa đổi, bổ sung tại khoản 8 Điều 1 Quyết định số 28/2023/QĐ- TTg ngày 23 tháng 11 năm 2023 của Thủ tướng Chính phủ) (sau đây gọi là Quyết định số 12/201 8/QÐ- TTg được sửa đổi, bổ sung tại Quyết định số 28/2023/QĐ-TTp) thuộc thấm quyền thực hiện của Chủ tịch Ủy ban nhân dân xã, phường, đặc khu (sau đây gọi là Ủy ban nhân dân: cấp xã).",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục công nhận, đưa ra khỏi danh sách và thay thế, bố sung người có uy tín quy định tại Mục VII Phụ lục I kèm theo Nghị định này. Điều 13. Quyết định số lượng người có uy tín Việc quyết định số lượng người có uy tín trong trường hợp thôn thành lập mới do sáp nhập các thôn theo quy định tại điểm b khoản 3 Điều 4 Quyết định số 12/2018/QĐ-TTg được sửa đổi, bổ sung tại Quyết định số 28/2023/QĐ-TTg thuộc thẩm quyền thực hiện của Chủ tịch Ủy ban nhân dân cấp xã. Mục 2 PHÂN ĐỊNH THẲM QUYỀN TRONG LĨNH.VỰC TÍN NGƯỠNG, TỒN GIÁO",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "14",
+          "noi_dung": "Tiếp nhận thông báo tổ chức lễ hội tín ngưỡng định kỳ",
+          "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Việc tiếp nhận thông báo tổ chức lễ hội tín ngưỡng định kỳ quy định tại khoản 1 Điều 13 Luật Tín ngưỡng, tôn giáo được phân định thẩm quyền thực hiện như sau: a) Ủy ban nhân dân cấp xã nơi tổ chức lễ hội có trách nhiệm tiếp nhận văn bản thông báo của người đại diện, ban quản lý cơ sở tín ngưỡng đối với lễ hội tín ngưỡng có quy mô tổ chức trong một xã; b) Ủy ban nhân dân cấp tỉnh nơi tổ chức lễ hội có trách nhiệm tiếp nhận văn bản thông báo của người đại diện, ban quản lý cơ sở tín ngưỡng đối với lễ hội tín ngưỡng có quy mô tổ chức trong nhiều xã thuộc tỉnh.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục tiếp nhận thông báo tổ chức lễ hội tín ngưỡng định kỳ quy định tại Mục IX Phụ lục I kèm theo Nghị định này.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "15",
+          "noi_dung": "Tiếp nhận thông báo mở lớp bồi dưỡng về tôn giáo 1. Việc tiếp nhận thông báo mở lớp bồi dưỡng về tôn giáo quy định tại khoản 2 Điều 41 Luật Tín ngưỡng, tôn giáo được phân định thẩm quyền thực hiện như sau: Ủy ban nhân dân cấp xã nơi tổ chức tôn giáo, tổ chức tôn giáo trực thuộc mở lớp bồi dưỡng có trách nhiệm tiếp nhận thông báo bằng văn bản của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc mở lớp bồi dưỡng: về tôn giáo không thuộc quy định tại khoản 1 Điều 41 Luật Tín ngưỡng, tôn giáo.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục tiếp nhận thông báo mở lớp bồi dưỡng về tôn giáo quy định tại Mục X Phụ lục I kèm theo Nghị định này.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "16",
+          "noi_dung": "Tiếp nhận. thông báo danh mục hoạt động tôn giáo 1. Việc tiếp nhận thông báo danh mục hoạt động tôn giáo quy định tại khoản 1 Điều 43 Luật Tín ngưỡng, tôn giáo được phân định thẩm quyền thực hiện như sau: a) Ủy ban nhân dân cấp xã tiếp nhận danh mục hoạt động tôn giáo của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc, tổ chức được cấp chứng nhận đăng ký hoạt động tôn giáo có địa bàn hoạt động tôn giáo ở một xã; 8 b) Ủy ban nhân dân cấp tỉnh tiếp nhận danh mục hoạt động tôn giáo của tổ” th chức tôn giáo, tổ chức tôn giáo trực thuộc, tổ chức được cấp chứng nhận đăng ký hoạt động tôn giáo có địa bàn hoạt động tôn giáo ở nhiều xã trên địa bàn tỉnh; c) Bộ Dân tộc và Tôn giáo tiếp nhận danh mục hoạt động tôn giáo của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc, tổ chức được cấp chứng nhận đăng ký hoạt động tôn giáo có địa bàn hoạt động tôn giáo ở nhiều tỉnh.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Đối với hoạt động tôn giáo không. có trong danh mục đã thông báo thì người đại diện tổ chức có trách nhiệm thông báo bổ sung tới cơ quan nhà nước có thẩm quyền theo quy định tại khoản 1 Điều này chậm nhất là 20 ngày trước khi diễn ra hoạt động.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Trình tự, thủ tục tiếp nhận thông báo danh mục hoạt động tôn giáo. định tại Mục XI Phụ lục I Nghị định này.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "17",
+          "noi_dung": "Tiếp nhận thông báo tổ chức hội nghị của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc 1. Việc tiếp nhận thông báo tổ chức hội nghị của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc quy định tại điểm khoản 1 Điều 44 Luật Tín ngưỡng, tôn giáo được phân định thẩm quyền thực hiện như sau: a) Ủy ban nhân dẫn cấp xã tiếp nhận văn bản thông báo tổ chức hội nghị thường niên của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc có địa bàn hoạt động ở một xã; b) Ủy ban nhân dân cấp tỉnh tiếp nhận thông báo tổ chức hội nghị thường niên của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc có địa bàn hoạt động ở nhiều xã trên địa bàn tỉnh; c) Bộ Dân tộc và Tôn giáo tiếp nhận thông báo tổ chức hội nghị thường niện của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc có địa bàn hoạt động ở nhiều tỉnh.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục tiếp nhận nhận thông báo tổ chức hội nghị của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc quy định tại Mục XII Phụ lục J kèm theo Nghị định này.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "18",
+          "noi_dung": "Chấp thuận tổ chức đại hội của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc, tổ chức được cấp giấy chứng nhận đăng ký hoạt động tôn giáo 1. Việc chấp thuật tổ chức đại hội của tổ chức tôn giáo, tổ chức tôn giáo tị thuộc, tổ chức được cấp giấy chứng nhận đăng ký hoạt động tôn giáo quy định tại khoản 3 Điều 45 Luật Tín ngưỡng, tôn giáo được phân định thẩm quyền thực hiện như sau: a) Ủy ban nhân dân cấp xã có trách nhiệm trả lời bằng văn bản đối với việc tổ chức đại hội của tổ chức tôn giáo trực thuộc có địa bàn hoạt động ¿ Ở một xã; ˆ....s. 9 b) Ủy ban nhân dân cấp tỉnh có trách nhiệm trả lời bằng văn bản đối với việc tổ chức đại hội của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc, tổ chức được cấp chứng nhận đăng ký hoạt động tôn giáo có địa bàn hoạt động ở nhiều xã trên địa bàn tỉnh; cơ) Đối với việc tổ chức đại hội không thuộc trường hợp quy định tại điểm a và điểm b khoản này, Bộ Dân tộc và Tôn giáo có trách nhiệm trả lời bằng văn bản.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục chấp thuận tổ chức đại hội của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc, tổ chức được cấp giấy chứng nhận đăng ký hoạt động tôn giáo quy định tại Mục XTJI Phụ lục J kèm theo Nghị định này.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "19",
+          "noi_dung": "Chấp thuận tổ chức cuộc lễ, giảng đạo ngoài cơ sở tôn giáo, địa điểm hợp pháp 1. Việc chấp thuận tổ chức cuộc lễ, giảng đạo ngoài cơ sở tôn giáo, địa điểm hợp pháp quy định tại khoản 3 Điều 46 Luật Tín ngưỡng, tôn giáo được phân định thẩm quyền thực hiện như sau: a) Ủy ban nhân dân cấp xã có trách nhiệm trả lời bằng văn bản về việc tổ chức cuộc lễ, giảng đạo có quy mô tổ chức ở xã; b) Ủy ban nhân dân cấp tỉnh nơi dự kiến tổ chức cuộc lễ, giảng đạo có trách nhiệm trả lời bằng văn bản về việc tổ chức cuộc lễ, giảng đạo có quy mô tổ chức ở nhiều xã trên địa bàn tỉnh hoặc ở nhiều tỉnh.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục chấp thuận tổ chức cuộc lễ, giảng đạo ngoài cơ sở tôn giáo, địa điềm hợp pháp quy định tại Mục XIV Phụ lục I kèm theo Nghị định này.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "20",
+          "noi_dung": "Tiếp nhận thông báo về việc tổ chức quyền góp của cơ sở tín ngưỡng, tổ chức tôn giáo, tổ chức tôn giáo trực thuộc 1. Việc tiếp nhận thông báo về việc tổ chức quyền góp của cơ sở tín ngưỡng, tổ chức tôn giáo, tổ chức tôn giáo trực thuộc quy định tại khoản 3 Điều 25 Nghị định số 95/2021/NĐ-CP ngày 29 tháng 12 năm 2023 của Chính phủ quy định chỉ tiết một số điều và biện pháp thi hành Luật Tín ngưỡng, tôn giáo (sau đây gọi là Nghị định số 95/2021/NĐ-CP) được phân định thẩm quyền thực hiện như sau: a) Ủy ban nhân dân cấp xã nơi tổ chức quyền.góp tiếp nhận thông báo bằng văn bản của người đại diện hoặc ban quản lý cơ sở tín ngưỡng, tổ chức tôn giáo, tổ chức tôn giáo trực thuộc về việc tổ chức quyền góp trong địa bàn một xã; b) Ủy ban nhân dân cấp tỉnh nơi tổ chức quyền góp tiếp nhận thông báo bằng văn bản của người đại diện hoặc ban quản lý cơ sở tín ngưỡng, tổ chức tôn giáo, tổ chức tôn giáo trực thuộc về việc tổ chức quyền góp trên địa bàn nhiều xã thuộc tỉnh.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trình tự, thủ tục tiếp nhận thông báo về việc tổ chức quyền góp của cơ sở tín ngưỡng, tổ chức tôn giáo, tổ chức tôn giáo trực thuộc quy định tại Mục XV Phụ lục I kèm theo Nghị định này. 10",
+              "diem": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "so_chuong": "IV",
+      "ten_chuong": "TRÁCH NHIỆM CỦA BỘ, CƠ QUAN NGANG BỘ,",
+      "dieu": [
+        {
+          "so_dieu": "21",
+          "noi_dung": "Trách nhiệm của Bộ Dân tộc và Tôn giáo",
+          "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Chủ trì, phối hợp với các bộ, cơ quan ngang bộ và cơ quan có liên q an tổ chức và hướng dẫn thực hiện việc phân quyền, phân cấp, phân định thẩm quyền theo quy định tại Nghị định này.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Thực hiện việc kiểm tra, giám sát đối với các nhiệm vụ đã được phân quyền, phân cấp, phân định thẩm quyền cho chính quyền địa phương theo quy định của pháp luật. sÀ Ạ LZA kẻ A^ ^ Z..",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "22",
+          "noi_dung": "Trách nhiệm của bộ, cơ quan ngang bộ, cơ quan có liên quan Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan liên quan trong chức năng, nhiệm vụ, quyền hạn tổ chức thực hiện Nghị định này và phối hợp với Bộ Dân tộc và Tôn giáo báo cáo Chính phủ các nội dung có liên quan tại Nghị định này.",
+          "khoan": []
+        },
+        {
+          "so_dieu": "23",
+          "noi_dung": "Trách nhiệm của Ủy ban nhân dân các cấp - 1. Thực hiện nhiệm vụ được phân quyền, phân cấp và thẩm quyền được phân định tại Nghị định này.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Ủy ban nhân dận cấp tính theo thẩm quyền quyết định việc phân cấp, h quyền cho cơ quan chuyển môn về dân tộc, tín ngưỡng, tôn giáo cấp tỉnh thực hiện nhiệm vụ, quyền hạn được phân định tại Nghị định này phù hợp với quy định của Luật Tổ chức chính quyền địa phương năm 2025 và khả năng, điều kiện thực tiến của địa phương.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Bảo đảm nguồn lực để thực hiện nhiệm vụ được phân quyền, phân cấp, phân định thẩm quyền tại Nghị định này.",
+              "diem": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "so_chuong": "V",
+      "ten_chuong": "ĐIỀU KHOẢN THỊ HÀNH",
+      "dieu": [
+        {
+          "so_dieu": "24",
+          "noi_dung": "Hiệu lực thi hành 1. Nghị định này có hiệu lực thi hành kể từ ngày 01 tháng 7 năm 2025.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Nghị định này. hết hiệu lực kể từ ngày 01 tháng 3 năm 2027 trừ trường - hợp được cấp có thẩm quyền quyết định kéo dài thời gian áp dụng toàn bộ hoặc một phần Nghị định này. 1 3. Trong thời gian Nghị định này có hiệu lực thi hành, nếu trong Luật, nghị quyêt của Quốc hội, pháp lệnh, nghị quyêt của Ủy ban Thường vụ Quốc hội và các văn bản quy phạm pháp luật khác có-liên quan được ban hành và có hiệu lực trước ngày 0 tháng 7 năm 2025 có quy định khác về thẩm quyền, trách nhiệm quản lý nhà nước, trình tự, thủ tục so với quy định tại Nghị định này thì thực hiện theo quy định tại Nghị định này.",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Trường hợp các Luật,nghị quyết của Quốc hội, pháp lệnh, nghị quyết của Ủy ban Thường vụ Quốc hội, nghị định, nghị quyêt của Chính phủ được ban hành và có hiệu lực sau ngày 01 tháng 7 năm 2025 có quy định khác về thẩm quyền, trách nhiệm quản lý nhà nước, trình tự, thủ tục so với quy định tại Nghị định này thì thực hiện theo quy định tại văn bản đó.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "25",
+          "noi_dung": "Hồ sơ đề nghị cấp giấy chứng nhận đăng ký hoạt tôn giáo; đề nghị công nhận tổ chức tôn giáo; đề nghị thành lập, chia, tách, sáp nhập, hợp nhất tổ chức tôn giáo trực thuộc; đăng ký người được bỗ nhiệm, bầu cử, suy cử làm chức việc; chấp thuận thành lập cơ sở đào tạo tôn giáo; văn bản thông báo người được phong phẩm hoặc suy cử làm chức sắc; đơn giản hóa thủ tục hành chính trong lĩnh vực tín ngưỡng, tôn giáo 1. Hồ sơ đề nghị cấp giấy chứng nhận đăng ký hoạt tôn giáo quy định tại Mục I Phụ lục II kèm theo Nghị định này.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Hồ sơ đề nghị công nhận tổ chức tôn giáo quy định tại Mục II Phụ lục II kèm theo Nghị định này.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Hồ sơ đề nghị thành lập, chia, tách, sáp nhập, hợp nhất tổ chức tôn giáo trực thuộc quy định tại Mục III Phụ lục JI kèm theo Nghị định này.",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Hồ sơ đăng ký người được bổ nhiệm, bầu cử, suy cử làm chức việc quy định tại Mục TV Phụ lục II kèm theo Nghị định này.",
+              "diem": []
+            },
+            {
+              "so_khoan": "5",
+              "noi_dung": "Hồ sơ đề nghị chấp thuận thành lập cơ sở đào tạo tôn giáo quy định tại Mục V Phụ lục II kèm theo Nghị định này.",
+              "diem": []
+            },
+            {
+              "so_khoan": "6",
+              "noi_dung": "Văn bản thông báo người được phong phẩm hoặc suy cử làm chức sắc phải nêu rõ tên tổ chức tôn giáo, họ và tên, phẩm vị, địa bàn hoạt động, tóm tắt quá trình hoạt động tôn giáo kèm theo sơ yếu lý lịch của chức sắc.",
+              "diem": []
+            },
+            {
+              "so_khoan": "7",
+              "noi_dung": "Đơn giản hóa thủ tục hành chính trong lĩnh vực tín ngưỡng, tôn giáo quy định tại Mục VI Phụ lục II kèm theo Nghị định này.",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "26",
+          "noi_dung": "Sửa đổi, bổ sung một số điều của Nghị định số 05/2011/NĐ-CP ngày 14 tháng 01 năm 2011 của Chính phủ về công tác dân tộc đã được sửa đổi, bổ sung tại Nghị định số 127/2024/NĐ-CP ngày 14 tháng 01 năm 2024 của Chính phủ 1. Sửa đổi, bổ sung khoản 4 Điều 4 (đã được sửa đổi, bổ sung theo quy định tại khoản 1 Điều 1 Nghị định số 127/2024/NĐ-CP ngày 14 tháng 01 năm 2024 của Chính phủ) như sau: 12 “4. “Vùng đồng bào dân tộc thiểu số” là địa bàn cấp tỉnh, cấp xã có đông đồng bào dân tộc thiều số sinh sống ồn định; thôn, bản, làng, phun, sóc, xóm, ấp và tương đương (sau đây gọi chung là thôn) có đông đồng bào dân tộc thiểu số sinh sống ồh định thành cộng đồng.”.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Sửa đổi, bổ sung khoản 2 Điều 6 như sau: “2. Đại hội đại biêu các dân tộc thiêu số cấp tỉnh, cấp xã được tổ chức địn kỳ 05 năm một lân.”. 3, Sửa đổi, bổ sung khoản 5 Điều 22 như sau; “5. Cơ quan chuyển môn thực hiện chức năng quản lý nhà nước vê công tác dân tộc, tín ngưỡng, tôn giáo được tổ chức từ cập trung ương, cấp tỉnh và cấp xã...",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "27",
+          "noi_dung": "Sứa đối, bỗ sung một số điều của Nghị định số 41/2025/NĐ-CP ngày 26 tháng 02 năm 2025 của Chính phủ quy định chức năng, nhiệm vụ, À Ắ Ẩ ! z 2 ˆ ˆ ˆ ˆ.z quyền hạn và cơ cầu tổ chức của Bộ Dân tộc và Tôn giáo Bãi bỏ cụm từ “cấp huyện” tại điểm đ khoản 6 Điều 2.",
+          "khoan": []
+        },
+        {
+          "so_dieu": "28",
+          "noi_dung": "Điều khuôn chuyển tiếp 1. Nhiệm vụ đã được cơ quan, tổ chức, cá nhân có thẩm quyền phân quyền, phân cấp thụ lý và đang thực hiện nhưng chưa hoàn thành trước thời điểm Nghĩ định này có hiệu lực thì chuyển giao toàn bộ hồ sơ, tài liệu, kết quả thực hiện cho cơ quan, tổ chức, đơn vị, cá nhân được phân quyền, phân cấp, phân định thẩm quyền đề tiếp tục thực hiện, giải quyết theo quy định tại Nghị định này.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Cơ quan, tổ chức, cá nhân được phân quyền, phân cấp, phân định thẳm quyền khi tiếp nhận. thực hiện chức năng, nhiệm vụ quản lý nhà nước trong lĩnh vực công tác dân tộc, tín ngưỡng, tôn giáo có trách nhiệm sau đây: a) Công bố Quyết Hình danh mục thủ tục hành chính thuộc thẩm quyền giải quyết; giải quyết thủ tục hành chính sau khi được phân quyền, phân cấp, phân định thầm quyền bảo đảm kịp thời và không bị gián đoạn; b) Kế thừa toàn bộ hồ sơ, tài liệu, quy trình, thủ tục và kết quả thực hiệ trước thời điểm Nghị định này có hiệu lực thi hành. Không được yêu câu cơ quan), tổ chức, cá nhân thực hiện lại quy trình, thủ tục, bồ sơ theo quy định tại Nghị định này đối với những hồ sơ, nhiệm vụ đang thực hiện, xử lý trước thời điểm Nghị định này có hiệu lực thi hành; c) Định kỳ báo cáo kết quả thực hiện nhiệm vụ được phân quyền, phân cấp, phân định thẩm quyền trước ngày 31 tháng 12 hằng năm với cơ quan, tổ chức, cá nhân có thẩm quyền phân quyền, phân cấp.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Văn bản, giấy chứng nhận đã được cơ quan, tổ chức, cá nhân có mài quyền phân quyền, phân cấp, phân định thầm quyền được ban hành trước ngày Nghị định này có hiệu lực thi hành và chưa hết hiệu lực hoặc chưa hết thời hạn thì 13 tiếp tục được áp dụng, sử dụng theo thời hạn ghi trên văn bản, giấy chứng nhận đó cho đến khi hết thời hạn. Trường hợp cơ quan, tổ chức, cá nhân có nhu cầu được sửa đổi, cấp lại văn bản, giấy chứng nhận bởi cơ quan, tổ chức, đơn vị, cá nhân được phân quyền, phân cấp, phân định thẩm quyền thì có văn bản đề nghị để được giải quyết theo quy định của Nghị định này./. Nơi nhận: TM. CHÍNH PHỦ - Ban Bí thư Trung ương Đảng; I. THỦ TƯỚNG - Thủ tướng, các Phó Thủ tướng Chính phủ; - Các Bộ, cơ quan ngang Bộ, cơ quan thuộc CP; - HĐND, UBND các tỉnh, thành phố trực thuộc TƯ; - Văn phòng Trung ương và các Ban của Đảng: - Văn phòng Tổng Bí thư; - Văn phòng Chủ tịch nước; - Hội đồng Dân tộc và các Ủy bạn của Quốc hội; - Văn phòng Quốc hội; - Tòa án nhân dân tối cao; E1 - Viện Kiểm sát nhân dân tối cao; guyễn Hòa Bình - Kiểm toán Nhà nước; - Ngân hàng Chính sách xã hội; - Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam; - Cơ quan Trung ương của các đoàn thể; - VPCP: BTCN, các PCN, Trợ lý TTgCP, TGĐ công TTĐT, các Vụ, Cục, đơn vị trực thuộc; - Lưu: VT, QHĐP (03) S.Tùng. 'a8 Phụ lục J ÌNH TỰ, THỦ TỤC, HỖ SƠ THỰC HIỆN NHIỆM VỤ. TƯƠIð PHÁN QUYỀN, PHÂN CẮP, PHÂN ĐỊNH THẢM QUYN 7P rheo: Nghị định số 124/2025/NĐ-CP ngày 11 tháng 6 năm 2025 của Chính phủ) =1, Trình tự, thủ tục tiếp nhận thông báo kết quả đào tạo của cơ sở đào tạo tôn giáo Cơ sở đào tạo tôn giáo có trách nhiệm thông báo bằng văn bản về kết quả đào tạo của từng khóa học với Ủy ban nhân dân cấp tỉnh chậm nhất là 20 ngày kể từ ngày kết thúc khóa học. Văn bản thông báo nêu rõ tên cơ sở đào tạo tôn giáo, khóa đào tạo, số học viên tốt nghiệp. IL Trình tự, thủ tục trả lời nhóm người nước ngoài sinh hoạt tôn giáo tập trung mời chức sắc, nhà tu hành là người nước ngoài đến giảng đạo 1. Nhóm người nước ngoài sinh hoạt tôn giáo tập trung mời chức sắc, nhà tu hành là người nước ngoài đến giảng đạo gửi hô sơ đê nghị theo quy định tại khoản 2 Điều 48 Luật Tín ngưỡng, tôn giáo đến Ủy ban nhân dân cấp tính.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trong thời hạn 45 ngày kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cập tỉnh có trách nhiệm trả lời băng văn bản; trường hợp không chấp thuận phải nêu rõ lý do. TH. Trình tự, thú tục trả lời việc người nước ngoài học tại cơ sở đào tạo tôn giáo ở Việt Nam 1. Người nước ngoài học tại cơ sở đào tạo tôn giáo ở Việt Nam phải là người cư trú hợp pháp ở Việt Nam, tuân thủ pháp luật Việt Nam, tự nguyện đăng ký học và được cơ sở đào tạo tôn giáo gửi hồ sơ đề nghị theo \"quy định tại khoản 2 Điều 49 Luật Tín ngưỡng, tôn giáo đến Ủy ban nhân dân cấp tỉnh.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trong thời hạn 45 ngày kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cập tỉnh có trách nhiệm trả lời băng văn bản; trường hợp không chấp thuận phải nêu rõ lý do. IV. trình tự, thú tục xác định xã khu vực III, HI I và thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiếu số và miền núi giai đoạn 2021 - 2025 1. Ủy ban nhân dân cấp xã căn cứ tiêu chí quy định tại các Điều 2, 3,4, 5, 6 Quyết định số 33/2020/QĐ-TTg để xác định xã khu vực III, II, I và thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiều số và miền núi theo trình độ phát triển giai đoạn 2021 - 2025; lập báo cáo kết quả xác định gửi Ủy ban nhân dân cấp tỉnh trong thời hạn 15 ngày làm việc kể từ ngày Ủy ban nhân dân cấp tỉnh chí đạo, tổ chức triển khai thực hiện. 2. hi 2. Trong thời hạn 45 ngày làm việc kể từ ngày nhận đủ hỗ sơ của các Ầ Ủy ban nhân dân cấp tỉnh rà soát, thầm định, quyết định phê quyết ở đạnh. sách các đồng bào dân tộc thiều số và miền núi giai đoạn 2021 - 2025. i",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Trường hợp hồ sơ, tài liệu chưa bảo đảm quy định, trong thời hạn 05 ngày làm việc kế từ ngày nhận được hồ sơ, Ủy ban nhân dân cấp tỉnh có văn bản trả lời - và nêu rõ lý do. V. Hồ sơ xác định xã khu vực IH, H, I và thôn đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 - 2025 1. Bảng đánh giá của xã và các thôn về mức độ đạt hoặc không đạt tiêu chí: quy định tại các Điều 2, 3, 4, 5, 6 Quyết định số 33/2020/QĐ-TTg. 2 Báo cáo kết quả và danh sách chi tiết xác định các xã khu vực II, II, I và thôn được xác định đặc biệt khó khăn thuộc vùng đồng bào dân tộc thiểu số à miền núi giai đoạn 20217 2025.: 3. \"Quyết định phê duyệt kết quả xác định tỷ lệ hộ nghèo của cấp có thẩm quyền đối với các xã, thôn.",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Số liệu về dân số, tỷ lệ hộ dân tộc thiểu số, hộ nghèo là hộ dân tộc thiểu số và số liệu, tài liệu của xã, thôn có liên quan đến các tiêu chí quy định tại các Điều 2, 3, 4, 5, 6 Quyết định số 33/2020/QĐ-TTg. VI. Trình tự, thủ tục phê duyệt danh sách các dân tộc còn gặp nhiêu khó khăn, có khó khăn đặc thù giai đoạn 2021 - 2025 1. Ủy ban nhân dân cấp xã: Tổ chức rà soát, tổng hợp và lập hồ sơ theo quy định tại khoản 1 Mục VII Phụ lục này, gửi Ủy ban nhân dân cấp tỉnh trong thời hạn 15 ngày làm việc kể từ ngày Ủy ban nhân dân cấp tỉnh chỉ đạo triển khai, tổ chức thực hiện.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Ủy ban nhân dân cấp tỉnh: Sau khi nhận đủ hồ sơ của xã, Ủy ban nhân dân cấp tính chí đạo tổ chức! irà soát, thẩm định và hoàn thiện hồ sơ.theo quy định khoản 2 Mục VII Phụ lục này, gửi Bộ Dân tộc và Tôn giáo trong thời hạn 30 ngày làm việc kể từ ngày nhận được văn bản chỉ đạo triển khai thực hiện của Bộ Dẩn tộc và Tôn giáo.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Bộ Dân tộc và Tôn giáo: Trong thời hạn 45 ngày làm việc kể từ ngày nhận đủ hồ SƠ của Ủy ban nhân dân cấp tính, Bộ Dân tộc và Tôn giáo tổng hợp, rà soạt và quyết định phê duyệt danh sách các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thù giai đoạn 2021 - 2025.:",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Trường. hợp hồ sơ, tài liệu không bảo đảm quy định, trong thời hạn d5 ngày làm việc kể từ khi nhận được hồ sơ, cơ quan tiếp nhận hồ sơ có văn bản tí trả lời và nêu rõ lý do. 3 VII. Hồ sơ xác định các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thù giai đoạn 2021 - 2025 1. Hô sơ Ủy ban nhân dân cấp xã gửi Ủy ban nhân dân câp tỉnh: 02 bộ, môi bộ gôm: a) Báo cáo tông hợp số liệu vê dân số, số hộ, số khâu, tỷ lệ hộ dân tộc thiêu số, số hộ nghèo của từng dân tộc thiêu số sinh sống trên địa bàn; b) Số liệu, tài liệu của xã, thôn có liên quan đến các tiêu chí quy định tại Điều 2, Điều 3 Quyết định số 39/2020/QĐ-TTg; c) Bảng đánh giá về mức độ đạt hoặc không đạt tiêu chí đối với các dân tộc thiểu số ở xã, thôn.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Hồ sơ Ủy ban nhân dân cấp tỉnh gửi Bộ Dân tộc và Tôn giáo: 01 bộ, gồm: a) Báo cáo kết quả và đề nghị phê duyệt danh sách các dân tộc còn gặp nhiều khó khăn, có khó khăn đặc thù; b) Quyết định phê duyệt kết quả xác định tỷ lệ hộ nghèo của cấp có thẩm quyền đối với các hộ dân tộc thiểu số ở các xã, thôn vùng đồng bào dân tộc thiểu số và miền núi; c) Số liệu về dân số, số hộ, số khẩu, tỷ lệ hộ dân tộc thiểu số, số hộ nghèo của từng dân tộc thiểu số sinh sống ở các xã, thôn và số liệu, tài liệu của xã, thôn có liên quan đến các tiêu chí quy định tại Điều 2, Điều 3 Quyết định số 39/2020/QĐ-TTg; d) Báo cáo thẩm định của cơ quan chuyển môn về dân tộc, tín ngưỡng, tôn giáo cập tỉnh. VIH. Trình tự, thủ tục công nhận, đưa ra khỏi danh sách và thay thế, bổ sung người có uy tín 1. Công nhận người có uy tín a) Trưởng thôn tổ chức họp thôn (có sự tham gia của ít nhất 2/3 số hộ gia đình trong thôn) để phố biến về nội dung chính sách, tiêu chí, điều kiện, số lượng và đề cử danh sách lựa chọn người có uy tín (theo Mẫu số 01 Phụ lục kèm theo Quyết định số 12/201 8/QĐ-TTg) gửi Trưởng Ban công tác Mặt trận thôn; b) Trưởng Ban công tác Mặt trận thôn tổ chức họp liên tịch (có sự tham gia của đại diện Chi ủy, chính quyền, Ban công tác Mặt trận, các tổ chức đoàn thể và đại diện hộ dân trong thôn), lập văn bản đề nghị kèm theo biên bản họp liên tịch thôn (theo Mẫu số 02 Phụ lục kèm theo Quyết định số 12/2018/QĐ- -TTg) gửi Ủy ban nhân dân cấp xã; c) Trong thời hạn 05 ngày làm việc kể từ ngày nhận được văn bản đề nghị của thôn, Ủy ban nhân dân cấp xã tổng hợp, kiểm tra, lập hồ sơ (01 bộ, gồm: văn bản đề nghị, biên bản kiểm tra theo Mẫu số 3 Phụ lục kèm theo Quyết định số 4 12/2018/QĐ- -TTg, bản tổng hợp danh sách đề nghị công nhận người có uy tín theo Mẫu số 4 Phụ lục kèm theo Quyết định số 12/2018/QĐ- TTg) gửi xin ý kiến cơ quan chuyển môn về dân tộc, tín ngưỡng, tôn giáo cấp tỉnh; d) Trong thời hạn d5 ngày làm việc kể từ ngày nhận đủ hồ sơ của xã, cơ quai chuyển môn về dân tộc, tín ngưỡng, tôn giáo cấp tỉnh chủ trì, phối hợp với các cơ quan liên quan kiểm tra, tà soát và có văn bản trả lời Ủy ban nhân dân cấp xã; đ) Chậm nhất sau 10 ngày làm việc kể từ ngày có văn bản thống nhất của cơ quan chuyển môn về dân tộc, tín ngưỡng, tôn giáo cấp tỉnh, Chủ tịch Ủy ban nhân AI dân cấp xã quyết định công nhận người có uy tín trên địa bàn xã (danh sách theo Mẫu số 01 Phụ lục III kèm theo Nghị định này) và báo cáo Ủy ban nhân dân cấp tỉnh (qua cơ quan chuyển môn về dân tộc, tín ngưỡng, tôn giáo cấp tỉnh) kết quả thực hiện đề theo dõi, chỉ đạo.:",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Đưa ra khỏi danh sách và thay thế, bổ sung người có uy tín a) Khi có trường hợp cần đưa ra khỏi danh sách và thay thế, bổ sung người có uy tín theo quy định tại khoản 2 Điều 6 Quyết định số 12/2018/QĐ-TTg, Trưởng Ban công tác Mặt trận thôn thống nhất với Chỉ ủy chỉ bộ và tổ chức họp liên tịch (có sự tham gia của đại diện Chỉ ủy, chính quyền, Ban công tác Mặt trận, các tổ chức đoàn thể và đại diện hộ dân trong thôn), lập văn bản đề nghị đưa ra khỏi danh sách và thay, thế, bổ sung người có uy tín (kèm theo biên bản họp liên tịch thôn theo Mẫu số 02 và Mẫu số 06 Phụ lục kèm theo Quyết định số 12/2018/QĐ-TTg) gửi Ủy ban nhân dân cấp xã; b) Trong thời hạn 05 ngày làm việc kể từ ngày nhận được văn bản đề nghị của thôn, Ủy ban nhân dân cấp xã kiểm tra, tổng hợp và lập hồ sơ (01 bộ, gồm: vă bản đề nghị; biên bản kiểm tra theo Mẫu số 03 và Mẫu số 07 Phụ lục kèm theb Quyết định số 12/2018/QĐ-TTg; bản tổng hợp danh sách đề nghị đưa ra khỏi danh sách và thay thế, bổ sung người có uy tín theo Mẫu số 02 Phụ lục III kèm theo Nghị định này) gửi cơ quan chuyển môn về dân tộc, tín ngưỡng, tôn giáo cấp tỉnh; c) Trong thời hạn 05 ngày làm việc kề từ ngày nhận đủ hồ sơ của xã, cơ quan chuyển môn về dân tộc, tín ngưỡng, tôn giáo cấp tỉnh kiểm tra, rà soát và có văn bản trả lời Ủy ban nhân dân cấp xã; d) Chậm nhất sau 10 ngày làm việc kể từ ngày nhận được văn bản thống nhất của cơ quan chuyển môn về dân tộc, tín ngưỡng, tôn giáo cấp tính, Chủ tịch Ủy ban nhân dân cấp xãi quyết định đưa ra khỏi danh sách và thay thế, bổ sung người có uy tín (danh sách theo Mẫu số 03 Phụ lục JII kèm theo Nghị định này), báo cáo Ủy ban nhân dân cấp tỉnh (qua cơ quan chuyển môn dân tộc, tín ngưỡng, tôn giáo cấp tỉnh) kết quả thực hiện để theo dõi, chỉ đạo. JX. Trình tự, thủ tục tiếp nhận thông báo tổ chức lễ hội tín ngưỡng đỉnh kỳ Người đại diện, ban quản lý cơ sở tín ngưỡng có trách nhiệm thông báo bằng văn bản về việc tổ chức lễ hội tín ngưỡng diễn ra định kỳ chậm nhất là 20 ngày trước ngày tổ chức lễ hội đến cơ quan nhà nước có thẩm quyền theo quy định như sau:",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Ủy ban nhân dân cấp xã nơi tổ chức lễ hội tiếp nhận văn bản thông báo đối với lê hội tín ngưỡng có quy-mô-tô-chức trong một xã:",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Ủy ban nhân dân cấp tỉnh nơi tổ chức lễ hội tiếp nhận văn bản thông báo đối với lê hội tín ngưỡng có quy mô tổ chức trong nhiêu xã thuộc tỉnh. X. Trình tự, thủ tục tiếp nhận thông báo mở lớp bồi dưỡng về tôn giáo 1. Tổ chức tôn giáo, tổ chức tôn giáo trực thuộc mở lớp bồi dưỡng về tôn giáo không thuộc quy định tại khoản 1 Điều 41 Luật Tín ngưỡng, tôn giáo có trách nhiệm thông báo bằng văn bản đến Ủy ban nhân dân cấp xã nơi mở lớp chậm nhất là 20 ngày trước ngày khai giảng. Văn bản thông báo nêu rõ tên lớp, địa điểm, lý do, thời gian học, nội dung; chương trình, thành phần tham dự; danh sách giảng viên.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trường hợp việc mở lớp bồi dưỡng về tôn giáo có hành vi vi phạm quy định tại Điều 5 Luật Tín ngưỡng, tôn giáo, Ủy ban nhân dân cấp xã có văn bản yêu cầu tỏ chức tôn giáo, tổ chức tôn giáo trực thuộc không tổ chức hoặc đừng vi việc mở lớp bồi dưỡng. XI Trình tự, thủ tục tiếp nhận thông báo danh mục hoạt động tôn giáo Tổ chức tôn giáo, tổ chức tôn giáo trực thuộc, tổ chức được cấp chứng nhận đăng ký hoạt động tôn giáo có trách nhiệm thông báo bằng văn bản về danh mục hoạt động tôn giáo diễn ra hằng năm chậm nhất là 30 ngày kể từ ngày được công nhận, chấp thuận hoặc được cấp chứng nhận đăng ký hoạt động tôn giáo theo quy định sau:",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Tổ chức có địa bàn hoạt động tôn giáo ở một xã gửi thông báo đến Ủy ban nhân dân cấp xã.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Tổ chức có địa bàn hoạt \"động tôn giáo ở nhiều xã trên địa bàn tỉnh gửi thông báo đến Ủy ban nhân dân cấp tỉnh.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Tổ chức có địa bàn hoạt động tôn giáo ở nhiều tỉnh gửi thông báo đến Bộ Dân tộc và Tôn giáo. XI. Trình tự, thủ tục tiếp nhận nhận thông báo tổ chức hội nghị của tổ ' chức tôn giáo, tổ chức tôn giáo trực thuộc Chậm nhất là 20 ngày trước khi tổ chức hội nghị thường niên, tổ chức tôn giáo, tổ chức tôn giáo trực thuộc có trách nhiệm thông báo bằng văn (trong đó nêu 6 rõ tên tổ chức; dự kiến thành phần, số lượng người tham dự; nội dung, chươn trình, thời gian, địa điểm tổ chức hội nghị) đến cơ quan nhà nước có thẩm quyền như sau:",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Ủy ban nhân dân cấp xã đối với tôn giáo, tổ chức tôn giáo trực thuộc c địa bàn hoạt động ở một xã.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Ủy ban nhân dân cấp tỉnh đối với tổ chức tôn giáo, tổ chức tôn giáo trực thuộc có địa bàn hoạt động ở nhiều xã trên địa bàn tỉnh.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Bộ Dân tộc và Tôn giáo đối với tổ chức tôn giáo, tổ chức tôn giáo trự thuộc có địa bàn hoạt động ở nhiều tỉnh. XIII. Trình tự, thú tục chấp thuận tổ chức đại hội của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc, tổ chức được cấp giấy chứng nhận đăng ký hoạt động tôn giáo 1. Tổ chức tôn giáo, tổ chức tôn giáo trực thuộc, tổ chức được cấp chứng nhận đăng ký hoạt động tôn giáo trước khi tổ chức đại hội có trách nhiệm gửi hồ sơ theo quy định tại khoản 2 Điều 45 Luật Tín ngưỡng, tôn giáo đến cơ quan nhà nước có thẩm quyền như sau: a) Tổ chức có địa bàn hoạt động tôn giáo ở một xã gửi hồ sơ đến Ủy ban nhân dân cấp xã; b) Tổ chức có địa bàn hoạt động tôn giáo ở nhiều xã trên địa bàn tỉnh gửi hộ sơ đến Ủy ban nhân dân cấp tỉnh; c) Tổ chức có địa bàn hoạt động tôn giáo không thuộc. quy định. tại điểm a và điểm b khoản này gửi hồ sơ đến Bộ Dân tộc và Tôn giáo.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Ủy ban nhân dân cấp xã có trách nhiệm trả lời bằng văn bản đối với việc tổ chức đại hội của tổ chức tôn giáo trực thuộc có địa bàn hoạt động ở một xã trong thời hạn 25 ngày kế từ ngày nhận đủ hồ sơ hợp lệ; trường hợp không chấp thuận phải nêu rõ lý do.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Ủy ban nhân dân cấp tỉnh có trách nhiệm trả lời bằng văn bản đối với việc tổ chức đại hội của tổ chức tôn giáo, tổ chức tôn giáo trực thuộc, tổ chức được cấp chứng nhận đăng ký hoạt động tôn giáo có địa bàn hoạt động ở nhiều xã trên địa bàn tỉnh trong thời hạn 30 ngày kể từ ngày nhận đủ hồ sơ hợp lệ; trường hợp không chấp thuận phải nêu rõ lý do.",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Bộ Dân tộc và Tôn giáo có trách nhiệm trả lời băng văn bản đối với việc tổ chức đại hội không thuộc quy định tại khoản 2 và khoản 3 Mục này trong thời hạn 45 ngày kề từ ngày nhận đủ hồ sơ hợp lệ; trường hợp không chấp thuận phải nêu rõ lý do. 7 XIV. Trình tự, thủ tục chấp thuận tổ chức cuộc lễ, giảng đạo ngoài cơ sở tôn giáo, địa điểm hợp pháp 1. Ủy ban nhân dân cấp xã có trách nhiệm trả lời bằng văn bản về việc tổ chức cuộc lê, giảng đạo có quy mô tổ chức ở xã trong thời hạn 25 ngày kê từ ngày nhận được văn bản đê nghị hợp lệ: trường hợp không châp thuận phải nêu rõ lý do.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Ủy ban nhân dân cấp tỉnh nơi dự kiến tổ chức cuộc lễ, giảng đạo có trách nhiệm trả lời bằng văn bản về việc tổ chức cuộc lễ, giảng đạo có quy mô tổ chức ở nhiều xã trên địa bàn tỉnh hoặc ở nhiều tỉnh trong thời hạn 30 ngày kể từ ngày nhận được văn bản đề nghị hợp lệ; trường hợp không chấp thuận phải nêu rõ lý do. XV. Trình tự, thủ tục tiếp nhận thông báo về việc tổ chức quyền góp của cơ sở tín ngưỡng, tổ chức tôn giáo, tổ chức tôn giáo trực thuộc Người đại diện hoặc ban quản lý cơ sở tín ngưỡng, tổ chức tôn giáo, tổ chức tôn giáo trực thuộc trước khi tổ chức quyền góp có trách nhiệm thông báo bằng văn bản về việc tổ chức quyền góp (trong đó nêu rõ mục đích, địa bàn, cách thức, thời gian quyền góp; phương thức quản lý và sử dụng tài sản được quyền góp) đến cơ quan nhà nước có thẩm quyền như sau:",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Trước khi tổ chức quyền góp 05 ngày làm việc, người đại diện hoặc ban quản lý cơ sở tín ngưỡng, tổ chức tôn giáo, tổ chức tôn giáo trực thuộc có trách nhiệm thông báo băng văn bản đến Ủy ban nhân dân cấp xã nơi tổ chức quyền góp đối với trường hợp tổ chức quyền góp trong địa bàn một xã..",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Trước khi tổ chức quyền góp 15 ngày làm việc, người đại diện hoặc ban quản lý cơ sở tín ngưỡng, tổ chức tôn giáo, tổ chức tôn giáo trực thuộc có trách nhiệm thông báo bằng văn bản đến Ủy ban nhân dân cấp tỉnh nơi tổ chức quyền góp đối với trường hợp tổ chức quyền góp trên địa bàn nhiều xã thuộc tỉnh./.. \" Phụ lụcH _ ì; T GIẢM, ĐƠN GIAN HÓA THỦ TỤC HÀNH CHÍNH g ghi định số 124/2025/MĐ-CP ngày J J tháng 6 năm 2025 của Chính phủ) 1. Hồ sơ đề nghị cấp giấy chứng nhận đăng ký hoạt tôn giáo 1, Văn bản đăng ký nêu rỡ tên tổ chức; tên tôn giáo; tôn chỉ, mục đích; nội dung, địa bàn hoạt động; nguồn gộc hình thành, quá trình phát triện ở Việt Nam; họ và tên người đại diện tổ chức; số lượng người tin theo; cơ câu tổ chức, địa điêm dự kiên đặt trụ sở.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Danh sách, sơ yếu lý lịch, bản tóm tắt quá trình hoạt động tôn giáo của người đại diện và những người dự kiên lãnh đạo tổ chức.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Bản tóm tắt giáo lý, giáo luật, lễ nghỉ.",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Quy chế hoạt động của tổ chức.",
+              "diem": []
+            },
+            {
+              "so_khoan": "5",
+              "noi_dung": "Giấy tờ chứng minh có địa điểm hợp pháp đề đặt trụ sở. II. Hồ sơ đề nghị công nhận tỗ chức tôn giáo 1. Văn bản đề nghị nêu rõ tên tổ chức đề nghị công nhận, tên giao dịch quốc tê (nêu có); tên tôn giáo; họ và tên người đại diện tổ chức; số lượng tín đô, địa bàn hoạt động của tổ chức tại thời điểm đê nghị; cơ câu tổ chức, trụ sở của tổ chức.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Văn bản tóm tắt quá trình hoạt động của tổ chức từ khi được cấp chứng nhận đăng ký hoạt động tôn giáo.",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Danh sách, sơ yếu lý lịch, bản tóm tắt quá trình hoạt động tôn giáo của người đại diện và những người dự kiên lãnh đạo tổ chức.",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Bản tóm tắt giáo lý, giáo luật, lễ nghỉ.",
+              "diem": []
+            },
+            {
+              "so_khoan": "5",
+              "noi_dung": "Hiến",
+              "diem": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "so_chuong": "VI",
+      "ten_chuong": "ủa tổ chức.",
+      "dieu": []
+    }
+  ]
+}

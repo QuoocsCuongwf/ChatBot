@@ -16,6 +16,17 @@ import time
 import multiprocessing
 import re
 
+# Import module parser
+try:
+    # Fallback nếu chạy từ thư mục khác
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+    from parser import clean_text, parse_legal_document, fix_chapter_numbers
+except ImportError as e:
+    print(f"⚠️ Không thể import module parser: {e}")
+    clean_text = None
+    parse_legal_document = None
+    fix_chapter_numbers = None
+
 # ==============================================================================
 # CẤU HÌNH HỆ THỐNG
 # ==============================================================================
@@ -30,7 +41,7 @@ TESSERACT_PATH = r"D:\apps\OCR\tesseract.exe"
 
 # 3. Cấu hình xử lý song song và chất lượng
 MAX_WORKERS = min(2, multiprocessing.cpu_count())  # Giảm số luồng để tiết kiệm RAM
-DPI_SETTING = 300  # DPI mặc định cho PDF text
+DPI_SETTING = 350  # DPI mặc định cho PDF text
 SCAN_DPI = 350     # DPI cho scan (Tăng lên để OCR chính xác hơn)
 BATCH_SIZE = 4     # Số trang xử lý mỗi batch
 
@@ -208,173 +219,6 @@ def ocr_from_images_parallel(images, silent=False):
         del batch_results
         gc.collect()
     
-    if not silent: print(f"\n   ✓ Hoàn thành OCR: {total} trang")
-    return "\n".join(results)
-
-# ==============================================================================
-# MODULE PARSER (TÍCH HỢP TRỰC TIẾP ĐỂ TỐI ƯU HÓA)
-# ==============================================================================
-
-def clean_text(text):
-    """Làm sạch văn bản cơ bản và xử lý lỗi OCR."""
-    text = text.replace('\x0c', '')
-    
-    # 1. Sửa lỗi chính tả OCR tiếng Việt phổ biến
-    # qủy -> quy (qủy định -> quy định, qủyền -> quyền)
-    text = re.sub(r'\bqủy\b', 'quy', text, flags=re.IGNORECASE) 
-    text = re.sub(r'qủy([a-zà-ỹ])', r'quy\1', text, flags=re.IGNORECASE) # qủyền -> quyền
-    
-    # thắm quyền -> thẩm quyền
-    text = re.sub(r'\bthắm\s+quyền\b', 'thẩm quyền', text, flags=re.IGNORECASE)
-    text = re.sub(r'\bthẳm\s+quyền\b', 'thẩm quyền', text, flags=re.IGNORECASE)
-    
-    # Ÿ tế -> Y tế
-    text = text.replace('Ÿ tế', 'Y tế')
-    
-    # Dgười -> Người
-    text = re.sub(r'\bDgười\b', 'Người', text)
-    text = re.sub(r'\bDgƯỜI\b', 'NGƯỜI', text)
-
-    # Diều/Điêu -> Điều (đã có ở ngoài nhưng đưa vào đây cho gọn)
-    text = re.sub(r'\b(Diều|Điêu|Dìêu)\b', 'Điều', text)
-    text = re.sub(r'\b(Khoán|Khoàn)\b', 'Khoản', text)
-
-    # 2. Sửa lỗi số La Mã của Chương và định dạng Chương
-    # Xử lý các biến thể lỗi OCR của số La Mã
-    text = re.sub(r'(Chương|CHƯƠNG)\s+U\b', r'\1 II', text, flags=re.IGNORECASE)
-    text = re.sub(r'(Chương|CHƯƠNG)\s+IH\b', r'\1 III', text, flags=re.IGNORECASE)
-    text = re.sub(r'(Chương|CHƯƠNG)\s+Il\b', r'\1 II', text, flags=re.IGNORECASE)
-    text = re.sub(r'(Chương|CHƯƠNG)\s+IlI\b', r'\1 III', text, flags=re.IGNORECASE)
-    
-    # 3. Tách dòng cho Chương và Điều nếu bị dính
-    # Tìm dấu chấm/chấm phẩy/khoảng trắng, theo sau là Điều/Chương + Số
-    # Thêm \n trước Điều/Chương để parser nhận diện được
-    
-    # Xử lý Điều: "...nội dung. Điều 5..." -> "...nội dung.\nĐiều 5..."
-    text = re.sub(r'([.;])\s+(Điều|ĐIỀU)\s+(\d+)', r'\1\n\2 \3', text)
-    
-    # Xử lý Chương: "...nội dung. Chương II..." -> "...nội dung.\nChương II..."
-    text = re.sub(r'([.;])\s+(Chương|CHƯƠNG)\s+([IVXLCDM\d]+|II|III)', r'\1\n\2 \3', text, flags=re.IGNORECASE)
-    
-    # Xử lý số trang hoặc rác dính trước Chương ở đầu dòng (do OCR ghép dòng)
-    # Ví dụ: "13 Chương III" -> "\nChương III"
-    text = re.sub(r'\n\d+\s+(Chương|CHƯƠNG)', r'\n\1', text, flags=re.IGNORECASE)
-    
-    return text
-
-def parse_legal_document(text):
-    """
-    Phân tích văn bản pháp luật thành cấu trúc JSON.
-    Sử dụng Regex chặt chẽ để tránh nhận diện nhầm tham chiếu Điều khoản.
-    """
-    doc = {
-        "metadata": {},
-        "phan_mo_dau": {},
-        "can_cu_phap_ly": [],
-        "chuong": []
-    }
-    
-    lines = text.split('\n')
-    
-    # Regex patterns tối ưu: Bắt buộc có dấu chấm (.) hoặc hai chấm (:) sau số
-    # Ví dụ: "Điều 1." hoặc "Điều 1:" -> OK
-    # Ví dụ: "Điều 15;" hoặc "Điều 16 Nghị định" -> Bỏ qua (đây là tham chiếu)
-    re_dieu = re.compile(r'^\s*Điều\s+(\d+)\s*[\.:]\s*(.*)$', re.IGNORECASE)
-    re_chuong = re.compile(r'^\s*Chương\s+([IVXLCDM\d]+)(?:[\s\.:]+(.*))?$', re.IGNORECASE)
-    re_khoan = re.compile(r'^\s*(\d+)\.\s+(.*)$')
-    re_diem = re.compile(r'^\s*([a-zđ])\)\s+(.*)$')
-    
-    current_chuong = None
-    current_dieu = None
-    current_khoan = None
-    
-    # Buffer để tích lũy nội dung nhiều dòng
-    buffer_content = []
-    
-    def flush_buffer():
-        nonlocal buffer_content
-        if not buffer_content:
-            return
-            
-        content = " ".join(buffer_content).strip()
-        buffer_content.clear() # Xóa buffer sau khi dùng
-        
-        if current_khoan:
-            if current_khoan.get("diem"):
-                 # Nếu đã có điểm, nội dung này nối vào điểm cuối cùng
-                 current_khoan["diem"][-1]["noi_dung"] += " " + content
-            else:
-                 current_khoan["noi_dung"] += " " + content
-        elif current_dieu:
-            current_dieu["noi_dung"] = (current_dieu.get("noi_dung", "") + " " + content).strip()
-            
-    for line in lines:
-        line = line.strip()
-        if not line: continue
-            
-        # 1. Kiểm tra Chương
-        match_chuong = re_chuong.match(line)
-        if match_chuong:
-            flush_buffer()
-            current_chuong = {
-                "so_chuong": match_chuong.group(1),
-                "ten_chuong": match_chuong.group(2) or "",
-                "dieu": []
-            }
-            doc["chuong"].append(current_chuong)
-            current_dieu = None
-            current_khoan = None
-            continue
-            
-        # 2. Kiểm tra Điều (QUAN TRỌNG: Regex chặt chẽ ở đây)
-        match_dieu = re_dieu.match(line)
-        if match_dieu:
-            flush_buffer()
-            current_dieu = {
-                "so_dieu": match_dieu.group(1),
-                "tieu_de": match_dieu.group(2),
-                "noi_dung": "",
-                "khoan": []
-            }
-            if current_chuong is None:
-                current_chuong = {"so_chuong": "", "ten_chuong": "", "dieu": []}
-                doc["chuong"].append(current_chuong)
-            current_chuong["dieu"].append(current_dieu)
-            current_khoan = None
-            continue
-            
-        # 3. Kiểm tra Khoản
-        match_khoan = re_khoan.match(line)
-        if match_khoan and current_dieu:
-            flush_buffer()
-            current_khoan = {
-                "so_khoan": match_khoan.group(1),
-                "noi_dung": match_khoan.group(2),
-                "diem": []
-            }
-            current_dieu["khoan"].append(current_khoan)
-            continue
-            
-        # 4. Kiểm tra Điểm
-        match_diem = re_diem.match(line)
-        if match_diem and current_khoan:
-            flush_buffer()
-            diem = {
-                "so_diem": match_diem.group(1),
-                "noi_dung": match_diem.group(2)
-            }
-            current_khoan["diem"].append(diem)
-            continue
-            
-        # Nội dung thường (nối vào buffer)
-        buffer_content.append(line)
-        
-    flush_buffer() # Flush lần cuối
-    return doc
-
-# ==============================================================================
-# HÀM XỬ LÝ CHÍNH
-# ==============================================================================
 
 def process_single_pdf(pdf_path, output_dir=None, dpi=None, silent=False):
     """
@@ -442,9 +286,6 @@ def process_single_pdf(pdf_path, output_dir=None, dpi=None, silent=False):
             
             raw_text = "\n".join(all_text)
             if not silent: print(f"\n      >> Hoàn thành OCR {num_pages} trang.")
-
-        # Áp dụng làm sạch nâng cao (xử lý Chương dính dòng, lỗi số La Mã)
-        raw_text = clean_text(raw_text)
 
         if not raw_text.strip():
             raise ValueError("Không trích xuất được nội dung từ file PDF.")
@@ -591,17 +432,36 @@ def clean_existing_json(json_path, output_path=None):
         output_path = json_path
         
     with open(json_path, 'r', encoding='utf-8') as f:
-        raw_text_from_json = json.dumps(json.load(f))
+        data = json.load(f)
 
-    # Sử dụng hàm clean_text từ parser
-    cleaned_text = clean_text(raw_text_from_json)
+    # Hàm đệ quy để làm sạch tất cả các chuỗi trong JSON
+    def recursive_clean(obj):
+        if isinstance(obj, dict):
+            # Xóa trường tieu_de nếu có và gộp vào noi_dung để không mất dữ liệu
+            if 'tieu_de' in obj:
+                if obj.get('tieu_de') and 'noi_dung' in obj:
+                     # Chỉ gộp nếu nội dung chưa chứa tiêu đề
+                     if not obj['noi_dung'].startswith(obj['tieu_de']):
+                         obj['noi_dung'] = (obj['tieu_de'] + " " + obj['noi_dung']).strip()
+                del obj['tieu_de']
+            
+            return {k: recursive_clean(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [recursive_clean(i) for i in obj]
+        elif isinstance(obj, str):
+            return clean_text(obj)
+        else:
+            return obj
+
+    cleaned_data = recursive_clean(data)
     
-    cleaned_data = json.loads(cleaned_text)
+    # Sửa lại số chương (khắc phục lỗi thiếu chương 1, 2, 3)
+    cleaned_data = fix_chapter_numbers(cleaned_data)
 
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(cleaned_data, f, ensure_ascii=False, indent=2)
     
-    print(f"✅ Đã làm sạch và ghi đè file: {output_path}")
+    print(f"✅ Đã làm sạch, xóa tiêu đề thừa và sửa lỗi chương cho file: {output_path}")
     return cleaned_data
 
 if __name__ == "__main__":
