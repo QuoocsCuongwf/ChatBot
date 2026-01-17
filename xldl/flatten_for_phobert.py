@@ -4,13 +4,14 @@ from typing import List, Dict, Any
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
-def flatten_json_for_phobert(json_file_path: str, output_csv_path: str = None):
+def flatten_json_for_phobert(json_file_path: str, output_csv_path: str = None, silent: bool = False):
     """
     Làm phẳng dữ liệu JSON văn bản pháp luật để chuẩn bị cho phoBERT
     
     Args:
         json_file_path: Đường dẫn file JSON đầu vào
         output_csv_path: Đường dẫn file CSV đầu ra (tùy chọn)
+        silent: Nếu True, không in thông báo ra màn hình
     
     Returns:
         DataFrame chứa dữ liệu đã làm phẳng
@@ -122,7 +123,8 @@ def flatten_json_for_phobert(json_file_path: str, output_csv_path: str = None):
     # Lưu ra file CSV nếu có đường dẫn
     if output_csv_path:
         df.to_csv(output_csv_path, index=False, encoding='utf-8-sig')
-        print(f"Đã lưu dữ liệu vào {output_csv_path}")
+        if not silent:
+            print(f"Đã lưu dữ liệu vào {output_csv_path}")
     
     return df
 
