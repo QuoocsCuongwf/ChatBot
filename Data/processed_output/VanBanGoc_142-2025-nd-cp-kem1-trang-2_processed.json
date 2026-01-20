@@ -21,46 +21,157 @@
       "dieu": [
         {
           "so_dieu": "33",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền đình chỉ hoạt động trung tâm khác thực hiện nhiệm vụ giáo dục thường xuyên 1. Trung tâm bị đình chỉ hoạt động khi thuộc một trong các trường hợp sau đây: a) Có hành vi gian lận để được thành lập hoặc cho phép thành lệp trung tâm; b) Trong quá trình hoạt. động, không duy trì được một trong các điều kiện quy định tại khoản 2 Điều 32 Phụ lục I kèm theo Nghị định này; 32 c) \"Không triển khai hoạt động giáo đục trong thời hạn 01 năm kế từ ngày có quyết định thành lập hoặc cho phép thành lập; d) Vi phạm quy định của pháp luật về giáo dục bị xử phạt vi phạm hành chính ở mức độ phải đình chỉ; đ) Trường hợp khác theo quy định của pháp luật.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền đình chỉ hoạt động trung tâm khác thực hiện nhiệm vụ giáo dục thường xuyên",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Trung tâm bị đình chỉ hoạt động khi thuộc một trong các trường hợp sau đây:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Có hành vi gian lận để được thành lập hoặc cho phép thành lệp trung tâm;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong quá trình hoạt. động, không duy trì được một trong các điều kiện quy định tại khoản 2 Điều 32 Phụ lục I kèm theo Nghị định này;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "\"Không triển khai hoạt động giáo đục trong thời hạn 01 năm kế từ ngày có quyết định thành lập hoặc cho phép thành lập;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Vi phạm quy định của pháp luật về giáo dục bị xử phạt vi phạm hành chính ở mức độ phải đình chỉ;"
+                },
+                {
+                  "so_diem": "đ",
+                  "noi_dung": "Trường hợp khác theo quy định của pháp luật."
+                }
+              ]
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Trình tự thực hiện: a) Khi phát hiện trung tâm vi phạm quy định tại khoản 1 Điều này, SỞ Giáo dục và Đào tạo tổ chức kiểm tra để đánh giá tình trạng thực tế của trung tâm, lập biên bản kiểm tra và thông báo cho trung tâm về hành vi vi phạm; b) Trong thời hạn 15 ngày,. kể từ ngày thông báo cho trung tâm về hành vi vi phạm, Giám đốc Sở Giáo dục và Đào tạo quyết định đình chỉ hoạt động của trung tâm. Quyết định đình chỉ hoạt động trung tâm khác thực hiện nhiệm vụ giáo dục thường xuyên (theo Mẫu số 10 Phụ lục I kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng; 9 Trong thời hạn bị đình chỉ, nếu: nguyên nhân dẫn đến việc đình chỉ được khắc phục thì trung tâm thông báo bằng văn bản kèm theo minh chứng cho Giám. đốc Sở Giáo dục và Đào tạo. Trong thời hạn 07 ngày làm việc, kế từ ngày, nhận được thông báo của trung tâm, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trung tâm hoạt động trở lại và công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Khi phát hiện trung tâm vi phạm quy định tại khoản 1 Điều này, SỞ Giáo dục và Đào tạo tổ chức kiểm tra để đánh giá tình trạng thực tế của trung tâm, lập biên bản kiểm tra và thông báo cho trung tâm về hành vi vi phạm;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 15 ngày,. kể từ ngày thông báo cho trung tâm về hành vi vi phạm, Giám đốc Sở Giáo dục và Đào tạo quyết định đình chỉ hoạt động của trung tâm. Quyết định đình chỉ hoạt động trung tâm khác thực hiện nhiệm vụ giáo dục thường xuyên (theo Mẫu số 10 Phụ lục I kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng; 9 Trong thời hạn bị đình chỉ, nếu: nguyên nhân dẫn đến việc đình chỉ được khắc phục thì trung tâm thông báo bằng văn bản kèm theo minh chứng cho Giám. đốc Sở Giáo dục và Đào tạo. Trong thời hạn 07 ngày làm việc, kế từ ngày, nhận được thông báo của trung tâm, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trung tâm hoạt động trở lại và công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "34",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền sáp nhập, chia, tách trung tâm khác thực hiện nhiệm vụ giáo dục thường xuyên 1. Trung tâm được sáp nhập, chia, tách khi bảo đảm các yêu cầu sau đây: a) Bảo đảm quyền, lợi ích của nhà giáo vàngười học; b) Góp phần nâng cao chất lượng và hiệu quả giáo dục; c) Trung tâm mới được hình thành sau quá trình sáp nhập, chia, tách phải đáp ứng các điều kiện quy định tại khoản 2 Điều 32 Phụ lục I kèm theo Nghị định này.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền sáp nhập, chia, tách trung tâm khác thực hiện nhiệm vụ giáo dục thường xuyên",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Trung tâm được sáp nhập, chia, tách khi bảo đảm các yêu cầu sau đây:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Bảo đảm quyền, lợi ích của nhà giáo vàngười học;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Góp phần nâng cao chất lượng và hiệu quả giáo dục;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trung tâm mới được hình thành sau quá trình sáp nhập, chia, tách phải đáp ứng các điều kiện quy định tại khoản 2 Điều 32 Phụ lục I kèm theo Nghị định này."
+                }
+              ]
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Hồ sơ gồm: a) Tờ trình đề nghị sáp nhập, chia, tách trung tâm (theo Mẫu số số 04 Phụ Tục I kèm theo Nghị định này);.b Đề án sáp nhập, chia, tách trung tâm (theo Mẫu số á 05 Phụ lục II.kèm theo Nghị định này); lì Ý kiến đồng thuận của nhà đầu tư đại diện ít nhất 75%. tổng số vốn góp đối với việc sáp nhập, chia, tách trung tâm tư thục.",
-              "diem": []
+              "noi_dung": "Hồ sơ gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tờ trình đề nghị sáp nhập, chia, tách trung tâm (theo Mẫu số số 04 Phụ Tục I kèm theo Nghị định này);.b Đề án sáp nhập, chia, tách trung tâm (theo Mẫu số á 05 Phụ lục II.kèm theo Nghị định này); lì Ý kiến đồng thuận của nhà đầu tư đại diện ít nhất 75%. tổng số vốn góp đối với việc sáp nhập, chia, tách trung tâm tư thục."
+                }
+              ]
             },
             {
               "so_khoan": "3",
-              "noi_dung": "Trình tự thực hiện: a) Nhà trường, tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại khoản 3 Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo; 33 b) Trong thời hạn 05 ngày làm việc, kề từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cân chỉnh sửa cho nhà trường, tổ chức, cá nhân đề nghị sáp nhập, chia, tách trung tâm. Nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp Với các cơ quan có liên quan tổ chức thẳm định hồ sơ và thẳm định thực tế các điều kiện sáp nhập, chia, tách trung tâm, lập. báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này trong thời hạn 10 ngày; c) Trong thời hạn 05 ngày làm việc, kế từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo quyết định sáp nhập, chia, tách trung tâm; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho nhà trường, tổ chức, cá nhân đề nghị sáp nhập, chia, tách và nêu rõ lý do... Quyết định sáp nhập, chia, tách trung tâm khác thực hiện nhiệm vụ giáo dục thường. xuyên (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Nhà trường, tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại khoản 3 Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kề từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cân chỉnh sửa cho nhà trường, tổ chức, cá nhân đề nghị sáp nhập, chia, tách trung tâm. Nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp Với các cơ quan có liên quan tổ chức thẳm định hồ sơ và thẳm định thực tế các điều kiện sáp nhập, chia, tách trung tâm, lập. báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này trong thời hạn 10 ngày;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kế từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo quyết định sáp nhập, chia, tách trung tâm; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho nhà trường, tổ chức, cá nhân đề nghị sáp nhập, chia, tách và nêu rõ lý do... Quyết định sáp nhập, chia, tách trung tâm khác thực hiện nhiệm vụ giáo dục thường. xuyên (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "35",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền giải thể trung tâm khác thực hiện nhiệm vụ giáo dục thường xuyên 1. Trung tâm bị giải thể khi thuộc một trong các trường hợp sau đây: a) Vi phạm nghiêm trọng quy định về quản lý, tổ chức và hoạt động của trung tâm; b Hết thời hạn đình chỉ hoạt động giáo dục mà không khắc phục được nguyên nhân dẫn đến việc đình chỉ; e) Mục tiêu và nội dung hoạt động trong quyết định thành lập hoặc cho phép thành lập trung tâm không còn phù hợp với nhu câu phát triên kinh tê - xã hội; d) Không bảo đảm chất lượng giáo dục; đ) Theo đề nghị của tổ chức, cá nhân thành lập trung tâm.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền giải thể trung tâm khác thực hiện nhiệm vụ giáo dục thường xuyên",
           "khoan": [
             {
-              "so_khoan": "2",
-              "noi_dung": "Hồ sơ: a) Trùng tâm giải thể theo quy định tại điểm a, b, c, d khoản 1 Điều này, hô sơ gôm:. Minh chứng về việc trung tâm vì phạm quy định tại điểm a, b, c, d khoản 1 Điều này; Phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên quan.",
+              "so_khoan": "1",
+              "noi_dung": "Trung tâm bị giải thể khi thuộc một trong các trường hợp sau đây:",
               "diem": [
                 {
-                  "so_diem": "b",
-                  "noi_dung": "Trung tâm giải thể theo quy định tại điểm đ khoản 1 Điều này, hồ sơ gồm: Tờ trình đề nghị giải thể của nhà trường, tổ chức, cá nhân (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); Đề án giải thể trung tâm (theo Mẫu số 07 Phụ lục II kèm theo Nghị định này). 34 3. Trình tự thực hiện:"
+                  "so_diem": "a",
+                  "noi_dung": "Vi phạm nghiêm trọng quy định về quản lý, tổ chức và hoạt động của trung tâm; b Hết thời hạn đình chỉ hoạt động giáo dục mà không khắc phục được nguyên nhân dẫn đến việc đình chỉ;"
                 },
                 {
+                  "so_diem": "e",
+                  "noi_dung": "Mục tiêu và nội dung hoạt động trong quyết định thành lập hoặc cho phép thành lập trung tâm không còn phù hợp với nhu câu phát triên kinh tế - xã hội;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Không bảo đảm chất lượng giáo dục;"
+                },
+                {
+                  "so_diem": "đ",
+                  "noi_dung": "Theo đề nghị của tổ chức, cá nhân thành lập trung tâm."
+                }
+              ]
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Hồ sơ:",
+              "diem": [
+                {
                   "so_diem": "a",
-                  "noi_dung": "Trung tâm bị giải thể theo quy định tại điểm a, b, c, d khoản 1 Điều này: Khi phát hiện trung tâm vi phạm quy định tại điểm a, b, c, d khoản 1 Điều này, Sở Giáo dục và Đào tạo tổ chức kiểm tra đánh giá tình trạng thực tế của trung tâm, lập biên bản kiểm tra và thông báo cho trung tâm về hành vi vi phạm; Trong thời bạn 10 ngày, kể từ ngày tổ chức kiểm tra, căn cứ kết quả kiểm tra, Giám đốc Sở Giáo dục và Đào tạo quyết định giải thể trung tâm. b) Trung tâm bị giải thể theo quy định tại điểm đ khoản 1 Điều này: Nhà trường, tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại điểm b khoản 3 Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến SỞ Giáo dục và Đào tạo; Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cân chỉnh sửa cho nhà trường, tổ chức, cá nhân đề nghị giải thể trung tâm. Nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan tổ chức thẩm định hồ sơ đề nghị giải thể trung tâm và lập báo cáo thẩm định trong thời hạn 10 ngày; Trong thời hạn 05 ngày làm việc, kể từ ngày có báo cáo thẳm định, Giám đốc Sở Giáo dục và Đào tạo xem xét, quyết định giải thể trung tâm; nếu chưa quyết định giải thể thì thông báo bằng văn bản cho nhà trường, tổ chức, cá. nhân đề nghị giải thể và nêu rõ lý do. c) Quyết định giải thể trung tâm khác thực hiện nhiệm vụ giáo dục thường xuyên (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                  "noi_dung": "Trùng tâm giải thể theo quy định tại điểm a, b, c, d khoản 1 Điều này, hô sơ gôm:. Minh chứng về việc trung tâm vì phạm quy định tại điểm a, b, c, d khoản 1 Điều này; Phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên quan."
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trung tâm giải thể theo quy định tại điểm đ khoản 1 Điều này, hồ sơ gồm: Tờ trình đề nghị giải thể của nhà trường, tổ chức, cá nhân (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); Đề án giải thể trung tâm (theo Mẫu số 07 Phụ lục II kèm theo Nghị định này)."
+                }
+              ]
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Trung tâm bị giải thể theo quy định tại điểm a, b, c, d khoản 1 Điều này: Khi phát hiện trung tâm vi phạm quy định tại điểm a, b, c, d khoản 1 Điều này, Sở Giáo dục và Đào tạo tổ chức kiểm tra đánh giá tình trạng thực tế của trung tâm, lập biên bản kiểm tra và thông báo cho trung tâm về hành vi vi phạm; Trong thời bạn 10 ngày, kể từ ngày tổ chức kiểm tra, căn cứ kết quả kiểm tra, Giám đốc Sở Giáo dục và Đào tạo quyết định giải thể trung tâm."
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trung tâm bị giải thể theo quy định tại điểm đ khoản 1 Điều này: Nhà trường, tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại điểm b khoản 3 Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến SỞ Giáo dục và Đào tạo; Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cân chỉnh sửa cho nhà trường, tổ chức, cá nhân đề nghị giải thể trung tâm. Nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan tổ chức thẩm định hồ sơ đề nghị giải thể trung tâm và lập báo cáo thẩm định trong thời hạn 10 ngày; Trong thời hạn 05 ngày làm việc, kể từ ngày có báo cáo thẳm định, Giám đốc Sở Giáo dục và Đào tạo xem xét, quyết định giải thể trung tâm; nếu chưa quyết định giải thể thì thông báo bằng văn bản cho nhà trường, tổ chức, cá. nhân đề nghị giải thể và nêu rõ lý do."
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Quyết định giải thể trung tâm khác thực hiện nhiệm vụ giáo dục thường xuyên (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
                 }
               ]
             }
@@ -68,12 +179,34 @@
         },
         {
           "so_dieu": "36",
-          "noi_dung": "Trình tự, thủ tục thực hiện \"thắm quyền thành lập hoặc cho phép thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập 1. Điều kiện thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập thực hiện theo quy định tại Điều 48 Nghị định số 125/2024/NĐ-CP.",
+          "noi_dung": "Trình tự, thủ tục thực hiện \"thắm quyền thành lập hoặc cho phép thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập",
           "khoan": [
             {
-              "so_khoan": "2",
-              "noi_dung": "Hồ sơ gồm: a) Tờ trình đề nghị thành lập hoặc cho phép thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 01 Phụ lục II kèm theo Nghị định này); b) Đề án thành lập hoặc cho phép thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 02 Phụ lục II kèm theo Nghị định này); c) Bản sao các văn bản pháp lý chứng minh quyền sử dụng đất, quyền sở hữu nhà hoặc hợp đồng thuê địa điểm trung tâm; d) Đối với trung tâm tư thục phải có văn bản pháp lý xác nhận về số tiền đầu tư thành lập trung tâm, bảo đảm tính hợp pháp, phù hợp với quy mô dự kiến tại thời điểm đề nghị thành lập trung tâm; 35 ở) Dự thảo quy chế tổ chức và hoạt động của trung tâm, gồm các nội dung chủ yếu sau đây: Vị trí pháp lý, nhiệm vụ, quyền hạn của trung tâm; tổ chức, bộ máy, của trung tâm; tổ chức hoạt động giáo dục trong trung tâm; nhiệm vụ và quyền của đội ngũ cán bộ quản lý, giáo viên, nhân viên, người lao động và người học; tài chính và tài sản của trung tâm; các vấn đề khác liên quan đến tổ chức và hoạt động của trung tâm.",
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập thực hiện theo quy định tại Điều 48 Nghị định số 125/2024/NĐ-CP.",
               "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Hồ sơ gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tờ trình đề nghị thành lập hoặc cho phép thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 01 Phụ lục II kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án thành lập hoặc cho phép thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 02 Phụ lục II kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Bản sao các văn bản pháp lý chứng minh quyền sử dụng đất, quyền sở hữu nhà hoặc hợp đồng thuê địa điểm trung tâm;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Đối với trung tâm tư thục phải có văn bản pháp lý xác nhận về số tiền đầu tư thành lập trung tâm, bảo đảm tính hợp pháp, phù hợp với quy mô dự kiến tại thời điểm đề nghị thành lập trung tâm; ở) Dự thảo quy chế tổ chức và hoạt động của trung tâm, gồm các nội dung chủ yếu sau đây: Vị trí pháp lý, nhiệm vụ, quyền hạn của trung tâm; tổ chức, bộ máy, của trung tâm; tổ chức hoạt động giáo dục trong trung tâm; nhiệm vụ và quyền của đội ngũ cán bộ quản lý, giáo viên, nhân viên, người lao động và người học; tài chính và tài sản của trung tâm; các vấn đề khác liên quan đến tổ chức và hoạt động của trung tâm."
+                }
+              ]
             },
             {
               "so_khoan": "3",
@@ -81,7 +214,11 @@
               "diem": [
                 {
                   "so_diem": "a",
-                  "noi_dung": "Thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập công lập: Sở Giáo dục và Đào tạo phối hợp với Sở Nội vụ và các cơ quan chuyển môn xây dựng hồ sơ đề nghị thành lập trung tâm trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định; Trong thời hạn 15 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định thành lập trung tâm; b) Cho phép thành lập trung t tâm hỗ trợ phát triển giáo dục hòa nhập tư thục: Tổ chức, cá nhân gửi 01 bộ. hồ sơ quy định tại khoản. 2 Điều này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo; Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng. văn bản những nội dung cần chỉnh sửa, bổ sung cho tổ chức, cá nhân đề nghị thành lập; nếu hồ sơ hợp lệ thì Sở Giáo dục và Đào tạo tổ chức thẳm định các điều kiện thành lập trung tâm; Trong thời hạn 10 ngày, kế từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan liên quan tổ chức thẩm định hồ sơ và thẩm định thực tế các điều kiện thành lập trung tâm; lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này; Trong thời hạn 05 ngày làm việc, kể từ ngày có báo cáo thẳm định, nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo. quyết định cho phép thành lập trung tâm; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho tổ chức, cá nhân đề nghị thành lập trung tâm và nêu rõ lý do; eo Quyết định thành lập hoặc cho phép thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                  "noi_dung": "Thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập công lập: Sở Giáo dục và Đào tạo phối hợp với Sở Nội vụ và các cơ quan chuyển môn xây dựng hồ sơ đề nghị thành lập trung tâm trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định; Trong thời hạn 15 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định thành lập trung tâm;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Cho phép thành lập trung t tâm hỗ trợ phát triển giáo dục hòa nhập tư thục: Tổ chức, cá nhân gửi 01 bộ. hồ sơ quy định tại khoản. 2 Điều này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo; Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng. văn bản những nội dung cần chỉnh sửa, bổ sung cho tổ chức, cá nhân đề nghị thành lập; nếu hồ sơ hợp lệ thì Sở Giáo dục và Đào tạo tổ chức thẳm định các điều kiện thành lập trung tâm; Trong thời hạn 10 ngày, kế từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan liên quan tổ chức thẩm định hồ sơ và thẩm định thực tế các điều kiện thành lập trung tâm; lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này; Trong thời hạn 05 ngày làm việc, kể từ ngày có báo cáo thẳm định, nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo. quyết định cho phép thành lập trung tâm; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho tổ chức, cá nhân đề nghị thành lập trung tâm và nêu rõ lý do; eo Quyết định thành lập hoặc cho phép thành lập trung tâm hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
                 }
               ]
             }
@@ -89,52 +226,91 @@
         },
         {
           "so_dieu": "37",
-          "noi_dung": "Trình tự, thủ tục thực hiện thắm quyền đình chỉ hoạt động trung tâm hỗ trợ phát triển giáo dục hòa nhập 1. Trung tâm hỗ trợ phát triển giáo dục hòa nhập bị đình chỉ hoạt động khi thuộc một trong các trường hợp sau đây: a) Có hành vì gian lận để được thành lập hoặc cho phép thành lập trung tâm; 36 b) Trong quá trình hoạt động không duy trì được một trong các điều kiện quy định tại khoản 1 Điều 36 Phụ lục I kèm theo Nghị định này; c) Không triển khai hoạt động trong thời hạn 01 năm kể từ ngày có quyết định thành lập hoặc cho phép thành lập trung tâm; d) Vi phạm quy định của pháp luật về giáo dục bị xử phạt vi phạm hành chính ở mức độ bị đình chỉ; đ) Trường hợp khác theo quy định của pháp luật.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thắm quyền đình chỉ hoạt động trung tâm hỗ trợ phát triển giáo dục hòa nhập",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Trung tâm hỗ trợ phát triển giáo dục hòa nhập bị đình chỉ hoạt động khi thuộc một trong các trường hợp sau đây:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Có hành vì gian lận để được thành lập hoặc cho phép thành lập trung tâm;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong quá trình hoạt động không duy trì được một trong các điều kiện quy định tại khoản 1 Điều 36 Phụ lục I kèm theo Nghị định này;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Không triển khai hoạt động trong thời hạn 01 năm kể từ ngày có quyết định thành lập hoặc cho phép thành lập trung tâm;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Vi phạm quy định của pháp luật về giáo dục bị xử phạt vi phạm hành chính ở mức độ bị đình chỉ;"
+                },
+                {
+                  "so_diem": "đ",
+                  "noi_dung": "Trường hợp khác theo quy định của pháp luật."
+                }
+              ]
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Trình tự thực hiện: a) Khi phát hiện trung tâm vi phạm quy định tại. khoản 1 Điều này, Sở Giáo dục và Đào tạo tổ chức kiểm tra để đánh giá tình trạng thực tế của trung tâm, lập biên bản kiểm tra và thông báo cho trung tâm về hành vi vi phạm; b) Trong thời hạn 15 ngày, kể từ ngày thông báo cho trung tâm về hành vi vi phạm, Sở Giáo dục và Đào tạo căn cứ mức độ vi phạm, trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định đình chỉ hoạt động đối với trung tâm công lập hoặc Giám đốc Sở Giáo dục và Đào tạo quyết định đình chỉ hoạt động đối với trung tâm tư thục. Quyết định đình chỉ hoạt động trung tâm hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng: c) Trong thời hạn bị đình chỉ, nếu nguyên nhân dẫn đến việc đình chỉ được khắc phục thì trung tâm thông báo bằng văn bản kèm theo minh chứng cho Chủ tịch Ủy ban nhân dân cấp tỉnh hoặc Giám đốc Sở Giáo dục và Đào tạo. Trong thời hạn 07 ngày làm việc, kể từ ngày nhận được thông báo của trung tâm, Chủ tịch Ủy ban nhân dân cấp tỉnh hoặc Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trung tâm hoạt động trở lại và công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Khi phát hiện trung tâm vi phạm quy định tại. khoản 1 Điều này, Sở Giáo dục và Đào tạo tổ chức kiểm tra để đánh giá tình trạng thực tế của trung tâm, lập biên bản kiểm tra và thông báo cho trung tâm về hành vi vi phạm;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 15 ngày, kể từ ngày thông báo cho trung tâm về hành vi vi phạm, Sở Giáo dục và Đào tạo căn cứ mức độ vi phạm, trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định đình chỉ hoạt động đối với trung tâm công lập hoặc Giám đốc Sở Giáo dục và Đào tạo quyết định đình chỉ hoạt động đối với trung tâm tư thục. Quyết định đình chỉ hoạt động trung tâm hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng:"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn bị đình chỉ, nếu nguyên nhân dẫn đến việc đình chỉ được khắc phục thì trung tâm thông báo bằng văn bản kèm theo minh chứng cho Chủ tịch Ủy ban nhân dân cấp tỉnh hoặc Giám đốc Sở Giáo dục và Đào tạo. Trong thời hạn 07 ngày làm việc, kể từ ngày nhận được thông báo của trung tâm, Chủ tịch Ủy ban nhân dân cấp tỉnh hoặc Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trung tâm hoạt động trở lại và công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "38",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm. quyền sáp nhập, chia, tách trung tâm hỗ trợ phát triển giáo dục hòa nhập 1. Trung tâm hỗ trợ phát triển. giáo dục hòa nhập được sáp nhập, chia, tách khi bảo đảm các yêu câu sau đây: a) Bảo đảm quyền, lợi ích của nhà giáo và người học; b) Góp phần nâng cao chất lượng và hiệu quả giáo dục; c) Trung tâm được hình thành sau khi sáp nhập, chia, tách phải đáp ứng các điều kiện quy định tại khoản 1 Điều 36 Phụ lục I kèm theo Nghị định này.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm. quyền sáp nhập, chia, tách trung tâm hỗ trợ phát triển giáo dục hòa nhập",
           "khoan": [
             {
-              "so_khoan": "2",
-              "noi_dung": "Hồ sơ gồm: a) Tờ trình đề nghị sáp nhập, chia, tách trung tâm (theo Mẫu số 04 Phụ lục I.kèm theo Nghị định này); 37 b) Đề án sáp nhập, chia, tách trung tâm (theo Mẫu số 05 Phụ lục II kèm theo Nghị định này); o) Ý kiến đồng thuận của nhà đầu tư đại diện ít nhất 75% tổng số vốn góp đối với việc sáp nhập, chia, tách trung tâm tư thục.",
-              "diem": []
+              "so_khoan": "1",
+              "noi_dung": "Trung tâm hỗ trợ phát triển. giáo dục hòa nhập được sáp nhập, chia, tách khi bảo đảm các yêu câu sau đây:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Bảo đảm quyền, lợi ích của nhà giáo và người học;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Góp phần nâng cao chất lượng và hiệu quả giáo dục;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trung tâm được hình thành sau khi sáp nhập, chia, tách phải đáp ứng các điều kiện quy định tại khoản 1 Điều 36 Phụ lục I kèm theo Nghị định này."
+                }
+              ]
             },
-            {
-              "so_khoan": "3",
-              "noi_dung": "Trình tự thực hiện: a) Sáp nhập, chia, tách trung tâm công lập: Sở Giáo dục và Đào tạo chủ trì, phối hợp với Sở Nội vụ xây dựng hồ SƠ đề nghị sáp nhập, chia, tách trung tâm trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định; Trong thời hạn 15 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định việc sáp nhập, chia, tách trung tâm; b) Sáp nhập, chia, tách trung tâm tư thục: Tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại khoản 2: Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo; Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cân chỉnh sửa cho tổ chức, cá nhân đề nghị sáp nhập, chia, tách trung tâm. Nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan tổ chức thẩm định hồ sơ và thẩm định thực tế các điều kiện sáp nhập, chia, tách trung tâm tư thục, lập báo cáo thẳm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này trong thời hạn 15 ngày; Trong thời hạn 05 ngày làm việc, kể từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo quyết định sáp nhập, chia, tách trung. tâm hỗ trợ phát. triển giáo dục hòa nhập; nêu chưa đủ điều kiện thì thông báo bằng văn bản cho tổ chức, cá nhân đề nghị sáp nhập, chia, tách và nêu rõ lý do. Quyết định sáp nhập, chia, tách trung tâm. hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Điều 39, Trình tự, thủ tục thực hiện thẩm quyền giải thể trung tâm hỗ trợ phát triển giáo dục hòa nhập 1. Trung tâm bị giải thể khi thuộc một trong các trường hợp sau đây: a) Vi phạm nghiêm trọng quy định về quản lý, tổ chức và hoạt động của trung tâm; b). Hết thời hạn đình chỉ hoạt động mà không khắc phục được nguyên nhân dẫn đến việc đình chỉ; c) Mục tiêu và nội dung. hoạt \"động trong quyết định thành lập trung tâm không còn phù hợp với nhu câu phát triển kinh tế - xã hội; d) Không bảo đảm chất lượng giáo dục; 38 đ) Theo đề nghị của tổ chức, cá nhân thành lập trung tâm.",
-              "diem": []
-            },
-            {
-              "so_khoan": "2",
-              "noi_dung": "Hồ sơ:..4) Trung tâm giải thể theo quy định tại điểm a, b, c, d khoản 1 Điều này, hô sơ gôm: Minh chứng về việc trung tâm vi phạm quy định tại điểm a, b,c, d khoản 1 Điều này; Phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên. quan; _..b) Trung tâm giải thể theo quy định tại điểm đ khoản 1 Điều này, hồ sơ gồm:. Tờ trình đề nghị giải thể trung tâm (theo Mẫu số 06 Phụ lục II. kèm theo Nghị định này); Đề án giải thể trung tâm (theo Mẫu số 07 Phụ lục II kèm theo vì định này).",
-              "diem": []
-            },
-            {
-              "so_khoan": "3",
-              "noi_dung": "Trình tự thực hiện: a) Trung tâm bị giải thể theo quy định tại điểm a, b, c, d khoản 1 Điều này: Khi phát hiện trung tâm vi phạm quy định tại điểm a, b, c, d khoản 1 Điều này, Sở Giáo dục và Đào tạo tổ chức kiểm tra đánh giá tình trạng thực tế của trung tâm, lập biên bản kiểm tra và thông báo cho trung tâm biết về hành vi vi phạm; Trong thời hạn 05 ngày làm việc, kể từ ngày tổ chức kiểm tra, Sở Giáo dục và Đào tạo gửi hồ sơ quy định tại điểm a khoản 3 Điều này tới Chủ tịch Ủy ban nhân dân cấp tỉnh để xem xét, quyết định giải thể trung tâm công lập hoặc Giám đắc Sở Giáo dục và Đào tạo để xem xét, quyết định giải thể trung tâm tư thục; b) Trung tâm bị giải thể theo quy định tại điểm đ khoản 1 Điều này: Đồi với trung tâm công lập: Sở Giáo dục và Đào tạo chủ trì, phối hợp với Sở Nội vụ xây dựng hồ sơ theo quy định tại điểm b khoản 2 Điều này trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định. Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được văn bản của Sở Giáo dục và Đào tạo, Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định việc giải thể trung tâm... Đối với trung tâm tư thục: Tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại điểm b khoản 2 Điều này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo. Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ SƠ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những. nội dung cần chỉnh sửa cho tổ chức, cá nhân đề nghị giải thể trung tâm. Nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan tổ chức thẳm định hồ sơ đề nghị giải thể trung tâm, lập báo cáo thẩm định trong thời hạn 15 ngày.:39.. Trong thời hạn 05 ngày làm việc, kể từ ngày có báo cáo thẳm định, Giám đốc SỞ Giáo dục và Đào tạo xem xét, quyết định giải thể trung tâm; nếu chưa quyết định giải thể thì thông báo bằng văn bản cho tổ chức, cá nhân đề nghị giải thể và nêu rõ lý do; c) Quyết định giải thể trung tâm hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
-            }
-          ]
-        },
-        {
-          "so_dieu": "40",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền thành lập trường phổ thông dân tộc nội trú 1. Điều kiện thành lập trường phố thông dân tộc nội trú thực hiện theo quy định tại Điều 53 Nghị định số 125/2024/NĐ-CP.",
-          "khoan": [
             {
               "so_khoan": "2",
               "noi_dung": "Hồ sơ gồm:",
               "diem": [
                 {
                   "so_diem": "a",
-                  "noi_dung": "Tờ trình đề nghị thành lập trường (theo Mẫu số 01 Phụ lục II kèm theo Nghị định này);..b) Đề án thành lập trường (theo Mẫu số 02 Phụ lục II kèm theo Nghị định này)."
+                  "noi_dung": "Tờ trình đề nghị sáp nhập, chia, tách trung tâm (theo Mẫu số 04 Phụ lục I.kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án sáp nhập, chia, tách trung tâm (theo Mẫu số 05 Phụ lục II kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "o",
+                  "noi_dung": "Ý kiến đồng thuận của nhà đầu tư đại diện ít nhất 75% tổng số vốn góp đối với việc sáp nhập, chia, tách trung tâm tư thục."
                 }
               ]
             },
@@ -144,7 +320,100 @@
               "diem": [
                 {
                   "so_diem": "a",
-                  "noi_dung": "Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan xây dựng đề án thành lập trường; lập hồ sơ theo quy định tại khoản 2 Điều này trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định; b) Trong thời hạn 15 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân. cấp tỉnh xem xét các điều kiện thành lập trường tại hồ SƠ; nếu đủ điều kiện thì quyết định thành lập trường phố thông dân tộc nội trú; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho các cơ quan có liên quan và nêu rõ lý do. Quyết định thành lập trường phổ thông dân tộc nội trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                  "noi_dung": "Sáp nhập, chia, tách trung tâm công lập: Sở Giáo dục và Đào tạo chủ trì, phối hợp với Sở Nội vụ xây dựng hồ SƠ đề nghị sáp nhập, chia, tách trung tâm trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định; Trong thời hạn 15 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định việc sáp nhập, chia, tách trung tâm;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Sáp nhập, chia, tách trung tâm tư thục: Tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại khoản 2: Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo; Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cân chỉnh sửa cho tổ chức, cá nhân đề nghị sáp nhập, chia, tách trung tâm. Nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan tổ chức thẩm định hồ sơ và thẩm định thực tế các điều kiện sáp nhập, chia, tách trung tâm tư thục, lập báo cáo thẳm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này trong thời hạn 15 ngày; Trong thời hạn 05 ngày làm việc, kể từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo quyết định sáp nhập, chia, tách trung. tâm hỗ trợ phát. triển giáo dục hòa nhập; nêu chưa đủ điều kiện thì thông báo bằng văn bản cho tổ chức, cá nhân đề nghị sáp nhập, chia, tách và nêu rõ lý do. Quyết định sáp nhập, chia, tách trung tâm. hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Điều 39, Trình tự, thủ tục thực hiện thẩm quyền giải thể trung tâm hỗ trợ phát triển giáo dục hòa nhập"
+                }
+              ]
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Trung tâm bị giải thể khi thuộc một trong các trường hợp sau đây:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Vi phạm nghiêm trọng quy định về quản lý, tổ chức và hoạt động của trung tâm; b). Hết thời hạn đình chỉ hoạt động mà không khắc phục được nguyên nhân dẫn đến việc đình chỉ;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Mục tiêu và nội dung. hoạt \"động trong quyết định thành lập trung tâm không còn phù hợp với nhu câu phát triển kinh tế - xã hội;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Không bảo đảm chất lượng giáo dục;"
+                },
+                {
+                  "so_diem": "đ",
+                  "noi_dung": "Theo đề nghị của tổ chức, cá nhân thành lập trung tâm."
+                }
+              ]
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Hồ sơ:..4) Trung tâm giải thể theo quy định tại điểm a, b, c, d khoản 1 Điều này, hô sơ gôm: Minh chứng về việc trung tâm vi phạm quy định tại điểm a, b,c, d khoản 1 Điều này; Phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên. quan; _..",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trung tâm giải thể theo quy định tại điểm đ khoản 1 Điều này, hồ sơ gồm:. Tờ trình đề nghị giải thể trung tâm (theo Mẫu số 06 Phụ lục II. kèm theo Nghị định này); Đề án giải thể trung tâm (theo Mẫu số 07 Phụ lục II kèm theo vì định này)."
+                }
+              ]
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Trung tâm bị giải thể theo quy định tại điểm a, b, c, d khoản 1 Điều này: Khi phát hiện trung tâm vi phạm quy định tại điểm a, b, c, d khoản 1 Điều này, Sở Giáo dục và Đào tạo tổ chức kiểm tra đánh giá tình trạng thực tế của trung tâm, lập biên bản kiểm tra và thông báo cho trung tâm biết về hành vi vi phạm; Trong thời hạn 05 ngày làm việc, kể từ ngày tổ chức kiểm tra, Sở Giáo dục và Đào tạo gửi hồ sơ quy định tại điểm a khoản 3 Điều này tới Chủ tịch Ủy ban nhân dân cấp tỉnh để xem xét, quyết định giải thể trung tâm công lập hoặc Giám đắc Sở Giáo dục và Đào tạo để xem xét, quyết định giải thể trung tâm tư thục;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trung tâm bị giải thể theo quy định tại điểm đ khoản 1 Điều này: Đồi với trung tâm công lập: Sở Giáo dục và Đào tạo chủ trì, phối hợp với Sở Nội vụ xây dựng hồ sơ theo quy định tại điểm b khoản 2 Điều này trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định. Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được văn bản của Sở Giáo dục và Đào tạo, Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định việc giải thể trung tâm... Đối với trung tâm tư thục: Tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại điểm b khoản 2 Điều này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo. Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ SƠ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những. nội dung cần chỉnh sửa cho tổ chức, cá nhân đề nghị giải thể trung tâm. Nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan tổ chức thẳm định hồ sơ đề nghị giải thể trung tâm, lập báo cáo thẩm định trong thời hạn 15 ngày.:39.. Trong thời hạn 05 ngày làm việc, kể từ ngày có báo cáo thẳm định, Giám đốc SỞ Giáo dục và Đào tạo xem xét, quyết định giải thể trung tâm; nếu chưa quyết định giải thể thì thông báo bằng văn bản cho tổ chức, cá nhân đề nghị giải thể và nêu rõ lý do;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Quyết định giải thể trung tâm hỗ trợ phát triển giáo dục hòa nhập (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "so_dieu": "40",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền thành lập trường phổ thông dân tộc nội trú",
+          "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện thành lập trường phố thông dân tộc nội trú thực hiện theo quy định tại Điều 53 Nghị định số 125/2024/NĐ-CP.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Hồ sơ gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tờ trình đề nghị thành lập trường (theo Mẫu số 01 Phụ lục II kèm theo Nghị định này);.."
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án thành lập trường (theo Mẫu số 02 Phụ lục II kèm theo Nghị định này)."
+                }
+              ]
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan xây dựng đề án thành lập trường; lập hồ sơ theo quy định tại khoản 2 Điều này trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 15 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân. cấp tỉnh xem xét các điều kiện thành lập trường tại hồ SƠ; nếu đủ điều kiện thì quyết định thành lập trường phố thông dân tộc nội trú; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho các cơ quan có liên quan và nêu rõ lý do. Quyết định thành lập trường phổ thông dân tộc nội trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
                 }
               ]
             }
@@ -152,28 +421,86 @@
         },
         {
           "so_dieu": "41",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền cho phép trường phố thông dân tộc nội trú hoạt động giáo dục 1. Điều kiện cho phép trường phổ thông dân tộc nội trú hoạt động giáo dục thực hiện theo quy định tại Điều 55 Nghị định số 125/2024/NĐ-CP.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền cho phép trường phố thông dân tộc nội trú hoạt động giáo dục",
           "khoan": [
             {
-              "so_khoan": "2",
-              "noi_dung": "Hồ sơ gồm: a) Tờ trình đề nghị cho phép hoạt động giáo dục (theo Mẫu số 03 Phụ lục kèm theo Nghị định này); b) Bản sao các văn bản pháp lý chứng minh quyền sử dụng. đất, quyền sở hữu nhà hoặc hợp đồng thuê địa điểm trường với thời hạn tối thiểu 05 năm; 40 c) Quy chế tổ chức và hoạt động của nhà trường, gồm các nội dung chủ yếu sau đây: Vị trí pháp lý, nhiệm vụ, quyền hạn của nhà trường: tổ chức và quản lý nhà trường; tổ chức hoạt. động. giáo dục trong nhà trường: nhiệm vụ và quyền của đội ngũ cán bộ quản lý, giáo viên, nhân viên, người lao động và học sinh; tài chính và tài sản của nhà trường: các vấn đề khác liên quan đến tổ chức và hoạt động của nhà trường.",
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện cho phép trường phổ thông dân tộc nội trú hoạt động giáo dục thực hiện theo quy định tại Điều 55 Nghị định số 125/2024/NĐ-CP.",
               "diem": []
             },
             {
+              "so_khoan": "2",
+              "noi_dung": "Hồ sơ gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tờ trình đề nghị cho phép hoạt động giáo dục (theo Mẫu số 03 Phụ lục kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Bản sao các văn bản pháp lý chứng minh quyền sử dụng. đất, quyền sở hữu nhà hoặc hợp đồng thuê địa điểm trường với thời hạn tối thiểu 05 năm;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Quy chế tổ chức và hoạt động của nhà trường, gồm các nội dung chủ yếu sau đây: Vị trí pháp lý, nhiệm vụ, quyền hạn của nhà trường: tổ chức và quản lý nhà trường; tổ chức hoạt. động. giáo dục trong nhà trường: nhiệm vụ và quyền của đội ngũ cán bộ quản lý, giáo viên, nhân viên, người lao động và học sinh; tài chính và tài sản của nhà trường: các vấn đề khác liên quan đến tổ chức và hoạt động của nhà trường."
+                }
+              ]
+            },
+            {
               "so_khoan": "3",
-              "noi_dung": "Trình tự thực hiện: a) Nhà trường gửi 01 bộ. hồ sơ quy định tại khoản 2 Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã (nếu là trường phố thông dân tộc nội trú trung học cơ sở) hoặc Sở Giáo dục và Đào tạo (nếu là trường phổ thông dân tộc nội trú có cấp học cao nhất là trung học phố thông); b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cần chỉnh sửa, bổ sung cho nhà trường trong trường hợp hồ sơ không hợp lệ; hoặc thông báo kế hoạch thẳm định thực tế tại trường trong trường hợp hồ sơ hợp lệ; e) Trong thời hạn 20 ngày làm việc, kể từ: ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo chủ trì, phối hợp với các đơn vị chuyển môn có liên quan tổ chức thẩm định thực tế điều kiện hoạt động giáo dục của trường phổ thông dân tộc nội trú; lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này; d) Trong thời. hạn 05 ngày làm việc, kể từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường phố thông dân tộc nội trú hoạt động giáo dục; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho trường và nêu rõ lý do. Quyết định cho phép trường phổ thông dân tộc nội trú hoạt động giáo dục (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Nhà trường gửi 01 bộ. hồ sơ quy định tại khoản 2 Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã (nếu là trường phố thông dân tộc nội trú trung học cơ sở) hoặc Sở Giáo dục và Đào tạo (nếu là trường phổ thông dân tộc nội trú có cấp học cao nhất là trung học phố thông);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cần chỉnh sửa, bổ sung cho nhà trường trong trường hợp hồ sơ không hợp lệ; hoặc thông báo kế hoạch thẳm định thực tế tại trường trong trường hợp hồ sơ hợp lệ;"
+                },
+                {
+                  "so_diem": "e",
+                  "noi_dung": "Trong thời hạn 20 ngày làm việc, kể từ: ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo chủ trì, phối hợp với các đơn vị chuyển môn có liên quan tổ chức thẩm định thực tế điều kiện hoạt động giáo dục của trường phổ thông dân tộc nội trú; lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Trong thời. hạn 05 ngày làm việc, kể từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường phố thông dân tộc nội trú hoạt động giáo dục; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho trường và nêu rõ lý do. Quyết định cho phép trường phổ thông dân tộc nội trú hoạt động giáo dục (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "42",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền đình chỉ hoạt động giáo dục, sáp nhập, chia, tách, giải thể trường phổ thông dân tộc nội trú 1. Đình chỉ hoạt động giáo dục trường phổ thông dân tộc nội trú: a) Trường phố thông dân tộc nội trú bị đình chỉ hoạt động giáo dục khi thuộc một trong các trường hợp quy định tại khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP; b) Trình tự thực hiện: Khi phát hiện. trường phố thông dân tộc nội trú vi phạm quy định tại điểm a khoản này, Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo tổ chức kiểm tra để đánh giá tình trạng thực tế của trường, lập biên bản kiểm tra và thông báo cho nhà trường về hành vi vi phạm. 4l Trong thời hạn 15 ngày làm việc, kể từ ngày thông báo cho nhà trường về hành Vivi phạm, Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo căn cứ mức độ vi phạm, quyết định đình chỉ hoạt động giáo dục của trường và báo cáo Chủ tịch Ủy ban nhân dân cấp tỉnh. Quyết định đình chỉ hoạt động giáo dục trường phổ thông dân tộc nội trú (theo. Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn bị đình chỉ, nếu nguyên nhân. dẫn đến việc đình chỉ được khắc phục thì nhà trường thông báo bằng văn bản kèm theo minh chứng cho Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo. Trong thời hạn 07 ngày. làm việc, kể từ ngày nhận được thông báo của nhà trường, Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường phố thông dân tộc nội trú hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng. Trường hợp bị đình chỉ theo quy định tại điểm b khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP ngày 05/ 10/2024 của Chính phủ quy định về điều kiện đầu tư và hoạt động trong. lĩnh vực giáo dục, trong thời hạn 05 ngày làm việc kể từ ngày ra quyết định đình chỉ, Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo. rà soát điều kiện hoạt động giáo dục của trường phố thông dân tộc: nội trú, nếu đáp ứng quy định tại khoản 1 Điều 39 Nghị định này thì quyết định cho phép trường phô thông dân tộc nội trú hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền đình chỉ hoạt động giáo dục, sáp nhập, chia, tách, giải thể trường phổ thông dân tộc nội trú",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Đình chỉ hoạt động giáo dục trường phổ thông dân tộc nội trú:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Trường phố thông dân tộc nội trú bị đình chỉ hoạt động giáo dục khi thuộc một trong các trường hợp quy định tại khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trình tự thực hiện: Khi phát hiện. trường phố thông dân tộc nội trú vi phạm quy định tại điểm a khoản này, Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo tổ chức kiểm tra để đánh giá tình trạng thực tế của trường, lập biên bản kiểm tra và thông báo cho nhà trường về hành vi vi phạm. 4l Trong thời hạn 15 ngày làm việc, kể từ ngày thông báo cho nhà trường về hành Vivi phạm, Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo căn cứ mức độ vi phạm, quyết định đình chỉ hoạt động giáo dục của trường và báo cáo Chủ tịch Ủy ban nhân dân cấp tỉnh. Quyết định đình chỉ hoạt động giáo dục trường phổ thông dân tộc nội trú (theo. Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn bị đình chỉ, nếu nguyên nhân. dẫn đến việc đình chỉ được khắc phục thì nhà trường thông báo bằng văn bản kèm theo minh chứng cho Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo. Trong thời hạn 07 ngày. làm việc, kể từ ngày nhận được thông báo của nhà trường, Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường phố thông dân tộc nội trú hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng. Trường hợp bị đình chỉ theo quy định tại điểm b khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP ngày 05/ 10/2024 của Chính phủ quy định về điều kiện đầu tư và hoạt động trong. lĩnh vực giáo dục, trong thời hạn 05 ngày làm việc kể từ ngày ra quyết định đình chỉ, Ủy ban nhân dân cấp xã hoặc Giám đốc Sở Giáo dục và Đào tạo. rà soát điều kiện hoạt động giáo dục của trường phố thông dân tộc: nội trú, nếu đáp ứng quy định tại khoản 1 Điều 39 Nghị định này thì quyết định cho phép trường phô thông dân tộc nội trú hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Sáp nhập, chia, tách trường phố thông dân tộc nội trú 3) Trường phố thông dân tộc nội trú được sáp nhập, chia, tách khi bảo đảm các yêu cầu quy định tại khoản 1 Điều 51 của Luật Giáo dục; b) Hồ sơ gồm: Tờ trình đề nghị sáp nhập, chia, tách trường phố thông dân tộc nội trú (theo Mẫu số 04 Phụ lục II kèm theo Nghị định này); Đề án sáp nhập, chia, tách trường phố thông dân tộc nội trú (theo Mẫu số 05 Phụ lục II kèm theo Nghị định này). e) Trình tự thực hiện: Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan xây dựng đề án sáp nhập, chia, tách trường phổ thông dân tộc nội trú; lập hồ sơ theo quy định tại điểm c khoản này trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định. Trong thời hạn 15 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân cấp tỉnh. xem xét các điều kiện sáp nhập, chia, tách trường; nếu đủ điều kiện thì quyết định sáp nhập, chia, tách trường phổ thông dân tộc nội trú; nếu chưa đủ điều kiện thì thông báo. bằng văn bản chỏ các cơ quan có liên quan và nêu rõ lý do. 42 Quyết: định sáp nhập, chia, tách trường phố thông dân tộc nội trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn 05 ngày làm việc, kế từ ngày Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định sáp nhập, chia, tách trường, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường phố thông dân tộc nội trú được thành lập sau khi sáp nhập, chia, tách hoạt động giáo dục.",
-              "diem": []
+              "noi_dung": "Sáp nhập, chia, tách trường phố thông dân tộc nội trú 3) Trường phố thông dân tộc nội trú được sáp nhập, chia, tách khi bảo đảm các yêu cầu quy định tại khoản 1 Điều 51 của Luật Giáo dục;",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Hồ sơ gồm: Tờ trình đề nghị sáp nhập, chia, tách trường phố thông dân tộc nội trú (theo Mẫu số 04 Phụ lục II kèm theo Nghị định này); Đề án sáp nhập, chia, tách trường phố thông dân tộc nội trú (theo Mẫu số 05 Phụ lục II kèm theo Nghị định này)."
+                },
+                {
+                  "so_diem": "e",
+                  "noi_dung": "Trình tự thực hiện: Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan xây dựng đề án sáp nhập, chia, tách trường phổ thông dân tộc nội trú; lập hồ sơ theo quy định tại điểm c khoản này trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định. Trong thời hạn 15 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân cấp tỉnh. xem xét các điều kiện sáp nhập, chia, tách trường; nếu đủ điều kiện thì quyết định sáp nhập, chia, tách trường phổ thông dân tộc nội trú; nếu chưa đủ điều kiện thì thông báo. bằng văn bản chỏ các cơ quan có liên quan và nêu rõ lý do. Quyết: định sáp nhập, chia, tách trường phố thông dân tộc nội trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn 05 ngày làm việc, kế từ ngày Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định sáp nhập, chia, tách trường, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường phố thông dân tộc nội trú được thành lập sau khi sáp nhập, chia, tách hoạt động giáo dục."
+                }
+              ]
             },
             {
               "so_khoan": "3",
@@ -181,7 +508,15 @@
               "diem": [
                 {
                   "so_diem": "a",
-                  "noi_dung": "Trường phổ: thông dân tộc. nội trú bị giải thể khi thuộc một trong các trường hợp quy định tại khoản 2 Điều 51 của Luật Giáo dục; b) Hồ sơ: Trường phố thông dân tộc nội trú bị giải thể theo quy định: tại điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của Sở Giáo dục và Đào tạo (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); minh chứng về việc trường phổ thông dân tộc nội trú vi phạm quy định tại điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục;. phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên quan. Trường phố thông dân tộc nội trú bị giải thể theo quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của Sở Giáo dục và Đào tạo (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); đề án giải thể trường phố thông dân tộc nội trú (theo Mẫu số 07 Phụ lục II kèm theo Nghị định này). c) Trình tự thực hiện: Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan lập hồ sơ theo quy định tại điểm c khoản này trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định. Trong thời hạn 20 ngày làm việc, kế từ \"ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định giải thể trường phổ thông dân tộc nội trú. Quyết định giải thể trường phố thông dân tộc nội trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                  "noi_dung": "Trường phổ: thông dân tộc. nội trú bị giải thể khi thuộc một trong các trường hợp quy định tại khoản 2 Điều 51 của Luật Giáo dục;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Hồ sơ: Trường phố thông dân tộc nội trú bị giải thể theo quy định: tại điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của Sở Giáo dục và Đào tạo (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); minh chứng về việc trường phổ thông dân tộc nội trú vi phạm quy định tại điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục;. phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên quan. Trường phố thông dân tộc nội trú bị giải thể theo quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của Sở Giáo dục và Đào tạo (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); đề án giải thể trường phố thông dân tộc nội trú (theo Mẫu số 07 Phụ lục II kèm theo Nghị định này)."
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trình tự thực hiện: Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan có liên quan lập hồ sơ theo quy định tại điểm c khoản này trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định. Trong thời hạn 20 ngày làm việc, kế từ \"ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định giải thể trường phổ thông dân tộc nội trú. Quyết định giải thể trường phố thông dân tộc nội trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
                 }
               ]
             }
@@ -189,42 +524,136 @@
         },
         {
           "so_dieu": "43",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền thành lập trường phố thông dân tộc bán trú 1. Điều kiện thành lập trường phổ thông dân tộc nội trú thực hiện theo quy định tại Điều 58 Nghị định số 125/2024/NĐ-CP.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền thành lập trường phố thông dân tộc bán trú",
           "khoan": [
             {
-              "so_khoan": "2",
-              "noi_dung": "Hồ sơ gồm: a) Tờ trình đề nghị thành lập trường (theo Mẫu số 01 Phụ lục II kèm theo Nghị định này); 43 b) Đề án thành lập trường (theo Mẫu số 02 Phụ lục II kèm theo Nghị định này).",
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện thành lập trường phổ thông dân tộc nội trú thực hiện theo quy định tại Điều 58 Nghị định số 125/2024/NĐ-CP.",
               "diem": []
             },
             {
+              "so_khoan": "2",
+              "noi_dung": "Hồ sơ gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tờ trình đề nghị thành lập trường (theo Mẫu số 01 Phụ lục II kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án thành lập trường (theo Mẫu số 02 Phụ lục II kèm theo Nghị định này)."
+                }
+              ]
+            },
+            {
               "so_khoan": "3",
-              "noi_dung": "Trình tự thực hiện: a) Cơ quan, tổ chức gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã; b) Trong thời hạn 05 ngày làm Việc, kế từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Ủy ban nhân dân cấp xã thông báo bằng văn bản những nội dung cân chỉnh sửa cho cơ quan, tổ chức đề nghị thành lập trường; c) Trong thời hạn 20 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã tổ chức thẩm định các điều kiện thành \"lập trường phổ thông dân tộc bán trú; nếu đủ điều kiện thì Ủy ban nhân dân cấp xã quyết định thành lập trường; nếu chưa đủ điều kiện thì thông báo bằng văn bản cơ quan, tổ chức đề nghị thành lập trường và nêu rõ lý do. Quyết định thành lập trường phổ thông dân tộc bán trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Cơ quan, tổ chức gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm Việc, kế từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Ủy ban nhân dân cấp xã thông báo bằng văn bản những nội dung cân chỉnh sửa cho cơ quan, tổ chức đề nghị thành lập trường;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn 20 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã tổ chức thẩm định các điều kiện thành \"lập trường phổ thông dân tộc bán trú; nếu đủ điều kiện thì Ủy ban nhân dân cấp xã quyết định thành lập trường; nếu chưa đủ điều kiện thì thông báo bằng văn bản cơ quan, tổ chức đề nghị thành lập trường và nêu rõ lý do. Quyết định thành lập trường phổ thông dân tộc bán trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "44",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền cho phép trường phố thông dân tộc bán trú hoạt động giáo dục 1. Điều kiện cho phép trường phổ thông dân tộc bán trú hoạt động giáo dục thực hiện theo quy định tại Điều 60 Nghị định số 125/2024/NĐ-CP. 2.Hồsơ gồm: a) Tờ trình đề nghị cho phép hoạt động giáo dục (theo Mẫu số 03 Phụ lục II kèm theo Nghị định này): b) Bản sao các văn bản pháp lý chứng minh quyền sử dụng. đất, quyền sở hữu nhà hoặc hợp đồng thuê địa điểm trường với thời hạn tối thiểu 05 năm; c) Quy chế tổ chức và hoạt động của nhà trường, gồm các nội dung chủ yếu sau đây: Vị trí pháp lý, nhiệm vụ, quyền hạn của nhà trường: tổ chức và quản lý nhà trường; tổ chức hoạt. động giáo dục trong nhà trường; nhiệm vụ và quyền của đội ngũ cán bộ quản lý, giáo viên, nhân viên, người lao động và học sinh; tài chính và tài sản của nhà trường; các vấn đề khác liên. quan đến tổ chức và hoạt động của nhà trường.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền cho phép trường phố thông dân tộc bán trú hoạt động giáo dục",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện cho phép trường phổ thông dân tộc bán trú hoạt động giáo dục thực hiện theo quy định tại Điều 60 Nghị định số 125/2024/NĐ-CP. 2.Hồsơ gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tờ trình đề nghị cho phép hoạt động giáo dục (theo Mẫu số 03 Phụ lục II kèm theo Nghị định này):"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Bản sao các văn bản pháp lý chứng minh quyền sử dụng. đất, quyền sở hữu nhà hoặc hợp đồng thuê địa điểm trường với thời hạn tối thiểu 05 năm;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Quy chế tổ chức và hoạt động của nhà trường, gồm các nội dung chủ yếu sau đây: Vị trí pháp lý, nhiệm vụ, quyền hạn của nhà trường: tổ chức và quản lý nhà trường; tổ chức hoạt. động giáo dục trong nhà trường; nhiệm vụ và quyền của đội ngũ cán bộ quản lý, giáo viên, nhân viên, người lao động và học sinh; tài chính và tài sản của nhà trường; các vấn đề khác liên. quan đến tổ chức và hoạt động của nhà trường."
+                }
+              ]
+            },
+            {
               "so_khoan": "3",
-              "noi_dung": "Trình tự thực hiện: a) Nhà trường gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã; b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, Ủy ban nhân dân cấp xã thông báo bằng văn bản những nội dung cần chỉnh sửa, bổ sung cho nhà trường trong trường hợp hồ. sơ không hợp lệ; 44 e) Trong thời hạn 20 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã tổ chức thẳm định thực tế điều kiện hoạt động giáo dục của trường phổ thông dân tộc bán trú; nếu đủ điều kiện thì Ủy ban nhân dân. cấp xã quyết định cho phép trường phổ thông dân tộc bán trú hoạt động giáo dục; nêu chưa đủ điều kiện thì thông báo bằng văn bản cho trường và nêu rõ lý do. Quyết định cho phép trường phố thông dân tộc bán trú hoạt động giáo dục (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Nhà trường gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, Ủy ban nhân dân cấp xã thông báo bằng văn bản những nội dung cần chỉnh sửa, bổ sung cho nhà trường trong trường hợp hồ. sơ không hợp lệ;"
+                },
+                {
+                  "so_diem": "e",
+                  "noi_dung": "Trong thời hạn 20 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã tổ chức thẳm định thực tế điều kiện hoạt động giáo dục của trường phổ thông dân tộc bán trú; nếu đủ điều kiện thì Ủy ban nhân dân. cấp xã quyết định cho phép trường phổ thông dân tộc bán trú hoạt động giáo dục; nêu chưa đủ điều kiện thì thông báo bằng văn bản cho trường và nêu rõ lý do. Quyết định cho phép trường phố thông dân tộc bán trú hoạt động giáo dục (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "45",
-          "noi_dung": "Trình tự, thủ tục thực hiện thắm quyền đình chỉ hoạt động giáo dục, sáp nhập, chia, tách, giải thể trường phỗ thông dân tộc bán trú 1. Đình chỉ hoạt động giáo dục trường phố thông dân tộc bán trú a) Các trường hợp đình chỉ hoạt động giáo dục trường phố thông dân tộc bán trú thực hiện theo quy định tại điểm a khoản 1 Điều 62 Nghị định số 125/2024/NĐ-CP. b) Trình tự thực hiện: Khi phát hiện trường phổ thông dân tộc bán trú vi phạm quy định tại điểm a khoản 1 Điều 62 Nghị định số 125/2021/NĐ-CP, Ủy ban nhân dân cấp xã tổ chức kiểm tra để đánh giá tình trạng thực tế của trường, lập biên bản kiểm tra và thông báo cho nhà trường về hành vi vi phạm. Trong thời hạn 15 ngày làm việc, kể từ ngày thông báo cho nhà trường về hành vi vi phạm, Ủy ban nhân dân cấp xã căn cứ mức độ vi phạm, quyết định đình chỉ hoạt động giáo dục của trường. Quyết định đình chỉ hoạt động giáo dục trường phổ thông dân tộc bán trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.. Trong thời hạn bị đình chỉ, nếu nguyên nhân dẫn đến việc đình chỉ được khắc phục thì nhà trường thông báo bằng văn bản kèm theo minh chứng cho Ủy ban nhân dân cấp xã. Trong thời hạn 07 ngày làm việc, kể từ ngày nhận được thông báo của nhà trường, Ủy ban nhân dân cấp xã quyết định cho phép trường phô thông dân tộc bán trú hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng... Trường hợp bị đình chỉ theo quy định tại điểm b khoản 1 Điều 19 hoặc điểm b khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP, trong thời. hạn 05 ngày làm việc kể từ ngày ra quyết định đình chỉ, \"Ủy ban nhân dân cấp xã rà soát điều kiện hoạt động giáo dục của trường phố thông dân tộc bán trú, nếu đáp ứng quy định tại Điều 60 Nghị định số 125/2024/NĐ-CP thì quyết định cho phép trường phố thông dân tộc bán trú hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng. 45 2. Sáp nhập, chia, tách trường phô thông dân tộc bán trú a) Trường phổ thông dân tộc bán trú được sáp nhập, chia, tách khi bảo đảm các yêu câu quy định tại khoản 1-Điều 51 của Luật Giáo dục; b) Hồ sơ gồm: Tờ trình đề nghị sáp nhập, chia, tách trường phố thông dân tộc bán trú (theo Mẫu số 04 Phụ lục II kèm theo Nghị định này). Đề án sáp nhập, chia, tách trường phố thông dân tộc bán trú (theo Mẫu số 05 Phụ lục II kèm theo Nghị định này). e) Trình tự thực hiện: Cơ quan, tổ chức gửi 01 bộ hồ sơ quy định tại điểm b khoản này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã. Trong thời hạn 05 ngày làm việc, kế từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Ủy ban nhân dân cấp xã thông báo bằng văn bản những nội 'dung cần chỉnh sửa cho cơ quan đề nghị sáp nhập, chia, tách trường; Trong thời hạn 25 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã tổ chức thẳm định hồ sơ và thẩm định thực tế (nếu cân thiết) các điều. kiện sáp nhập, chia, tách trường; nếu đủ điều kiện thì Ủy ban nhân dân cấp xã quyết định sáp nhập, chia, tách trường phổ thông dân tộc bán trú và cho phép hoạt động giáo dục; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho các cơ quan có liên quan và nêu rõ lý do. Quyết định sáp nhập, chia, tách trường phổ thông dân tộc bán trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thắm quyền đình chỉ hoạt động giáo dục, sáp nhập, chia, tách, giải thể trường phỗ thông dân tộc bán trú",
           "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Đình chỉ hoạt động giáo dục trường phố thông dân tộc bán trú a) Các trường hợp đình chỉ hoạt động giáo dục trường phố thông dân tộc bán trú thực hiện theo quy định tại điểm a khoản 1 Điều 62 Nghị định số 125/2024/NĐ-CP.",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trình tự thực hiện: Khi phát hiện trường phổ thông dân tộc bán trú vi phạm quy định tại điểm a khoản 1 Điều 62 Nghị định số 125/2021/NĐ-CP, Ủy ban nhân dân cấp xã tổ chức kiểm tra để đánh giá tình trạng thực tế của trường, lập biên bản kiểm tra và thông báo cho nhà trường về hành vi vi phạm. Trong thời hạn 15 ngày làm việc, kể từ ngày thông báo cho nhà trường về hành vi vi phạm, Ủy ban nhân dân cấp xã căn cứ mức độ vi phạm, quyết định đình chỉ hoạt động giáo dục của trường. Quyết định đình chỉ hoạt động giáo dục trường phổ thông dân tộc bán trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.. Trong thời hạn bị đình chỉ, nếu nguyên nhân dẫn đến việc đình chỉ được khắc phục thì nhà trường thông báo bằng văn bản kèm theo minh chứng cho Ủy ban nhân dân cấp xã. Trong thời hạn 07 ngày làm việc, kể từ ngày nhận được thông báo của nhà trường, Ủy ban nhân dân cấp xã quyết định cho phép trường phô thông dân tộc bán trú hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng... Trường hợp bị đình chỉ theo quy định tại điểm b khoản 1 Điều 19 hoặc điểm b khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP, trong thời. hạn 05 ngày làm việc kể từ ngày ra quyết định đình chỉ, \"Ủy ban nhân dân cấp xã rà soát điều kiện hoạt động giáo dục của trường phố thông dân tộc bán trú, nếu đáp ứng quy định tại Điều 60 Nghị định số 125/2024/NĐ-CP thì quyết định cho phép trường phố thông dân tộc bán trú hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Sáp nhập, chia, tách trường phô thông dân tộc bán trú",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Trường phổ thông dân tộc bán trú được sáp nhập, chia, tách khi bảo đảm các yêu câu quy định tại khoản 1-Điều 51 của Luật Giáo dục;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Hồ sơ gồm: Tờ trình đề nghị sáp nhập, chia, tách trường phố thông dân tộc bán trú (theo Mẫu số 04 Phụ lục II kèm theo Nghị định này). Đề án sáp nhập, chia, tách trường phố thông dân tộc bán trú (theo Mẫu số 05 Phụ lục II kèm theo Nghị định này)."
+                },
+                {
+                  "so_diem": "e",
+                  "noi_dung": "Trình tự thực hiện: Cơ quan, tổ chức gửi 01 bộ hồ sơ quy định tại điểm b khoản này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã. Trong thời hạn 05 ngày làm việc, kế từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Ủy ban nhân dân cấp xã thông báo bằng văn bản những nội 'dung cần chỉnh sửa cho cơ quan đề nghị sáp nhập, chia, tách trường; Trong thời hạn 25 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã tổ chức thẳm định hồ sơ và thẩm định thực tế (nếu cân thiết) các điều. kiện sáp nhập, chia, tách trường; nếu đủ điều kiện thì Ủy ban nhân dân cấp xã quyết định sáp nhập, chia, tách trường phổ thông dân tộc bán trú và cho phép hoạt động giáo dục; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho các cơ quan có liên quan và nêu rõ lý do. Quyết định sáp nhập, chia, tách trường phổ thông dân tộc bán trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
+            },
             {
               "so_khoan": "3",
               "noi_dung": "Giải thể trường phổ thông dân tộc bán trú",
               "diem": [
                 {
                   "so_diem": "a",
-                  "noi_dung": "Trường phố thông dân tộc bán trú bị giải thể khi thuộc một trong các trường hợp quy định tại khoản 2 Điều 51 của Luật Giáo dục; b) Hồ sơ: Trường phổ thông dân tộc bán trú bị giải thể theo quy định tại điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của Ủy ban nhân dân cấp xã (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); minh chứng về việc trường phố thông dân tộc bán trú vi phạm quy định tại điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục;, phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên quan, Trường phố thông dân tộc bán trú bị giải thể theo. quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của Ủy ban nhân dân cấp xã (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); đề án giải thể trường phô thông dân tộc bán trú (theo Mẫu số 07 Phụ lục II kèm theo Nghị định này). 46 c) Trình tự thực hiện: Cơ quan, tổ chức gửi 01 bộ hồ sơ quy định tại điểm b khoản này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã. Trong thời hạn 20 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã xem xét, quyết định giải thể trường phổ thông dân tộc bán trú. Quyết định giải thể trường phổ thông dân tộc bán trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                  "noi_dung": "Trường phố thông dân tộc bán trú bị giải thể khi thuộc một trong các trường hợp quy định tại khoản 2 Điều 51 của Luật Giáo dục;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Hồ sơ: Trường phổ thông dân tộc bán trú bị giải thể theo quy định tại điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của Ủy ban nhân dân cấp xã (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); minh chứng về việc trường phố thông dân tộc bán trú vi phạm quy định tại điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục;, phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên quan, Trường phố thông dân tộc bán trú bị giải thể theo. quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của Ủy ban nhân dân cấp xã (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); đề án giải thể trường phô thông dân tộc bán trú (theo Mẫu số 07 Phụ lục II kèm theo Nghị định này)."
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trình tự thực hiện: Cơ quan, tổ chức gửi 01 bộ hồ sơ quy định tại điểm b khoản này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã. Trong thời hạn 20 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã xem xét, quyết định giải thể trường phổ thông dân tộc bán trú. Quyết định giải thể trường phổ thông dân tộc bán trú (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
                 }
               ]
             }
@@ -232,13 +661,34 @@
         },
         {
           "so_dieu": "46",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẫm quyền thành h lập trường trung học phố thông chuyển 1. Điều kiện thành lập trường trung học phổ thông chuyển công lập hoặc cho phép thành lập trường trung học phổ thông chuyển tư thục a) Có đề án thành lập hoặc cho phép thành lập trường phù hợp với quy hoạch tỉnh và các quy hoạch có liên quan của địa phương nơi trường đặt trụ sở. b) Đề án thành lập hoặc cho phép thành lập trường xác định rõ mục tiêu, nhiệm vụ, chương trình và nội dung giáo dục; đất đai, cơ sở vật chất, thiết bị, địa điểm dự kiến xây dựng trường, tổ chức bộ \"máy, nguồn. lực và tài chính; phương hướng. chiến lược xây dựng và phát triển trường nhằm đạt được mục tiêu, nhiệm vụ của trường chuyển. “2. Hồ sơ, trình tự thành lập hoặc cho phép thành lập trường trung học phổ thông chuyển thực hiện theo quy định tại khoản 2 Điều 71 Nghị định số 125/2024/NĐ-CP.",
-          "khoan": []
+          "noi_dung": "Trình tự, thủ tục thực hiện thẫm quyền thành h lập trường trung học phố thông chuyển",
+          "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện thành lập trường trung học phổ thông chuyển công lập hoặc cho phép thành lập trường trung học phổ thông chuyển tư thục a) Có đề án thành lập hoặc cho phép thành lập trường phù hợp với quy hoạch tỉnh và các quy hoạch có liên quan của địa phương nơi trường đặt trụ sở.",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án thành lập hoặc cho phép thành lập trường xác định rõ mục tiêu, nhiệm vụ, chương trình và nội dung giáo dục; đất đai, cơ sở vật chất, thiết bị, địa điểm dự kiến xây dựng trường, tổ chức bộ \"máy, nguồn. lực và tài chính; phương hướng. chiến lược xây dựng và phát triển trường nhằm đạt được mục tiêu, nhiệm vụ của trường chuyển. “2. Hồ sơ, trình tự thành lập hoặc cho phép thành lập trường trung học phổ thông chuyển thực hiện theo quy định tại khoản 2 Điều 71 Nghị định số 125/2024/NĐ-CP."
+                }
+              ]
+            }
+          ]
         },
         {
           "so_dieu": "47",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẫm quyền cho phép trường trung học phố thông chuyển hoạt động giáo dục 1. Điều kiện cho phép trường trung học phổ thông chuyển hoạt động giáo dục Trường trung học phổ thông chuyển được cho phép hoạt động giáo dục khi đáp ứng các điều kiện hoạt động như đối với trường trung học phổ thông quy định tại Điều 27 _Nghị định số 125/2024/NĐ-CP ngày 05/ 10/2024 của Chính phủ quy định về điều kiện đầu tư và hoạt động trong lĩnh vực giáo dục và các điều kiện sau đây: 3) Có chương trình giáo dục và tài liệu giảng dạy, học tập theo quy định đối với trường chuyển. b) Có đội ngũ cán bộ quản lý, giáo viên, nhân viên đáp ứng các tiêu chuẩn, nhiệm vụ theo quy định đối với trường chuyển.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẫm quyền cho phép trường trung học phố thông chuyển hoạt động giáo dục",
           "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện cho phép trường trung học phổ thông chuyển hoạt động giáo dục Trường trung học phổ thông chuyển được cho phép hoạt động giáo dục khi đáp ứng các điều kiện hoạt động như đối với trường trung học phổ thông quy định tại Điều 27 _Nghị định số 125/2024/NĐ-CP ngày 05/ 10/2024 của Chính phủ quy định về điều kiện đầu tư và hoạt động trong lĩnh vực giáo dục và các điều kiện sau đây: 3) Có chương trình giáo dục và tài liệu giảng dạy, học tập theo quy định đối với trường chuyển.",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Có đội ngũ cán bộ quản lý, giáo viên, nhân viên đáp ứng các tiêu chuẩn, nhiệm vụ theo quy định đối với trường chuyển."
+                }
+              ]
+            },
             {
               "so_khoan": "2",
               "noi_dung": "Hồ sơ, trình tự cho phép trường trung học phố thông chuyển hoạt động giáo dục thực hiện quy định tại khoản 2 Điều 73 Nghị định số 125/2024/NĐ-CP. Điều 48. trình tự, thủ tục thực hiện thẫm quyền đình chỉ hoạt động giáo dục, sáp nhập, chia, tách, giải thể trường trung học phố thông chuyển Trình tự, thủ tục thực hiện thẩm quyền đình chỉ hoạt động giáo dục, sáp nhập, chia, tách, giải thể trường trung học phố thông chuyển thực hiện theo quy định tại khoản 3 Điều 74 Nghị định số 125/2024/NĐ-CP.",
@@ -248,68 +698,62 @@
         },
         {
           "so_dieu": "49",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền thành lập hoặc cho phép thành lập trường năng khiếu nghệ thuật, thể dục, thể thao 1. Điều kiện thành lập trường năng khiếu nghệ thuật, thể dục, thể thao công lập hoặc cho phép thành lập trường năng khiếu nghệ thuật, thể dục, thể thao tư thục a) Có đề án thành lập hoặc cho phép thành lập trường năng khiếu nghệ thuật, thể dục, thể thao phù hợp với quy hoạch tỉnh và các quy hoạch có liên quan của địa phương nơi trường đặt trụ sở. b) Đề án thành lập hoặc cho phép thành lập trường xác định rõ' mục tiêu, nhiệm vụ, chương trình và nội dung giáo dục; đất đai, cơ SỞ vật chất, thiết bị, địa điểm dự kiến xây dựng trường, tổ chức bộ máy, nguồn. lực và tài chính; phương hướng chiến lược xây dựng và phát triển trường. nhằm đạt được mục tiêu, nhiệm vụ của trường năng khiếu nghệ thuật, thể dục, thể thao.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền thành lập hoặc cho phép thành lập trường năng khiếu nghệ thuật, thể dục, thể thao",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện thành lập trường năng khiếu nghệ thuật, thể dục, thể thao công lập hoặc cho phép thành lập trường năng khiếu nghệ thuật, thể dục, thể thao tư thục a) Có đề án thành lập hoặc cho phép thành lập trường năng khiếu nghệ thuật, thể dục, thể thao phù hợp với quy hoạch tỉnh và các quy hoạch có liên quan của địa phương nơi trường đặt trụ sở.",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án thành lập hoặc cho phép thành lập trường xác định rõ' mục tiêu, nhiệm vụ, chương trình và nội dung giáo dục; đất đai, cơ SỞ vật chất, thiết bị, địa điểm dự kiến xây dựng trường, tổ chức bộ máy, nguồn. lực và tài chính; phương hướng chiến lược xây dựng và phát triển trường. nhằm đạt được mục tiêu, nhiệm vụ của trường năng khiếu nghệ thuật, thể dục, thể thao."
+                }
+              ]
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Hồ sơ gồm: a) Tờ trình đề nghị thành lập hoặc cho phép thành lập trường (theo Mẫu số 01 Phụ lục I kèm theo Nghị định này); b) Đề án thành lập hoặc cho phép thành lập trường (theo Mẫu số 02 Phụ lục I kèm theo Nghị định này). 3.Trình tự thực hiện: a) Tổ chức, cá nhân gửi 01 bộ. hồ sơ quy định tại khoản 2 Điều này qua công. dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo nơi trường đặt trụ sở; b Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ SƠ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung. cần chỉnh sửa, bổ sung cho cơ quan, tổ chức, cá nhân; nếu hô SƠ hợp lệ, Mì c) Trong thời hạn 20 ngày, kế từ ngày nhận đủ hồ SƠ hợp. lệ Sở Giáo dục và Đào tạo thẩm định các điều kiện thành. lập hoặc cho phép thành lập trường tại hồ sơ; lập báo. cáo thẩm định để đánh giá tình hình đáp ứng các quy định 'tại khoản 1 Điều này; d) Trong thời hạn 05 này làm việc, kể từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định thành lập hoặc cho phép thành lập trường; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho cơ quan, tổ chức, cá nhân đề nghị thành lập hoặc cho phép thành lập trường và nêu rõ lý do. 48 Quyết định thành lập hoặc cho phép thành lập trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
+              "noi_dung": "Hồ sơ gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tờ trình đề nghị thành lập hoặc cho phép thành lập trường (theo Mẫu số 01 Phụ lục I kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án thành lập hoặc cho phép thành lập trường (theo Mẫu số 02 Phụ lục I kèm theo Nghị định này). 3.Trình tự thực hiện:"
+                },
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tổ chức, cá nhân gửi 01 bộ. hồ sơ quy định tại khoản 2 Điều này qua công. dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo nơi trường đặt trụ sở; b Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ SƠ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung. cần chỉnh sửa, bổ sung cho cơ quan, tổ chức, cá nhân; nếu hô SƠ hợp lệ, Mì c) Trong thời hạn 20 ngày, kế từ ngày nhận đủ hồ SƠ hợp. lệ Sở Giáo dục và Đào tạo thẩm định các điều kiện thành. lập hoặc cho phép thành lập trường tại hồ sơ; lập báo. cáo thẩm định để đánh giá tình hình đáp ứng các quy định 'tại khoản 1 Điều này;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Trong thời hạn 05 này làm việc, kể từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định thành lập hoặc cho phép thành lập trường; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho cơ quan, tổ chức, cá nhân đề nghị thành lập hoặc cho phép thành lập trường và nêu rõ lý do. Quyết định thành lập hoặc cho phép thành lập trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "50",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền cho phép trường năng khiếu nghệ thuật, thể dục, thể thao hoạt động giáo dục ' 1. Điều kiện cho phép trường năng khiếu nghệ thuật, thể dục, thể thao đặt trên địa bàn tỉnh hoạt động giáo dục thực hiện theo quy định tại Điều 77 Nghị định số 125/2024/NĐ-CP.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền cho phép trường năng khiếu nghệ thuật, thể dục, thể thao hoạt động giáo dục '",
           "khoan": [
             {
-              "so_khoan": "2",
-              "noi_dung": "Hồ sơ gồm: a) Tờ trình đề nghị cho phép hoạt động giáo dục (theo Mẫu số 03 Phụ lục TI kèm theo Nghị định này); b) Bản sao các văn bản pháp lý chứng minh quyền sử dụng. đất, quyền sở hữu nhà hoặc hợp đồng thuê địa điểm trường với thời hạn tối thiểu 05 năm; oi Đối với trường năng. khiếu nghệ thuật, thể dục, thể thao tư thục phải có văn bản pháp lý xác nhận về số tiền do nhà trường đang quản lý, bảo đảm tính hợp pháp và phù hợp với quy mô dự kiến tại thời điểm đăng ký hoạt động giáo dục.",
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện cho phép trường năng khiếu nghệ thuật, thể dục, thể thao đặt trên địa bàn tỉnh hoạt động giáo dục thực hiện theo quy định tại Điều 77 Nghị định số 125/2024/NĐ-CP.",
               "diem": []
             },
-            {
-              "so_khoan": "3",
-              "noi_dung": "Trình tự thực hiện: a) Nhà trường gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo hoặc bộ, ngành theo quy định tại khoản 1 Điều này; b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, Sở Giáo dục và Đào tạo hoặc bộ, ngành thông báo bằng văn bản những nội dung: cần chỉnh sửa, bổ sung cho nhà trường trong trường hợp hồ sơ không hợp lệ; hoặc thông báo kế hoạch thẩm định thực tế tại trường trong trường hợp hồ sơ hợp lệ; c) Trong' thời hạn 20 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thẩm định hồ sơ, thẩm định thực tế điều kiện hoạt động giáo dục của nhà trường và lấy ý kiến thống nhất bằng văn bản của Giám đốc Sở Văn hóa, Thể thao và Du lịch (hoặc Sở Văn hóa và Thể thao); lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này; d) Trong thời hạn 05 ngày làm việc, kề từ ngày có báo cáo thẩm định và văn bản. thống nhất của cơ quan liên quan, nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường năng khiếu nghệ thuật, thể dục, thể thao hoạt động giáo dục; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho trường và nêu rõ lý do. Quyết định cho phép trường năng. khiếu nghệ thuật, thể dục, thể thao hoạt động giáo dục (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
-            }
-          ]
-        },
-        {
-          "so_dieu": "51",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền đình chỉ hoạt độn giáo dục, sáp nhập, chia, tách, giải thể trường năng khiếu nghệ-thuật, thê dục, thể thao 1. Đình chỉ hoạt động giáo dục: a) Trường năng khiếu nghệ thuật, thể dục, thể thao bị đình chỉ hoạt động giáo dục khi thuộc một trong các trường hợp quy định tại khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP; b Giám đốc Sở Giáo dục và Đào tạo quyết định đình chỉ hoạt động giáo dục đối với trường năng khiếu nghệ thuật, thể dục, thể thao công lập và tư thục thuộc địa phương: c) Trình tự thực hiện: Khi phát hiện trường năng khiếu nghệ thuật, thể dục, thể thao vì phạm quy định tại điểm a khoản này, Sở Giáo dục và Đào tạo hoặc bộ, ngành tổ chức kiểm tra đề đánh giá tình trạng thực tế của trường, lập biên bản kiểm tra và thông báo cho nhà trường về hành vi vi phạm. Trong thời hạn 15 ngày, kể từ ngày thông báo cho nhà trường về hành vi vi phạm, Giám đốc Sở Giáo dục và Đào tạo căn cứ mức độ vi phạm, quyết định đình chỉ hoạt động giáo dục của trường và thông báo cho người có thẩm quyền quyết định thành lập hoặc cho phép thành lập trường. Quyết. định đình chỉ hoạt động giáo dục trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn bị đình chỉ, nẾếu nguyên nhân dẫn đến việc đình chỉ được khắc phục thì trường năng khiếu nghệ thuật, thể dục, thể thao thông báo bằng văn bản kèm theo minh chứng cho Giám đốc Sở Giáo dục và Đào tạo. Trong thời hạn 07 ngày làm việc, kể từ ngày nhận được thông báo của nhà trường, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng. Trường hợp bị đình chỉ theo quy định tại điểm b khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP, trong thời hạn 05 ngày làm việc kế từ ngày ra quyết định đình chỉ, Giám đốc Sở Giáo dục và Đào tạo rà soát điều kiện hoạt động giáo dục của trường năng khiếu nghệ thuật, thể dục, thể thao, nếu đáp ứng quy định tại khoản 1 Điều 48 Phụ lục I kèm theo Nghị định này thì quyết định cho phép trường năng khiếu nghệ thuật, thể dục, thể thao hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng.",
-          "khoan": [
             {
               "so_khoan": "2",
-              "noi_dung": "Sáp nhập, chia, tách: a) Trường năng khiếu nghệ thuật, thể dục, thể thao được sáp nhập, chia, tách khi bảo đảm các yêu cầu quy định tại khoản 1 Điều 51 của Luật Giáo dục; b) Hồ sơ gồm: 50 Tờ trình đề nghị sáp nhập, chia, tách trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 04 Phụ lục II kèm theo Nghị định này); Đề án sáp nhập, chia, tách trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 05 Phụ lục II kèm theo Nghị định này); Ý kiến đồng thuận của nhà đầu tư đại diện ít nhất 75% tổng số vốn góp đối với việc sáp nhập, chia, tách trường năng khiếu nghệ thuật, thể dục, thể thao tư thục; c) Trình tự thực hiện:.. Tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại điểm b khoản này qua cổng dịch vụ công. trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo nơi trường đặt trụ sở. Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội. dung cân chỉnh sửa, bỗ sung cho cơ quan, tổ chức, cá nhân; nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thẳm định các điều kiện sáp nhập, chia, tách trường. Trong thời hạn 20 ngày, kể từ ngày nhận: đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo thẳm định hồ sơ và thẳm định thực tế các điều kiện sáp nhập, chia, tách trường, lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại điểm a khoản này. Trong thời hạn 05 ngày làm việc, kế từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định sáp nhập, chia, tách trường; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho cơ quan, tổ chức cá nhân đề nghị sáp nhập, chia, tách trường và nêu Tố lý do. Quyết định sáp nhập, chia, tách trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn 05 ngày làm việc kể từ ngày Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định sáp nhập, chia, tách trường, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường năng khiếu nghệ thuật, thể dục, thể thao: được thành lập sau khi sáp nhập, chia, tách hoạt động giáo dục.",
-              "diem": []
-            },
-            {
-              "so_khoan": "3",
-              "noi_dung": "Giải thể: a) Trường năng khiếu nghệ thuật, thể dục, thể thao bị giải thể khi thuộc một trong các trường hợp quy định tại khoản 2 Điều 51 của Luật Giáo dục; b) Hồ sơ: Trường năng khiếu nghệ thuật, thể dục, thể thao bị giải thể theo quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gÔm: Tờ trình đề nghị giải thể của Sở Giáo dục và Đào tạo (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); minh chứng về việc trường vi phạm quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục; phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên quan. 51 Trường năng khiếu nghệ thuật, thể dục, thể thao bị giải thể theo quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của cơ quan, tổ chức, cá nhân thành lập trường (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); đề án giải thể trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 07 Phụ lục II kèm theo Nghị định này); c) Trình tự thực hiện: Trường hợp giải thể theo quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục: Trường hợp phát hiện nhà trường vi phạm quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, Ủy ban nhân dân cấp tỉnh chỉ đạo Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan chuyển môn trong thời hạn 20 ngày, tiền hành xác minh hành vi vi phạm của nhà trường, lập hồ SƠ đề nghị giải thể trong đó nêu rõ lý do giải thể; thông báo cho nhà trường và cơ quan quản lý có thẩm quyền của nhà trường: báo cáo Chủ tịch Ủy ban nhân dân tỉnh xem xét, quyết định. Trong thời hạn 10 ngày, kể từ ngày nhận được báo cáo của Sở Giáo dục và Đào tạo, Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định việc giải thể trường năng khiếu nghệ thuật, thể dục, thể thao. Trường hợp giải thể theo quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục: Cơ quan, tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại điểm b khoản này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo. Trong thời hạn 20 ngày, kể từ ngày nhận được hồ sơ đề nghị giải thể trường năng khiếu nghệ thuật, thể dục, thể thao, Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định việc giải thể trường; nếu chưa quyết định giải thể thì thông báo bằng văn bản cho cơ quan, tổ chức, cá nhân đề nghị giải thể và nêu rõ lý do; d) Quyết định giải thể trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
-            }
-          ]
-        },
-        {
-          "so_dieu": "52",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền thành lập hoặc cho phép thành lập trường dành cho người khuyết tật 1. Điều kiện thành lập trường dành cho người khuyết tật công lập hoặc cho phép thành lập trường dành cho người khuyết tật tư thục a) Trường dành cho người khuyết tật được thành lập ở cấp học mầm non và phố thông khi có đề án thành lập hoặc cho phép thành lập trường phù hợp với quy hoạch hệ thống cơ sở giáo dục chuyển biệt đối với người khuyết tật và hệ thống trung tâm hỗ trợ phát triển giáo dục hòa nhập. 52 b) Đề án thành lập hoặc cho phép thành lập trường xác định rõ mục tiêu, nhiệm vụ, chương trình và nội dung giáo dục; đất đai, cơ sở vật chất, thiết bị, địa điểm dự kiến. xây dựng trường; tổ chức bộ máy; nguồn lực và tài chính; phương hướng chiến lược xây dựng và phát triển nhà trường.",
-          "khoan": [
-            {
-              "so_khoan": "2",
-              "noi_dung": "Hồ sơ gồm:..a) Tờ trình đề nghị thành lập hoặc cho phép thành lập trường (theo Mẫu số 01 Phụ lục II kèm theo Nghị định này); b) Đề án thành lập hoặc cho phép thành lập trường (theo Mẫu số 02 Phụ lục II kèm theo Nghị định này).",
-              "diem": []
-            },
-            {
-              "so_khoan": "3",
-              "noi_dung": "Trình tự thực hiện: 8) Tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo; b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cần chỉnh sửa, bổ sung cho cơ quan, tổ chức, cá nhân; nếu bồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thầm định các điều kiện thành lập trường: e) Trong thời hạn 20 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo. chủ trì, phối hợp với các đơn vị chuyển môn có liên quan thấm định các điều kiện thành lập hoặc cho phép thành lập trường tại hồ sơ; lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này; trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định; d Trong thời hạn 05 ngày làm việc, kế từ ngày nhận được báo cáo thẳm định của Sở Giáo dục và Đào tạo, nếu đủ điều kiện thì Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định thành lập hoặc cho phép thành lập trường; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho cơ quan, tổ chức, cá nhân đề nghị thành lập hoặc cho phép thành lập trường và nêu rõ lý do. Quyết định thành lập hoặc cho phép thành lập trường dành cho người khuyết tật (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
-            },
-            {
-              "so_khoan": "4",
-              "noi_dung": "Sau thời hạn 02 năm, kể từ ngày quyết định thành lập hoặc cho phép thành lập trường có hiệu lực, nếu trường không được cho phép hoạt động giáo dục thì Sở Giáo dục và Đào tạo báo cáo Chủ tịch Ủy ban nhân dân cấp tỉnh thu hồi quyết định thành lập hoặc cho phép thành lập trường. Điều 53. trình tự, thủ tục thực hiện thẩm quyền cho phép trường dành cho người khuyết tật hoạt động giáo dục 1. Điều kiện cho phép trường dành cho người khuyết tật hoạt động giáo dục thực hiện theo quy định tại Điều 82 Nghị định số 125/2024/NĐ-CP. 53 2. Hồ sơ gồm:",
+              "noi_dung": "Hồ sơ gồm:",
               "diem": [
                 {
                   "so_diem": "a",
-                  "noi_dung": "Tờ trình đề nghị cho phép trường dành cho người khuyết tật hoạt động giáo dục (theo Mẫu số 03 Phụ lục II kèm theo Nghị: định này); b) Bản sao các văn bản pháp lý chứng minh quyền sử dụng. đất, quyền sở hữu nhà hoặc hợp đồng thuê địa điểm trường với thời hạn tối thiểu 05 năm; c) Đối với trường dành cho người khuyết tật tư thục phải có văn bản pháp lý xác nhận về số tiền do nhà trường đang quản lý, bảo đảm tính hợp pháp và phù hợp với quy mô dự kiến tại thời điểm đăng ký hoạt động giáo dục; d) Quy chế tổ chức và hoạt động của nhà trường, gồm các nội dung chủ yếu sau đây: Vị trí pháp lý, nhiệm vụ, quyền hạn của nhà trường; tổ chức và quản lý nhà trường; tổ chức hoạt động giáo dục trong nhà trường; nhiệm vụ và quyền của đội ngũ cán bộ quản lý, giáo viên, nhân viên, người lao động” và học sinh; tài chính và tài sản của nhà trường: các vấn đề khác liên quan đến tổ chức và hoạt động của nhà trường."
+                  "noi_dung": "Tờ trình đề nghị cho phép hoạt động giáo dục (theo Mẫu số 03 Phụ lục TI kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Bản sao các văn bản pháp lý chứng minh quyền sử dụng. đất, quyền sở hữu nhà hoặc hợp đồng thuê địa điểm trường với thời hạn tối thiểu 05 năm; oi Đối với trường năng. khiếu nghệ thuật, thể dục, thể thao tư thục phải có văn bản pháp lý xác nhận về số tiền do nhà trường đang quản lý, bảo đảm tính hợp pháp và phù hợp với quy mô dự kiến tại thời điểm đăng ký hoạt động giáo dục."
                 }
               ]
             },
@@ -319,25 +763,59 @@
               "diem": [
                 {
                   "so_diem": "a",
-                  "noi_dung": "Nhà trường gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua cồng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo; b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ. hồ sơ, Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cần chỉnh sửa, bổ sung cho nhà trường trong trường hợp hồ sơ không hợp lệ; hoặc thông báo kế hoạch thẩm định thực tế tại trường trong trường hợp hồ sơ hợp lệ; e) Trong thời hạn 20 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các đơn vị chuyển môn có liên quan tổ chức thẩm định thực tế điều kiện hoạt động giáo dục của trường: lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này; đd) Trong thời hạn 05 ngày làm việc, kể. từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường dành cho người. khuyết tật hoạt động giáo dục; nêu chưa đủ điều kiện thì thông báo bằng văn bản cho trường và nêu rõ lý do. Quyết định cho phép trường dành cho người khuyết tật hoạt động giáo dục (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                  "noi_dung": "Nhà trường gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo hoặc bộ, ngành theo quy định tại khoản 1 Điều này;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, Sở Giáo dục và Đào tạo hoặc bộ, ngành thông báo bằng văn bản những nội dung: cần chỉnh sửa, bổ sung cho nhà trường trong trường hợp hồ sơ không hợp lệ; hoặc thông báo kế hoạch thẩm định thực tế tại trường trong trường hợp hồ sơ hợp lệ;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong' thời hạn 20 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thẩm định hồ sơ, thẩm định thực tế điều kiện hoạt động giáo dục của nhà trường và lấy ý kiến thống nhất bằng văn bản của Giám đốc Sở Văn hóa, Thể thao và Du lịch (hoặc Sở Văn hóa và Thể thao); lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kề từ ngày có báo cáo thẩm định và văn bản. thống nhất của cơ quan liên quan, nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường năng khiếu nghệ thuật, thể dục, thể thao hoạt động giáo dục; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho trường và nêu rõ lý do. Quyết định cho phép trường năng. khiếu nghệ thuật, thể dục, thể thao hoạt động giáo dục (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
                 }
               ]
             }
           ]
         },
         {
-          "so_dieu": "54",
-          "noi_dung": "Trình tự, thủ tục. thực hiện thẫm quyền đình chỉ hoạt động giáo dục, sáp nhập, chia, tách, giải thể trường dành cho người khuyết tật 1. Đình chỉ hoạt động giáo dục: a) Trường dành cho người khuyết tật bị đình chỉ hoạt động giáo dục khi thuộc một trong các trường hợp quy định tại khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP; 54 b) Trình tự thực hiện: Khi phát hiện trường dành cho người khuyết tật vi phạm quy định tại điểm a khoản này, Giám đốc Sở Giáo dục và Đào tạo tổ chức kiểm tra để đánh giá tình trạng thực tế của trường, lập biên bản kiểm tra và thông báo cho nhà trường về hành vi vi phạm. Trong thời hạn 15 ngày, kể từ ngày thông báo cho nhà trường về hành vi vi phạm, Giám đốc Sở Giáo dục và Đào tạo căn cứ mức độ vi phạm, quyết định đình chỉ hoạt động giáo đục của trường và báo cáo Chủ tịch Ủy ban nhân dân cấp tính. Quyết định đình chỉ hoạt động giáo dục trường dành cho người khuyết tật (theo Mẫu số 10. Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn bị đình chỉ, nẾếu nguyên nhân dẫn đến việc đình chỉ được khắc phục thì trường thông báo bằng văn bản kèm theo minh chứng cho Giám đốc Sở Giáo dục và Đào tạo. Trong thời hạn 07 ngày làm việc, kể từ ngày nhận được thông báo của nhà trường, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng. Trường hợp bị đình chỉ theo quy định tại điểm b khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP, trong thời hạn 05 ngày làm việc kể từ ngày ra quyết định đình chỉ, Giám đốc Sở Giáo dục và Đào tạo rà soát điều kiện hoạt động giáo dục của trường dành cho người khuyết tật, nếu đáp ứng quy định tại 1",
-          "khoan": []
-        },
-        {
           "so_dieu": "51",
-          "noi_dung": "Phụ lục I kèm theo Nghị định này thì quyết định cho phép trường dành cho người khuyết tật hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền đình chỉ hoạt độn giáo dục, sáp nhập, chia, tách, giải thể trường năng khiếu nghệ-thuật, thê dục, thể thao",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Đình chỉ hoạt động giáo dục:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Trường năng khiếu nghệ thuật, thể dục, thể thao bị đình chỉ hoạt động giáo dục khi thuộc một trong các trường hợp quy định tại khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP; b Giám đốc Sở Giáo dục và Đào tạo quyết định đình chỉ hoạt động giáo dục đối với trường năng khiếu nghệ thuật, thể dục, thể thao công lập và tư thục thuộc địa phương:"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trình tự thực hiện: Khi phát hiện trường năng khiếu nghệ thuật, thể dục, thể thao vì phạm quy định tại điểm a khoản này, Sở Giáo dục và Đào tạo hoặc bộ, ngành tổ chức kiểm tra đề đánh giá tình trạng thực tế của trường, lập biên bản kiểm tra và thông báo cho nhà trường về hành vi vi phạm. Trong thời hạn 15 ngày, kể từ ngày thông báo cho nhà trường về hành vi vi phạm, Giám đốc Sở Giáo dục và Đào tạo căn cứ mức độ vi phạm, quyết định đình chỉ hoạt động giáo dục của trường và thông báo cho người có thẩm quyền quyết định thành lập hoặc cho phép thành lập trường. Quyết. định đình chỉ hoạt động giáo dục trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn bị đình chỉ, nẾếu nguyên nhân dẫn đến việc đình chỉ được khắc phục thì trường năng khiếu nghệ thuật, thể dục, thể thao thông báo bằng văn bản kèm theo minh chứng cho Giám đốc Sở Giáo dục và Đào tạo. Trong thời hạn 07 ngày làm việc, kể từ ngày nhận được thông báo của nhà trường, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng. Trường hợp bị đình chỉ theo quy định tại điểm b khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP, trong thời hạn 05 ngày làm việc kế từ ngày ra quyết định đình chỉ, Giám đốc Sở Giáo dục và Đào tạo rà soát điều kiện hoạt động giáo dục của trường năng khiếu nghệ thuật, thể dục, thể thao, nếu đáp ứng quy định tại khoản 1 Điều 48 Phụ lục I kèm theo Nghị định này thì quyết định cho phép trường năng khiếu nghệ thuật, thể dục, thể thao hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Sáp nhập, chia, tách: a) Trường dành cho người khuyết tật được sáp nhập, chia, tách khi bảo đảm các yêu câu quy định tại khoản 1 Điều 51 của Luật Giáo dục; b) Hồ sơ gồm: Tờ trình đề nghị sáp nhập, chia, tách trường (theo Mẫu số 04 Phụ lục II kèm theo Nghị định này). Đề án sáp nhập, chia, tách trường (theo Mẫu số 05 Phụ lục II kèm theo Nghị định này). Ý kiến đồng thuận của nhà đầu tư đại diện ít nhất 75% tổng số vốn gÓp đối với việc sáp nhập, chia, tách trường dành cho người khuyết tật tư thục; c) Trình tự thực hiện: Tổ chức, cá nhân gửi. 01 bộ hồ sơ quy định tại điểm b khoản này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo. 55 Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cân chỉnh sửa, bổ sung cho cơ quan, tổ chức, cá nhân; nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thẳm định các điều kiện sáp nhập, chia, tách trường. Trong thời hạn 20 ngày, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các đơn vị chuyển môn thẩm định hồ sơ và thẩm định thực tế các điều kiện sáp nhập, chia, tách trường dành cho người. khuyết tật; lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại điểm a khoản này: trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định. Trong thời hạn 05 ngày làm Việc, kể từ ngày nhận được báo cáo thẩm định của Sở Giáo dục và Đào tạo, nếu đủ điều kiện thì Chủ tịch Ủy ban nhân dân cấp tỉnh quyết. định sáp nhập, chia, tách trường dành cho người khuyết tật; nêu chưa đủ điều kiện thì thông báo bằng văn bản cho cơ quan, tổ chức, cá nhân đề nghị sáp nhập, chia, tách trường và nêu rõ lý do. Quyết định sáp nhập, chia, tách trường dành cho người khuyết tật (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn 05 ngày làm việc, kể từ ngày Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định sáp nhập, chia, tách trường dành cho người khuyết tật, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường được thành lập sau khi sáp nhập, chia, tách hoạt động giáo dục.",
-              "diem": []
+              "noi_dung": "Sáp nhập, chia, tách:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Trường năng khiếu nghệ thuật, thể dục, thể thao được sáp nhập, chia, tách khi bảo đảm các yêu cầu quy định tại khoản 1 Điều 51 của Luật Giáo dục;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Hồ sơ gồm: Tờ trình đề nghị sáp nhập, chia, tách trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 04 Phụ lục II kèm theo Nghị định này); Đề án sáp nhập, chia, tách trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 05 Phụ lục II kèm theo Nghị định này); Ý kiến đồng thuận của nhà đầu tư đại diện ít nhất 75% tổng số vốn góp đối với việc sáp nhập, chia, tách trường năng khiếu nghệ thuật, thể dục, thể thao tư thục;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trình tự thực hiện:.. Tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại điểm b khoản này qua cổng dịch vụ công. trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo nơi trường đặt trụ sở. Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội. dung cân chỉnh sửa, bỗ sung cho cơ quan, tổ chức, cá nhân; nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thẳm định các điều kiện sáp nhập, chia, tách trường. Trong thời hạn 20 ngày, kể từ ngày nhận: đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo thẳm định hồ sơ và thẳm định thực tế các điều kiện sáp nhập, chia, tách trường, lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại điểm a khoản này. Trong thời hạn 05 ngày làm việc, kế từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định sáp nhập, chia, tách trường; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho cơ quan, tổ chức cá nhân đề nghị sáp nhập, chia, tách trường và nêu Tố lý do. Quyết định sáp nhập, chia, tách trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn 05 ngày làm việc kể từ ngày Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định sáp nhập, chia, tách trường, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường năng khiếu nghệ thuật, thể dục, thể thao: được thành lập sau khi sáp nhập, chia, tách hoạt động giáo dục."
+                }
+              ]
             },
             {
               "so_khoan": "3",
@@ -345,7 +823,180 @@
               "diem": [
                 {
                   "so_diem": "a",
-                  "noi_dung": "Trường dành cho người khuyết tật bị giải thể khi thuộc một trong các trường hợp quy định tại khoản 2 Điều 51 của Luật Giáo dục; b) Hồ sơ: Trường dành cho người khuyết tật bị giải thể theo quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của Sở Giáo dục và Đào tạo (theo Mẫu số 06 Phụ lục II kèm theo. Nghị định này); minh chứng về việc trường vi phạm. quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục; phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên quan. Trường dành cho. người khuyết tật bị giải thể theo quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của cơ quan, tổ chức, cá nhân thành lập trường (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); đề án giải thể trường (theo Mẫu số 07 Phụ lục II kèm theo Nghị định này); c) Trình tự thực hiện: Trường bị giải thể theo quy định tại các điểm a, b, c và d khoản 2 Điều 5 của Luật Giáo dục: Trường hợp phát hiện hoặc có văn bản của Sở Giáo dục và Đào tạo kiểm tra vê việc nhà trường vi phạm quy định tại các điểm a, b, c và d khoản 2 Điều 51 56 của Luật Giáo dục, Ủy ban nhân dân cấp tỉnh chỉ đạo Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan chuyển môn trong thời hạn 20 ngày, tiến hành xác minh hành vi vi phạm của nhà trường, lập hồ sơ đề nghị giải thể trong đó nêu rõ lý do giải thể và thông báo cho nhà trường. Trong thời hạn 10 ngày, kể từ ngày nhận được báo cáo của Sở Giáo dục và Đào tạo, Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định việc giải thể trường trung học. Trường bị giải thể theo quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục: Cơ quan, tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại điểm b khoản này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp tỉnh. Trong thời hạn 20 ngày, kế từ ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định việc giải thể trường; nếu chưa quyết định giải thể thì thông báo bằng văn bản cho cơ quan, tổ chức, cá nhân đề nghị giải thể và nêu rõ lý do. Quyết định giải thể trường dành cho người khuyết tật (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bô công khai trên các phương tiện thông tin đại chúng."
+                  "noi_dung": "Trường năng khiếu nghệ thuật, thể dục, thể thao bị giải thể khi thuộc một trong các trường hợp quy định tại khoản 2 Điều 51 của Luật Giáo dục;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Hồ sơ: Trường năng khiếu nghệ thuật, thể dục, thể thao bị giải thể theo quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gÔm: Tờ trình đề nghị giải thể của Sở Giáo dục và Đào tạo (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); minh chứng về việc trường vi phạm quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục; phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên quan. Trường năng khiếu nghệ thuật, thể dục, thể thao bị giải thể theo quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của cơ quan, tổ chức, cá nhân thành lập trường (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); đề án giải thể trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 07 Phụ lục II kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trình tự thực hiện: Trường hợp giải thể theo quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục: Trường hợp phát hiện nhà trường vi phạm quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, Ủy ban nhân dân cấp tỉnh chỉ đạo Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan chuyển môn trong thời hạn 20 ngày, tiền hành xác minh hành vi vi phạm của nhà trường, lập hồ SƠ đề nghị giải thể trong đó nêu rõ lý do giải thể; thông báo cho nhà trường và cơ quan quản lý có thẩm quyền của nhà trường: báo cáo Chủ tịch Ủy ban nhân dân tỉnh xem xét, quyết định. Trong thời hạn 10 ngày, kể từ ngày nhận được báo cáo của Sở Giáo dục và Đào tạo, Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định việc giải thể trường năng khiếu nghệ thuật, thể dục, thể thao. Trường hợp giải thể theo quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục: Cơ quan, tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại điểm b khoản này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo. Trong thời hạn 20 ngày, kể từ ngày nhận được hồ sơ đề nghị giải thể trường năng khiếu nghệ thuật, thể dục, thể thao, Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định việc giải thể trường; nếu chưa quyết định giải thể thì thông báo bằng văn bản cho cơ quan, tổ chức, cá nhân đề nghị giải thể và nêu rõ lý do;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Quyết định giải thể trường năng khiếu nghệ thuật, thể dục, thể thao (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "so_dieu": "52",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền thành lập hoặc cho phép thành lập trường dành cho người khuyết tật",
+          "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện thành lập trường dành cho người khuyết tật công lập hoặc cho phép thành lập trường dành cho người khuyết tật tư thục a) Trường dành cho người khuyết tật được thành lập ở cấp học mầm non và phố thông khi có đề án thành lập hoặc cho phép thành lập trường phù hợp với quy hoạch hệ thống cơ sở giáo dục chuyển biệt đối với người khuyết tật và hệ thống trung tâm hỗ trợ phát triển giáo dục hòa nhập.",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án thành lập hoặc cho phép thành lập trường xác định rõ mục tiêu, nhiệm vụ, chương trình và nội dung giáo dục; đất đai, cơ sở vật chất, thiết bị, địa điểm dự kiến. xây dựng trường; tổ chức bộ máy; nguồn lực và tài chính; phương hướng chiến lược xây dựng và phát triển nhà trường."
+                }
+              ]
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Hồ sơ gồm:..",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tờ trình đề nghị thành lập hoặc cho phép thành lập trường (theo Mẫu số 01 Phụ lục II kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án thành lập hoặc cho phép thành lập trường (theo Mẫu số 02 Phụ lục II kèm theo Nghị định này)."
+                }
+              ]
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Trình tự thực hiện: 8) Tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo;",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cần chỉnh sửa, bổ sung cho cơ quan, tổ chức, cá nhân; nếu bồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thẩm định các điều kiện thành lập trường:"
+                },
+                {
+                  "so_diem": "e",
+                  "noi_dung": "Trong thời hạn 20 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo. chủ trì, phối hợp với các đơn vị chuyển môn có liên quan thấm định các điều kiện thành lập hoặc cho phép thành lập trường tại hồ sơ; lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này; trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định; d Trong thời hạn 05 ngày làm việc, kế từ ngày nhận được báo cáo thẳm định của Sở Giáo dục và Đào tạo, nếu đủ điều kiện thì Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định thành lập hoặc cho phép thành lập trường; nếu chưa đủ điều kiện thì thông báo bằng văn bản cho cơ quan, tổ chức, cá nhân đề nghị thành lập hoặc cho phép thành lập trường và nêu rõ lý do. Quyết định thành lập hoặc cho phép thành lập trường dành cho người khuyết tật (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Sau thời hạn 02 năm, kể từ ngày quyết định thành lập hoặc cho phép thành lập trường có hiệu lực, nếu trường không được cho phép hoạt động giáo dục thì Sở Giáo dục và Đào tạo báo cáo Chủ tịch Ủy ban nhân dân cấp tỉnh thu hồi quyết định thành lập hoặc cho phép thành lập trường. Điều 53. trình tự, thủ tục thực hiện thẩm quyền cho phép trường dành cho người khuyết tật hoạt động giáo dục",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện cho phép trường dành cho người khuyết tật hoạt động giáo dục thực hiện theo quy định tại Điều 82 Nghị định số 125/2024/NĐ-CP.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Hồ sơ gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tờ trình đề nghị cho phép trường dành cho người khuyết tật hoạt động giáo dục (theo Mẫu số 03 Phụ lục II kèm theo Nghị: định này);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Bản sao các văn bản pháp lý chứng minh quyền sử dụng. đất, quyền sở hữu nhà hoặc hợp đồng thuê địa điểm trường với thời hạn tối thiểu 05 năm;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Đối với trường dành cho người khuyết tật tư thục phải có văn bản pháp lý xác nhận về số tiền do nhà trường đang quản lý, bảo đảm tính hợp pháp và phù hợp với quy mô dự kiến tại thời điểm đăng ký hoạt động giáo dục;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Quy chế tổ chức và hoạt động của nhà trường, gồm các nội dung chủ yếu sau đây: Vị trí pháp lý, nhiệm vụ, quyền hạn của nhà trường; tổ chức và quản lý nhà trường; tổ chức hoạt động giáo dục trong nhà trường; nhiệm vụ và quyền của đội ngũ cán bộ quản lý, giáo viên, nhân viên, người lao động” và học sinh; tài chính và tài sản của nhà trường: các vấn đề khác liên quan đến tổ chức và hoạt động của nhà trường."
+                }
+              ]
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Nhà trường gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua cồng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ. hồ sơ, Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cần chỉnh sửa, bổ sung cho nhà trường trong trường hợp hồ sơ không hợp lệ; hoặc thông báo kế hoạch thẩm định thực tế tại trường trong trường hợp hồ sơ hợp lệ;"
+                },
+                {
+                  "so_diem": "e",
+                  "noi_dung": "Trong thời hạn 20 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các đơn vị chuyển môn có liên quan tổ chức thẩm định thực tế điều kiện hoạt động giáo dục của trường: lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này; đd) Trong thời hạn 05 ngày làm việc, kể. từ ngày có báo cáo thẩm định, nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường dành cho người. khuyết tật hoạt động giáo dục; nêu chưa đủ điều kiện thì thông báo bằng văn bản cho trường và nêu rõ lý do. Quyết định cho phép trường dành cho người khuyết tật hoạt động giáo dục (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "so_dieu": "54",
+          "noi_dung": "Trình tự, thủ tục. thực hiện thẫm quyền đình chỉ hoạt động giáo dục, sáp nhập, chia, tách, giải thể trường dành cho người khuyết tật",
+          "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Đình chỉ hoạt động giáo dục:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Trường dành cho người khuyết tật bị đình chỉ hoạt động giáo dục khi thuộc một trong các trường hợp quy định tại khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trình tự thực hiện: Khi phát hiện trường dành cho người khuyết tật vi phạm quy định tại điểm a khoản này, Giám đốc Sở Giáo dục và Đào tạo tổ chức kiểm tra để đánh giá tình trạng thực tế của trường, lập biên bản kiểm tra và thông báo cho nhà trường về hành vi vi phạm. Trong thời hạn 15 ngày, kể từ ngày thông báo cho nhà trường về hành vi vi phạm, Giám đốc Sở Giáo dục và Đào tạo căn cứ mức độ vi phạm, quyết định đình chỉ hoạt động giáo đục của trường và báo cáo Chủ tịch Ủy ban nhân dân cấp tính. Quyết định đình chỉ hoạt động giáo dục trường dành cho người khuyết tật (theo Mẫu số"
+                }
+              ]
+            },
+            {
+              "so_khoan": "10",
+              "noi_dung": "Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn bị đình chỉ, nẾếu nguyên nhân dẫn đến việc đình chỉ được khắc phục thì trường thông báo bằng văn bản kèm theo minh chứng cho Giám đốc Sở Giáo dục và Đào tạo. Trong thời hạn 07 ngày làm việc, kể từ ngày nhận được thông báo của nhà trường, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng. Trường hợp bị đình chỉ theo quy định tại điểm b khoản 1 Điều 29 Nghị định số 125/2024/NĐ-CP, trong thời hạn 05 ngày làm việc kể từ ngày ra quyết định đình chỉ, Giám đốc Sở Giáo dục và Đào tạo rà soát điều kiện hoạt động giáo dục của trường dành cho người khuyết tật, nếu đáp ứng quy định tại 1",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "51",
+          "noi_dung": "Phụ lục I kèm theo Nghị định này thì quyết định cho phép trường dành cho người khuyết tật hoạt động giáo dục trở lại và công bố công khai trên các phương tiện thông tin đại chúng.",
+          "khoan": [
+            {
+              "so_khoan": "2",
+              "noi_dung": "Sáp nhập, chia, tách:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Trường dành cho người khuyết tật được sáp nhập, chia, tách khi bảo đảm các yêu câu quy định tại khoản 1 Điều 51 của Luật Giáo dục;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Hồ sơ gồm: Tờ trình đề nghị sáp nhập, chia, tách trường (theo Mẫu số 04 Phụ lục II kèm theo Nghị định này). Đề án sáp nhập, chia, tách trường (theo Mẫu số 05 Phụ lục II kèm theo Nghị định này). Ý kiến đồng thuận của nhà đầu tư đại diện ít nhất 75% tổng số vốn gÓp đối với việc sáp nhập, chia, tách trường dành cho người khuyết tật tư thục;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trình tự thực hiện: Tổ chức, cá nhân gửi. 01 bộ hồ sơ quy định tại điểm b khoản này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Sở Giáo dục và Đào tạo. Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cân chỉnh sửa, bổ sung cho cơ quan, tổ chức, cá nhân; nếu hồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thẳm định các điều kiện sáp nhập, chia, tách trường. Trong thời hạn 20 ngày, Sở Giáo dục và Đào tạo chủ trì, phối hợp với các đơn vị chuyển môn thẩm định hồ sơ và thẩm định thực tế các điều kiện sáp nhập, chia, tách trường dành cho người. khuyết tật; lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại điểm a khoản này: trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định. Trong thời hạn 05 ngày làm Việc, kể từ ngày nhận được báo cáo thẩm định của Sở Giáo dục và Đào tạo, nếu đủ điều kiện thì Chủ tịch Ủy ban nhân dân cấp tỉnh quyết. định sáp nhập, chia, tách trường dành cho người khuyết tật; nêu chưa đủ điều kiện thì thông báo bằng văn bản cho cơ quan, tổ chức, cá nhân đề nghị sáp nhập, chia, tách trường và nêu rõ lý do. Quyết định sáp nhập, chia, tách trường dành cho người khuyết tật (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng. Trong thời hạn 05 ngày làm việc, kể từ ngày Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định sáp nhập, chia, tách trường dành cho người khuyết tật, Giám đốc Sở Giáo dục và Đào tạo quyết định cho phép trường được thành lập sau khi sáp nhập, chia, tách hoạt động giáo dục."
+                }
+              ]
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Giải thể:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Trường dành cho người khuyết tật bị giải thể khi thuộc một trong các trường hợp quy định tại khoản 2 Điều 51 của Luật Giáo dục;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Hồ sơ: Trường dành cho người khuyết tật bị giải thể theo quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của Sở Giáo dục và Đào tạo (theo Mẫu số 06 Phụ lục II kèm theo. Nghị định này); minh chứng về việc trường vi phạm. quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục; phương án xử lý về tổ chức bộ máy, nhân sự, tài chính, tài sản, đất đai và các vấn đề khác có liên quan. Trường dành cho. người khuyết tật bị giải thể theo quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục, hồ sơ gồm: Tờ trình đề nghị giải thể của cơ quan, tổ chức, cá nhân thành lập trường (theo Mẫu số 06 Phụ lục II kèm theo Nghị định này); đề án giải thể trường (theo Mẫu số 07 Phụ lục II kèm theo Nghị định này);"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trình tự thực hiện: Trường bị giải thể theo quy định tại các điểm a, b, c và d khoản 2 Điều 5 của Luật Giáo dục: Trường hợp phát hiện hoặc có văn bản của Sở Giáo dục và Đào tạo kiểm tra vê việc nhà trường vi phạm quy định tại các điểm a, b, c và d khoản 2 Điều 51 của Luật Giáo dục, Ủy ban nhân dân cấp tỉnh chỉ đạo Sở Giáo dục và Đào tạo chủ trì, phối hợp với các cơ quan chuyển môn trong thời hạn 20 ngày, tiến hành xác minh hành vi vi phạm của nhà trường, lập hồ sơ đề nghị giải thể trong đó nêu rõ lý do giải thể và thông báo cho nhà trường. Trong thời hạn 10 ngày, kể từ ngày nhận được báo cáo của Sở Giáo dục và Đào tạo, Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định việc giải thể trường trung học. Trường bị giải thể theo quy định tại điểm đ khoản 2 Điều 51 của Luật Giáo dục: Cơ quan, tổ chức, cá nhân gửi 01 bộ hồ sơ quy định tại điểm b khoản này qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp tỉnh. Trong thời hạn 20 ngày, kế từ ngày nhận đủ hồ sơ hợp lệ, Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định việc giải thể trường; nếu chưa quyết định giải thể thì thông báo bằng văn bản cho cơ quan, tổ chức, cá nhân đề nghị giải thể và nêu rõ lý do. Quyết định giải thể trường dành cho người khuyết tật (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bô công khai trên các phương tiện thông tin đại chúng."
                 }
               ]
             }
@@ -353,33 +1004,127 @@
         },
         {
           "so_dieu": "55",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền thành lập hoặc cho phép lớp dành cho người khuyết tật 1. Điều kiện thành lập hoặc cho phép thành lập lớp dành cho người khuyết tật: Lớp dành cho người khuyết tật được thành lập hoặc cho phép thành lập trong trường mầm non, trường tiểu học, trường trung học cơ sở, trường trung học phố thông, trung tâm giáo dục thường xuyên, trung. tâm giáo dục nghề nghiệp - giáo dục thường xuyên và phải đáp ứng các điều kiện sau đây: a) Có. chương trình giáo dục và tài liệu giảng dạy, học tập phù hợp với phương thức giáo dục đối với người khuyết tật; b) Có cán bộ quản lý, giáo viên, nhân viên đủ số lượng, phẩm chất, năng lực và trình độ đào tạo đáp ứng hoạt động giáo dục học sinh khuyêt tật; c) Có cơ sở vật chất, phương tiện, thiết bị dạy học và hỗ trợ đáp ứng các quy định tại khoản 1 Điều 53 Phụ lục I kèm theo Nghị định này.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẩm quyền thành lập hoặc cho phép lớp dành cho người khuyết tật",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện thành lập hoặc cho phép thành lập lớp dành cho người khuyết tật: Lớp dành cho người khuyết tật được thành lập hoặc cho phép thành lập trong trường mầm non, trường tiểu học, trường trung học cơ sở, trường trung học phố thông, trung tâm giáo dục thường xuyên, trung. tâm giáo dục nghề nghiệp - giáo dục thường xuyên và phải đáp ứng các điều kiện sau đây:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Có. chương trình giáo dục và tài liệu giảng dạy, học tập phù hợp với phương thức giáo dục đối với người khuyết tật;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Có cán bộ quản lý, giáo viên, nhân viên đủ số lượng, phẩm chất, năng lực và trình độ đào tạo đáp ứng hoạt động giáo dục học sinh khuyêt tật;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Có cơ sở vật chất, phương tiện, thiết bị dạy học và hỗ trợ đáp ứng các quy định tại khoản 1 Điều 53 Phụ lục I kèm theo Nghị định này."
+                }
+              ]
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Hồ sơ gồm: 3) Tờ trình đề nghị thành lập hoặc cho phép thành lập lớp dành cho người khuyết tật (theo Mẫu số 01 Phụ lục II kèm theo Nghị định này); b) Tài liệu, minh chứng về việc đáp ứng các điều kiện quy định tại khoản 1 Điều này. 57 3. Trình tự thực hiện: a) Nhà trường, trung tâm giáo dục thường xuyên, trung tâm giáo dục nghề nghiệp - giáo dục thường xuyên. gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua công dịch công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo; b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cần chỉnh sửa, bổ sung cho nhà trường, trung tâm; nếu hồ sơ hợp lệ, Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo tổ chức thẩm định các điều kiện thành lập lớp dành cho người khuyết tật; c) Trong thời hạn 20 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo chủ trì, phối hợp với các đơn vị chuyển môn có liên quan thẩm định các điều kiện thành lập lớp dành cho người khuyết tật; lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này; trình Chủ tịch Ủy ban nhân dân cấp xã hoặc Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định; Nhì Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được báo cáo thẳm định của Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo, nếu đủ điều kiện thì Chủ tịch Ủy ban nhân dân cấp xax hoặc Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định thành lập lớp dành cho người khuyết tật; nêu chưa đủ điều kiện thì thông báo bằng văn bản cho nhà trường, trung tâm và nêu rõ lý do. Quyết định thành lập lớp dành cho người khuyết tật (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng.",
-              "diem": []
+              "noi_dung": "Hồ sơ gồm: 3) Tờ trình đề nghị thành lập hoặc cho phép thành lập lớp dành cho người khuyết tật (theo Mẫu số 01 Phụ lục II kèm theo Nghị định này);",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Tài liệu, minh chứng về việc đáp ứng các điều kiện quy định tại khoản 1 Điều này."
+                }
+              ]
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Nhà trường, trung tâm giáo dục thường xuyên, trung tâm giáo dục nghề nghiệp - giáo dục thường xuyên. gửi 01 bộ hồ sơ quy định tại khoản 2 Điều này qua công dịch công trực tuyến hoặc bưu chính hoặc trực tiếp đến Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận đủ hồ sơ, nếu hồ sơ không hợp lệ thì Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo thông báo bằng văn bản những nội dung cần chỉnh sửa, bổ sung cho nhà trường, trung tâm; nếu hồ sơ hợp lệ, Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo tổ chức thẩm định các điều kiện thành lập lớp dành cho người khuyết tật;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn 20 ngày, kể từ ngày nhận đủ hồ sơ hợp lệ, Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo chủ trì, phối hợp với các đơn vị chuyển môn có liên quan thẩm định các điều kiện thành lập lớp dành cho người khuyết tật; lập báo cáo thẩm định để đánh giá tình hình đáp ứng các quy định tại khoản 1 Điều này; trình Chủ tịch Ủy ban nhân dân cấp xã hoặc Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định; Nhì Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được báo cáo thẳm định của Ủy ban nhân dân cấp xã hoặc Sở Giáo dục và Đào tạo, nếu đủ điều kiện thì Chủ tịch Ủy ban nhân dân cấp xax hoặc Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định thành lập lớp dành cho người khuyết tật; nêu chưa đủ điều kiện thì thông báo bằng văn bản cho nhà trường, trung tâm và nêu rõ lý do. Quyết định thành lập lớp dành cho người khuyết tật (theo Mẫu số 10 Phụ lục II kèm theo Nghị định này) được công bố công khai trên các phương tiện thông tin đại chúng."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "56",
-          "noi_dung": "Trình tự, thủ tục thực hiện thẫm quyền thành lập hoặc cho phép thành lập cơ sở giáo dục nghề nghiệp, cơ sở giáo dục nghề nghiệp cho người khuyết tật, lập phân hiệu của trường trung cấp 1. Điều kiện thành lập hoặc cho phép thành lập cơ sở giáo dục nghề nghiệp a) Phù hợp với quy hoạch mạng lưới cơ sở giáo dục nghề nghiệp Việt Nam. Đối với cơ sở giáo dục nghề nghiệp công lập khi thành lập phải hoạt động theo cơ chế tự chủ của đơn vị sự nghiệp công lập do Chính phủ quy định. b) Có địa điểm xây dựng cơ sở vật chất bảo đảm diện tích đất sử dụng tối thiểu đối với trung tâm giáo dục nghề nghiệp là 1.000 m2;; trường trung cập là 10.000 m2 đối với khu vực đô thị hoặc 20.000 m^ đối với khu vực ngoài đô thị; trường cao đẳng là 20.000 mˆ đối với khu vực đô thị hoặc 40.000 mˆ đối với khu vực ngoài đô thị. 58 Trường hợp địa điểm xây dựng cơ sở vật chất của trường trung cấp, trường cao đắng vừa có diện tích đất sử dụng tại khu vực đô thị vừa có diện tích đất sử dụng tại khu vực ngoài đô thị thì thực hiện quy đổi diện tích đất theo tỷ lệ tương ứng giữa đất khu vực đô thị với đất khu vực ngoài đô thị là 1:2. 9 Vốn đầu tư thành lập cơ sở giáo dục nghề nghiệp được đầu tư bằng nguồn vốn hợp pháp, không bao gồm giá trị về đất đai, cụ thể như sau: Đối với trung tâm giáo dục nghề nghiệp tối thiểu là 05 (năm) tỷ đồng: Đối với trường trung cấp tối thiểu là 50 (năm mươi) tỷ đồng; Đối với trường cao đắng tối thiểu là 100 (một trăm) tỷ đồng.",
+          "noi_dung": "Trình tự, thủ tục thực hiện thẫm quyền thành lập hoặc cho phép thành lập cơ sở giáo dục nghề nghiệp, cơ sở giáo dục nghề nghiệp cho người khuyết tật, lập phân hiệu của trường trung cấp",
           "khoan": [
             {
-              "so_khoan": "2",
-              "noi_dung": "Điều kiện thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp cho người khuyết tật Cơ sở giáo dục nghề nghiệp cho người khuyết tật phải bảo đảm các điều kiện theo quy định tại Điều 3 _Nghị định này và các điều kiện theo quy định tại điểm a và điểm b khoản 3 Điều 18 của Luật Giáo dục nghề nghiệp...3. Hồ sơ thực hiện thẩm quyền thành lập hoặc cho phép thành lập cơ sở giáo dục nghề nghiệp, phân hiệu của trường trung cấp Hồ sơ thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp là 01 bộ, bao gồm: a) Văn bản đề nghị thành lập của cơ quan chủ quản đối với cơ sở giáo dục nghề nghiệp công lập; văn bản đề nghị cho phép thành lập của tổ chức xã hội, tổ chức xã hội - nghề nghiệp, tổ chức kinh tế, cá nhân đối với cơ sở giáo dục nghề nghiệp tư thục theo Mẫu số 01 Phụ lục III kèm theo Nghị định này; b) Đề án thành lập cơ sở giáo dục nghề nghiệp theo Mẫu số 02 Phụ lục II kèm theo Nghị định này;",
+              "so_khoan": "1",
+              "noi_dung": "Điều kiện thành lập hoặc cho phép thành lập cơ sở giáo dục nghề nghiệp a) Phù hợp với quy hoạch mạng lưới cơ sở giáo dục nghề nghiệp Việt Nam. Đối với cơ sở giáo dục nghề nghiệp công lập khi thành lập phải hoạt động theo cơ chế tự chủ của đơn vị sự nghiệp công lập do Chính phủ quy định.",
               "diem": [
                 {
+                  "so_diem": "b",
+                  "noi_dung": "Có địa điểm xây dựng cơ sở vật chất bảo đảm diện tích đất sử dụng tối thiểu đối với trung tâm giáo dục nghề nghiệp là 1.000 m2;; trường trung cập là"
+                }
+              ]
+            },
+            {
+              "so_khoan": "10",
+              "noi_dung": "000 m2 đối với khu vực đô thị hoặc 20.000 m^ đối với khu vực ngoài đô thị; trường cao đẳng là 20.000 mˆ đối với khu vực đô thị hoặc 40.000 mˆ đối với khu vực ngoài đô thị. Trường hợp địa điểm xây dựng cơ sở vật chất của trường trung cấp, trường cao đắng vừa có diện tích đất sử dụng tại khu vực đô thị vừa có diện tích đất sử dụng tại khu vực ngoài đô thị thì thực hiện quy đổi diện tích đất theo tỷ lệ tương ứng giữa đất khu vực đô thị với đất khu vực ngoài đô thị là 1:2. 9 Vốn đầu tư thành lập cơ sở giáo dục nghề nghiệp được đầu tư bằng nguồn vốn hợp pháp, không bao gồm giá trị về đất đai, cụ thể như sau: Đối với trung tâm giáo dục nghề nghiệp tối thiểu là 05 (năm) tỷ đồng: Đối với trường trung cấp tối thiểu là 50 (năm mươi) tỷ đồng; Đối với trường cao đắng tối thiểu là 100 (một trăm) tỷ đồng.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Điều kiện thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp cho người khuyết tật Cơ sở giáo dục nghề nghiệp cho người khuyết tật phải bảo đảm các điều kiện theo quy định tại Điều 3 _Nghị định này và các điều kiện theo quy định tại điểm a và điểm b khoản 3 Điều 18 của Luật Giáo dục nghề nghiệp...",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Hồ sơ thực hiện thẩm quyền thành lập hoặc cho phép thành lập cơ sở giáo dục nghề nghiệp, phân hiệu của trường trung cấp Hồ sơ thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp là 01 bộ, bao gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Văn bản đề nghị thành lập của cơ quan chủ quản đối với cơ sở giáo dục nghề nghiệp công lập; văn bản đề nghị cho phép thành lập của tổ chức xã hội, tổ chức xã hội - nghề nghiệp, tổ chức kinh tế, cá nhân đối với cơ sở giáo dục nghề nghiệp tư thục theo Mẫu số 01 Phụ lục III kèm theo Nghị định này;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án thành lập cơ sở giáo dục nghề nghiệp theo Mẫu số 02 Phụ lục II kèm theo Nghị định này;"
+                },
+                {
                   "so_diem": "c",
-                  "noi_dung": "Dự thảo quy hoạch tổng. thể mặt bằng các công trình kiến trúc xây dựng, bảo đảm phù hợp với ngành, nghề, quy mô, trình độ đào tạo và tiêu chuẩn diện tích sử dụng, diện tích xây dựng cho hoạt động học tập và giảng dạy; d) Bản sao giấy chứng nhận quyền sử dụng đất hoặc quyết định giao đất, cho. thuê đất để xây dựng cơ sở giáo dục nghề. nghiệp của Ủy ban nhân dân cấp tỉnh kèm theo bản sao biên lai (nộp tiền sử dụng đất hoặc tiền thuê đất) hoặc minh chứng đã hoàn thành nghĩa vụ tài chính về đất đai theo quy định. Bản sao hợp đồng thuê cơ sở vật chất gắn liền với đất còn thời hạn ít nhất là 05 năm kể từ ngày gửi hồ sơ đối với trường hợp thuê cơ SỞ vật chất gắn liền với đất và giây tờ chứng minh quyền sử dụng hoặc quyền sở hữu của bên cho thuê; đì Bản sao văn bản phê duyệt chủ trương đầu tư, quyết định đầu tư hoặc văn bản phê duyệt, giao kế hoạch đầu tư công hoặc văn bản phê duyệt quyết toán dự án hoàn thành đầu tư xây dựng cơ sở giáo dục nghề nghiệp công lập của cơ quan có thẩm quyền; 59 e) Văn bản xác. nhận khả năng tài chính để đầu tư. xây dựng cơ sở giáo dục nghề nghiệp tư thục của cơ quan, tổ chức có thẩm quyền;..g)Bản sao giấy tờ chứng, minh quyền sở hữu về tài sản kèm theo văn bản thẩm định giá tài sản góp vốn nếu góp vốn bằng tài sản; h) Đối với cơ sở giáo dục nghề nghiệp tư thục có từ 02 thành viên gÓp vốn trở lên, ngoài hồ sơ theo quy định tại điểm a, b, c, d,đ, e, g khoản 3 Điều này, hồ sơ cân bổ sung: Biên bản cử người đại diện đứng tên thành lập cơ sở giáo dục nghề. nghiệp của các thành viên góp vốn; Danh sách trích ngang các thành viên Ban. sáng lập; Danh sách, hình thức và biên bản góp vôn của các thành viên cam kết góp vốn thành lập; Dự kiến Hội đồng quản trị và Chủ tịch Hội đồng quản trị của trường trung cấp, trường cao đắng."
+                  "noi_dung": "Dự thảo quy hoạch tổng. thể mặt bằng các công trình kiến trúc xây dựng, bảo đảm phù hợp với ngành, nghề, quy mô, trình độ đào tạo và tiêu chuẩn diện tích sử dụng, diện tích xây dựng cho hoạt động học tập và giảng dạy;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Bản sao giấy chứng nhận quyền sử dụng đất hoặc quyết định giao đất, cho. thuê đất để xây dựng cơ sở giáo dục nghề. nghiệp của Ủy ban nhân dân cấp tỉnh kèm theo bản sao biên lai (nộp tiền sử dụng đất hoặc tiền thuê đất) hoặc minh chứng đã hoàn thành nghĩa vụ tài chính về đất đai theo quy định. Bản sao hợp đồng thuê cơ sở vật chất gắn liền với đất còn thời hạn ít nhất là 05 năm kể từ ngày gửi hồ sơ đối với trường hợp thuê cơ SỞ vật chất gắn liền với đất và giây tờ chứng minh quyền sử dụng hoặc quyền sở hữu của bên cho thuê; đì Bản sao văn bản phê duyệt chủ trương đầu tư, quyết định đầu tư hoặc văn bản phê duyệt, giao kế hoạch đầu tư công hoặc văn bản phê duyệt quyết toán dự án hoàn thành đầu tư xây dựng cơ sở giáo dục nghề nghiệp công lập của cơ quan có thẩm quyền;"
+                },
+                {
+                  "so_diem": "e",
+                  "noi_dung": "Văn bản xác. nhận khả năng tài chính để đầu tư. xây dựng cơ sở giáo dục nghề nghiệp tư thục của cơ quan, tổ chức có thẩm quyền;..g)Bản sao giấy tờ chứng, minh quyền sở hữu về tài sản kèm theo văn bản thẩm định giá tài sản góp vốn nếu góp vốn bằng tài sản;"
+                },
+                {
+                  "so_diem": "h",
+                  "noi_dung": "Đối với cơ sở giáo dục nghề nghiệp tư thục có từ 02 thành viên gÓp vốn trở lên, ngoài hồ sơ theo quy định tại điểm a, b, c, d,đ, e, g khoản 3 Điều này, hồ sơ cân bổ sung: Biên bản cử người đại diện đứng tên thành lập cơ sở giáo dục nghề. nghiệp của các thành viên góp vốn; Danh sách trích ngang các thành viên Ban. sáng lập; Danh sách, hình thức và biên bản góp vôn của các thành viên cam kết góp vốn thành lập; Dự kiến Hội đồng quản trị và Chủ tịch Hội đồng quản trị của trường trung cấp, trường cao đắng."
                 }
               ]
             },
             {
               "so_khoan": "4",
-              "noi_dung": "Trình tự, thủ tục hành chính thực hiện thành lập trung tâm giáo dục nghề. nghiệp, trường. trung cấp công lập trực thuộc hoặc cho phép thành lập trung tâm giáo dục: nghề nghiệp, trường trung cấp tư thục trên địa bàn a) Tiếp nhận, kiểm tra hồ sơ đề nghị thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp Cơ quan, tổ chức, cá nhân đề nghị thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp gửi hồ. sơ theo quy định tại Điều 6 Nghị định này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến cơ quan, tổ chức quy định tại điểm a khoản này; Sở Giáo. dục và Đào tạo. tiếp nhận hồ sơ đề nghị thành lập trung tâm giáo dục nghề nghiệp, trường trung cấp công lập trực thuộc tỉnh, thành phố trực thuộc Trung ương: hồ SƠ đề nghị cho phép thành lập trung tâm giáo dục nghề nghiệp, trường trung ' cấp tư thục trên địa bàn; Trong thời hạn 03 ngày làm việc kế từ ngày tiếp nhận hồ sơ Sở Giáo dục và Đào tạo kiểm tra sơ bộ hồ sơ đề nghị thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp. Trường hợp hồ sơ hợp lệ, gửi Hội động thẩm định hồ sơ đề nghị thành lập, cho phép thành lập cơ sở giáo dục. nghề nghiệp (sau đây gọi là Hội đồng thẩm định) để tổ chức thẩm định. Trường hợp hồ sơ không hợp lệ, có văn bản trả lời và nêu rõ lý do. b) Thẩm định hồ sơ thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp Hội đồng thẩm định tổ chức thẳm định hồ sơ thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp. Chủ tịch Ủy ban nhân dân ' cấp tỉnh quyết định thành lập Hội đồng thẩm định và ban hành quy chế tổ chức, hoạt động của Hội đồng thầm định. Hội đồng thẩm định hồ sơ thành lập trung tâm giáo dục nghề nghiệp, trường trung. cấp công lập trực thuộc tỉnh và cho phép thành lập trung tâm giáo dục nghề nghiệp, trường trung cấp tư thục trên địa bàn tỉnh do Lãnh đạo Ủy ban nhân dân cập tỉnh hoặc người được ủy. quyền làm Chủ tịch, các thành viên là đại diện một số cơ quan chuyển môn thuộc Ủy ban nhân dân cấp tỉnh có liên quan. 60 Trong thời hạn 05 ngày làm việc kể từ ngày nhận được hồ sơ thành lập, cho phép thành lập cơ sở giáo dục. nghề nghiệp, Hội đồng thẩm định tổ chức thấm định hồ sơ thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp..= Căn cứ kết luận của Hội đồng thẩm định (công khai tại cuộc họp thẩm định), trong thời hạn 03 ngày làm việc kể từ ngày tổ chức thẩm định, Sở Giáo dục và Đào tạo có văn bản thông báo kết quả thẩm định cho cơ quan, tổ chức, cá nhân đề nghị thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp. c) Quyết định thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp Trường hợp hồ sơ thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp đủ điều kiện theo kết luận của Hội đồng thẩm định, trong thời hạn 05 ngày làm việc kể từ ngày có kết luận thẳm định, Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân tỉnh quyết định thành lập cơ sở giáo dục nghề nghiệp công lập, cho phép thành lập cơ sở giáo dục nghề nghiệp tư thục theo Mẫu số 04 Phụ lục III kèm theo Nghị định này. Trường hợp không quyết định thành lập, không cho phép thành lập thì có văn bản trả lời và nêu rõ lý do; Trường hợp hồ sơ thành lập, cho phép thành lập cơ sở giáo dục. nghề nghiệp đủ điều kiện nhưng phải hoàn thiện theo kết luận của Hội đồng thắm định, trong thời hạn 05 ngày làm việc kể từ ngày nhận được hồ sơ đã hoàn thiện, Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân tỉnh quyết định thành lập cơ sở giáo dục nghề nghiệp công lập, cho phép thành lập cơ sở giáo dục nghệ nghiệp tư thục theo Mẫu số 04 Phụ lục III kèm theo Nghị định này. Trường hợp không quyết định thành lập, không cho phép thành lập thì có văn bản trả lời và nêu rõ lý do. d) Công khai và gửi quyết định thành lập, cho phép thành - Cơ SỞ giáo dục nghề nghiệp Ủy ban nhân dân cấp tỉnh thực hiện công khai quyết định thành lập, cho SA..... quan minh; Trong thời hạn 02 ngày làm việc kể từ ngày ban hành quyết định thành lập trung tâm giáo dục nghề nghiệp, trường trung cấp công lập trực thuộc hoặc quyết. định cho phép thành lập trung tâm giáo dục nghệ: nghiệp, trường trung cấp tư thục trên địa bàn, Ủy ban nhân dân cấp tỉnh gửi quyết định đến Bộ Giáo dục và Đào tạo đề theo dối, quản lý.",
-              "diem": []
+              "noi_dung": "Trình tự, thủ tục hành chính thực hiện thành lập trung tâm giáo dục nghề. nghiệp, trường. trung cấp công lập trực thuộc hoặc cho phép thành lập trung tâm giáo dục: nghề nghiệp, trường trung cấp tư thục trên địa bàn a) Tiếp nhận, kiểm tra hồ sơ đề nghị thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp Cơ quan, tổ chức, cá nhân đề nghị thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp gửi hồ. sơ theo quy định tại Điều 6 Nghị định này qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến cơ quan, tổ chức quy định tại điểm a khoản này; Sở Giáo. dục và Đào tạo. tiếp nhận hồ sơ đề nghị thành lập trung tâm giáo dục nghề nghiệp, trường trung cấp công lập trực thuộc tỉnh, thành phố trực thuộc Trung ương: hồ SƠ đề nghị cho phép thành lập trung tâm giáo dục nghề nghiệp, trường trung ' cấp tư thục trên địa bàn; Trong thời hạn 03 ngày làm việc kế từ ngày tiếp nhận hồ sơ Sở Giáo dục và Đào tạo kiểm tra sơ bộ hồ sơ đề nghị thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp. Trường hợp hồ sơ hợp lệ, gửi Hội động thẩm định hồ sơ đề nghị thành lập, cho phép thành lập cơ sở giáo dục. nghề nghiệp (sau đây gọi là Hội đồng thẩm định) để tổ chức thẩm định. Trường hợp hồ sơ không hợp lệ, có văn bản trả lời và nêu rõ lý do.",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Thẩm định hồ sơ thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp Hội đồng thẩm định tổ chức thẳm định hồ sơ thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp. Chủ tịch Ủy ban nhân dân ' cấp tỉnh quyết định thành lập Hội đồng thẩm định và ban hành quy chế tổ chức, hoạt động của Hội đồng thẩm định. Hội đồng thẩm định hồ sơ thành lập trung tâm giáo dục nghề nghiệp, trường trung. cấp công lập trực thuộc tỉnh và cho phép thành lập trung tâm giáo dục nghề nghiệp, trường trung cấp tư thục trên địa bàn tỉnh do Lãnh đạo Ủy ban nhân dân cập tỉnh hoặc người được ủy. quyền làm Chủ tịch, các thành viên là đại diện một số cơ quan chuyển môn thuộc Ủy ban nhân dân cấp tỉnh có liên quan. Trong thời hạn 05 ngày làm việc kể từ ngày nhận được hồ sơ thành lập, cho phép thành lập cơ sở giáo dục. nghề nghiệp, Hội đồng thẩm định tổ chức thấm định hồ sơ thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp..= Căn cứ kết luận của Hội đồng thẩm định (công khai tại cuộc họp thẩm định), trong thời hạn 03 ngày làm việc kể từ ngày tổ chức thẩm định, Sở Giáo dục và Đào tạo có văn bản thông báo kết quả thẩm định cho cơ quan, tổ chức, cá nhân đề nghị thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp."
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Quyết định thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp Trường hợp hồ sơ thành lập, cho phép thành lập cơ sở giáo dục nghề nghiệp đủ điều kiện theo kết luận của Hội đồng thẩm định, trong thời hạn 05 ngày làm việc kể từ ngày có kết luận thẳm định, Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân tỉnh quyết định thành lập cơ sở giáo dục nghề nghiệp công lập, cho phép thành lập cơ sở giáo dục nghề nghiệp tư thục theo Mẫu số 04 Phụ lục III kèm theo Nghị định này. Trường hợp không quyết định thành lập, không cho phép thành lập thì có văn bản trả lời và nêu rõ lý do; Trường hợp hồ sơ thành lập, cho phép thành lập cơ sở giáo dục. nghề nghiệp đủ điều kiện nhưng phải hoàn thiện theo kết luận của Hội đồng thắm định, trong thời hạn 05 ngày làm việc kể từ ngày nhận được hồ sơ đã hoàn thiện, Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân tỉnh quyết định thành lập cơ sở giáo dục nghề nghiệp công lập, cho phép thành lập cơ sở giáo dục nghệ nghiệp tư thục theo Mẫu số 04 Phụ lục III kèm theo Nghị định này. Trường hợp không quyết định thành lập, không cho phép thành lập thì có văn bản trả lời và nêu rõ lý do."
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Công khai và gửi quyết định thành lập, cho phép thành - Cơ SỞ giáo dục nghề nghiệp Ủy ban nhân dân cấp tỉnh thực hiện công khai quyết định thành lập, cho SA..... quan minh; Trong thời hạn 02 ngày làm việc kể từ ngày ban hành quyết định thành lập trung tâm giáo dục nghề nghiệp, trường trung cấp công lập trực thuộc hoặc quyết. định cho phép thành lập trung tâm giáo dục nghệ: nghiệp, trường trung cấp tư thục trên địa bàn, Ủy ban nhân dân cấp tỉnh gửi quyết định đến Bộ Giáo dục và Đào tạo đề theo dối, quản lý."
+                }
+              ]
             },
             {
               "so_khoan": "5",

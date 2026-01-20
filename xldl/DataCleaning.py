@@ -16,6 +16,14 @@ import time
 import multiprocessing
 import re
 
+# Cấu hình encoding UTF-8 cho Windows
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except AttributeError:
+        pass  # Python < 3.7, bỏ qua
+
 # Import module parser
 try:
     # Fallback nếu chạy từ thư mục khác
@@ -41,7 +49,7 @@ TESSERACT_PATH = r"D:\apps\OCR\tesseract.exe"
 
 # 3. Cấu hình xử lý song song và chất lượng
 MAX_WORKERS = min(2, multiprocessing.cpu_count())  # Giảm số luồng để tiết kiệm RAM
-DPI_SETTING = 350  # DPI mặc định cho PDF text
+DPI_SETTING = 300  # DPI mặc định cho PDF text
 SCAN_DPI = 350     # DPI cho scan (Tăng lên để OCR chính xác hơn)
 BATCH_SIZE = 4     # Số trang xử lý mỗi batch
 
@@ -52,29 +60,29 @@ def check_system_dependencies():
     """
     global POPPLER_PATH, TESSERACT_PATH
 
-    print("🔍 Kiểm tra Tesseract và Poppler...")
+    print("Kiem tra Tesseract va Poppler...")
 
     # Kiểm tra Tesseract
     if TESSERACT_PATH and os.path.exists(TESSERACT_PATH):
         pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
-        print("   - Tesseract: OK (sử dụng đường dẫn cấu hình)")
+        print("   - Tesseract: OK (su dung duong dan cau hinh)")
     elif shutil.which("tesseract"):
         TESSERACT_PATH = shutil.which("tesseract")
         pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
-        print("   - Tesseract: OK (tìm thấy trong PATH hệ thống)")
+        print("   - Tesseract: OK (tim thay trong PATH he thong)")
     else:
-        print("   - ⚠️  CẢNH BÁO: Không tìm thấy Tesseract OCR. Vui lòng cài đặt và/hoặc cập nhật TESSERACT_PATH.")
+        print("   - CANH BAO: Khong tim thay Tesseract OCR. Vui long cai dat va/hoac cap nhat TESSERACT_PATH.")
         TESSERACT_PATH = None # Đánh dấu là không có sẵn
 
     # Kiểm tra Poppler
     if POPPLER_PATH and os.path.exists(POPPLER_PATH):
-        print("   - Poppler: OK (sử dụng đường dẫn cấu hình)")
+        print("   - Poppler: OK (su dung duong dan cau hinh)")
     elif any(shutil.which(cmd) for cmd in ["pdftoppm", "pdfinfo"]):
          # Poppler không cần set path global, pdf2image sẽ tự tìm nếu có trong PATH
         POPPLER_PATH = None # Đánh dấu là không cần path hardcode
-        print("   - Poppler: OK (tìm thấy trong PATH hệ thống)")
+        print("   - Poppler: OK (tim thay trong PATH he thong)")
     else:
-        print("   - ⚠️  CẢNH BÁO: Không tìm thấy Poppler. Vui lòng cài đặt và/hoặc cập nhật POPPLER_PATH.")
+        print("   - CANH BAO: Khong tim thay Poppler. Vui long cai dat va/hoac cap nhat POPPLER_PATH.")
         POPPLER_PATH = None
 
 # Gọi hàm kiểm tra ngay khi khởi chạy
@@ -176,7 +184,7 @@ def ocr_from_images_parallel(images, silent=False):
     if total == 0:
         return ""
     if not TESSERACT_PATH:
-        if not silent: print("\n   ❌ Không thể OCR vì không tìm thấy Tesseract.")
+        if not silent: print("\n   Khong the OCR vi khong tim thay Tesseract.")
         return ""
     
     import gc
@@ -192,7 +200,7 @@ def ocr_from_images_parallel(images, silent=False):
             # Batch nhỏ: xử lý tuần tự
             for i, img in enumerate(batch_images):
                 if not silent: 
-                    print(f"   🔄 Đang xử lý OCR: {batch_start + i + 1}/{total} trang...", end='\r')
+                    print(f"   Dang xu ly OCR: {batch_start + i + 1}/{total} trang...", end='\r')
                 batch_results[i] = ocr_single_page(img)
                 del img  # Giải phóng ảnh sau khi xử lý
         else:
@@ -357,7 +365,7 @@ def process_multiple_pdfs(pdf_paths, output_dir=None):
     
     # In báo cáo tổng kết
     print("\n" + "="*70)
-    print("📊 BÁO CÁO KẾT QUẢ")
+    print("BAO CAO KET QUA")
     print("="*70)
     print(f"   - Tổng số file: {results['total']}")
     print(f"   - ✅ Thành công: {results['success']}")
@@ -365,7 +373,7 @@ def process_multiple_pdfs(pdf_paths, output_dir=None):
     print(f"   - ⏱️  Thời gian:   {elapsed_time:.2f} giây ({elapsed_time/60:.2f} phút)")
     
     if results["failed"] > 0:
-        print("\n❌ DANH SÁCH FILE LỖI:")
+        print("\nDANH SACH FILE LOI:")
         for r in results["files"]:
             if not r["success"]:
                 print(f"   - {os.path.basename(r['input_file'])}: {r['error']}")
@@ -418,13 +426,13 @@ def main_cli():
                 output_dir = os.path.join(folder_path, "processed_output")
                 process_multiple_pdfs(pdf_files, output_dir)
             else:
-                print("❌ Không tìm thấy file PDF nào.")
+                print("Khong tim thay file PDF nao.")
     
     elif choice == "0":
-        print("👋 Tạm biệt!")
+        print("Tam biet!")
     
     else:
-        print("❌ Lựa chọn không hợp lệ.")
+        print("Lua chon khong hop le.")
 
 def clean_existing_json(json_path, output_path=None):
     """API: Áp dụng lại logic làm sạch cho một file JSON đã được xử lý."""

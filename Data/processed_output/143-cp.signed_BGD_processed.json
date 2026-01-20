@@ -14,7 +14,7 @@
     "co_quan_ban_hanh": "CHÍNH PHỦ"
   },
   "can_cu_phap_ly": [
-    "Căn cứ Luật Tổ chức chính quyền địa phương năm 2025; Căn cứ Ngữi quyết số 190/2025/QH1 5 ngày 19 tháng 02 năm 2025 của Quốc hội quy định về xử lý một số vấn đề liên quan đến sắp xếp tổ chức bộ máy"
+    "Căn cứ Luật Tổ chức chính quyền địa phương năm 2025; Căn cứ Nghị quyết số 190/2025/QH1 5 ngày 19 tháng 02 năm 2025 của Quốc hội quy định về xử lý một số vấn đề liên quan đến sắp xếp Tổ chức bộ máy"
   ],
   "chuong": [
     {
@@ -28,8 +28,13 @@
         },
         {
           "so_dieu": "2",
-          "noi_dung": "Nguyên tắc phân quyền, phân cấp 1. Bảo đảm phù hợp với quy định của Hiến pháp; phù hợp với các nguyên tắc, quy định về phân quyền, phân cấp của Luật Tổ chức Chính phủ, Luật Tổ chức chính quyền địa phương.",
+          "noi_dung": "Nguyên tắc phân quyền, phân cấp",
           "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Bảo đảm phù hợp với quy định của Hiến pháp; phù hợp với các nguyên tắc, quy định về phân quyền, phân cấp của Luật Tổ chức Chính phủ, Luật Tổ chức chính quyền địa phương.",
+              "diem": []
+            },
             {
               "so_khoan": "2",
               "noi_dung": "Bảo đảm phân cấp triệt đề các nhiệm vụ giữa cơ quan nhà nước ở trung ương với chính quyền địa phương, bảo đảm thẩm quyền quản lý thống nhất của Chính phủ, quyền điều hành của người đứng đầu Chính phủ đối với lĩnh vực quản lý nhà nước về giáo dục và phát huy tính chủ động, sáng tạo, tự chịu trách nhiệm của chính quyền địa phương trong thực hiện nhiệm vụ quản lý nhà nước trong lĩnh vực giáo dục.",
@@ -42,7 +47,7 @@
             },
             {
               "so_khoan": "4",
-              "noi_dung": "Đầy mạnh phân quyền, phân cấp và phân định rõ thẩm quyền của Hội 2 đồng nhân dân, Ủy ban nhân dân, Chủ tịch Ủy ban nhân dân; phân định rõ thẩm quyền chung của Ủy ban nhân dân và thẩm quyền riêng của Chủ tịch Ủy ban nhân dân; bảo đảm phù hợp với nhiệm vụ, quyền hạn và năng lực của cơ quan, người có thẩm quyền thực hiện nhiệm vụ, quyền hạn được phân định.",
+              "noi_dung": "Đầy mạnh phân quyền, phân cấp và phân định rõ thẩm quyền của Hội đồng nhân dân, Ủy ban nhân dân, Chủ tịch Ủy ban nhân dân; phân định rõ thẩm quyền chung của Ủy ban nhân dân và thẩm quyền riêng của Chủ tịch Ủy ban nhân dân; bảo đảm phù hợp với nhiệm vụ, quyền hạn và năng lực của cơ quan, người có thẩm quyền thực hiện nhiệm vụ, quyền hạn được phân định.",
               "diem": []
             },
             {
@@ -52,7 +57,7 @@
             },
             {
               "so_khoan": "6",
-              "noi_dung": "Bảo đảm quyền con người, quyền công dân; bảo đảm công khai, minh bạch, tạo điều kiện thuận lợi cho cá nhân, tổ chức trong việc tiếp cận thông tin, thực hiện các quyền, nghĩa vụ và các thủ tục theo quy định của pháp luật; không làm ảnh hưởng đến hoạt động bình thường của xã hội, người dân, doanh nghiệp.",
+              "noi_dung": "Bảo đảm quyền con người, quyền công dân; bảo đảm công khai, minh bạch, tạo điều kiện thuận lợi cho cá nhân, Tổ chức trong việc tiếp cận thông tin, thực hiện các quyền, nghĩa vụ và các thủ tục theo quy định của pháp luật; không làm ảnh hưởng đến hoạt động bình thường của xã hội, người dân, doanh nghiệp.",
               "diem": []
             },
             {
@@ -69,16 +74,21 @@
         },
         {
           "so_dieu": "3",
-          "noi_dung": "Về phí, lệ phí Các thủ tục hành chính khi giải quyết mà phải nộp phí, lệ phí theo quy định của pháp luật về phí, lệ phí thì khi người dân, tổ chức nộp hồ sơ đề nghị giải quyết thủ tục hành chính đồng thời nộp phí, lệ phí cho cơ quan tiếp nhận hồ sơ. Mức phí, lệ phí, việc quản lý, sử dụng phí, lệ phí thực hiện theo quy định của Chính phủ, Bộ trưởng Bộ Tài chính hoặc Hội đồng nhân dân cấp tỉnh đối với phí, lệ phí tương ứng. Chương IIn PHẦN QUYỀN, PHẦN CÁP TRONG LĨNH VỰC QUẢN LÝ NHÀ NƯỚC CỦA BỘ GIÁO DỤC VÀ ĐÀO TẠO",
+          "noi_dung": "Về phí, lệ phí Các thủ tục hành chính khi giải quyết mà phải nộp phí, lệ phí theo quy định của pháp luật về phí, lệ phí thì khi người dân, Tổ chức nộp hồ sơ đề nghị giải quyết thủ tục hành chính đồng thời nộp phí, lệ phí cho cơ quan tiếp nhận hồ sơ. Mức phí, lệ phí, việc quản lý, sử dụng phí, lệ phí thực hiện theo quy định của Chính phủ, Bộ trưởng Bộ Tài chính hoặc Hội đồng nhân dân cấp tỉnh đối với phí, lệ phí tương ứng. Chương IIn PHẦN QUYỀN, PHÂN CẤP TRONG LĨNH VỰC QUẢN LÝ NHÀ NƯỚC CỦA BỘ GIÁO DỤC VÀ ĐÀO TẠO",
           "khoan": []
         },
         {
           "so_dieu": "4",
-          "noi_dung": "Phân quyền công nhận tỉnh đạt chuẩn phổ cập giáo dục, xóa mù chữ 1. Thẩm quyền công nhận tỉnh đạt chuẩn phổ cập giáo dục mức độ Ì và mức độ 2, xóa mù chữ mức độ 1 đối với tỉnh quy định tại Điều 25 Nghị định số 20/2014/NĐ-CP ngày 24 tháng 3 năm 2014 của Chính phủ về phố cập giáo dục, xóa mù chữ do Chủ tịch Ủy ban nhân dân cấp tính thực hiện.",
+          "noi_dung": "Phân quyền công nhận tỉnh đạt chuẩn phổ cập giáo dục, xóa mù chữ",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Thẩm quyền công nhận tỉnh đạt chuẩn phổ cập giáo dục mức độ Ì và mức độ 2, xóa mù chữ mức độ 1 đối với tỉnh quy định tại Điều 25 Nghị định số 20/2014/NĐ-CP ngày 24 tháng 3 năm 2014 của Chính phủ về phố cập giáo dục, xóa mù chữ do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện.",
+              "diem": []
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Thẳm quyền công nhận tính đạt chuẩn phố cập giáo dục mức độ 3, xóa mù chữ mức độ 2 đối với tỉnh quy định tại Điều 25 Nghị định số 20/2014/NĐ-CP do Bộ trưởng Bộ Giáo dục và Đào tạo thực hiện.",
+              "noi_dung": "Thẩm quyền công nhận tính đạt chuẩn phố cập giáo dục mức độ 3, xóa mù chữ mức độ 2 đối với tỉnh quy định tại Điều 25 Nghị định số 20/2014/NĐ-CP do Bộ trưởng Bộ Giáo dục và Đào tạo thực hiện.",
               "diem": []
             },
             {
@@ -90,57 +100,88 @@
         },
         {
           "so_dieu": "5",
-          "noi_dung": "Phân cấp cho phép thành lập, giải thể, chẩm dứt hoạt động cơ sở giáo dục mầm non, cơ sở giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ đề nghị 1. Thẩm quyền cho phép thành lập, giải thể, chấm dứt hoạt động cơ sở giáo dục mầm non, cơ sở giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ đê nghị quy định tại Điều 40 Nghị định số 86/2018/NĐ-CP ngày 06 tháng 6 năm 2018 của Chính phủ quy định về hợp tác, đầu tư của nước ngoài trong lĩnh vực giáo dục (được sửa đổi, bổ sung một số điều bởi Nghị định số 124/2024/NĐ-CP ngày 05 tháng 10 \"năm 2024 của Chính phủ) do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện.",
+          "noi_dung": "Phân cấp cho phép thành lập, giải thể, chẩm dứt hoạt động cơ sở giáo dục mầm non, cơ sở giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ đề nghị",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Thẩm quyền cho phép thành lập, giải thể, chấm dứt hoạt động cơ sở giáo dục mầm non, cơ sở giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ đê nghị quy định tại Điều 40 Nghị định số 86/2018/NĐ-CP ngày 06 tháng 6 năm 2018 của Chính phủ quy định về hợp tác, đầu tư của nước ngoài trong lĩnh vực giáo dục (được sửa đổi, bổ sung một số điều bởi Nghị định số 124/2024/NĐ-CP ngày 05 tháng 10 \"năm 2024 của Chính phủ) do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện.",
+              "diem": []
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Trình tự, thủ tục thực hiện cho phép thành lập, giải thể, chấm dứt hoạt động cơ SỞ giáo dục mầm non, cơ SỞ giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ đề nghị theo quy định tại Điều 2 Phụ lục I ban hành kèm theo Nghị định này.",
+              "noi_dung": "Trình tự, thủ tục thực hiện cho phép thành lập, giải thể, chấm dứt hoạt động cơ SỞ giáo dục mầm non, cơ SỞ giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ đề nghị theo quy định tại Điều 2 Phụ lục I ban hành kèm theo Nghị định này.",
               "diem": []
             }
           ]
         },
         {
           "so_dieu": "6",
-          "noi_dung": "Phân cấp chuyển đỗi loại hình cơ sở giáo dục mầm non, cơ sở giáo dục phố thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phú đề nghị 1. Thắm quyền chuyển đổi loại hình cơ sở giáo dục mầm non, cơ sở giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ đề nghị thành lập sang cơ sở hoạt động không vì lợi nhuận quy định tại Điều 6 và Điều 7 Nghị định số 84/2020/NĐ-CP ngày 17 tháng 7 năm 2020 của Chính phủ quy định chi tiết một số điều của Luật Giáo dục do Chủ tịch Ủy ban nhân dân câp tỉnh thực hiện.",
+          "noi_dung": "Phân cấp chuyển đỗi loại hình cơ sở giáo dục mầm non, cơ sở giáo dục phố thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phú đề nghị",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Thẩm quyền chuyển đổi loại hình cơ sở giáo dục mầm non, cơ sở giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ đề nghị thành lập sang cơ sở hoạt động không vì lợi nhuận quy định tại Điều 6 và Điều 7 Nghị định số 84/2020/NĐ-CP ngày 17 tháng 7 năm 2020 của Chính phủ quy định chi tiết một số điều của Luật Giáo dục do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện.",
+              "diem": []
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Trình tự, thủ tục thực hiện chuyển đồi cơ sở giáo dục mầm non, cơ sở giáo dục phố thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ đề nghị thành lập sang cơ sở hoạt động không vì lợi nhuận theo quy định tại Điều 3 Phụ lục I ban hành kèm theo Nghị định này.",
+              "noi_dung": "Trình tự, thủ tục thực hiện chuyển đồi cơ sở giáo dục mầm non, cơ sở giáo dục phố thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ đề nghị thành lập sang cơ sở hoạt động không vì lợi nhuận theo quy định tại Điều 3 Phụ lục I ban hành kèm theo Nghị định này.",
               "diem": []
             }
           ]
         },
         {
           "so_dieu": "7",
-          "noi_dung": "Phân cấp phê duyệt liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài 1. Thẩm quyền phê duyệt liên kết tổ chức thì cấp chứng chỉ năng lực ngoại ngữ của nước ngoài quy định tại Điều 22 và Điều 23 Nghị định số 86/2018/NĐ-CP (được sửa đổi, bổ sung một số điều bởi Nghị định số 124/2024/NĐ-CP) do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện.",
+          "noi_dung": "Phân cấp phê duyệt liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Thẩm quyền phê duyệt liên kết Tổ chức thì cấp chứng chỉ năng lực ngoại ngữ của nước ngoài quy định tại Điều 22 và Điều 23 Nghị định số 86/2018/NĐ-CP (được sửa đổi, bổ sung một số điều bởi Nghị định số 124/2024/NĐ-CP) do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện.",
+              "diem": []
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Trình tự, thủ tục phê duyệt liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài theo quy định tại Điều 4 Phụ lục I ban hành kèm theo Nghị định này.",
+              "noi_dung": "Trình tự, thủ tục phê duyệt liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài theo quy định tại Điều 4 Phụ lục I ban hành kèm theo Nghị định này.",
               "diem": []
             }
           ]
         },
         {
           "so_dieu": "8",
-          "noi_dung": "Phân cấp việc cấp, gia hạn. sửa đối, bỗ sung quyết định cho phép thành lập văn phòng đại điện của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam 1. Thẩm quyền cấp, gia hạn, sửa đổi, bỏ sung quyết định cho phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam quy định 4 tại Điều 57 Nghị định số 86/2018/NĐ-CP (được sửa đổi, bổ sung một số điều bởi Nghị định số 124/2024/NĐ-CP) do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện. 2. trình tự, thủ tục cấp, gia hạn, sửa đổi, bổ sung quyết định cho phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam theo quy định tại Điều 5 Phụ lục I ban hành kèm theo Nghị định này.",
-          "khoan": []
+          "noi_dung": "Phân cấp việc cấp, gia hạn. sửa đối, bỗ sung quyết định cho phép thành lập văn phòng đại điện của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam",
+          "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Thẩm quyền cấp, gia hạn, sửa đổi, bỏ sung quyết định cho phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam quy định tại Điều 57 Nghị định số 86/2018/NĐ-CP (được sửa đổi, bổ sung một số điều bởi Nghị định số 124/2024/NĐ-CP) do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện. 2. trình tự, thủ tục cấp, gia hạn, sửa đổi, bổ sung quyết định cho phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam theo quy định tại Điều 5 Phụ lục I ban hành kèm theo Nghị định này.",
+              "diem": []
+            }
+          ]
         },
         {
           "so_dieu": "9",
-          "noi_dung": "Phân cấp việc cấp, sửa đổi, bổ sung, gia hạn, cấp lại, chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam 1. Thẩm quyền cấp, sửa đồi, bổ sung, gia hạn, cấp lại, chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của tổ chức, cơ SỞ giáo dục nghề nghiệp nước ngoài tại Việt Nam quy định tại Điều 31 Nghị định số 15/2019/NĐ-CP ngày 01 tháng 02 năm 2019 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Giáo dục nghề nghiệp (được sửa đổi, bổ sung một số điều bởi Nghị định số 24/2021/NĐ-CP ngày 06 tháng 4 năm 2022 của Chính phủ) do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện.",
+          "noi_dung": "Phân cấp việc cấp, sửa đổi, bổ sung, gia hạn, cấp lại, chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Thẩm quyền cấp, sửa đồi, bổ sung, gia hạn, cấp lại, chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của Tổ chức, cơ SỞ giáo dục nghề nghiệp nước ngoài tại Việt Nam quy định tại Điều 31 Nghị định số 15/2019/NĐ-CP ngày 01 tháng 02 năm 2019 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Giáo dục nghề nghiệp (được sửa đổi, bổ sung một số điều bởi Nghị định số 24/2021/NĐ-CP ngày 06 tháng 4 năm 2022 của Chính phủ) do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện.",
+              "diem": []
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Trình tự, thủ tục cấp, sửa đổi, bổ sung, gia hạn, cấp lại, chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam theo quy định tại Điều 6 Phụ lục I ban hành kèm theo Nghị định này.",
+              "noi_dung": "Trình tự, thủ tục cấp, sửa đổi, bổ sung, gia hạn, cấp lại, chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam theo quy định tại Điều 6 Phụ lục I ban hành kèm theo Nghị định này.",
               "diem": []
             }
           ]
         },
         {
           "so_dieu": "10",
-          "noi_dung": "Phân cấp việc đánh giá việc đầm bảo các điều kiện tổ chức dạy học tiếng dân tộc thiểu số 1. Thẩm quyền đánh giá việc đảm bảo các điều kiện tổ chức dạy học tiếng dân tộc thiểu số quy định tại Điều 4 Nghị định số 82/2010/NĐ-CP ngày 15 tháng 7 năm 2010 của Chính phủ quy định việc dạy và học tiếng nói, chữ viết của dân tộc thiểu số trong các cơ sở giáo dục phô thông và trung tâm giáo dục thường xuyên do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện.",
+          "noi_dung": "Phân cấp việc đánh giá việc đầm bảo các điều kiện Tổ chức dạy học tiếng dân tộc thiểu số",
           "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Thẩm quyền đánh giá việc đảm bảo các điều kiện Tổ chức dạy học tiếng dân tộc thiểu số quy định tại Điều 4 Nghị định số 82/2010/NĐ-CP ngày 15 tháng 7 năm 2010 của Chính phủ quy định việc dạy và học tiếng nói, chữ viết của dân tộc thiểu số trong các cơ sở giáo dục phô thông và trung tâm giáo dục thường xuyên do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện.",
+              "diem": []
+            },
             {
               "so_khoan": "2",
               "noi_dung": "Trình tự, thủ tục đánh giá việc đảm bảo các điều kiện và đưa tiếng dân tộc thiểu số vào dạy học theo quy định tại Điều 7 Phụ lục I ban hành kèm theo Nghị định này.",
@@ -152,7 +193,7 @@
     },
     {
       "so_chuong": "II",
-      "ten_chuong": "ĐIỀU KHOẢN THỊ HÀNH",
+      "ten_chuong": "ĐIỀU KHOẢN THI HÀNH",
       "dieu": [
         {
           "so_dieu": "11",
@@ -165,8 +206,13 @@
             },
             {
               "so_khoan": "2",
-              "noi_dung": "Nghị định này hết hiệu lực kể từ ngày 01 tháng 3 năm 2027 trừ các trường hợp sau: _a) Bộ, cơ quan nởang bộ báo cáo Chính phủ đề xuất và được Quốc hội quyết định kéo dài thời gian áp dụng toàn bộ hoặc một phần Nghị định này; b) Luật, nghị quyết của Quốc hội, \"pháp lệnh, nghị quyết của Ủy ban Thường vụ Quốc hội, nghị định, nghị quyết của Chính phủ, quyết định của Thủ 5 tướng Chính phủ có quy định về thẩm quyền, trách nhiệm quản lý nhà nước, trình tự, thủ tục quy định tại Nghị định này thông qua hoặc ban hành kể từ ngày 01 tháng 7 năm 2025 và có hiệu lực trước ngày 01 tháng 3 năm 2027 thì quy định tương ứng trong Nghị định này hết hiệu lực tại thời điểm các văn bản quy phạm pháp luật đó có hiệu lực.",
-              "diem": []
+              "noi_dung": "Nghị định này hết hiệu lực kể từ ngày 01 tháng 3 năm 2027 trừ các trường hợp sau: _a) Bộ, cơ quan nởang bộ báo cáo Chính phủ đề xuất và được Quốc hội quyết định kéo dài thời gian áp dụng toàn bộ hoặc một phần Nghị định này;",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Luật, nghị quyết của Quốc hội, \"pháp lệnh, nghị quyết của Ủy ban Thường vụ Quốc hội, nghị định, nghị quyết của Chính phủ, quyết định của Thủ tướng Chính phủ có quy định về thẩm quyền, trách nhiệm quản lý nhà nước, trình tự, thủ tục quy định tại Nghị định này thông qua hoặc ban hành kể từ ngày 01 tháng 7 năm 2025 và có hiệu lực trước ngày 01 tháng 3 năm 2027 thì quy định tương ứng trong Nghị định này hết hiệu lực tại thời điểm các văn bản quy phạm pháp luật đó có hiệu lực."
+                }
+              ]
             },
             {
               "so_khoan": "3",
@@ -177,8 +223,13 @@
         },
         {
           "so_dieu": "12",
-          "noi_dung": "Điều khoản cùyê tiếp 1. Bộ Giáo dục và Đào tạo có trách nhiệm cung cấp thông tin về hồ sơ giải quyết các thủ tục hành chính do Bộ thực hiện trước ngày 01 tháng 7 năm 2025 để bảo đảm thực hiện thông§uôt việc giải quyết các thủ tục hành chính khi phân quyền, phân cấp cho CHỦ tịch Ủy ban nhân dân cấp tỉnh.",
+          "noi_dung": "Điều khoản cùyê tiếp",
           "khoan": [
+            {
+              "so_khoan": "1",
+              "noi_dung": "Bộ Giáo dục và Đào tạo có trách nhiệm cung cấp thông tin về hồ sơ giải quyết các thủ tục hành chính do Bộ thực hiện trước ngày 01 tháng 7 năm 2025 để bảo đảm thực hiện thông§uôt việc giải quyết các thủ tục hành chính khi phân quyền, phân cấp cho CHỦ tịch Ủy ban nhân dân cấp tỉnh.",
+              "diem": []
+            },
             {
               "so_khoan": "2",
               "noi_dung": "Đối với các hồ sơ đề nghị thực hiện thủ tục hành chính quy định tại Điều 4 Nghị định này đã nộp hồ sơ cho Bộ Giáo dục và Đào tạo trước ngày Nghị định này có hiệu lực thì thực hiện theo quy định tại Nghị định số 20/2014/NĐ-CP.",
@@ -191,7 +242,7 @@
             },
             {
               "so_khoan": "4",
-              "noi_dung": "Đối với các hồ SƠ đề nghị thực hiện thủ tục hành chính quy định tại Điều 6 Nghị định này đã nộp hồ sơ cho Bộ Giáo dục và Đào tạo trước ngày Nghị định này có hiệu lực thì thực hiện theo quy định tại Nghị định số 84/2020/NĐ-CP.",
+              "noi_dung": "Đối với các hồ sơ đề nghị thực hiện thủ tục hành chính quy định tại Điều 6 Nghị định này đã nộp hồ sơ cho Bộ Giáo dục và Đào tạo trước ngày Nghị định này có hiệu lực thì thực hiện theo quy định tại Nghị định số 84/2020/NĐ-CP.",
               "diem": []
             },
             {
@@ -206,14 +257,14 @@
             },
             {
               "so_khoan": "7",
-              "noi_dung": "Văn bản, giấy tờ đã được cơ quan, chức danh có thẩm quyền ban hành, cấp trước ngày Nghị định này có hiệu lực thi hành mà chưa hết hiệu lực hoặc chưa hết thời hạn sử dụng thì tiếp tục được áp dụng, sử dụng theo quy định của pháp luật cho đến khi hết thời hạn hoặc được sửa đổi, bổ sung, thay thế, bãi bỏ, hủy bỏ, thu hồi bởi cơ quan, chức danh tiếp nhận chức năng, nhiệm vụ, quyền hạn hoặc cơ quan, người có thầm quyền.",
+              "noi_dung": "Văn bản, giấy tờ đã được cơ quan, chức danh có thẩm quyền ban hành, cấp trước ngày Nghị định này có hiệu lực thi hành mà chưa hết hiệu lực hoặc chưa hết thời hạn sử dụng thì tiếp tục được áp dụng, sử dụng theo quy định của pháp luật cho đến khi hết thời hạn hoặc được sửa đổi, bổ sung, thay thế, bãi bỏ, hủy bỏ, thu hồi bởi cơ quan, chức danh tiếp nhận chức năng, nhiệm vụ, quyền hạn hoặc cơ quan, người có thẩm quyền.",
               "diem": []
             }
           ]
         },
         {
           "so_dieu": "13",
-          "noi_dung": "Trách nhiệm thi hành Bộ trưởng Bộ Giáo dục và Đào tạo, các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương, tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Nghị định này Nơi nhận: khu CHÍNH PHỦ - Ban Bí thư Trung ương Đảng; - Thủ tướng, các Phó Thủ tướng Chính phủ; - Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ: - HĐND, UBND các tỉnh, thành phố trực thuộc trung ương? - Văn phòng Trung ương và các Ban của Đảng; - Văn phòng Tổng Bí thư; - Văn phòng Chủ tịch nước; - Hội đồng Dân tộc và các Ủy ban của Quốc hội; - Văn phòng Quốc hội; - Tòa án nhân dân tối cao; - Viện kiểm sát nhân dân tối cao; - Kiểm toán nhà nước; - Ủy ban trung ương Mặt trận Tổ quốc Việt Nam; - Cơ quan trung ương của các đoàn thể: - VPCP: BTCN, các PCN, Trợ lý TTg, TGĐ Cổng TTĐT, các Vụ, Cục, đơn vị trực thuộc, Công báo; -Lưu: VT, KGVX Ób). H ị NA Phụ lục J % SA SINH TỰ, THỦ TỤC THỰC HIỆN CÁC NHIỆM VỤ 2U PHAN QUYỀN, PHẦN CÁP TRONG LĨNH VỰC Ý NHÀ NƯỚC CỦA BỘ GIÁO DỤC VÀ ĐÀO TẠO (Kèm theo Nghị định số 143 /2025/NĐ-CP ngày 12 tháng 6 năm 2025 của Chính phủ)",
+          "noi_dung": "Trách nhiệm thi hành Bộ trưởng Bộ Giáo dục và Đào tạo, các Bộ trưởng, Thủ trưởng cơ quan ngang bộ, Thủ trưởng cơ quan thuộc Chính phủ, Chủ tịch Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương, Tổ chức, cá nhân có liên quan chịu trách nhiệm thi hành Nghị định này Nơi nhận: khu CHÍNH PHỦ - Ban Bí thư Trung ương Đảng; - Thủ tướng, các Phó Thủ tướng Chính phủ; - Các bộ, cơ quan ngang bộ, cơ quan thuộc Chính phủ: - HĐND, UBND các tỉnh, thành phố trực thuộc trung ương? - Văn phòng Trung ương và các Ban của Đảng; - Văn phòng Tổng Bí thư; - Văn phòng Chủ tịch nước; - Hội đồng Dân tộc và các Ủy ban của Quốc hội; - Văn phòng Quốc hội; - Tòa án nhân dân tối cao; - Viện kiểm sát nhân dân tối cao; - Kiểm toán nhà nước; - Ủy ban trung ương Mặt trận Tổ quốc Việt Nam; - Cơ quan trung ương của các đoàn thể: - VPCP: BTCN, các PCN, Trợ lý TTg, TGĐ Cổng TTĐT, các Vụ, Cục, đơn vị trực thuộc, Công báo; -Lưu: VT, KGVX Ób). H ị NA Phụ lục J % SA SINH TỰ, THỦ TỤC THỰC HIỆN CÁC NHIỆM VỤ 2U PHAN QUYỀN, PHÂN CẤP TRONG LĨNH VỰC Ý NHÀ NƯỚC CỦA BỘ GIÁO DỤC VÀ ĐÀO TẠO (Kèm theo Nghị định số 143 /2025/NĐ-CP ngày 12 tháng 6 năm 2025 của Chính phủ)",
           "khoan": []
         },
         {
@@ -222,8 +273,17 @@
           "khoan": [
             {
               "so_khoan": "1",
-              "noi_dung": "Hồ sơ đề nghị công nhận tỉnh đạt chuẩn phổ cập giáo dục, xóa mù chữ a) Báo cáo quá trình thực hiện và kết quả phỗ cập giáo dục hoặc xóa mù chữ kèm theo các biểu thống kê. b) Biên bản kiểm tra phổ cập giáo dục hoặc xóa mù chữ của tỉnh đối với xã trên địa bàn tỉnh. c) Quyết định công nhận xã đạt chuẩn phổ cập giáo dục hoặc xóa mù chữ trên địa bàn tỉnh.",
-              "diem": []
+              "noi_dung": "Hồ sơ đề nghị công nhận tỉnh đạt chuẩn phổ cập giáo dục, xóa mù chữ a) Báo cáo quá trình thực hiện và kết quả phỗ cập giáo dục hoặc xóa mù chữ kèm theo các biểu thống kê.",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Biên bản kiểm tra phổ cập giáo dục hoặc xóa mù chữ của tỉnh đối với xã trên địa bàn tỉnh."
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Quyết định công nhận xã đạt chuẩn phổ cập giáo dục hoặc xóa mù chữ trên địa bàn tỉnh."
+                }
+              ]
             },
             {
               "so_khoan": "2",
@@ -232,8 +292,17 @@
             },
             {
               "so_khoan": "3",
-              "noi_dung": "Trình tự thực hiện a) Ủy ban nhân dân cấp tỉnh hoàn thành việc tự kiểm tra công nhận đạt chuẩn phế cập giáo dục, xóa mù chữ theo các quy định hiện hành trước ngày 30 tháng 12 hằng năm. b) Trong trường hợp đạt chuẩn phổ cập giáo dục mức độ 1 hoặc mức độ 2 hoặc xóa mù chữ mức độ 1 thì Chủ tịch Ủy ban nhân dân cấp tỉnh công bố việc đạt chuẩn phổ cập giáo dục, xóa mù chữ và gửi báo cáo Bộ Giáo dục và Đào tạo để tổng hợp, theo dõi. c) Trong trường hợp đạt chuẩn phổ cập giáo dục mức độ 3, xóa mù chữ mức độ 2, Ủy ban nhân dân cấp tỉnh lập hồ sơ theo quy định tại khoản 1 Điều này và đề nghị Bộ Giáo dục và Đào tạo kiểm tra hồ sơ, kiểm tra thực tế kết quả thực hiện phố cập giáo dục, xóa mù chữ. Trong trường hợp đủ tiêu chuẩn, Bộ trưởng Bộ Giáo dục và Đào tạo quyết định công nhận tỉnh đạt chuẩn phổ cập giáo dục mức độ 3, xóa mù chữ mức độ",
-              "diem": []
+              "noi_dung": "Trình tự thực hiện a) Ủy ban nhân dân cấp tỉnh hoàn thành việc tự kiểm tra công nhận đạt chuẩn phế cập giáo dục, xóa mù chữ theo các quy định hiện hành trước ngày 30 tháng 12 hằng năm.",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong trường hợp đạt chuẩn phổ cập giáo dục mức độ 1 hoặc mức độ 2 hoặc xóa mù chữ mức độ 1 thì Chủ tịch Ủy ban nhân dân cấp tỉnh công bố việc đạt chuẩn phổ cập giáo dục, xóa mù chữ và gửi báo cáo Bộ Giáo dục và Đào tạo để tổng hợp, theo dõi."
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong trường hợp đạt chuẩn phổ cập giáo dục mức độ 3, xóa mù chữ mức độ 2, Ủy ban nhân dân cấp tỉnh lập hồ sơ theo quy định tại khoản 1 Điều này và đề nghị Bộ Giáo dục và Đào tạo kiểm tra hồ sơ, kiểm tra thực tế kết quả thực hiện phố cập giáo dục, xóa mù chữ. Trong trường hợp đủ tiêu chuẩn, Bộ trưởng Bộ Giáo dục và Đào tạo quyết định công nhận tỉnh đạt chuẩn phổ cập giáo dục mức độ 3, xóa mù chữ mức độ"
+                }
+              ]
             },
             {
               "so_khoan": "2",
@@ -244,12 +313,47 @@
         },
         {
           "so_dieu": "2",
-          "noi_dung": "Thủ tục cho phép thành lập, giải thể, chấm dứt cơ sở giáo dục mầm non, cơ sở giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ đề nghị cho phép ! thành lập + \"xe. \" 1. Hồ sơ thành lập cơ sở giáo dục mầm non và cơ sở giáo dục phổ. thống do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ, thành lập, hồ sơ bao gồm: S 1 Lư ý a). Đơn đề nghị cho phép thành lập cơ sở giáo dục mền non, cơ SỞ giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ đề nghị cho phép thành lập theo Mẫu số 01 tại Phụ lục II ban hành kèm theo Nghị định này; b) Đề án thành lập cơ sở giáo dục mầm non, cơ sở giáo dục phố thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ đề nghị cho phép thành lập theo Mẫu số 02 tại Phụ lục II ban hành kèm theo Nghị định này, trong đó xác định rõ: Tên gọi của cơ sở giáo dục; mục tiêu, nhiệm vụ giáo dục; phạm vi hoạt động giáo dục; văn bằng, chứng chỉ sẽ cấp; đự kiến cơ cầu bộ máy tổ chức, quản lý, điều hành. Dự kiến cụ thể kế hoạch xây dựng, phát triển và quy mô đào tạo của cơ sở giáo dục trong từng giai đoạn, trong đó làm rõ khả năng đáp ứng các nội dung bảo đảm chất lượng giáo dục; c) Bản sao có chứng thực hoặc bản sao kèm theo bản gốc để đối chiếu của văn bản thuê đất hoặc văn bản thỏa thuận về nguyên tắc thuê đất, thuê cơ sở vật chất sẵn có phù hợp với quy định. Trường hợp cơ quan có thẩm quyền khai thác, chia sẻ được dữ liệu của địa phương thì cá nhân, tổ chức không phải cung cấp thành phần hồ sơ này; d) Văn bản chứng minh năng lực tài chính.",
+          "noi_dung": "Thủ tục cho phép thành lập, giải thể, chấm dứt cơ sở giáo dục mầm non, cơ sở giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ đề nghị cho phép ! thành lập + \"xe. \"",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Hồ sơ thành lập cơ sở giáo dục mầm non và cơ sở giáo dục phổ. thống do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ, thành lập, hồ sơ bao gồm: S 1 Lư ý a). Đơn đề nghị cho phép thành lập cơ sở giáo dục mền non, cơ SỞ giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ đề nghị cho phép thành lập theo Mẫu số 01 tại Phụ lục II ban hành kèm theo Nghị định này;",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Đề án thành lập cơ sở giáo dục mầm non, cơ sở giáo dục phố thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ đề nghị cho phép thành lập theo Mẫu số 02 tại Phụ lục II ban hành kèm theo Nghị định này, trong đó xác định rõ: Tên gọi của cơ sở giáo dục; mục tiêu, nhiệm vụ giáo dục; phạm vi hoạt động giáo dục; văn bằng, chứng chỉ sẽ cấp; đự kiến cơ cầu bộ máy Tổ chức, quản lý, điều hành. Dự kiến cụ thể kế hoạch xây dựng, phát triển và quy mô đào tạo của cơ sở giáo dục trong từng giai đoạn, trong đó làm rõ khả năng đáp ứng các nội dung bảo đảm chất lượng giáo dục;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Bản sao có chứng thực hoặc bản sao kèm theo bản gốc để đối chiếu của văn bản thuê đất hoặc văn bản thỏa thuận về nguyên tắc thuê đất, thuê cơ sở vật chất sẵn có phù hợp với quy định. Trường hợp cơ quan có thẩm quyền khai thác, chia sẻ được dữ liệu của địa phương thì cá nhân, Tổ chức không phải cung cấp thành phần hồ sơ này;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Văn bản chứng minh năng lực tài chính."
+                }
+              ]
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Trình tự thực hiện: a) Nhà đầu tư gửi 01 bộ hồ sơ qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiêp đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo); b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được hồ sơ, nếu hồ sơ không hợp lệ, Sở Giáo dục và Đào tạo thông báo băng văn bản cho cơ sở giáo dục đê sửa đổi, bô sung: c) Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, Sở Giáo dục và Đào tạo có trách nhiệm kiểm tra tính hợp lệ của hồ sơ và gửi hồ sơ xin ý kiến của các cơ quan, đơn vị có liên quan. Trong thời hạn 10 ngày làm việc kế từ ngày nhận được công văn xin ý kiến của cơ quan tiếp nhận hồ sơ, cơ quan, đơn vị được hỏi ý kiến phải có văn bản trả lời; d) Trong thời hạn 15 ngày làm việc kể từ ngày nhận đủ ý kiến, Sở Giáo dục và Đào tạo tổ chức thẩm định hô sơ; nêu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định; nếu chưa đủ điều kiện thì thông báo thông báo băng văn bản gửi trực tiệp hoặc qua dịch vụ bưu điện cho nhà đâu tư, trong đó nêu rõ lý do.",
-              "diem": []
+              "noi_dung": "Trình tự thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Nhà đầu tư gửi 01 bộ hồ sơ qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được hồ sơ, nếu hồ sơ không hợp lệ, Sở Giáo dục và Đào tạo thông báo băng văn bản cho cơ sở giáo dục đê sửa đổi, bô sung:"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, Sở Giáo dục và Đào tạo có trách nhiệm kiểm tra tính hợp lệ của hồ sơ và gửi hồ sơ xin ý kiến của các cơ quan, đơn vị có liên quan. Trong thời hạn 10 ngày làm việc kế từ ngày nhận được công văn xin ý kiến của cơ quan tiếp nhận hồ sơ, cơ quan, đơn vị được hỏi ý kiến phải có văn bản trả lời;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Trong thời hạn 15 ngày làm việc kể từ ngày nhận đủ ý kiến, Sở Giáo dục và Đào tạo Tổ chức thẩm định hô sơ; nêu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định; nếu chưa đủ điều kiện thì thông báo thông báo băng văn bản gửi trực tiệp hoặc qua dịch vụ bưu điện cho nhà đầu tư, trong đó nêu rõ lý do."
+                }
+              ]
             },
             {
               "so_khoan": "3",
@@ -257,18 +361,35 @@
               "diem": [
                 {
                   "so_diem": "a",
-                  "noi_dung": "Đơn đề nghị giải thể, chấm dứt hoạt động của cơ sở giáo dục; b) Phương án giải thể, chấm dứt hoạt động của cơ sở giáo dục có vốn đầu tư nước ngoài trong đó nêu rõ các biện pháp bảo đảm quyền lợi hợp pháp của người học, nhà giáo, cán bộ quản lý và nhân viên; phương án giải quyết tài chính, tài sản."
+                  "noi_dung": "Đơn đề nghị giải thể, chấm dứt hoạt động của cơ sở giáo dục;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Phương án giải thể, chấm dứt hoạt động của cơ sở giáo dục có vốn đầu tư nước ngoài trong đó nêu rõ các biện pháp bảo đảm quyền lợi hợp pháp của người học, nhà giáo, cán bộ quản lý và nhân viên; phương án giải quyết tài chính, tài sản."
                 }
               ]
             },
             {
               "so_khoan": "4",
-              "noi_dung": "Thủ tục thực hiện: a) Nhà đầu tư gửi 01 bộ hồ sơ qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiệp đến Trung tâm Phục vụ hành chính công cập tỉnh (Sở Giáo dục và Đào tạo); b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được hồ sơ, nếu hồ sơ không hợp lệ, Sở Giáo dục và Đào tạo thông báo băng văn bản cho cơ sở giáo dục đề sửa đổi, bố sung; c) Trong thời hạn 20 ngày làm việc kể từ ngày nhận được hồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thẩm định hồ sơ; nếu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định; nếu chưa đủ điều kiện thì thông báo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu điện cho nhà đầu tư, trong đó nêu rõ lý do.",
-              "diem": []
+              "noi_dung": "Thủ tục thực hiện:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Nhà đầu tư gửi 01 bộ hồ sơ qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiệp đến Trung tâm Phục vụ hành chính công cập tỉnh (Sở Giáo dục và Đào tạo);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được hồ sơ, nếu hồ sơ không hợp lệ, Sở Giáo dục và Đào tạo thông báo băng văn bản cho cơ sở giáo dục đề sửa đổi, bố sung;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn 20 ngày làm việc kể từ ngày nhận được hồ sơ hợp lệ, Sở Giáo dục và Đào tạo Tổ chức thẩm định hồ sơ; nếu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định; nếu chưa đủ điều kiện thì thông báo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu điện cho nhà đầu tư, trong đó nêu rõ lý do."
+                }
+              ]
             },
             {
               "so_khoan": "5",
-              "noi_dung": "Trường hợp cơ sở giáo dục vi phạm một trong các nội dung quy định tại các điểm b, c, d và đ khoản 2 Điều 51 Nghị định số 86/2018/NĐ-CP (được sửa đổi, bố sung một số điều bởi Nghị định số 124/2024/NĐ-CP), Sở Giáo dục và Đào tạo tổ chức kiểm tra các nội dung vi phạm và trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định.",
+              "noi_dung": "Trường hợp cơ sở giáo dục vi phạm một trong các nội dung quy định tại các điểm b, c, d và đ khoản 2 Điều 51 Nghị định số 86/2018/NĐ-CP (được sửa đổi, bố sung một số điều bởi Nghị định số 124/2024/NĐ-CP), Sở Giáo dục và Đào tạo Tổ chức kiểm tra các nội dung vi phạm và trình Chủ tịch Ủy ban nhân dân cấp tỉnh xem xét, quyết định.",
               "diem": []
             },
             {
@@ -280,23 +401,115 @@
         },
         {
           "so_dieu": "3",
-          "noi_dung": "Thủ tục chuyển đổi cơ sở giáo dục mầm non, cơ sở giáo dục phô thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quôc tế liên chính phú đê nghị thành lập sang hoạt động không vì lợi nhuận 1. Hồ sơ chuyển đổi cơ sở giáo dục mầm non, cơ sở giáo dục phô thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ đề nghị thành lập sang hoạt động không vì lợi nhuận bao gôm: a) Tờ trình đề nghị chuyển đổi sang hoạt động không vì lợi nhuận, trong đó nêu rõ sự cần thiết phải chuyển đổi; tôn chỉ, mục đích hoạt động không vì lợi nhuận; phần vốn góp, phần tài sản thuộc sở hữu chung hợp nhất không phân chia của cơ sở giáo dục (nếu có); b) Văn bản cam kết của các nhà đầu tư đại diện ít nhất 75% tổng số vốn góp của cơ sở giáo dục, bảo đảm thực hiện hoạt động không vì lợi nhuận, không rút vốn, không hưởng lợi tức; phần lợi nhuận tích lũy hằng năm thuộc sở hữu chung hợp nhất không phân chia đề tiếp tục đầu tư phát triển cơ sở giáo dục; c) Dự thảo quy chế tổ chức và hoạt động: dự thảo quy chế tài chính nội bộ của cơ sở giáo dục hoạt động không vì lợi nhuận; d) Bản sao được cấp từ số gốc, bản sao được chứng thực từ bản chính hoặc bản sao kèm theo bản chính đề đối chiều báo cáo kết quả kiểm toán; thỏa thuận giải quyết phần vốn góp cho nhà đầu tư không đồng ý chuyển đổi sang cơ SỞ giáo dục hoạt động không vì lợi nhuận (nếu có); các giây tờ, tài liệu về đất đai, tài sản, tài chính, tổ chức và nhân sự của cơ sở giáo dục; đ) Báo cáo đánh giá tác động của việc chuyển đổi về nhân sự, tài chính, tài sản và phương án xử lý; e) Quyết định thành lập, quyết định công nhận hội đồng trường đương nhiệm, quyết định công nhận hiệu trưởng đương nhiệm và các tài liệu liên quan khác (nếu có).",
+          "noi_dung": "Thủ tục chuyển đổi cơ sở giáo dục mầm non, cơ sở giáo dục phô thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phú đê nghị thành lập sang hoạt động không vì lợi nhuận",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Hồ sơ chuyển đổi cơ sở giáo dục mầm non, cơ sở giáo dục phô thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ đề nghị thành lập sang hoạt động không vì lợi nhuận bao gôm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tờ trình đề nghị chuyển đổi sang hoạt động không vì lợi nhuận, trong đó nêu rõ sự cần thiết phải chuyển đổi; tôn chỉ, mục đích hoạt động không vì lợi nhuận; phần vốn góp, phần tài sản thuộc sở hữu chung hợp nhất không phân chia của cơ sở giáo dục (nếu có);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Văn bản cam kết của các nhà đầu tư đại diện ít nhất 75% tổng số vốn góp của cơ sở giáo dục, bảo đảm thực hiện hoạt động không vì lợi nhuận, không rút vốn, không hưởng lợi tức; phần lợi nhuận tích lũy hằng năm thuộc sở hữu chung hợp nhất không phân chia đề tiếp tục đầu tư phát triển cơ sở giáo dục;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Dự thảo quy chế Tổ chức và hoạt động: dự thảo quy chế tài chính nội bộ của cơ sở giáo dục hoạt động không vì lợi nhuận;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Bản sao được cấp từ số gốc, bản sao được chứng thực từ bản chính hoặc bản sao kèm theo bản chính đề đối chiều báo cáo kết quả kiểm toán; thỏa thuận giải quyết phần vốn góp cho nhà đầu tư không đồng ý chuyển đổi sang cơ SỞ giáo dục hoạt động không vì lợi nhuận (nếu có); các giây tờ, tài liệu về đất đai, tài sản, tài chính, Tổ chức và nhân sự của cơ sở giáo dục;"
+                },
+                {
+                  "so_diem": "đ",
+                  "noi_dung": "Báo cáo đánh giá tác động của việc chuyển đổi về nhân sự, tài chính, tài sản và phương án xử lý;"
+                },
+                {
+                  "so_diem": "e",
+                  "noi_dung": "Quyết định thành lập, quyết định công nhận hội đồng trường đương nhiệm, quyết định công nhận hiệu trưởng đương nhiệm và các tài liệu liên quan khác (nếu có)."
+                }
+              ]
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Quy trình xử lý a) Cơ sở giáo dục gửi 01 bộ hồ sơ qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo); b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được hồ sơ, nếu hồ sơ không hợp lệ, Sở Giáo dục và Đào tạo thông báo bằng văn bản cho cơ sở giáo dục để sửa đổi, bổ sung; e) Trong thời hạn 05 ngày làm việc kế từ ngày nhận đủ hồ sơ theo quy định, Sở Giáo dục và Đào tạo có trách nhiệm kiểm tra tính hợp lệ của hồ sơ và gửi hồ sơ xin ý kiến của các cơ quan, đơn vị có liên quan. Trong thời hạn 10 ngày làm việc kể từ ngày nhận được công văn xin ý kiến của Sở Giáo dục và Đào tạo, cơ quan, đơn vị được hỏi ý kiến phải có văn bản trả lời; d) Trong thời hạn 15 ngày làm việc kế từ ngày nhận đủ ý kiến, Sở Giáo dục và Đào tạo lập báo cáo thầm định; nếu đủ điều kiện thì Giám đốc SỞ Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định; nếu chưa đủ điều kiện thì thông báo thông báo bằng văn bản cho cơ sở giáo dục, trong đó nêu rõ lý do.",
-              "diem": []
+              "noi_dung": "Quy trình xử lý a) Cơ sở giáo dục gửi 01 bộ hồ sơ qua công dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo);",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được hồ sơ, nếu hồ sơ không hợp lệ, Sở Giáo dục và Đào tạo thông báo bằng văn bản cho cơ sở giáo dục để sửa đổi, bổ sung;"
+                },
+                {
+                  "so_diem": "e",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc kế từ ngày nhận đủ hồ sơ theo quy định, Sở Giáo dục và Đào tạo có trách nhiệm kiểm tra tính hợp lệ của hồ sơ và gửi hồ sơ xin ý kiến của các cơ quan, đơn vị có liên quan. Trong thời hạn 10 ngày làm việc kể từ ngày nhận được công văn xin ý kiến của Sở Giáo dục và Đào tạo, cơ quan, đơn vị được hỏi ý kiến phải có văn bản trả lời;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Trong thời hạn 15 ngày làm việc kế từ ngày nhận đủ ý kiến, Sở Giáo dục và Đào tạo lập báo cáo thẩm định; nếu đủ điều kiện thì Giám đốc SỞ Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định; nếu chưa đủ điều kiện thì thông báo thông báo bằng văn bản cho cơ sở giáo dục, trong đó nêu rõ lý do."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "4",
-          "noi_dung": "Thủ tục phê duyệt liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài 1. Hồ sơ liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài gồm: 3) Đơn đề nghị phê duyệt liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài theo Mẫu số 03 tại Phụ lục JI ban hành kèm theo Nghị định này; b) Thỏa thuận hoặc hợp đồng giữa cơ sở tổ chức thi tại Việt Nam và cơ sở đánh giá năng lực ngoại ngữ nước ngoài; c) Văn bản xác nhận tư cách pháp lý của các bên liên kết; d) Đề á án tổ chức thi để cấp chứng chỉ năng lực ngoại ngữ của nước ngoài theo Mẫu số 04 tại Phụ lục JI ban hành kèm theo Nghị định này, trong đó có thông tin về giá trị và phạm vi sử dụng của chứng chỉ ngoại ngữ nước ngoài, minh chứng về bảo đảm chất lượng của việc tổ chức thi, địa điểm tổ chức thi, cách thức tổ chức, trách nhiệm của các bên, lệ phí thi và các loại phí, cơ chế thu chỉ và quản lý tài chính, quyền hạn và trách nhiệm người tham dự thi và các nội dung liên quan khác.",
+          "noi_dung": "Thủ tục phê duyệt liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Hồ sơ liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài gồm: 3) Đơn đề nghị phê duyệt liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài theo Mẫu số 03 tại Phụ lục JI ban hành kèm theo Nghị định này;",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Thỏa thuận hoặc hợp đồng giữa cơ sở Tổ chức thi tại Việt Nam và cơ sở đánh giá năng lực ngoại ngữ nước ngoài;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Văn bản xác nhận tư cách pháp lý của các bên liên kết;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Đề á án Tổ chức thi để cấp chứng chỉ năng lực ngoại ngữ của nước ngoài theo Mẫu số 04 tại Phụ lục JI ban hành kèm theo Nghị định này, trong đó có thông tin về giá trị và phạm vi sử dụng của chứng chỉ ngoại ngữ nước ngoài, minh chứng về bảo đảm chất lượng của việc Tổ chức thi, địa điểm Tổ chức thi, cách thức Tổ chức, trách nhiệm của các bên, lệ phí thi và các loại phí, cơ chế thu chỉ và quản lý tài chính, quyền hạn và trách nhiệm người tham dự thi và các nội dung liên quan khác."
+                }
+              ]
+            },
+            {
               "so_khoan": "3",
-              "noi_dung": "Thủ tục phê duyệt: a) Các bên liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài gửi 01 bộ hồ sơ trực tiếp hoặc qua dịch vụ bưu chính hoặc qua cổng dịch vụ công trực tuyến đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo); b) Trường hợp hồ sơ không đầy đủ, trong thời hạn 05 ngày làm việc kể từ ngày nhận được hô sơ, Sở Giáo dục và Đào tạo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu chính hoặc qua công dịch vụ công trực tuyến hoặc thư điện tử cho các bên đề nghị liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài; c) Trong thời hạn 20 ngày làm việc kể từ ngày nhận được đủ hồ sơ, Sở Giáo dục và Đào tạo thẩm định; nếu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định; nếu chưa đủ điều kiện thì thông báo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu chính hoặc qua công dịch vụ công trực tuyến cho. các bên liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài, trong đó nêu rõ lý do. \"Điều 5. Thủ tục cấp, gia hạn, chấm dứt hoạt động, sửa đổi, bố sung quyết định cho phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam 1, Hồ sơ đề nghị cho phép thành lập văn phòng đại diện giáo dục nước ngoài tại Việt Nam bao gồm: a) Đơn đề nghị cho phép thành lập văn phòng đại diện giáo dục nước ngoài tại Việt Nam theo Mẫu số 05 tại Phụ lục II ban hành kèm theo Nghị định này; bì Bản sao có chứng thực hoặc bản sao kèm theo bản chính để đối chiếu các giây tờ sau: Văn bản chứng minh tư cách pháp lý của tổ chức, cơ sở giáo dục nước ngoài; Điều lệ hoạt động của tổ chức, cơ sở giáo dục nước ngoài; Giấy chứng nhận kiểm định chất lượng giáo dục của cơ sở giáo ‹ dục nước ngoài hoặc giây tờ công nhận chất lượng giáo dục của cơ quan có thẩm quyền; Báo cáo tóm tắt sự hình thành và phát triển của tổ chức, cơ sở giáo dục nước ngoài; c) Dự thảo quy chế tổ chức, hoạt động của văn phòng đại diện giáo dục nước ngoài tại Việt Nam; d) Văn bản giới thiệu nhân sự làm trưởng văn phòng đại diện giáo dục nước ngoài tại Việt Nam và lý lịch cá nhân của người được giới thiệu.",
-              "diem": []
+              "noi_dung": "Thủ tục phê duyệt:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Các bên liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài gửi 01 bộ hồ sơ trực tiếp hoặc qua dịch vụ bưu chính hoặc qua cổng dịch vụ công trực tuyến đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trường hợp hồ sơ không đầy đủ, trong thời hạn 05 ngày làm việc kể từ ngày nhận được hô sơ, Sở Giáo dục và Đào tạo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu chính hoặc qua công dịch vụ công trực tuyến hoặc thư điện tử cho các bên đề nghị liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn 20 ngày làm việc kể từ ngày nhận được đủ hồ sơ, Sở Giáo dục và Đào tạo thẩm định; nếu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định; nếu chưa đủ điều kiện thì thông báo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu chính hoặc qua công dịch vụ công trực tuyến cho. các bên liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài, trong đó nêu rõ lý do. \"Điều"
+                }
+              ]
+            },
+            {
+              "so_khoan": "5",
+              "noi_dung": "Thủ tục cấp, gia hạn, chấm dứt hoạt động, sửa đổi, bố sung quyết định cho phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam 1, Hồ sơ đề nghị cho phép thành lập văn phòng đại diện giáo dục nước ngoài tại Việt Nam bao gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Đơn đề nghị cho phép thành lập văn phòng đại diện giáo dục nước ngoài tại Việt Nam theo Mẫu số 05 tại Phụ lục II ban hành kèm theo Nghị định này; bì Bản sao có chứng thực hoặc bản sao kèm theo bản chính để đối chiếu các giây tờ sau: Văn bản chứng minh tư cách pháp lý của Tổ chức, cơ sở giáo dục nước ngoài; Điều lệ hoạt động của Tổ chức, cơ sở giáo dục nước ngoài; Giấy chứng nhận kiểm định chất lượng giáo dục của cơ sở giáo ‹ dục nước ngoài hoặc giây tờ công nhận chất lượng giáo dục của cơ quan có thẩm quyền; Báo cáo tóm tắt sự hình thành và phát triển của Tổ chức, cơ sở giáo dục nước ngoài;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Dự thảo quy chế Tổ chức, hoạt động của văn phòng đại diện giáo dục nước ngoài tại Việt Nam;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Văn bản giới thiệu nhân sự làm trưởng văn phòng đại diện giáo dục nước ngoài tại Việt Nam và lý lịch cá nhân của người được giới thiệu."
+                }
+              ]
             },
             {
               "so_khoan": "2",
@@ -305,54 +518,160 @@
             },
             {
               "so_khoan": "3",
-              "noi_dung": "Thủ tục cho phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam: a) Tổ chức, cơ sở giáo dục nước ngoài gửi 01 bộ hồ sơ qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo); b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được hồ sơ, nếu hồ sơ không hợp lệ, Sở Giáo dục và Đào tạo thông báo bằng văn bản cho cơ sở giáo dục để sửa đồi, bổ sung; c) Trong thời hạn 05 ngày làm việc kế từ ngày nhận đủ hồ sơ theo quy định, Sở Giáo dục và Đào tạo có trách nhiệm kiểm tra tính hợp lệ của hồ sơ và gửi hồ sơ xin ý kiến của các cơ quan, đơn vị có liên quan. Trong thời hạn 10 ngày làm việc kể từ ngày nhận được công văn xin ý kiến của Sở Giáo dục và Đào tạo, cơ quan, đơn vị được hỏi ý kiến phải có văn bản trả lời; d) Trong thời hạn 15 ngày làm việc kế từ ngày nhận đủ ý kiến, Sở Giáo dục và Đào tạo lập báo cáo thẩm định; nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định theo Mẫu số 06 tại Phụ lục II ban hành kèm theo Nghị định này; nêu chưa đủ điều kiện thì thông báo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu điện cho nhà đầu tư, trong đó nêu rõ lý do.",
-              "diem": []
+              "noi_dung": "Thủ tục cho phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tổ chức, cơ sở giáo dục nước ngoài gửi 01 bộ hồ sơ qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được hồ sơ, nếu hồ sơ không hợp lệ, Sở Giáo dục và Đào tạo thông báo bằng văn bản cho cơ sở giáo dục để sửa đồi, bổ sung;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc kế từ ngày nhận đủ hồ sơ theo quy định, Sở Giáo dục và Đào tạo có trách nhiệm kiểm tra tính hợp lệ của hồ sơ và gửi hồ sơ xin ý kiến của các cơ quan, đơn vị có liên quan. Trong thời hạn 10 ngày làm việc kể từ ngày nhận được công văn xin ý kiến của Sở Giáo dục và Đào tạo, cơ quan, đơn vị được hỏi ý kiến phải có văn bản trả lời;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Trong thời hạn 15 ngày làm việc kế từ ngày nhận đủ ý kiến, Sở Giáo dục và Đào tạo lập báo cáo thẩm định; nếu đủ điều kiện thì Giám đốc Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định theo Mẫu số 06 tại Phụ lục II ban hành kèm theo Nghị định này; nêu chưa đủ điều kiện thì thông báo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu điện cho nhà đầu tư, trong đó nêu rõ lý do."
+                }
+              ]
             },
             {
               "so_khoan": "4",
-              "noi_dung": "Hồ sơ đề nghị sửa đồi, bổ sung, gia hạn quyết định cho phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam bao gồm: a) Đơn đề nghị của tổ chức, cơ sở giáo dục nước ngoài trong đó nêu rõ nội dung, lý do sửa đổi, bổ sung, gia hạn quyết định cho phép thành lập văn phòng đại diện giáo dục nước ngoài; b) Báo cáo chi tiết hoạt động của văn phòng đại diện.",
-              "diem": []
+              "noi_dung": "Hồ sơ đề nghị sửa đồi, bổ sung, gia hạn quyết định cho phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam bao gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Đơn đề nghị của Tổ chức, cơ sở giáo dục nước ngoài trong đó nêu rõ nội dung, lý do sửa đổi, bổ sung, gia hạn quyết định cho phép thành lập văn phòng đại diện giáo dục nước ngoài;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Báo cáo chi tiết hoạt động của văn phòng đại diện."
+                }
+              ]
             },
             {
               "so_khoan": "5",
-              "noi_dung": "Hỗ sơ đề nghị chẩm dứt hoạt động của văn phòng đại diện của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam a) Đơn đề nghị chấm dứt hoạt động của văn phòng đại diện trong đó nêu rõ lý do chấm đứt hoạt động; _b) Phương án chấm dứt hoạt động, trong đó nêu rõ các biện pháp bảo đảm quyền lợi hợp pháp của người lao động: phương án giải quyết tài chính, tài sản.",
+              "noi_dung": "Hỗ sơ đề nghị chẩm dứt hoạt động của văn phòng đại diện của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam a) Đơn đề nghị chấm dứt hoạt động của văn phòng đại diện trong đó nêu rõ lý do chấm đứt hoạt động; _b) Phương án chấm dứt hoạt động, trong đó nêu rõ các biện pháp bảo đảm quyền lợi hợp pháp của người lao động: phương án giải quyết tài chính, tài sản.",
               "diem": []
             },
             {
               "so_khoan": "6",
-              "noi_dung": "Thủ tục sửa đổi, bổ sung, gia hạn quyết định cho phép thành lập, chấm dứt hoạt động văn phòng đại diện của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam a) Tổ chức, cơ sở giáo dục rước ngoài gửi 01 bộ hồ sơ qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo); b) Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được hồ sơ, nếu hồ sơ không hợp lệ, Sở Giáo dục và Đào tạo thông báo bằng văn bản cho cơ sở giáo dục để sửa đồi, bổ sung; c) Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, Sở Giáo dục và Đào tạo có trách nhiệm kiểm tra tính hợp lệ của hồ sơ và gửi hồ sơ xin ý kiến của các cơ quan, đơn vị có liên quan. Trong thời hạn 10 ngày làm việc kể từ ngày nhận được công văn xin ý kiến của cơ quan tiếp nhận hồ sơ, cơ quan, đơn vị được hỏi ý kiến phải có văn bản trả lời; d) Trong thời hạn 15 ngày làm việc kể từ ngày nhận đủ ý kiến, Sở Giáo dục và Đào tạo lập báo cáo thẩm định; nếu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định theo Mẫu số 07 hoặc Mẫu số 08 tại Phụ lục II ban hành kèm theo Nghị định này; nếu chưa đủ điều kiện thì thông báo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu điện cho nhà đầu tư, trong đó nêu rõ lý do.",
-              "diem": []
+              "noi_dung": "Thủ tục sửa đổi, bổ sung, gia hạn quyết định cho phép thành lập, chấm dứt hoạt động văn phòng đại diện của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam a) Tổ chức, cơ sở giáo dục rước ngoài gửi 01 bộ hồ sơ qua cổng dịch vụ công trực tuyến hoặc bưu chính hoặc trực tiếp đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo);",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc, kể từ ngày nhận được hồ sơ, nếu hồ sơ không hợp lệ, Sở Giáo dục và Đào tạo thông báo bằng văn bản cho cơ sở giáo dục để sửa đồi, bổ sung;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn 05 ngày làm việc kể từ ngày nhận đủ hồ sơ theo quy định, Sở Giáo dục và Đào tạo có trách nhiệm kiểm tra tính hợp lệ của hồ sơ và gửi hồ sơ xin ý kiến của các cơ quan, đơn vị có liên quan. Trong thời hạn 10 ngày làm việc kể từ ngày nhận được công văn xin ý kiến của cơ quan tiếp nhận hồ sơ, cơ quan, đơn vị được hỏi ý kiến phải có văn bản trả lời;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Trong thời hạn 15 ngày làm việc kể từ ngày nhận đủ ý kiến, Sở Giáo dục và Đào tạo lập báo cáo thẩm định; nếu đủ điều kiện thì Sở Giáo dục và Đào tạo trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định theo Mẫu số 07 hoặc Mẫu số 08 tại Phụ lục II ban hành kèm theo Nghị định này; nếu chưa đủ điều kiện thì thông báo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu điện cho nhà đầu tư, trong đó nêu rõ lý do."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "6",
-          "noi_dung": "Thủ, tục cấp, sửa đổi, bỗ sung, gia hạn, cấp lại, chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam 1. Hồ sơ đề nghị cấp giấy phép thành lập văn phòng đại diện là 01 bộ, bao gồm: a) Văn bản của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài ‹ đề nghị cho phép thành lập văn phòng đại diện tại Việt Nam, trong đó nêu lý do, sự cần thiết thành lập văn phòng đại diện tại Việt Nam; tóm tắt quá trình hình thành và phát triển của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài; dự kiến nhân sự giữ chức trưởng văn phòng M đại diện tại Việt Nam theo Mẫu số 09 tại Phụ lục II ban hành kèm theo Nghị định này; b) Bản sao có chứng thực hoặc bản sao kèm theo bản chính để đối chiếu văn bản chứng minh tư cách 1 pháp lý của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài; c) Bản sao Điều lệ hoạt động của tổ chức, cơ sở giáo dục nghê nghiệp nước ngoài; d) Dự thảo Quy chế tổ chức, hoạt động của văn phòng đại diện tại Việt Nam; đ) Lý lịch cá nhân của người dự kiến giữ chức trưởng văn phòng đại diện tại Việt Nam có xác nhận của người đúng đầu tôi chức, cơ sở giáo dục nước ngoài ở nước ngoài hoặc của cơ quan có thẩm quyền của Việt Nam; e) Các văn bản xác nhận do cơ quan nước ngoài cấp phải được hợp pháp hóa lãnh sự theo quy định pháp luật vê hợp pháp hóa lãnh sự.",
+          "noi_dung": "Thủ, tục cấp, sửa đổi, bỗ sung, gia hạn, cấp lại, chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Hồ sơ đề nghị cấp giấy phép thành lập văn phòng đại diện là 01 bộ, bao gồm:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Văn bản của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài ‹ đề nghị cho phép thành lập văn phòng đại diện tại Việt Nam, trong đó nêu lý do, sự cần thiết thành lập văn phòng đại diện tại Việt Nam; tóm tắt quá trình hình thành và phát triển của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài; dự kiến nhân sự giữ chức trưởng văn phòng M đại diện tại Việt Nam theo Mẫu số 09 tại Phụ lục II ban hành kèm theo Nghị định này;"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Bản sao có chứng thực hoặc bản sao kèm theo bản chính để đối chiếu văn bản chứng minh tư cách 1 pháp lý của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Bản sao Điều lệ hoạt động của Tổ chức, cơ sở giáo dục nghê nghiệp nước ngoài;"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Dự thảo Quy chế Tổ chức, hoạt động của văn phòng đại diện tại Việt Nam;"
+                },
+                {
+                  "so_diem": "đ",
+                  "noi_dung": "Lý lịch cá nhân của người dự kiến giữ chức trưởng văn phòng đại diện tại Việt Nam có xác nhận của người đúng đầu tôi chức, cơ sở giáo dục nước ngoài ở nước ngoài hoặc của cơ quan có thẩm quyền của Việt Nam;"
+                },
+                {
+                  "so_diem": "e",
+                  "noi_dung": "Các văn bản xác nhận do cơ quan nước ngoài cấp phải được hợp pháp hóa lãnh sự theo quy định pháp luật vê hợp pháp hóa lãnh sự."
+                }
+              ]
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Trình tự cấp giấy phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam a) Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài đề nghị cấp giấy phép thành lập văn phòng đại diện tại Việt Nam lập hồ sơ theo quy định tại khoản 1 Điều này và gửi trực tiếp hoặc qua công dịch vụ công trực tuyến hoặc bưu điện đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo); b) Trường hợp hồ sơ không đây đủ, trong thời hạn 05 ngày làm việc, Sở Giáo dục và Đào tạo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ - bưu chính hoặc thư điện tử cho tổ chức, cơ sở giáo dục nước ngoài; c) Trong thời hạn 20 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thẩm tra, ly ý kiến các cơ quan liên quan (nếu có), trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam theo Mẫu 10 tại Phụ lục II ban hành kèm theo Nghị định này.",
-              "diem": []
+              "noi_dung": "Trình tự cấp giấy phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam a) Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài đề nghị cấp giấy phép thành lập văn phòng đại diện tại Việt Nam lập hồ sơ theo quy định tại khoản 1 Điều này và gửi trực tiếp hoặc qua công dịch vụ công trực tuyến hoặc bưu điện đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo);",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trường hợp hồ sơ không đây đủ, trong thời hạn 05 ngày làm việc, Sở Giáo dục và Đào tạo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ - bưu chính hoặc thư điện tử cho Tổ chức, cơ sở giáo dục nước ngoài;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn 20 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo Tổ chức thẩm tra, ly ý kiến các cơ quan liên quan (nếu có), trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam theo Mẫu 10 tại Phụ lục II ban hành kèm theo Nghị định này."
+                }
+              ]
             },
             {
               "so_khoan": "3",
-              "noi_dung": "Thủ tục đề nghị sửa đổi, bổ sung, gia hạn, cấp lại giấy phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam: a) Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam gửi văn bản đề nghị sửa đổi, bố sung, gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện theo Mẫu số 11 tại Phụ lục H ban hành kèm theo Nghị định này trực tiếp hoặc qua công dịch vụ công trực tuyến hoặc bưu điện đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo); b) Trường hợp hồ sơ không đầy đủ, trong thời hạn 05 ngày làm việc, Sở Giáo dục và Đào tạo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu chính hoặc thư điện tử cho tổ chức, cơ sở giáo dục nước ngoài; c) Trong thời hạn 15 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo tổ chức thẩm tra, lấy ý kiến các cơ quan liên quan (nếu có), trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định sửa đổi, bổ sung, gia hạn, cấp lại giấy phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam theo Mẫu số 12 tại Phụ lục II ban hành kèm theo Nghị định này.",
-              "diem": []
+              "noi_dung": "Thủ tục đề nghị sửa đổi, bổ sung, gia hạn, cấp lại giấy phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam:",
+              "diem": [
+                {
+                  "so_diem": "a",
+                  "noi_dung": "Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam gửi văn bản đề nghị sửa đổi, bố sung, gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện theo Mẫu số 11 tại Phụ lục H ban hành kèm theo Nghị định này trực tiếp hoặc qua công dịch vụ công trực tuyến hoặc bưu điện đến Trung tâm Phục vụ hành chính công cấp tỉnh (Sở Giáo dục và Đào tạo);"
+                },
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trường hợp hồ sơ không đầy đủ, trong thời hạn 05 ngày làm việc, Sở Giáo dục và Đào tạo thông báo bằng văn bản gửi trực tiếp hoặc qua dịch vụ bưu chính hoặc thư điện tử cho Tổ chức, cơ sở giáo dục nước ngoài;"
+                },
+                {
+                  "so_diem": "c",
+                  "noi_dung": "Trong thời hạn 15 ngày làm việc, kể từ ngày nhận đủ hồ sơ hợp lệ, Sở Giáo dục và Đào tạo Tổ chức thẩm tra, lấy ý kiến các cơ quan liên quan (nếu có), trình Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định sửa đổi, bổ sung, gia hạn, cấp lại giấy phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam theo Mẫu số 12 tại Phụ lục II ban hành kèm theo Nghị định này."
+                }
+              ]
             },
             {
               "so_khoan": "4",
-              "noi_dung": "Thủ tục chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam a) Chủ tịch Ủy ban nhân dân cấp tỉnh có thẩm quyền chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam theo các trường hợp quy định tại khoản 5 Điều 49 của Luật Giáo dục nghề nghiệp; b) Trong thời hạn 60 ngày làm việc, kế từ ngày được thông báo chấm dứt hoạt động, văn phòng đại diện phải hoàn thành mọi thủ tục liên quan đến người lao động: các khoản nợ, tiền lương, chế độ bảo hiểm xã hội; thực hiện các nghĩa vụ tài chính khác (nếu có): hoàn trả giấy phép thành lập văn phòng đại diện, nộp lại con dấu và gửi báo cáo bằng văn bản đến Ủy ban nhân dân cấp tỉnh, Sở Giáo dục và Đào tạo.",
-              "diem": []
+              "noi_dung": "Thủ tục chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam a) Chủ tịch Ủy ban nhân dân cấp tỉnh có thẩm quyền chấm dứt hoạt động, thu hồi giấy phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam theo các trường hợp quy định tại khoản 5 Điều 49 của Luật Giáo dục nghề nghiệp;",
+              "diem": [
+                {
+                  "so_diem": "b",
+                  "noi_dung": "Trong thời hạn 60 ngày làm việc, kế từ ngày được thông báo chấm dứt hoạt động, văn phòng đại diện phải hoàn thành mọi thủ tục liên quan đến người lao động: các khoản nợ, tiền lương, chế độ bảo hiểm xã hội; thực hiện các nghĩa vụ tài chính khác (nếu có): hoàn trả giấy phép thành lập văn phòng đại diện, nộp lại con dấu và gửi báo cáo bằng văn bản đến Ủy ban nhân dân cấp tỉnh, Sở Giáo dục và Đào tạo."
+                }
+              ]
             }
           ]
         },
         {
           "so_dieu": "7",
-          "noi_dung": "Trình tự, thủ tục đánh giá việc đảm bảo các điều kiện và đưa tiếng dân tộc thiểu số vào dạy học 1. Trên cơ sở nguyện vọng của người dân tộc thiểu số, Sở Giáo dục và Đào tạo tổng hợp, lập báo cáo về việc đảm bảo các điều kiện và đưa tiếng dân tộc thiểu số vào dạy học và đề nghị Ủy ban nhân dân cấp tỉnh xem xét đưa tiếng dân tộc thiểu số vào dạy học.",
+          "noi_dung": "Trình tự, thủ tục đánh giá việc đảm bảo các điều kiện và đưa tiếng dân tộc thiểu số vào dạy học",
           "khoan": [
             {
+              "so_khoan": "1",
+              "noi_dung": "Trên cơ sở nguyện vọng của người dân tộc thiểu số, Sở Giáo dục và Đào tạo tổng hợp, lập báo cáo về việc đảm bảo các điều kiện và đưa tiếng dân tộc thiểu số vào dạy học và đề nghị Ủy ban nhân dân cấp tỉnh xem xét đưa tiếng dân tộc thiểu số vào dạy học.",
+              "diem": []
+            },
+            {
               "so_khoan": "2",
-              "noi_dung": "Trong thời hạn 30 ngày làm việc. kế từ ngày nhận được đề nghị của Sở Giáo dục và Đào tạo, Ủy ban nhân dân cấp tỉnh xem xét, đánh giá việc đáp ứng các điều kiện về tổ chức dạy học tiếng dân tộc thiểu số theo quy định của pháp luật. Nếu đủ điều kiện, Chủ tịch Ủy ban nhân dân cấp tỉnh ra quyết định về việc dạy học tiếng dân tộc thiểu số trên địa bàn. Trường hợp không đủ điều kiện thì thông báo cho Sở Giáo dục và Đào tạo và nêu rố lý do. PhụulụcH. XS MU VĂN BẢN THỰC HIỆN CÁC NHIỆM VỤ ĐƯỢC EAÑM)UYÊN, PHÂN CẤP TRONG LĨNH VỰC GIÁO DỤC l (Kèm theo Nghị định số 143 /2025/NĐ-CP ngày 12 tháng Ó năm 2025 của Chính phủ) Đơn đề nghị cho phép thành lập cơ sở giáo dục mầm non, cơ sở giáo dục phô thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tê liên chính phủ đê nghị cho phép thành lập _ Đề án thành lập cơ sở giáo dục mầm non, cơ sở giáo dục phố thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tê liên chính phủ đê nghị cho phép thành lập Đơn đề nghị phê duyệt liên kết tổ chức thì cấp chứng chỉ năng lực ngoại ngữ của nước ngoài Đê án tổ chức thi đề cập chứng chỉ năng lực ngoại ngữ của nước ngoài Đơn đề nghị cho phép thành lập văn phòng đại diện giáo dục nước ngoài tại Việt Nam Quyết định cho phép thành lập văn phòng đại diện giáo dục nước ngoài tại Việt Nam Quyết định sửa đổi, bổ sung, gia hạn quyết định cho phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo đục nước ngoài tại Việt Nam Quyết định chấm dứt hoạt động của văn phòng đại diện của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam Mẫu số 9 Văn bản của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài đề - nghị cho phép thành lập văn phòng đại diện tại Việt Nam ẾP Quyết định thành lập văn phòng đại điện của tổ chức, cơ sở giáo Mẫu số 10. h P dục nghệ nghiệp nước ngoài tại Việt Nam Quyết định sửa đổi, bổ sung, gia hạn, cấp lại giầy phép thành lập Mẫu số 12. văn phòng đại diện của tổ chức, cơ sở giáo dục nghê nghiệp nước ngoài tại Việt Nam Văn bản đề nghị sửa đổi, bổ sung, gia hạn hoặc cấp lại giây phép thành lập văn phòng đại diện Mẫu số 1. Đơn đề nghị cho phép thành lập cơ sở giáo dục mầm non, cơ sở giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tê liên chính phú đề nghị cho phép thành lập CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc. gðy... tháng.... năm..... ĐƠN ĐẺ NGHỊ Cho phép thành lập cơ sở giáo dục mầm non, cơ sở giáo dục phố thông do cơ quan đại diện ngoại giao nước ngoài, _ tổ chức quốc tế liên chính phú đề nghị Tên nhà đầu tư:..................................... Ô).............ồ.ồồồ.ồ.ồ...ee.ssseesseesseneeeees, Giấy chứng nhận đăng ký đầu tư/Giấy chứng nhận đăng ký kinh doanh/doanh nghiệp số:... do... cập ngày... tháng... năm.... (nếu có) Xin phép thành lập cơ sở giáo dục có vốn đầu tư nước ngoài tại Việt Nam với các nội dung chính như sau: 1, Tên cơ sở giáo dục: Tên bằng tiếng Việt:.................................G.nnnnnnnnnnnnnnnnnnn Ennnn0n 0010110101005. Tên bằng tiếng DƯỚC ngoài: 3 3 ĐI NHI Tên viết tắt (nếu GÓ)'....................................",
+              "noi_dung": "Trong thời hạn 30 ngày làm việc. kế từ ngày nhận được đề nghị của Sở Giáo dục và Đào tạo, Ủy ban nhân dân cấp tỉnh xem xét, đánh giá việc đáp ứng các điều kiện về Tổ chức dạy học tiếng dân tộc thiểu số theo quy định của pháp luật. Nếu đủ điều kiện, Chủ tịch Ủy ban nhân dân cấp tỉnh ra quyết định về việc dạy học tiếng dân tộc thiểu số trên địa bàn. Trường hợp không đủ điều kiện thì thông báo cho Sở Giáo dục và Đào tạo và nêu rố lý do. PhụulụcH. XS MU VĂN BẢN THỰC HIỆN CÁC NHIỆM VỤ ĐƯỢC EAÑM)UYÊN, PHÂN CẤP TRONG LĨNH VỰC GIÁO DỤC l (Kèm theo Nghị định số 143 /2025/NĐ-CP ngày 12 tháng Ó năm 2025 của Chính phủ) Đơn đề nghị cho phép thành lập cơ sở giáo dục mầm non, cơ sở giáo dục phô thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tê liên chính phủ đê nghị cho phép thành lập _ Đề án thành lập cơ sở giáo dục mầm non, cơ sở giáo dục phố thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tê liên chính phủ đê nghị cho phép thành lập Đơn đề nghị phê duyệt liên kết Tổ chức thì cấp chứng chỉ năng lực ngoại ngữ của nước ngoài Đê án Tổ chức thi đề cập chứng chỉ năng lực ngoại ngữ của nước ngoài Đơn đề nghị cho phép thành lập văn phòng đại diện giáo dục nước ngoài tại Việt Nam Quyết định cho phép thành lập văn phòng đại diện giáo dục nước ngoài tại Việt Nam Quyết định sửa đổi, bổ sung, gia hạn quyết định cho phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo đục nước ngoài tại Việt Nam Quyết định chấm dứt hoạt động của văn phòng đại diện của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam Mẫu số 9 Văn bản của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài đề - nghị cho phép thành lập văn phòng đại diện tại Việt Nam ẾP Quyết định thành lập văn phòng đại điện của Tổ chức, cơ sở giáo Mẫu số 10. h P dục nghệ nghiệp nước ngoài tại Việt Nam Quyết định sửa đổi, bổ sung, gia hạn, cấp lại giầy phép thành lập Mẫu số 12. văn phòng đại diện của Tổ chức, cơ sở giáo dục nghê nghiệp nước ngoài tại Việt Nam Văn bản đề nghị sửa đổi, bổ sung, gia hạn hoặc cấp lại giây phép thành lập văn phòng đại diện Mẫu số",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Đơn đề nghị cho phép thành lập cơ sở giáo dục mầm non, cơ sở giáo dục phổ thông do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tê liên chính phú đề nghị cho phép thành lập CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc. gðy... tháng.... năm..... ĐƠN ĐẺ NGHỊ Cho phép thành lập cơ sở giáo dục mầm non, cơ sở giáo dục phố thông do cơ quan đại diện ngoại giao nước ngoài, _ Tổ chức quốc tế liên chính phú đề nghị Tên nhà đầu tư:..................................... Ô).............ồ.ồồồ.ồ.ồ...ee.ssseesseesseneeeees, Giấy chứng nhận đăng ký đầu tư/Giấy chứng nhận đăng ký kinh doanh/doanh nghiệp số:... do... cập ngày... tháng... năm.... (nếu có) Xin phép thành lập cơ sở giáo dục có vốn đầu tư nước ngoài tại Việt Nam với các nội dung chính như sau: 1, Tên cơ sở giáo dục: Tên bằng tiếng Việt:.................................G.nnnnnnnnnnnnnnnnnnn Ennnn0n 0010110101005. Tên bằng tiếng DƯỢC ngoài: 3 3 ĐI NHI Tên viết tắt (nếu GÓ)'....................................",
               "diem": []
             },
             {
@@ -372,17 +691,47 @@
             },
             {
               "so_khoan": "5",
-              "noi_dung": "Phạm vi Ì hoạt động: HN ® NI 8. ở 9 8 999 9® 0 609 99 59 ứ 6 90 6Ô 5 ò 60 6 00 00908 05606ô8HmnG80mø2Senô0N2GS9A2.8..0..CAC06.t0...s.69m0.ohAs.6,pp. dứdsøgø,o9s°sp.osooosoessesoeaseeseoeseso 7. Văn bằng, chứng chỉ dự kiến cấp:.—Y đ 3 3 HN",
+              "noi_dung": "Phạm vi Ì hoạt động: HN ® NI",
               "diem": []
             },
             {
               "so_khoan": "8",
-              "noi_dung": "Thời hạn hoạt động.............................................GGseneneneeenneseeeeeeeeeeesesee,: Chúng tôi xin cam kết chấp hành nghiêm chính quy định của pháp luật Việt Nam liên quan đến hợp tác, đầu tư của nước ngoài trong lĩnh vực giáo dục. Kính đề nghị:............................. ()............. xem xét, quyết định. ĐẠI DIỆN THEO PHÁP LUẬT CỦA NHÀ ĐẦU TƯ (Ký tên, đóng dấu, ghi rõ họ tên) Ghi chú: (1) Cấp có thẩm quyền cho phép thành lập cơ sở giáo dục. (2) Ghi bằng chữ in hoa. (3) Ghi rõ phần vốn góp và vốn vay. (4) Ghi rõ phạm vi hoạt động tương ứng với loại hình cơ sở giáo dục xin phép thành lập. Mẫu số 2. Đề án thành lập cơ sở giáo đục mầm non, cơ sở giáo đục phố thông ‹ do cơ quan đại diện ngoại giao nước ngoài, tổ chức quốc tế liên chính phủ đề nghị cho phép thành lập CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc (Hoặc Quốc hiệu và tên của cơ quan ngoại giao, tổ chức quốc tế liên Chính phủ đề nghị thành lập cơ sở giáo dục có vốn đầu tư nước ngoài) ĐỀ ÁN Thành lập.......... (tên cơ sở giáo dục) 1. MỞ ĐẦU 1. Đặt vấn đề.",
+              "noi_dung": "ở 9 8 999 9® 0 609 99 59 ứ 6 90 6Ô 5 ò 60 6 00 00908 05606ô8HmnG80mø2Senô0N2GS9A2.8..0..CAC06.t0...s.69m0.ohAs.6,pp. dứdsøgø,o9s°sp.osooosoessesoeaseeseoeseso",
+              "diem": []
+            },
+            {
+              "so_khoan": "7",
+              "noi_dung": "Văn bằng, chứng chỉ dự kiến cấp:.—Y đ 3 3 HN",
+              "diem": []
+            },
+            {
+              "so_khoan": "8",
+              "noi_dung": "Thời hạn hoạt động.............................................GGseneneneeenneseeeeeeeeeeesesee,: Chúng tôi xin cam kết chấp hành nghiêm chính quy định của pháp luật Việt Nam liên quan đến hợp tác, đầu tư của nước ngoài trong lĩnh vực giáo dục. Kính đề nghị:............................. ()............. xem xét, quyết định. ĐẠI DIỆN THEO PHÁP LUẬT CỦA NHÀ ĐẦU TƯ (Ký tên, đóng dấu, ghi rõ họ tên) Ghi chú: (1) Cấp có thẩm quyền cho phép thành lập cơ sở giáo dục. (2) Ghi bằng chữ in hoa. (3) Ghi rõ phần vốn góp và vốn vay. (4) Ghi rõ phạm vi hoạt động tương ứng với loại hình cơ sở giáo dục xin phép thành lập. Mẫu số",
               "diem": []
             },
             {
               "so_khoan": "2",
-              "noi_dung": "Cơ sở pháp lý. II. SỰ CÀN THIẾT THÀNH LẬP 1. Sự cần thiết thành lập.",
+              "noi_dung": "Đề án thành lập cơ sở giáo đục mầm non, cơ sở giáo đục phố thông ‹ do cơ quan đại diện ngoại giao nước ngoài, Tổ chức quốc tế liên chính phủ đề nghị cho phép thành lập CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc (Hoặc Quốc hiệu và tên của cơ quan ngoại giao, Tổ chức quốc tế liên Chính phủ đề nghị thành lập cơ sở giáo dục có vốn đầu tư nước ngoài) ĐỀ ÁN Thành lập.......... (tên cơ sở giáo dục)",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "MỞ ĐẦU",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Đặt vấn đề.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Cơ sở pháp lý. II. SỰ CÀN THIẾT THÀNH LẬP",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Sự cần thiết thành lập.",
               "diem": []
             },
             {
@@ -432,7 +781,12 @@
             },
             {
               "so_khoan": "1",
-              "noi_dung": "Hội đồng trường/thành viên/quản trị 2. Ban giám đốc/giám hiệu.",
+              "noi_dung": "Hội đồng trường/thành viên/quản trị",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Ban giám đốc/giám hiệu.",
               "diem": []
             },
             {
@@ -442,7 +796,12 @@
             },
             {
               "so_khoan": "4",
-              "noi_dung": "Các phòng ban chức năng. 5, Các tổ chức chính trị, xã hội. V. CÁC ĐIỀU KIỆN THÀNH LẬP 1. Vốn đầu tư.",
+              "noi_dung": "Các phòng ban chức năng. 5, Các Tổ chức chính trị, xã hội. V. CÁC ĐIỀU KIỆN THÀNH LẬP",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Vốn đầu tư.",
               "diem": []
             },
             {
@@ -462,7 +821,12 @@
             },
             {
               "so_khoan": "5",
-              "noi_dung": "Giáo trình, học liệu tham khảo, thư viện và các điều kiện khác. VI. KẾ HOẠCH XÂY DỰNG VÀ PHÁT TRIỀN 1. Kế hoạch xây dựng/thuê cơ sở vật chất (quy mô, diện tích, hạng mục, phương án kỹ thuật, công nghệ, các bước triển khai thực biện).",
+              "noi_dung": "Giáo trình, học liệu tham khảo, thư viện và các điều kiện khác. VI. KẾ HOẠCH XÂY DỰNG VÀ PHÁT TRIỀN",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Kế hoạch xây dựng/thuê cơ sở vật chất (quy mô, diện tích, hạng mục, phương án kỹ thuật, công nghệ, các bước triển khai thực biện).",
               "diem": []
             },
             {
@@ -482,22 +846,32 @@
             },
             {
               "so_khoan": "2",
-              "noi_dung": "Hệ thống các giải pháp (tổ chức, hành chính, giảng dạy, đào tạo, người học, nghiến cứu khoa học, hợp tác quốc tế, tài chính, bảo đảm chất lượng...) VII. ĐÁNH GIÁ HIỆU QUÁ TÀI CHÍNH VÀ XÃ HỘI 1. Đánh giá hiệu quả thông qua các chỉ tiêu về tài chính, đầu tư.",
-              "diem": []
-            },
-            {
-              "so_khoan": "2",
-              "noi_dung": "Đánh giá hiệu quả kinh tế, xã hội. IX. ĐIỂM KHÁC BIỆT CỦA (tên cơ sở) VỚI CÁC CƠ SỞ KHÁC X. KÉT LUẬN VÀ KIẾN NGHỊ XI. PHỤ LỤC Mẫu số 3. Đơn đề nghị phê duyệt liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc., ngày... tháng.... năm..... ĐƠN ĐỀ NGHỊ Phê duyệt liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ với nước ngoài tiếng........ đ)........ Chúng tôi, những người ký tên dưới đây, đại diện cho các Bên tham gia liên kết, gồm: Bên Việt Nam................................... GO).............ồ.ồ.ồ.ồÁồ.Ôồ.ồ.ồ.ồồồ...eessssssssse, nối bu: —X - Điện thoại:.................................................e.GseeneneennnennnnEnnnEnEennnennnnnnnenenesn",
-              "diem": []
-            },
-            {
-              "so_khoan": "3",
-              "noi_dung": "DEN - Website:...........................................e2.eeennnnnnennnnaeEE nen EE 06609 6000000018200009000555 - Quyết định thành lập:......................... (4)....................ồ.ồ.ồ.ồồ.ồ.ồ....esesesesseesses, Bên nước ngoài:................................ (3)...................ồ.ồ....ồ.ồ.cồồcồccesseesssues, Hộ - Điện thoại.:..................................................GueeeeenennnnnnnEnenennnneeeeeneeeeeeennens 3 HN - Website:....................................2eaennnnnneEnnEn0 1066668 nEEnn EEnEE1E00910000009300020090 1655 - Giấy phép thành lập:......................... (6)...........................G-GGGGG-Gen-n----n--. Đê nghị................... Ô)............ xem xét, phê duyệt liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ tiếng NI (0... giữa.............. G............. và.............. ()........... \"với các mục tiêu, phạm vi và thời hạn hoạt động như sau:",
+              "noi_dung": "Hệ thống các giải pháp (Tổ chức, hành chính, giảng dạy, đào tạo, người học, nghiến cứu khoa học, hợp tác quốc tế, tài chính, bảo đảm chất lượng...) VII. ĐÁNH GIÁ HIỆU QUÁ TÀI CHÍNH VÀ XÃ HỘI",
               "diem": []
             },
             {
               "so_khoan": "1",
-              "noi_dung": "Mục tiêu và phạm vi của liên kết: (Ghi tóm tắt ngoại ngữ dự định liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ, quy mô tổ chức thi hàng năm và loại chứng chỉ sẽ cấp theo liên kết).",
+              "noi_dung": "Đánh giá hiệu quả thông qua các chỉ tiêu về tài chính, đầu tư.",
+              "diem": []
+            },
+            {
+              "so_khoan": "2",
+              "noi_dung": "Đánh giá hiệu quả kinh tế, xã hội. IX. ĐIỂM KHÁC BIỆT CỦA (tên cơ sở) VỚI CÁC CƠ SỞ KHÁC X. KÉT LUẬN VÀ KIẾN NGHỊ XI. PHỤ LỤC Mẫu số",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Đơn đề nghị phê duyệt liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ của nước ngoài CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc., ngày... tháng.... năm..... ĐƠN ĐỀ NGHỊ Phê duyệt liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ với nước ngoài tiếng........ đ)........ Chúng tôi, những người ký tên dưới đây, đại diện cho các Bên tham gia liên kết, gồm: Bên Việt Nam................................... GO).............ồ.ồ.ồ.ồÁồ.Ôồ.ồ.ồ.ồồồ...eessssssssse, nối bu: —X - Điện thoại:.................................................e.GseeneneennnennnnEnnnEnEennnennnnnnnenenesn",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "DEN - Website:...........................................e2.eeennnnnnennnnaeEE nen EE 06609 6000000018200009000555 - Quyết định thành lập:......................... (4)....................ồ.ồ.ồ.ồồ.ồ.ồ....esesesesseesses, Bên nước ngoài:................................ (3)...................ồ.ồ....ồ.ồ.cồồcồccesseesssues, Hộ - Điện thoại.:..................................................GueeeeenennnnnnnEnenennnneeeeeneeeeeeennens 3 HN - Website:....................................2eaennnnnneEnnEn0 1066668 nEEnn EEnEE1E00910000009300020090 1655 - Giấy phép thành lập:......................... (6)...........................G-GGGGG-Gen-n----n--. Đê nghị................... Ô)............ xem xét, phê duyệt liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ tiếng NI (0... giữa.............. G............. và.............. ()........... \"với các mục tiêu, phạm vi và thời hạn hoạt động như sau:",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Mục tiêu và phạm vi của liên kết: (Ghi tóm tắt ngoại ngữ dự định liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ, quy mô Tổ chức thi hàng năm và loại chứng chỉ sẽ cấp theo liên kết).",
               "diem": []
             },
             {
@@ -517,12 +891,32 @@
             },
             {
               "so_khoan": "2",
-              "noi_dung": "Chấp hành nghiêm chỉnh các quy định của pháp luật Việt Nam. BÊN VIỆT NAM. BỀN NƯỚC NGOÀI (Ký tên, đóng dâu) (Ký tên, đóng dấu) Họ và tên Họ và tên Ghi chú: (1) Ngoại ngữ đề nghị liên kết cấp chứng chỉ. (2) Cơ quan có thẩm quyền phê duyệt liên kết tổ chức thi, cấp chứng chỉ năng lực ngoại ngữ. (3) Tên cơ sở giáo dục Việt Nam. (4) Số, ký hiệu văn bản pháp lý thể hiện tư cách pháp nhân của cơ sở giáo dục Việt Nam, thời điểm và tên cơ quan ban hành văn bản. (5) Tên cơ sở giáo dục nước ngoài. (6) Số, ký hiệu văn bản pháp lý thể hiện tư cách pháp nhân của cơ sở giáo dục nước ngoài, thời điểm và tên cơ quan ban hành văn bản. Mẫu số 4. Đề án tổ chức thi để cấp chứng chỉ năng lực ngoại ngữ của nước ngoài CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc NI, ngày..... tháng...... năm....... ĐỀ ÁN Liên kết tổ chức thi cấp chứng chỉ năng lực ngoại ngữ ‹ của nước ngoài (Mẫu gồm các nội dung chính, dùng để các bên liên kết tham khảo) 1. SỰ CẢN THIẾT Mô tả sự cần thiết thực hiện liên kết tổ chức thi để cấp chứng chỉ năng lực ngoại ngữ của nước ngoài. II. GIỚI THIỆU CÁC BỀN LIÊN KÉT 1. Giới thiệu các bên liên kết.",
+              "noi_dung": "Chấp hành nghiêm chỉnh các quy định của pháp luật Việt Nam. BÊN VIỆT NAM. BỀN NƯỚC NGOÀI (Ký tên, đóng dâu) (Ký tên, đóng dấu) Họ và tên Họ và tên Ghi chú: (1) Ngoại ngữ đề nghị liên kết cấp chứng chỉ. (2) Cơ quan có thẩm quyền phê duyệt liên kết Tổ chức thi, cấp chứng chỉ năng lực ngoại ngữ. (3) Tên cơ sở giáo dục Việt Nam. (4) Số, ký hiệu văn bản pháp lý thể hiện tư cách pháp nhân của cơ sở giáo dục Việt Nam, thời điểm và tên cơ quan ban hành văn bản. (5) Tên cơ sở giáo dục nước ngoài. (6) Số, ký hiệu văn bản pháp lý thể hiện tư cách pháp nhân của cơ sở giáo dục nước ngoài, thời điểm và tên cơ quan ban hành văn bản. Mẫu số",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Đề án Tổ chức thi để cấp chứng chỉ năng lực ngoại ngữ của nước ngoài CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc NI, ngày..... tháng...... năm....... ĐỀ ÁN Liên kết Tổ chức thi cấp chứng chỉ năng lực ngoại ngữ ‹ của nước ngoài (Mẫu gồm các nội dung chính, dùng để các bên liên kết tham khảo)",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "SỰ CẢN THIẾT Mô tả sự cần thiết thực hiện liên kết Tổ chức thi để cấp chứng chỉ năng lực ngoại ngữ của nước ngoài. II. GIỚI THIỆU CÁC BỀN LIÊN KÉT",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Giới thiệu các bên liên kết.",
               "diem": []
             },
             {
               "so_khoan": "2",
-              "noi_dung": "Quá trình hợp tác giữa các bên. II. NỘI DỤNG LIÊN KÉT 1. Mục tiêu.",
+              "noi_dung": "Quá trình hợp tác giữa các bên. II. NỘI DỤNG LIÊN KÉT",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Mục tiêu.",
               "diem": []
             },
             {
@@ -532,7 +926,7 @@
             },
             {
               "so_khoan": "3",
-              "noi_dung": "Minh chứng về bảo đảm chất lượng của việc tổ chức thi, trách nhiệm của các bên.",
+              "noi_dung": "Minh chứng về bảo đảm chất lượng của việc Tổ chức thi, trách nhiệm của các bên.",
               "diem": []
             },
             {
@@ -577,17 +971,37 @@
             },
             {
               "so_khoan": "3",
-              "noi_dung": "Cơ chế thu chí và quản lý tài chính. V. BIỆN PHÁP BẢO ĐẮM CHÁẮT LƯỢNG, QUẢN LÝ RỦI RO 1. Biện pháp bảo đảm chất lượng.",
+              "noi_dung": "Cơ chế thu chí và quản lý tài chính. V. BIỆN PHÁP BẢO ĐẮM CHÁẮT LƯỢNG, QUẢN LÝ RỦI RO",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Biện pháp bảo đảm chất lượng.",
               "diem": []
             },
             {
               "so_khoan": "2",
-              "noi_dung": "Biện pháp quản lý rủi ro, bảo đảm quyền và lợi ích của người dự thì.. VI. CƠ CHẾ QUẢN LÝ LIÊN KÉT 1. Cơ cấu tổ chức quản lý liên kết tổ chức thi và cấp chứng chỉ năng lực ngoại ngữ, người đại diện các bên liên kết tham gia quản lý (kèm theo lý lịch cá nhân kèm trong Phụ lục).",
+              "noi_dung": "Biện pháp quản lý rủi ro, bảo đảm quyền và lợi ích của người dự thì.. VI. CƠ CHẾ QUẢN LÝ LIÊN KÉT",
+              "diem": []
+            },
+            {
+              "so_khoan": "1",
+              "noi_dung": "Cơ cấu Tổ chức quản lý liên kết Tổ chức thi và cấp chứng chỉ năng lực ngoại ngữ, người đại diện các bên liên kết tham gia quản lý (kèm theo lý lịch cá nhân kèm trong Phụ lục).",
               "diem": []
             },
             {
               "so_khoan": "2",
-              "noi_dung": "Trách nhiệm và quyền hạn của các bên liên kết, 3. Trách nhiệm và quyền hạn của Đội ngũ cán bộ quản lý, chấm thi, hỗ trợ, kỹ thuật viên. Phụ lục kèm theo. 10 Mẫu số 5. Đơn đề nghị cho phép thành lập văn phòng đại diện giáo dục nước ngoài tại Việt Nam nen q).... (QUỐC HIỆU/BIỂU TƯỢNG rrrnrrnr CUA... (1)... nêu có) NI, ngày..... tháng...... năm....... ĐƠN ĐÈ NGHỊ Cho phép thành lập văn phòng đại diện giáo dục nước ngoài..4.9909.90%s22ô299093239898966e Ã Uoooseoroosnoeoedoiosesoeosneeoeoeeee Kính gửi:...................... NI Tổ chức, cơ sở giáo dục nước ngoài:............................ Ô)..........ồồóồồồcồồóồ6ó.. Được thành lập theo:.................................................. 8)........ồóồcồồcồcCccồ6.ồG6eSe Có trụ sở tại:................................. sen nnnnnn na ni nn 1066/0500 0000000000000600001 000065000055 Điện thoại:........................................... FaxX:.......................6077.66.6e. E-mail:................................................ Website:..................................... Lĩnh vực hoạt động chính:..............................................-s2222eee2220200006/92/255 655.99929496096984600498460808006260ós6s4s089ô2w%6G0seo809009990098999060009998908406060909606Š004060s20080608020080908060s8000680468ô8Ooỏè042â8Rô4ô0s2soneeos2080ụ0890889098a68A280608 Xin phép thành lập Văn phòng đại diện giáo dục tại Việt Nam với nội dung sau:",
+              "noi_dung": "Trách nhiệm và quyền hạn của các bên liên kết,",
+              "diem": []
+            },
+            {
+              "so_khoan": "3",
+              "noi_dung": "Trách nhiệm và quyền hạn của Đội ngũ cán bộ quản lý, chấm thi, hỗ trợ, kỹ thuật viên. Phụ lục kèm theo. Mẫu số",
+              "diem": []
+            },
+            {
+              "so_khoan": "5",
+              "noi_dung": "Đơn đề nghị cho phép thành lập văn phòng đại diện giáo dục nước ngoài tại Việt Nam nen q).... (QUỐC HIỆU/BIỂU TƯỢNG rrrnrrnr CUA... (1)... nêu có) NI, ngày..... tháng...... năm....... ĐƠN ĐÈ NGHỊ Cho phép thành lập văn phòng đại diện giáo dục nước ngoài..4.9909.90%s22ô299093239898966e Ã Uoooseoroosnoeoedoiosesoeosneeoeoeeee Kính gửi:...................... NI Tổ chức, cơ sở giáo dục nước ngoài:............................ Ô)..........ồồóồồồcồồóồ6ó.. Được thành lập theo:.................................................. 8)........ồóồcồồcồcCccồ6.ồG6eSe Có trụ sở tại:................................. sen nnnnnn na ni nn 1066/0500 0000000000000600001 000065000055 Điện thoại:........................................... FaxX:.......................6077.66.6e. E-mail:................................................ Website:..................................... Lĩnh vực hoạt động chính:..............................................-s2222eee2220200006/92/255 655.99929496096984600498460808006260ós6s4s089ô2w%6G0seo809009990098999060009998908406060909606Š004060s20080608020080908060s8000680468ô8Ooỏè042â8Rô4ô0s2soneeos2080ụ0890889098a68A280608 Xin phép thành lập Văn phòng đại diện giáo dục tại Việt Nam với nội dung sau:",
               "diem": []
             },
             {
@@ -602,7 +1016,12 @@
             },
             {
               "so_khoan": "5",
-              "noi_dung": "Thời hạn hoạt động:.................................................2........ Chúng tôi xin cam kết: - Chịu hoàn toàn trách nhiệm về sự trung thực và chính xác của nội dung Đơn xin phép và Hồ sơ gửi kèm; - Chấp hành nghiêm chỉnh mọi quy định của pháp luật Việt Nam liên quan đến Văn phòng đại diện giáo dục của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam và các nội dung quy định trong Giấy phép thành lập Văn phòng đại diện. ĐẠI DIỆN THEO PHÁP LUẬT CỦA TÔ CHỨC, CƠ SỞ GIÁO DỤC NƯỚC NGOÀI (Ký, đóng dấu và ghi rõ họ tên) Tài lệu gửi kèm bao gồm:..9.9.90.0.đ0.o.s.9o9.s,?ôs.osos.so.osos.O.eo....o°oO.s.nx.n2ngessiu.oso.cesssesnweuseosee2pso.sosssnseoeeosoo$s.opo.toe0eooÔososos.sesesose2se Ghỉ chú: (1) Tên tổ chức, cơ sở giáo dục nước ngoài. (2) Ghi tên bằng chữ in hoa. (3) Ghi rõ giây tờ pháp lý xác định tư cách pháp nhân của tổ chức, cơ sở giáo đục nước ngoài, thời điểm và cơ quan ban hành. (4) Ghi tên bằng chữ in hoa. (5) Ghi tên bằng chữ in hoa. (6) Ghi rõ địa chỉ thường trú tại Việt Nam hoặc sẽ đến thường trú tại Việt Nam. 12 Mẫu số 6. Quyết định cho phép thành lập văn phòng đại điện giáo dục nước ngoài tại Việt Nam ỦY BAN NHÂN DÂN CÁP TĨNH CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM —nmnẲơ7b Độc lập - Tự do - Hạnh phúc Số:../QĐ-........ Hà Nội, ngày... tháng... năm:.: QUYẾT ĐỊNH Cho phép thành lập Văn phòng đại diện giáo dục nước ngoài của..(1)... tại Việt Nam CHU TỊCH ỦY BẠN NHAN DÁN.... Căn Ct£................GMG1.cGnnGn nen n6 6/0010 510500100110 11 000516 40011011130000000000100020091 405; Xét đề nghị của............. đ)........... xin phép thành lập Văn phòng đại điện tại Việt Nam; Theo đề nghị của Giám đốc Sở Giáo dục và Đào tạo...... QUYÉT ĐỊNH:",
+              "noi_dung": "Thời hạn hoạt động:.................................................2........ Chúng tôi xin cam kết: - Chịu hoàn toàn trách nhiệm về sự trung thực và chính xác của nội dung Đơn xin phép và Hồ sơ gửi kèm; - Chấp hành nghiêm chỉnh mọi quy định của pháp luật Việt Nam liên quan đến Văn phòng đại diện giáo dục của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam và các nội dung quy định trong Giấy phép thành lập Văn phòng đại diện. ĐẠI DIỆN THEO PHÁP LUẬT CỦA TÔ CHỨC, CƠ SỞ GIÁO DỤC NƯỚC NGOÀI (Ký, đóng dấu và ghi rõ họ tên) Tài lệu gửi kèm bao gồm:..9.9.90.0.đ0.o.s.9o9.s,?ôs.osos.so.osos.O.eo....o°oO.s.nx.n2ngessiu.oso.cesssesnweuseosee2pso.sosssnseoeeosoo$s.opo.toe0eooÔososos.sesesose2se Ghi chú: (1) Tên Tổ chức, cơ sở giáo dục nước ngoài. (2) Ghi tên bằng chữ in hoa. (3) Ghi rõ giây tờ pháp lý xác định tư cách pháp nhân của Tổ chức, cơ sở giáo đục nước ngoài, thời điểm và cơ quan ban hành. (4) Ghi tên bằng chữ in hoa. (5) Ghi tên bằng chữ in hoa. (6) Ghi rõ địa chỉ thường trú tại Việt Nam hoặc sẽ đến thường trú tại Việt Nam. Mẫu số",
+              "diem": []
+            },
+            {
+              "so_khoan": "6",
+              "noi_dung": "Quyết định cho phép thành lập văn phòng đại điện giáo dục nước ngoài tại Việt Nam ỦY BAN NHÂN DÂN CÁP TĨNH CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM —nmnẲơ7b Độc lập - Tự do - Hạnh phúc Số:../QĐ-........ Hà Nội, ngày... tháng... năm:.: QUYẾT ĐỊNH Cho phép thành lập Văn phòng đại diện giáo dục nước ngoài của..(1)... tại Việt Nam CHU TỊCH ỦY BẠN NHAN DÁN.... Căn Ct£................GMG1.cGnnGn nen n6 6/0010 510500100110 11 000516 40011011130000000000100020091 405; Xét đề nghị của............. đ)........... xin phép thành lập Văn phòng đại điện tại Việt Nam; Theo đề nghị của Giám đốc Sở Giáo dục và Đào tạo...... QUYÉT ĐỊNH:",
               "diem": []
             }
           ]
@@ -614,7 +1033,7 @@
         },
         {
           "so_dieu": "2",
-          "noi_dung": "Nội dung hoạt động:.................................00200000101000090 0/05 9999989 NS9AÔNWS98eS8S.ô.2ós5Sn599020ạ$%Ỹø..s..o.0232e.a0..4.nsâs23s406ô09mmnsepoosae0e0eosSsnáCđáseooo,sOoOe.eom.seoeo asooseos ao. o9 ep.e$osnes 13",
+          "noi_dung": "Nội dung hoạt động:.................................00200000101000090 0/05 9999989 NS9AÔNWS98eS8S.ô.2ós5Sn599020ạ$%Ỹø..s..o.0232e.a0..4.nsâs23s406ô09mmnsepoosae0e0eosSsnáCđáseooo,sOoOe.eom.seoeo asooseos ao. o9 ep.e$osnes",
           "khoan": []
         },
         {
@@ -629,21 +1048,38 @@
         },
         {
           "so_dieu": "5",
-          "noi_dung": "Cơ quan, đơn vị, cá nhân chịu trách nhiệm thi hành quyết định. Nai nhận: CHỦ TỊCH - Như Điều 5; - Bộ Giáo dục và Đào tạo (để b/c); (HOẶC NGUƠI BƯợc ỦY QUYỀN) -Lưu: VT,.. (XS tên, đóng dấu Ghỉ ch ú. 1) Tên tổ chức, cơ sở giáo dục nước ngoài xin phép thành lập Văn phòng đại điện giáo dục nước ngoài tại Việt Nam. (2) Địa chỉ đầy đủ của tổ chức, cơ sở giáo dục nước ngoài xin phép thành lập Văn phòng đại diện giáo dục nước ngoài tại Việt Nam. (3) Ghi bằng chữ in hoa. (4) Thời hạn theo đề nghị của tổ chức, cơ sở giáo dục nước ngoài, (5) Tên tỉnh/thành phố nơi Văn phòng đại diện đặt trụ sở. 14 Mẫu số 7. Quyết định sửa đổi, bổ sung, gia hạn quyết định cho phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam ỦY BAN NHÂN DÂN... CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM —- Độc lập - Tự do - Hạnh phúc Số:.../QĐ-BGDĐT Hà Nội, ngày..... tháng..... năm....... QUYẾT ĐỊNH Về việc sửa đổi, bổ sung/gia hạn Quyết định cho phép thành lập Văn phòng đại diện giáo dục nước ngoài của....(1)..... tại Việt Nam CHỦ TỊCH ỦY BAN NHÂN DÂN.. Căn CỨ...................3222eeeeeesseesnse se 0 NÊN; Căn c..............................u....... đ)..........................................ồ..ssesususse,; Theo đề nghị của...................GnGnnGe (ve ven... QUYẾT ĐỊNH:",
-          "khoan": []
-        },
-        {
-          "so_dieu": "1",
-          "noi_dung": "Cho phép sửa đổi, bổ sung/gia hạn Quyết định số.......(4).... về việc cho phép thành lập Văn phòng đại diện giáo dục nước ngoài của......... (1)... tại Việt Nam như sau: 3 3 NI G).............................ồ.ồồ.ồ.ồồ.....sssssssss, Điều................GnHnnnnnnnnnnnnnnnnnnnnnnnnn (0 II Điều. Quyết định này có hiệu lực thi hành kê từ ngày ký HN (7).............. chịu trách nhiệm thi hành Quyết định này Nơi nhận:.= CHỦ TỊCH LNh Điền 5 (Ký tên, đóng dấu, ghi rõ họ và tên) - Lưu: VI. Họ và tên Ghi chú: (1) Tên tổ chức, cơ sở giáo dục nước ngoài. (2) Căn cứ pháp lý ban hành Quyết định. (3) Hồ sơ đề nghị sửa đổi, bổ sung, gia hạn hoạt động của tổ chức, cơ sở giáo dục nước ngoài. (4) Số Quyết định cho phép thành lập Văn phòng đại diện giáo dục nước ngoài tại Việt Nam. (5) Các nội dung sửa đồi, bổ sung nội dung tổ chức hoạt động của Văn phòng đại diện và gia hạn thời hạn hoạt động... (6) Các nội dung trách nhiệm, nghĩa vụ, quyền lợi hợp pháp của Văn phòng đại diện và các bên liên quan khác (nếu có)... (7) Cơ quan, đơn vị, cá nhân chịu trách nhiệm thi hành Quyết định. (8) Tên chức danh/cơ quan/đơn vị nhận được Quyết định. 15 Mẫu số 8. Quyết định chấm dứt hoạt động của văn phòng đại diện của tổ chức, cơ.sở giáo dục nước ngoài tại Việt Nam ỦY BAN NHÂN DÂN... CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM — Độc lập - Tự do - Hạnh phúc., Hgðy...... thóng...... năm....... QUYẾT ĐỊNH Về việc chấm dứt hoạt động Văn phòng đại diện giáo dục nước ngoài của....... G)..... tại Việt Nam CHỦ TỊCH ỦY BẠN NHÂN DÂẦN........ Căn c................................ 0 Căn cf.............................. l6 HN; Theo đề nghị của...................................... (4) QUYẾT ĐỊNH:",
-          "khoan": []
-        },
-        {
-          "so_dieu": "1",
-          "noi_dung": "Chấm dứt hoạt động Văn phòng đại diện giáo dục nước ngoài của......(1)..... tại Việt Nam theo Quyết định số...(5)........................................ Điều...................GnGGnnesene-eb-n--.. (09: Hệ Điều n................................... 62 3 3 3 3 3 3 HH I nEnneEEEEHe E006. (3)............ chịu trách nhiệm thi hành Quyết định này Nơi nhận: CHỦ TỊCH - Như la. cm - (Ký tên, đóng dấu, ghỉ rõ họ và tên) - Lưu: VT,......... Họ và tên Ghi chú: (1) Tên tổ chức, cơ sở giáo dục nước ngoài. (2) Căn cứ pháp lý ban hành Quyết định. (3) Hồ sơ đề nghị của tổ chức, cơ sở giáo dục nước ngoài đề nghị chấm đứt hoạt động của Văn phòng đại diện tại Việt Nam. (4) Thủ trưởng đơn vị soạn thảo, trình Quyết định. (5) Số, ký hiệu, trích yếu Quyết định cho phép thành lập Văn phòng đại diện giáo dục nước ngoài của tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam. (6) Các nội dung liên quan về trách nhiệm, nghĩa vụ của tổ chức, cơ sở giáo dục nước ngoài và các bên liên quan sau khi chấm dứt hoạt động. (7) Hiệu lực của Quyết định. (8) Cơ quan, đơn vị, cá nhân chịu trách nhiệm thi hành Quyết định. (9) Tên chức danh/cơ quan/đơn vị nhận được Quyết định. ló Mẫu số 9. Văn bản của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài đề nghị cho phép thành lập văn phòng đại diện tại Việt Nam NI 0...:. (QUỐC HIỆU/BIỂU TƯỢNG —-rr CỦA... (2)... nếu có) sé.......... N, ngãy..... tháng...... năm....... TỜ TRÌNH › Về việc đề nghị cho phép thành lập Văn phòng đại diện... (2)... tại Việt Nam Kính gửi:....................",
+          "noi_dung": "Cơ quan, đơn vị, cá nhân chịu trách nhiệm thi hành quyết định. Nai nhận: CHỦ TỊCH - Như Điều 5; - Bộ Giáo dục và Đào tạo (để b/c); (HOẶC NGUƠI BƯợc ỦY QUYỀN) -Lưu: VT,.. (XS tên, đóng dấu Ghi ch ú. 1) Tên Tổ chức, cơ sở giáo dục nước ngoài xin phép thành lập Văn phòng đại điện giáo dục nước ngoài tại Việt Nam. (2) Địa chỉ đầy đủ của Tổ chức, cơ sở giáo dục nước ngoài xin phép thành lập Văn phòng đại diện giáo dục nước ngoài tại Việt Nam. (3) Ghi bằng chữ in hoa. (4) Thời hạn theo đề nghị của Tổ chức, cơ sở giáo dục nước ngoài, (5) Tên tỉnh/thành phố nơi Văn phòng đại diện đặt trụ sở. Mẫu số",
           "khoan": [
             {
+              "so_khoan": "7",
+              "noi_dung": "Quyết định sửa đổi, bổ sung, gia hạn quyết định cho phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam ỦY BAN NHÂN DÂN... CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM —- Độc lập - Tự do - Hạnh phúc Số:.../QĐ-BGDĐT Hà Nội, ngày..... tháng..... năm....... QUYẾT ĐỊNH Về việc sửa đổi, bổ sung/gia hạn Quyết định cho phép thành lập Văn phòng đại diện giáo dục nước ngoài của....(1)..... tại Việt Nam CHỦ TỊCH ỦY BAN NHÂN DÂN.. Căn CỨ...................3222eeeeeesseesnse se 0 NÊN; Căn c..............................u....... đ)..........................................ồ..ssesususse,; Theo đề nghị của...................GnGnnGe (ve ven... QUYẾT ĐỊNH:",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "1",
+          "noi_dung": "Cho phép sửa đổi, bổ sung/gia hạn Quyết định số.......(4).... về việc cho phép thành lập Văn phòng đại diện giáo dục nước ngoài của......... (1)... tại Việt Nam như sau: 3 3 NI G).............................ồ.ồồ.ồ.ồồ.....sssssssss, Điều................GnHnnnnnnnnnnnnnnnnnnnnnnnnn (0 II Điều. Quyết định này có hiệu lực thi hành kê từ ngày ký HN (7).............. chịu trách nhiệm thi hành Quyết định này Nơi nhận:.= CHỦ TỊCH LNh Điền 5 (Ký tên, đóng dấu, ghi rõ họ và tên) - Lưu: VI. Họ và tên Ghi chú: (1) Tên Tổ chức, cơ sở giáo dục nước ngoài. (2) Căn cứ pháp lý ban hành Quyết định. (3) Hồ sơ đề nghị sửa đổi, bổ sung, gia hạn hoạt động của Tổ chức, cơ sở giáo dục nước ngoài. (4) Số Quyết định cho phép thành lập Văn phòng đại diện giáo dục nước ngoài tại Việt Nam. (5) Các nội dung sửa đồi, bổ sung nội dung Tổ chức hoạt động của Văn phòng đại diện và gia hạn thời hạn hoạt động... (6) Các nội dung trách nhiệm, nghĩa vụ, quyền lợi hợp pháp của Văn phòng đại diện và các bên liên quan khác (nếu có)... (7) Cơ quan, đơn vị, cá nhân chịu trách nhiệm thi hành Quyết định. (8) Tên chức danh/cơ quan/đơn vị nhận được Quyết định. Mẫu số",
+          "khoan": [
+            {
+              "so_khoan": "8",
+              "noi_dung": "Quyết định chấm dứt hoạt động của văn phòng đại diện của Tổ chức, cơ.sở giáo dục nước ngoài tại Việt Nam ỦY BAN NHÂN DÂN... CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM — Độc lập - Tự do - Hạnh phúc., Hgðy...... thóng...... năm....... QUYẾT ĐỊNH Về việc chấm dứt hoạt động Văn phòng đại diện giáo dục nước ngoài của....... G)..... tại Việt Nam CHỦ TỊCH ỦY BẠN NHÂN DÂẦN........ Căn c................................ Căn cf.............................. l6 HN; Theo đề nghị của...................................... (4) QUYẾT ĐỊNH:",
+              "diem": []
+            }
+          ]
+        },
+        {
+          "so_dieu": "1",
+          "noi_dung": "Chấm dứt hoạt động Văn phòng đại diện giáo dục nước ngoài của......(1)..... tại Việt Nam theo Quyết định số...(5)........................................ Điều...................GnGGnnesene-eb-n--.. (09: Hệ Điều n................................... 62 3 3 3 3 3 3 HH I nEnneEEEEHe E006. (3)............ chịu trách nhiệm thi hành Quyết định này Nơi nhận: CHỦ TỊCH - Như la. cm - (Ký tên, đóng dấu, ghi rõ họ và tên) - Lưu: VT,......... Họ và tên Ghi chú: (1) Tên Tổ chức, cơ sở giáo dục nước ngoài. (2) Căn cứ pháp lý ban hành Quyết định. (3) Hồ sơ đề nghị của Tổ chức, cơ sở giáo dục nước ngoài đề nghị chấm đứt hoạt động của Văn phòng đại diện tại Việt Nam. (4) Thủ trưởng đơn vị soạn thảo, trình Quyết định. (5) Số, ký hiệu, trích yếu Quyết định cho phép thành lập Văn phòng đại diện giáo dục nước ngoài của Tổ chức, cơ sở giáo dục nước ngoài tại Việt Nam. (6) Các nội dung liên quan về trách nhiệm, nghĩa vụ của Tổ chức, cơ sở giáo dục nước ngoài và các bên liên quan sau khi chấm dứt hoạt động. (7) Hiệu lực của Quyết định. (8) Cơ quan, đơn vị, cá nhân chịu trách nhiệm thi hành Quyết định. (9) Tên chức danh/cơ quan/đơn vị nhận được Quyết định. ló Mẫu số",
+          "khoan": [
+            {
+              "so_khoan": "9",
+              "noi_dung": "Văn bản của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài đề nghị cho phép thành lập văn phòng đại diện tại Việt Nam NI 0...:. (QUỐC HIỆU/BIỂU TƯỢNG —-rr CỦA... (2)... nếu có) sé.......... N, ngãy..... tháng...... năm....... TỜ TRÌNH › Về việc đề nghị cho phép thành lập Văn phòng đại diện... (2)... tại Việt Nam Kính gửi:....................",
+              "diem": []
+            },
+            {
               "so_khoan": "1",
-              "noi_dung": "Tên của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài (ghi bằng chữ in hoa tiếng Việt, tiếng Anh và bằng tiếng nước sở tại):.................... G8.........",
+              "noi_dung": "Tên của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài (ghi bằng chữ in hoa tiếng Việt, tiếng Anh và bằng tiếng nước sở tại):.................... G8.........",
               "diem": []
             },
             {
@@ -653,17 +1089,22 @@
             },
             {
               "so_khoan": "3",
-              "noi_dung": "Địa chỉ trụ sở chính (ở nước ngoài nơi có tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài làm đơn xin phép):................................nnnnnnennnn nen nnnnn1 010001057 Điện thoại...................... Fax...................... E-mail.........................",
+              "noi_dung": "Địa chỉ trụ sở chính (ở nước ngoài nơi có Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài làm đơn xin phép):................................nnnnnnennnn nen nnnnn1 010001057 Điện thoại...................... Fax...................... E-mail.........................",
               "diem": []
             },
             {
               "so_khoan": "4",
-              "noi_dung": "Lĩnh vực đang hoạt động hợp pháp của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài:...............................20 2001010000000 0 00 01 E0 110909109 009 160.",
+              "noi_dung": "Lĩnh vực đang hoạt động hợp pháp của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài:...............................20 2001010000000 0 00 01 E0 110909109 009 160.",
               "diem": []
             },
             {
               "so_khoan": "5",
-              "noi_dung": "Tóm tắt quá trình phát triển của tổ chức, cơ sở giáo dục nước 6. Nguồn và khả năng tài chính:................................................ Đề nghị cho phép lập Văn phòng đại diện tại Việt Nam với nội dung sau:",
+              "noi_dung": "Tóm tắt quá trình phát triển của Tổ chức, cơ sở giáo dục nước",
+              "diem": []
+            },
+            {
+              "so_khoan": "6",
+              "noi_dung": "Nguồn và khả năng tài chính:................................................ Đề nghị cho phép lập Văn phòng đại diện tại Việt Nam với nội dung sau:",
               "diem": [
                 {
                   "so_diem": "a",
@@ -671,41 +1112,65 @@
                 },
                 {
                   "so_diem": "b",
-                  "noi_dung": "Chức năng, nhiệm vụ chính của văn phòng đại diện tại Việt Nam c) Số người dự kiến làm việc tại Văn phòng đại diện là... người - Số người từ nước ngoài vào là................... người - Số người tuyển dụng tại Việt Nam là............ người 17 d) Họ tên người đứng đầu Văn phòng đại diện:.......................................... - Ngày sinh...../...../..... Dân tộc..................... Quốc tịch........................... - Hộ chiếu (Chứng minh nhân dân), số........................ Ngày cấp..../.../...... Nơi cấp.............. Thời hạn sử dụnpg:...........................................-2sseeesss - Nơi đăng ký hộ khẩu thường trú ở nước sở tại và địa chỉ nơi làm việc:....... - Địa chỉ đăng ký cư trú tại Việt Nam:................................ NHI - Thẻ thường trú (thẻ tạm trú, chứng nhận tạm trú) do cơ quan có thẩm quyền của Việt Nam cấp số: Ngày dấp................... Nơi cấp.........................e. Thời hạn:...................................-se.sssseseseesseeeeeseesseeeeseeeseshs mm. (4).........cam đoan những lời khai trên đây là hoàn toàn đúng sự thật. Chúng tôi xin chấp hành nghiêm chỉnh các quy định của nhà nước Việt Nam về các hoạt.động của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài, Văn phòng đại diện và thực hiện đầy đủ nghĩa vụ đối với nhà nước Việt Nam; không làm bất cứ việc gì dẫn đến vi phạm pháp luật và quy định hiện hành của nhà nước Việt Nam.............................-seennnesenenenneekeeenEneeeenenneeeeeeineeeEaeneeeEEineeenienennnenent Kèm theo:... ngày... tháng.... năm..... mm: ĐẠI DIỆN THEO PHÁP LUẬT CŨA TÔ CHỨC, - CƠ SỞ GIÁO DỤC NGHỆ NGHIỆP NƯỚC NGOÀI - (Ký, đóng dầu và ghỉ rõ họ:tên) (1): Địa danh. (2), G3), (4): Ghi cụ thể tên tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài. 18 Mẫu số 10. Quyết định thành lập văn phòng đại điện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam ỦY BAN NHÂN DÂN CÁPTỈNH. CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Số:.../QÐ-..........)..., ngày..... tháng...... năm...... QUYẾT ĐỊNH Cho phép thành lập Văn phòng đại diện của...(1)... tại Việt Nam CHỦ TỊCH ỦY BAN NHÂN DẦN...... Căn GỨ...........................ồ..sseeessseeeseesnesns NI; Xét đề nghị của....................... xin phép thành lập Văn phòng đại. diện của... (2)... tại Việt Nam; Theo đề nghị của Giám đốc Sở Giáo dục và Đào tạo...... QUYÉT ĐỊNH:"
+                  "noi_dung": "Chức năng, nhiệm vụ chính của văn phòng đại diện tại Việt Nam c) Số người dự kiến làm việc tại Văn phòng đại diện là... người - Số người từ nước ngoài vào là................... người - Số người tuyển dụng tại Việt Nam là............ người"
+                },
+                {
+                  "so_diem": "d",
+                  "noi_dung": "Họ tên người đứng đầu Văn phòng đại diện:.......................................... - Ngày sinh...../...../..... Dân tộc..................... Quốc tịch........................... - Hộ chiếu (Chứng minh nhân dân), số........................ Ngày cấp..../.../...... Nơi cấp.............. Thời hạn sử dụnpg:...........................................-2sseeesss - Nơi đăng ký hộ khẩu thường trú ở nước sở tại và địa chỉ nơi làm việc:....... - Địa chỉ đăng ký cư trú tại Việt Nam:................................ NHI - Thẻ thường trú (thẻ tạm trú, chứng nhận tạm trú) do cơ quan có thẩm quyền của Việt Nam cấp số: Ngày dấp................... Nơi cấp.........................e. Thời hạn:...................................-se.sssseseseesseeeeeseesseeeeseeeseshs mm. (4).........cam đoan những lời khai trên đây là hoàn toàn đúng sự thật. Chúng tôi xin chấp hành nghiêm chỉnh các quy định của nhà nước Việt Nam về các hoạt.động của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài, Văn phòng đại diện và thực hiện đầy đủ nghĩa vụ đối với nhà nước Việt Nam; không làm bất cứ việc gì dẫn đến vi phạm pháp luật và quy định hiện hành của nhà nước Việt Nam.............................-seennnesenenenneekeeenEneeeenenneeeeeeineeeEaeneeeEEineeenienennnenent Kèm theo:... ngày... tháng.... năm..... mm: ĐẠI DIỆN THEO PHÁP LUẬT CŨA TÔ CHỨC, - CƠ SỞ GIÁO DỤC NGHỆ NGHIỆP NƯỚC NGOÀI - (Ký, đóng dầu và ghi rõ họ:tên) (1): Địa danh. (2), G3), (4): Ghi cụ thể tên Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài. Mẫu số"
                 }
               ]
+            },
+            {
+              "so_khoan": "10",
+              "noi_dung": "Quyết định thành lập văn phòng đại điện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam ỦY BAN NHÂN DÂN CÁPTỈNH. CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Số:.../QÐ-..........)..., ngày..... tháng...... năm...... QUYẾT ĐỊNH Cho phép thành lập Văn phòng đại diện của...(1)... tại Việt Nam CHỦ TỊCH ỦY BAN NHÂN DẦN...... Căn GỨ...........................ồ..sseeessseeeseesnesns NI; Xét đề nghị của....................... xin phép thành lập Văn phòng đại. diện của... (2)... tại Việt Nam; Theo đề nghị của Giám đốc Sở Giáo dục và Đào tạo...... QUYÉT ĐỊNH:",
+              "diem": []
             }
           ]
         },
         {
           "so_dieu": "1",
-          "noi_dung": "Cho phép:..... (2)..... có địa chỉ trụ sở chính tại................ 0)... được phép thành lập Văn phòng đại diện tại Việt Nam. Tên giao dịch quốc tế:........................................nnnnnnnnnnnnnnnnnnnnnn nen nnnn1n005515. ThuộcC:...............................ồ.ồ.ồ..eEEEeesnnnnnnnnnnnnnnnnnnnnnnn E1 11000 00001000000000000 0000600020500 0997 Địa điểm trụ SỞ:...................nnnnn nen nen TEEETTTE16-N0E01E1EEE0001010000010000000006. Điện thoại:.........................,Fax............... -,E-mail............................ Quyết định thành lập số:.....................................nnnnnnenennnnennsnsenssessysnn nen. Ngày, tháng, năm cấp:...................nnnnnnnnnnnnnnnn nTnnnnn nnEEnn nnEE1nEˆEEEEennEn00n000 01/7 Được phép thành lập Văn phòng đại diện tại Việt Nam:..................... Địa điểm Văn phòng đại điện:..........................................nneneenensensensenssrssn, Điện thoại:..............,Fax:............,E-mail............... Website.................... Họ và tên người đứng đầu Văn phòng đại diện:.................................. - Sinh ngày...../...../.... Dân tộc..................... Quốc tịch............................ - Hộ chiếu/Căn cước công dân, số............................. Ngày cấp..../.../..... Nơi cấp............... Thời hạn sử dụng:......................-Gnnnnnnnnn nnn nen nnnn nen nsnnnsnn. 19......so..;.....sS.s..o.Oo.o..o2aÐa...seseeoe.Qnesesssoeoospe. /o0Uo.tb/Go/oo.0.OoQo..o.,anooseoo.ooooesoeo09./...ooVV)98B9SPoP90ỹPPOŸÿọbUvgvsvwevoọ9tÓeseGenĐoĐseo - Địa chỉ đăng ký cư trú tại Việt Nam........................ - Thẻ thường trú (thể tạm trú, chứng nhận tạm trú) do cơ quan có thẩm quyền của Việt Nam cấp số: Ngày cấp............................ Nơi cấp................... Thời hạn:...............................-se.nsnnnneieennennnEEEnnEEEEEEEEEE900/606000000090000000000990099090000952",
+          "noi_dung": "Cho phép:..... (2)..... có địa chỉ trụ sở chính tại................ 0)... được phép thành lập Văn phòng đại diện tại Việt Nam. Tên giao dịch quốc tế:........................................nnnnnnnnnnnnnnnnnnnnnn nen nnnn1n005515. ThuộcC:...............................ồ.ồ.ồ..eEEEeesnnnnnnnnnnnnnnnnnnnnnnn E1 11000 00001000000000000 0000600020500 0997 Địa điểm trụ SỞ:...................nnnnn nen nen TEEETTTE16-N0E01E1EEE0001010000010000000006. Điện thoại:.........................,Fax............... -,E-mail............................ Quyết định thành lập số:.....................................nnnnnnenennnnennsnsenssessysnn nen. Ngày, tháng, năm cấp:...................nnnnnnnnnnnnnnnn nTnnnnn nnEEnn nnEE1nEˆEEEEennEn00n000 01/7 Được phép thành lập Văn phòng đại diện tại Việt Nam:..................... Địa điểm Văn phòng đại điện:..........................................nneneenensensensenssrssn, Điện thoại:..............,Fax:............,E-mail............... Website.................... Họ và tên người đứng đầu Văn phòng đại diện:.................................. - Sinh ngày...../...../.... Dân tộc..................... Quốc tịch............................ - Hộ chiếu/Căn cước công dân, số............................. Ngày cấp..../.../..... Nơi cấp............... Thời hạn sử dụng:......................-Gnnnnnnnnn nnn nen nnnn nen nsnnnsnn.......so..;.....sS.s..o.Oo.o..o2aÐa...seseeoe.Qnesesssoeoospe. /o0Uo.tb/Go/oo.0.OoQo..o.,anooseoo.ooooesoeo09./...ooVV)98B9SPoP90ỹPPOŸÿọbUvgvsvwevoọ9tÓeseGenĐoĐseo - Địa chỉ đăng ký cư trú tại Việt Nam........................ - Thẻ thường trú (thể tạm trú, chứng nhận tạm trú) do cơ quan có thẩm quyền của Việt Nam cấp số: Ngày cấp............................ Nơi cấp................... Thời hạn:...............................-se.nsnnnneieennennnEEEnnEEEEEEEEEE900/606000000090000000000990099090000952",
           "khoan": []
         },
         {
           "so_dieu": "2",
-          "noi_dung": "Văn phòng đại diện......(2) m_ hoạt động theo quy định của pháp luật về hợp tác, đầu tư của nước ngoài trong lĩnh vực giáo dục nghề nghiệp; có tư cách pháp nhân, con. dấu và tài khoản riêng, được mở tài khoản tại ngân hàng: thực hiện các quyền và nghĩa vụ theo quy định của pháp luật. Thời hạn hoạt động của Văn phòng đại diện..... (2).....là... năm kể từ Điều 3. Quyết định có hiệu lực kể từ ngày ký ban hành. Cơ quan, đơn vị, cá nhân chịu trách nhiệm thi hành quyết định. Nei nhân mm CHỦ TỊCH - Ưư1tceu - Bộ Giáo dục và Đào tạo (đề b/c); (HOẶC NGUOI ĐƯỢC ỦY QUYỀN) - Lmu: VI, (Ký tên, đóng dấu) (1): Địa danh. (2): Tên của tổ chức, cơ sở giáo dục nghề nghiệp có vốn đầu tư nước ngoài đề nghị thành lập văn phòng đại diện. DU VY Sự XU 9 NI HỘ 20 Mẫu số 11. Văn bản đề nghị sửa đối, bổ sung, gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện HN GỠ)...... CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM — =——“ Độc lập - Tự do - Hạnh phúc V/v đềnghị.....2)..... ve, ngày... tháng... năm...... Kính gửi:.................",
+          "noi_dung": "Văn phòng đại diện......(2) m_ hoạt động theo quy định của pháp luật về hợp tác, đầu tư của nước ngoài trong lĩnh vực giáo dục nghề nghiệp; có tư cách pháp nhân, con. dấu và tài khoản riêng, được mở tài khoản tại ngân hàng: thực hiện các quyền và nghĩa vụ theo quy định của pháp luật. Thời hạn hoạt động của Văn phòng đại diện..... (2).....là... năm kể từ Điều 3. Quyết định có hiệu lực kể từ ngày ký ban hành. Cơ quan, đơn vị, cá nhân chịu trách nhiệm thi hành quyết định. Nei nhân mm CHỦ TỊCH - Ưư1tceu - Bộ Giáo dục và Đào tạo (đề b/c); (HOẶC NGUOI ĐƯỢC ỦY QUYỀN) - Lmu: VI, (Ký tên, đóng dấu) (1): Địa danh. (2): Tên của Tổ chức, cơ sở giáo dục nghề nghiệp có vốn đầu tư nước ngoài đề nghị thành lập văn phòng đại diện. DU VY Sự XU 9 NI HỘ Mẫu số",
           "khoan": [
             {
+              "so_khoan": "11",
+              "noi_dung": "Văn bản đề nghị sửa đối, bổ sung, gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện HN GỠ)...... CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM — =——“ Độc lập - Tự do - Hạnh phúc V/v đềnghị.....2)..... ve, ngày... tháng... năm...... Kính gửi:.................",
+              "diem": []
+            },
+            {
               "so_khoan": "1",
-              "noi_dung": "Thông tin về tổ chức, cơ SỞ giáo dục nghề nghiệp nước ngoài đề nghị sửa đổi, bổ sung, gia bạn hoặc cấp lại giấy phép thành lập văn phòng đại diện tại Việt Nam. 99979799 99:.9867..0997..4019406029095.<.0.990000039409009409099089990040000900000nn0520099990004099909099999000909000000000900008n8599999 Y........x...ooo.oo...g.oooooo......OÐOo7oxoÌo0Ọ0o....eÔ..oÐ.;..S.......0.....000J“ÚÌ........c.,c..co...0Q00.,),002000......",
+              "noi_dung": "Thông tin về Tổ chức, cơ SỞ giáo dục nghề nghiệp nước ngoài đề nghị sửa đổi, bổ sung, gia bạn hoặc cấp lại giấy phép thành lập văn phòng đại diện tại Việt Nam. 99979799 99:.9867..0997..4019406029095.<.0.990000039409009409099089990040000900000nn0520099990004099909099999000909000000000900008n8599999 Y........x...ooo.oo...g.oooooo......OÐOo7oxoÌo0Ọ0o....eÔ..oÐ.;..S.......0.....000J“ÚÌ........c.,c..co...0Q00.,),002000......",
               "diem": []
             },
             {
               "so_khoan": "2",
-              "noi_dung": "Thông tin về văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam - Tên văn phòng đại điện:......................................sneenennensneneereseeen re..ex51.6.7 Tên giao dịch quốc tế bằng tiếng Anh (nếu CÔ):...............GGGseGnnnnnnneeeessesen sen, - Địa điểm văn phòng đại đdiện..................................... G8)... - Giấy phép thành lập văn phòng đại diện: Giấy phép số............... ngày, tháng, năm ban hành, cơ quan ban hành, trích yêu của giây phép.",
+              "noi_dung": "Thông tin về văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam - Tên văn phòng đại điện:......................................sneenennensneneereseeen re..ex51.6.7 Tên giao dịch quốc tế bằng tiếng Anh (nếu CÔ):...............GGGseGnnnnnnneeeessesen sen, - Địa điểm văn phòng đại đdiện..................................... G8)... - Giấy phép thành lập văn phòng đại diện: Giấy phép số............... ngày, tháng, năm ban hành, cơ quan ban hành, trích yêu của giây phép.",
               "diem": []
             },
             {
               "so_khoan": "3",
-              "noi_dung": "Nội dung sửa đổi, bổ sung hoặc gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện tại Việt Nam 997099 31999..79909207o.1 9. )/ẽ$“ọ3oo9e9oo°P9600e2/0«68090990000920080n0009990999900620000006009000062°6n0/009800409340090900060806900000000060005 9939998098.ộó99... sseoosgseoeeolsaeoeaoeoeoesaoeoeseoeooi04040000.2090eenm...0/999960262900990.969000900000009990890900500.9n200000900600009999260 4. Lý do đề nghị sửa đổi, bổ: sung, gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện tại Việt Nam 997999.080.90.020295..22.9.0.90sosooọeetL on... elooeeø2990wnnnnee.00..an.80.90090590090000/080290990000nnn009099990908006908098605 (Hồ sơ kèm theo) Đề nghị........................ xem xét, quyết định. Nơi nhận: (4) cm (Ký tên, đóng dấu, ghi rõ họ tên) Ghỉ chú: (1) Tên tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài đề nghị sửa đổi, bổ sung, gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện tại Việt Nam. (2) Ghi lý do sửa đổi, bổ sung, gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện tại Việt Nam. (3) Ghi địa chỉ. (4) Chức danh người đứng đầu tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài đề nghị sửa đổi, bổ sung, gia hạn hoặc cấp lại giầy phép thành lập văn phòng đại diện tại Việt Nam. 21 Mẫu số 12. Quyết định sửa đổi, bỗ sung, gia hạn, cấp lại giấy phép thành lập văn phòng đại diện của tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam ỦY BAN NHÂN DÂN CÁP TÍNH CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Số:.../QP......... --.)... ngày..... tháng...... năm...... QUYÉT ĐỊNH Sửa đổi, bổ sung, gia hạn Quyết định thành lập Văn phòng đại diện...2).... tại Việt Nam ĐỒ............ G)......... /GPVPĐD Căn cứ................................GnnnnnnnnnnnỒ27.5.. đ).....................................; Căn cđ..............................nnunnnnnVnnn7Ồ050 050... í5)..............GGnnGnnnnnnnnnn (20701505...; Theo đề nghị của Giám đốc Sở Giáo đục và Đào tạo......................... QUYẾT ĐỊNH:",
+              "noi_dung": "Nội dung sửa đổi, bổ sung hoặc gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện tại Việt Nam 31999..79909207o.1 9. )/ẽ$“ọ3oo9e9oo°P9600e2/0«68090990000920080n0009990999900620000006009000062°6n0/009800409340090900060806900000000060005 9939998098.ộó99... sseoosgseoeeolsaeoeaoeoeoesaoeoeseoeooi04040000.2090eenm...0/999960262900990.969000900000009990890900500.9n200000900600009999260",
+              "diem": []
+            },
+            {
+              "so_khoan": "4",
+              "noi_dung": "Lý do đề nghị sửa đổi, bổ: sung, gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện tại Việt Nam 997999.080.90.020295..22.9.0.90sosooọeetL on... elooeeø2990wnnnnee.00..an.80.90090590090000/080290990000nnn009099990908006908098605 (Hồ sơ kèm theo) Đề nghị........................ xem xét, quyết định. Nơi nhận: (4) cm (Ký tên, đóng dấu, ghi rõ họ tên) Ghi chú: (1) Tên Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài đề nghị sửa đổi, bổ sung, gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện tại Việt Nam. (2) Ghi lý do sửa đổi, bổ sung, gia hạn hoặc cấp lại giấy phép thành lập văn phòng đại diện tại Việt Nam. (3) Ghi địa chỉ. (4) Chức danh người đứng đầu Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài đề nghị sửa đổi, bổ sung, gia hạn hoặc cấp lại giầy phép thành lập văn phòng đại diện tại Việt Nam. Mẫu số",
+              "diem": []
+            },
+            {
+              "so_khoan": "12",
+              "noi_dung": "Quyết định sửa đổi, bỗ sung, gia hạn, cấp lại giấy phép thành lập văn phòng đại diện của Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam ỦY BAN NHÂN DÂN CÁP TÍNH CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc Số:.../QP......... --.)... ngày..... tháng...... năm...... QUYÉT ĐỊNH Sửa đổi, bổ sung, gia hạn Quyết định thành lập Văn phòng đại diện...2).... tại Việt Nam ĐỒ............ G)......... /GPVPĐD Căn cứ................................GnnnnnnnnnnnỒ27.5.. đ).....................................; Căn cđ..............................nnunnnnnVnnn7Ồ050 050... í5)..............GGnnGnnnnnnnnnn (20701505...; Theo đề nghị của Giám đốc Sở Giáo đục và Đào tạo......................... QUYẾT ĐỊNH:",
               "diem": []
             }
           ]
         },
         {
           "so_dieu": "1",
-          "noi_dung": "Cho phép sửa đồi, bổ sung, gia hạn Giấy phép........ về việc thành lập Văn phòng đại diện (6) tại Việt Nam tại Quyết định — › như sau: —— Ớ)............Hnnnnnnnnnnnnnnn nen nen. 2129992000 ỀỄ:ÁS: mm Nơi nhận: QUYỀN HẠN, CHỨC VỤ CỦA NGƯỜI KÝ (8) - Như Điều.... (Chữ ko, dấu) - Lưu: VT,... (9) A.xx (10) Họ và tên RE LUOHHIHNN (1) Địa danh. (2), (6) Tên tổ chức, cơ sở giáo đục nghề nghiệp nước ngoài. (3) Số văn bản. (4) Nêu các căn cứ trực tiếp để ban hành quyết định. (5) Các văn bản pháp lý liên quan trực tiếp đến vấn đề giải quyết trong nội dung quyết định. (7) Nội dung quyết định: sửa đổi, bổ sung, gia hạn Giấy phép thành lập Văn phòng đại diện tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam. (8) Quyền hạn, chức vụ của người ký. (9) Chữ viết tắt tên đơn vị soạn thảo và số lượng bản lưu (nếu cần). (10) Ký hiệu người đánh máy, nhân bản và số lượng bản phát hành (nếu cần).",
+          "noi_dung": "Cho phép sửa đồi, bổ sung, gia hạn Giấy phép........ về việc thành lập Văn phòng đại diện (6) tại Việt Nam tại Quyết định — › như sau: —— Ớ)............Hnnnnnnnnnnnnnnn nen nen. 2129992000 ỀỄ:ÁS: mm Nơi nhận: QUYỀN HẠN, CHỨC VỤ CỦA NGƯỜI KÝ (8) - Như Điều.... (Chữ ko, dấu) - Lưu: VT,... (9) A.xx (10) Họ và tên RE LUOHHIHNN (1) Địa danh. (2), (6) Tên Tổ chức, cơ sở giáo đục nghề nghiệp nước ngoài. (3) Số văn bản. (4) Nêu các căn cứ trực tiếp để ban hành quyết định. (5) Các văn bản pháp lý liên quan trực tiếp đến vấn đề giải quyết trong nội dung quyết định. (7) Nội dung quyết định: sửa đổi, bổ sung, gia hạn Giấy phép thành lập Văn phòng đại diện Tổ chức, cơ sở giáo dục nghề nghiệp nước ngoài tại Việt Nam. (8) Quyền hạn, chức vụ của người ký. (9) Chữ viết tắt tên đơn vị soạn thảo và số lượng bản lưu (nếu cần). (10) Ký hiệu người đánh máy, nhân bản và số lượng bản phát hành (nếu cần).",
           "khoan": []
         }
       ]
