@@ -3,7 +3,7 @@
 # ============================================================================
 
 # Core Python Libraries
-numpy>=1.26.0,<2.0.0
+numpy==1.23.5  # IMPORTANT: Must be <1.24 for PaddleOCR compatibility
 pillow>=10.0.0
 
 # ============================================================================
@@ -12,6 +12,13 @@ pillow>=10.0.0
 opencv-python>=4.8.0
 pytesseract>=0.3.10
 pdf2image>=1.16.0
+paddleocr>=2.7.0
+paddlepaddle>=2.5.0
+vietocr>=0.3.0
+
+# ProtonX OCR (Optional - requires 900MB+ RAM)
+transformers>=4.30.0
+torch>=2.0.0
 
 # ============================================================================
 # STEP 2: PDF Parsing
@@ -22,15 +29,13 @@ pdfplumber>=0.10.0
 # STEP 4: LLM Normalization (KEY for 100% accuracy)
 # ============================================================================
 openai>=1.0.0
+google-generativeai>=0.3.0  # For Gemini API
 
 # ============================================================================
 # STEP 5: Embedding
 # ============================================================================
-transformers>=4.30.0
-torch>=2.0.0
-
-# Optional: For GPU support (uncomment if you have CUDA)
-# torch>=2.0.0+cu118
+sentence-transformers>=2.2.0  # For PhoBERT, BGE-M3
+huggingface-hub>=0.19.0
 
 # ============================================================================
 # STEP 6: Vector Database
@@ -43,3 +48,4 @@ faiss-cpu>=1.7.0  # For CPU only
 # Additional Utilities
 # ============================================================================
 tqdm>=4.65.0  # Progress bars
+python-dotenv>=1.0.0  # Environment variables

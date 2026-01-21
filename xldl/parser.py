@@ -56,6 +56,7 @@ VIETNAMESE_OCR_FIXES = {
     "quộc": "quốc", "Quộc": "Quốc",
     "điêu": "điều", "Điêu": "Điều",
     "Dicu": "Điều", "Diêu": "Điều", "Đicu": "Điều",
+    "Điệu": "Điều",
     "quân lý": "quản lý", "quán lý": "quản lý",
     
     # === Lỗi số La Mã - QUAN TRỌNG ===
@@ -260,9 +261,13 @@ def clean_text(text):
     text = fix_vietnamese_ocr_errors(text)
     text = apply_context_aware_fixes(text)
     
-    # Thêm xuống dòng trước Chương
-    text = re.sub(r'([^\n])\s+(Chương|CHƯƠNG)\s+([IVXLCDM\d]+)', 
-                  r'\1\n\n\2 \3', text, flags=re.IGNORECASE)
+    # ========== TÁCH DÒNG CHO CÁC CẤU TRÚC LỚN (CHƯƠNG, PHẦN, MỤC) ==========
+    
+    # Thêm xuống dòng trước Chương (Bảo vệ tham chiếu)
+    ref_chuong_pattern = r'(tại|theo|của|số|khoản\s+[\d,\svàhoặc]+|điểm\s+[\w,\svàhoặc]+|hoặc|và|,|;)\s+(Chương|CHƯƠNG)\s+([IVXLCDM\d]+)'
+    text = re.sub(ref_chuong_pattern, r'\1 <<<REF>>>\2 \3', text, flags=re.IGNORECASE)
+    text = re.sub(r'([^\n<>])\s*([_\-.]*)\s*(Chương|CHƯƠNG)\s+([IVXLCDM\d]+|IH|Ih|1H)', 
+                  r'\1\n\n\2\3 \4', text, flags=re.IGNORECASE)
     
     # Thêm xuống dòng trước Phần (Bảo vệ tham chiếu)
     ref_phan_pattern = r'(tại|theo|của|số|khoản\s+[\d,\svàhoặc]+|điểm\s+[\w,\svàhoặc]+|hoặc|và|,|;)\s+(Phần|PHẦN)\s+([IVXLCDM\d]+)'
@@ -273,10 +278,19 @@ def clean_text(text):
     # Thêm xuống dòng trước Mục (Bảo vệ tham chiếu)
     ref_muc_pattern = r'(tại|theo|của|số|khoản\s+[\d,\svàhoặc]+|điểm\s+[\w,\svàhoặc]+|hoặc|và|,|;)\s+(Mục|MỤC)\s+([IVXLCDM\d]+)'
     text = re.sub(ref_muc_pattern, r'\1 <<<REF>>>\2 \3', text, flags=re.IGNORECASE)
-    text = re.sub(r'([^\n<>])\s+(Mục|MỤC)\s+([IVXLCDM\d]+)', 
-                  r'\1\n\n\2 \3', text, flags=re.IGNORECASE)
+    text = re.sub(r'([^\n<>])\s*([_\-.]*)\s*(Mục|MỤC)\s+([IVXLCDM\d]+)', 
+                  r'\1\n\n\2\3 \4', text, flags=re.IGNORECASE)
 
-    # Thêm xuống dòng trước Điều (không phải tham chiếu)
+    # Tách dòng cho PHỤ LỤC (để parser có thể dừng xử lý)
+    # Bảo vệ tham chiếu "tại Phụ lục", "theo Phụ lục"
+    ref_pl_pattern = r'(tại|theo|của|số|xem|trong)\s+(PHỤ\s+LỤC|Phụ\s+lục)'
+    text = re.sub(ref_pl_pattern, r'\1 <<<REF>>>\2', text, flags=re.IGNORECASE)
+    
+    # Tách Phụ lục ra dòng riêng (nếu không phải tham chiếu)
+    text = re.sub(r'([^\n<>])\s*(PHỤ\s+LỤC|Phụ\s+lục)', r'\1\n\n\2', text, flags=re.IGNORECASE)
+
+    # ========== TÁCH DÒNG CHO ĐIỀU ==========
+    
     # Bảo vệ tham chiếu kiểu "tại Điều X", "theo Điều X", "quy định tại Điều X"
     ref_pattern = r'(tại|theo|của|số|khoản\s+[\d,\svàhoặc]+|điểm\s+[\w,\svàhoặc]+|hoặc|và|,|;)\s+(Điều|ĐIỀU)\s+(\d+)'
     text = re.sub(ref_pattern, r'\1 <<<REF>>>\2 \3', text, flags=re.IGNORECASE)
@@ -289,23 +303,15 @@ def clean_text(text):
     text = re.sub(r'(\.)\s+(\d+)\s+(Điều|ĐIỀU)\s+(\d+)', 
                   r'\1\n\n\3 \4', text, flags=re.IGNORECASE)
     
-    # Tách dòng cho các khoản (số thứ tự đầu dòng) bị dính vào dòng trước
-    text = re.sub(r'([.;:)]|\s+)\s*(\d+\.\s+[A-ZÀ-Ỹ])', r'\1\n\2', text)
-
-    # Tách dòng cho các điểm a), b)... bị dính vào dòng trước (sau dấu hai chấm, chấm phẩy, chấm)
-    text = re.sub(r'([:;.])\s*([a-zđ])\)\s+', r'\1\n\2) ', text, flags=re.IGNORECASE)
-
-    # Tách Khoản 1 (hoặc các khoản khác) bị dính vào giữa đoạn văn
-    text = re.sub(r'(\s+)(1\.\s+[A-ZÀ-Ỹ])', r'\n\2', text)
+    # Tách Điều bị dính vào cuối câu trước (ví dụ: "...thực hiện. Điều 4")
+    text = re.sub(r'([.;:)])\s*(Điều|ĐIỀU)\s+(\d+)(?![0-9])', 
+                  r'\1\n\n\2 \3', text, flags=re.IGNORECASE)
     
-    # Tách Khoản 1 khi dính vào năm (ví dụ: năm 2022 1. )
-    text = re.sub(r'\b(năm\s+\d+)\s*(1\.\s+[A-ZÀ-Ỹ])', r'\1\n\2', text, flags=re.IGNORECASE)
-    # Tách Khoản 1 khi dính vào tên Luật/Nghị định (ví dụ: Luật Đất đai 1. )
-    text = re.sub(r'(Luật\s+[^0-9]+)\s*(1\.\s+[A-ZÀ-Ỹ])', r'\1\n\2', text, flags=re.IGNORECASE)
-
-    # Tách Khoản 1 bị dính vào tiêu đề Điều (có tiêu đề ở giữa)
-    text = re.sub(r'((?:Điều|ĐIỀU)\s+\d+.*?)\s+(1\.\s+[A-ZÀ-Ỹ])', r'\1\n\2', text)
-
+    # Tách Điều bị dính vào giữa văn bản (không có dấu câu trước)
+    # Nhưng KHÔNG tách nếu là tham chiếu đã được đánh dấu
+    text = re.sub(r'([a-zà-ỹ])\s+(Điều|ĐIỀU)\s+(\d+)\s+([A-ZÀ-Ỹ].{2,})', 
+                  r'\1\n\n\2 \3 \4', text, flags=re.IGNORECASE)
+    
     # Tách Điều và Khoản 1 nếu dính nhau (ví dụ: "Điều 2. 1. Nội dung")
     text = re.sub(r'(Điều|ĐIỀU)\s+(\d+)[.:]?\s+(1\.\s+[A-ZÀ-Ỹ])', r'\1 \2.\n\3', text)
 
@@ -313,7 +319,48 @@ def clean_text(text):
     text = re.sub(r'([^\n<>])\s+(Điều|ĐIỀU)\s+(\d+)', 
                   r'\1\n\n\2 \3', text, flags=re.IGNORECASE)
     
+    # ========== TÁCH DÒNG CHO KHOẢN ==========
+    
+    # Tách dòng cho các khoản (số thứ tự đầu dòng) bị dính vào dòng trước
+    # QUAN TRỌNG: Bảo vệ "Điều [số]." khỏi bị tách - dùng 2 pass
+    # Pass 1: Đánh dấu "Điều [số]" để bảo vệ
+    text = re.sub(r'(Điều|ĐIỀU)\s+(\d+)\s*\.\s+', r'<<<DIEU_\2>>>. ', text, flags=re.IGNORECASE)
+    
+    # Pass 2: Tách khoản (sau dấu câu hoặc kết thúc từ + số thứ tự khoản)
+    text = re.sub(r'([.;:)]|[a-zà-ỹ])\s+(\d+\.\s+[A-ZÀ-Ỹ])', r'\1\n\2', text)
+    
+    # Pass 3: Khôi phục "Điều [số]."
+    text = re.sub(r'<<<DIEU_(\d+)>>>\.', r'Điều \1.', text)
+
+    # Tách Khoản 1 khi dính vào năm (ví dụ: năm 2022 1. )
+    text = re.sub(r'\b(năm|tháng|ngày)\s+(\d+)\s+(\d+\.\s+[A-ZÀ-Ỹ])', r'\1 \2\n\3', text, flags=re.IGNORECASE)
+    
+    # Tách Khoản 1 khi dính vào tên văn bản (ví dụ: Luật Đất đai 1. )
+    text = re.sub(r'(Luật|Nghị định|Thông tư|Quyết định)\s+([A-ZÀ-Ỹ][^0-9]{3,20})\s+(\d+\.\s+[A-ZÀ-Ỹ])', 
+                  r'\1 \2\n\3', text, flags=re.IGNORECASE)
+
+    # Tách Khoản bị dính vào tiêu đề Điều (có tiêu đề ở giữa)
+    text = re.sub(r'((?:Điều|ĐIỀU)\s+\d+[^\n]{0,100}?)\s+(\d+\.\s+[A-ZÀ-Ỹ])', r'\1\n\2', text)
+
+    # ========== TÁCH DÒNG CHO ĐIỂM ==========
+    
+    # Tách dòng cho các điểm a), b)... bị dính vào dòng trước
+    # Sau dấu hai chấm, chấm phẩy, chấm, hoặc dấu ngoặc đóng
+    text = re.sub(r'([:;.)])\s*([a-zđ])\)\s+', r'\1\n\2) ', text, flags=re.IGNORECASE)
+    
+    # Tách điểm bị dính vào cuối khoản/văn bản (không có dấu câu)
+    text = re.sub(r'([a-zà-ỹ])\s+([a-zđ])\)\s+([A-ZÀ-Ỹ])', r'\1\n\2) \3', text)
+    
+    # ========== LÀM SẠCH TẠM THỜI ==========
     text = text.replace('<<<REF>>>', '')
+    
+    # ========== CHUẨN HÓA KHOẢNG TRẮNG ==========
+    # Loại bỏ khoảng trắng thừa ở đầu/cuối dòng
+    text = re.sub(r'^\s+', '', text, flags=re.MULTILINE)
+    text = re.sub(r'\s+$', '', text, flags=re.MULTILINE)
+    
+    # Chuẩn hóa nhiều dòng trống liên tiếp thành tối đa 2 dòng
+    text = re.sub(r'\n{3,}', '\n\n', text)
     
     return text
 
@@ -330,12 +377,32 @@ class LegalParser:
             "chuong": []
         }
         self.current_chuong = None
+        self.current_muc = None
         self.current_dieu = None
         self.current_khoan = None
         self.current_diem = None
         self.state = {"collecting": None}
         self.buffer = []
         self.pending_chuong_title = False
+        self.pending_muc_title = False
+    
+    def roman_to_int(self, s):
+        """Chuyển đổi số La Mã thành số nguyên"""
+        roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+        result = 0
+        prev_value = 0
+        
+        for char in reversed(s):
+            if char not in roman_dict:
+                raise ValueError(f"Invalid Roman numeral: {s}")
+            value = roman_dict[char]
+            if value < prev_value:
+                result -= value
+            else:
+                result += value
+            prev_value = value
+        
+        return result
 
     def flush_buffer(self):
         """Gom nội dung từ buffer và phát hiện Điều bị gộp nhầm."""
@@ -421,6 +488,22 @@ class LegalParser:
             if not line_stripped:
                 continue
 
+            # Dừng xử lý khi gặp Phụ lục (tránh nhận diện nhầm biểu mẫu thành Điều)
+            if re.match(r'^\s*(PHỤ\s+LỤC|Phụ\s+lục)\b', line_stripped, re.IGNORECASE):
+                self.flush_buffer()
+                break
+            
+            # Dừng xử lý nếu gặp dấu hiệu của văn bản con (Biểu mẫu) xuất hiện sau khi đã có nội dung chính
+            # Ví dụ: "CỘNG HÒA XÃ HỘI..." bắt đầu một mẫu đơn/quyết định trong phụ lục
+            if re.match(r'^\s*CỘNG\s+HÒA\s+XÃ\s+HỘI\s+CHỦ\s+NGHĨA\s+VIỆT\s+NAM', line_stripped, re.IGNORECASE) and self.document["chuong"]:
+                self.flush_buffer()
+                break
+            
+            # Dừng parsing khi gặp PHỤ LỤC, BIỂU MẪU, MẪU SỐ, hoặc DANH MỤC
+            if re.match(r'^\s*(PHỤ\s+LỤC|PHỤLỤC|BIỂU\s+MẪU|MẪU\s+SỐ|DANH\s+MỤC|PHỤ\s+KIỆN|CÁC\s+BIỂU\s+MẪU)', line_stripped, re.IGNORECASE):
+                self.flush_buffer()
+                break
+
             # Căn cứ pháp lý
             if re.match(r'^Căn cứ\s+', line_stripped, re.IGNORECASE) and not is_can_cu_section:
                 is_can_cu_section = True
@@ -441,13 +524,25 @@ class LegalParser:
                 if not re.match(r'^(Điều|ĐIỀU)\s+\d+', line_stripped):
                     self.current_chuong["ten_chuong"] = line_stripped
                     self.pending_chuong_title = False
-                    self.state["collecting"] = None
+                    self.state["collecting"] = None  # Reset state để nhận diện Điều
                     continue
                 else:
                     self.pending_chuong_title = False
+            
+            # Tiêu đề mục từ dòng sau
+            if self.pending_muc_title and self.current_muc:
+                if not re.match(r'^(Điều|ĐIỀU)\s+\d+', line_stripped):
+                    self.current_muc["ten_muc"] = line_stripped
+                    self.pending_muc_title = False
+                    self.state["collecting"] = None  # Reset state để nhận diện Điều
+                    continue
+                else:
+                    self.pending_muc_title = False
 
-            # Nhận diện cấu trúc
+            # Nhận diện cấu trúc (theo thứ tự phân cấp từ lớn đến nhỏ)
             if self.handle_chuong(line_stripped):
+                continue
+            if self.handle_muc(line_stripped):
                 continue
             if self.handle_dieu(line_stripped):
                 continue
@@ -463,17 +558,33 @@ class LegalParser:
         self.flush_buffer()
 
     def handle_chuong(self, line):
-        """Xử lý Chương"""
-        match = re.match(r'^(Chương|CHƯƠNG)\s+([IVXLCDM\d]+)\s*[-:.]?\s*(.*)$', line, re.IGNORECASE)
+        """Xử lý Chương với validation nghiêm ngặt"""
+        match = re.match(r'^[_\-.\s]*(Chương|CHƯƠNG)\s+([IVXLCDM\d]+|IH|Ih|1H)\b\s*[-:.]?\s*(.*)$', line, re.IGNORECASE)
         if match:
             so_chuong_raw = match.group(2).upper()
             title_part = match.group(3).strip()
             title_part = re.sub(r'^[-–—]\s*', '', title_part)
             
+            # VALIDATION 1: Tiêu đề phải có độ dài hợp lý hoặc rỗng
             if title_part and len(title_part) < 4:
                 clean_title = re.sub(r'[^a-zA-ZÀ-ỹ]', '', title_part)
                 if len(clean_title) < 3:
                     return False
+            
+            # VALIDATION 2: Kiểm tra số Chương hợp lý (I-XX hoặc 1-20)
+            if re.match(r'^\d+$', so_chuong_raw):
+                if int(so_chuong_raw) > 20:  # Văn bản hiếm khi có >20 chương
+                    return False
+            elif re.match(r'^[IVXLCDM]+$', so_chuong_raw):
+                # Kiểm tra giá trị số La Mã hợp lệ (I-XX = 1-20)
+                try:
+                    roman_val = self.roman_to_int(so_chuong_raw)
+                    if roman_val > 20 or roman_val < 1:
+                        return False
+                except:
+                    return False
+            else:
+                return False
             
             existing_chuong = [c['so_chuong'] for c in self.document['chuong']]
             if so_chuong_raw in existing_chuong:
@@ -520,23 +631,141 @@ class LegalParser:
             return True
         return False
 
-    def handle_dieu(self, line):
-        """Xử lý Điều"""
-        match = re.match(r'^(Điều|ĐIỀU)\s+(\d+)\s*[.:]?\s*(.*)$', line, re.IGNORECASE)
-        if not match:
+    def handle_muc(self, line):
+        """Xử lý Mục (Section) - cấu trúc nhỏ hơn Chương nhưng lớn hơn Điều"""
+        # VALIDATION CHIẾM NH: Chỉ xử lý Mục nếu đã có Chương (tránh nhận dạng nhầm)
+        if not self.document["chuong"]:
+            return False
+        
+        # Bỏ qua "Mục lục" (thường xuất hiện ở cuối văn bản)
+        if re.match(r'^\s*(Mục|MỤC)\s+(lục|LỤC)', line, re.IGNORECASE):
             return False
             
+        # Thêm Đ vào regex để bắt trường hợp Mục Đ (phổ biến trong văn bản VN)
+        # Thêm \b để tránh bắt nhầm từ (ví dụ: "Mục đích" -> bắt nhầm Mục đ, "Mục Do" -> bắt nhầm Mục D)
+        match = re.match(r'^\s*(Mục|MỤC)\s+([IVXLCDMĐ\d]+)\b\s*[-:.]?\s*(.*)$', line, re.IGNORECASE)
+        if match:
+            so_muc_raw = match.group(2).upper()
+            title_part = match.group(3).strip()
+            title_part = re.sub(r'^[-–—]\s*', '', title_part)
+            
+            # Chặn lỗi OCR: Nếu số mục là 1 ký tự (ví dụ D, C), tiêu đề không được bắt đầu bằng chữ thường
+            # Ví dụ: "Mục Do..." -> bắt nhầm Mục D, tiêu đề "o..." -> Chặn
+            if len(so_muc_raw) == 1 and title_part:
+                if title_part[0].islower():
+                    return False
+                
+                # --- LOGIC MỚI: Chặn các lỗi cắt từ phổ biến ---
+                # CÁC -> Mục C ÁC...
+                if so_muc_raw == 'C' and re.match(r'^[ÁA]C\b', title_part, re.IGNORECASE):
+                    return False
+                # DO -> Mục D O...
+                if so_muc_raw == 'D' and re.match(r'^[O0]\b', title_part, re.IGNORECASE):
+                    return False
+                # LỤC -> Mục L ỤC...
+                if so_muc_raw == 'L' and re.match(r'^[UỤ]C\b', title_part, re.IGNORECASE):
+                    return False
+            
+            # Kiểm tra tiêu đề hợp lệ
+            if title_part and len(title_part) < 4:
+                clean_title = re.sub(r'[^a-zA-ZÀ-ỹ]', '', title_part)
+                if len(clean_title) < 3:
+                    return False
+            
+            self.flush_buffer()
+            
+            # Phát hiện Điều dính vào tiêu đề Mục
+            dieu_match = re.search(r'(Điều|ĐIỀU)\s+(\d+)', title_part, re.IGNORECASE)
+            
+            if dieu_match:
+                muc_title = title_part[:dieu_match.start()].strip()
+                self.current_muc = {
+                    "so_muc": so_muc_raw,
+                    "ten_muc": muc_title,
+                    "dieu": []
+                }
+                
+                # Thêm Mục vào Chương hiện tại
+                if not self.current_chuong:
+                    if not self.document["chuong"]:
+                        self.document["chuong"].append({
+                            "so_chuong": "", 
+                            "ten_chuong": "QUY ĐỊNH CHUNG", 
+                            "dieu": []
+                        })
+                    self.current_chuong = self.document["chuong"][-1]
+                
+                # Thêm thuộc tính "muc" vào chương nếu chưa có
+                if "muc" not in self.current_chuong:
+                    self.current_chuong["muc"] = []
+                
+                self.current_chuong["muc"].append(self.current_muc)
+                self.current_dieu = self.current_khoan = self.current_diem = None
+                self.pending_muc_title = False
+                self.state["collecting"] = None
+                
+                # Xử lý Điều dính vào
+                remainder = title_part[dieu_match.start():].strip()
+                self.handle_dieu(remainder)
+            else:
+                self.current_muc = {
+                    "so_muc": so_muc_raw,
+                    "ten_muc": title_part,
+                    "dieu": []
+                }
+                
+                # Thêm Mục vào Chương hiện tại
+                if not self.current_chuong:
+                    if not self.document["chuong"]:
+                        self.document["chuong"].append({
+                            "so_chuong": "", 
+                            "ten_chuong": "QUY ĐỊNH CHUNG", 
+                            "dieu": []
+                        })
+                    self.current_chuong = self.document["chuong"][-1]
+                
+                # Thêm thuộc tính "muc" vào chương nếu chưa có
+                if "muc" not in self.current_chuong:
+                    self.current_chuong["muc"] = []
+                
+                self.current_chuong["muc"].append(self.current_muc)
+                self.current_dieu = self.current_khoan = self.current_diem = None
+                
+                if not title_part:
+                    self.pending_muc_title = True
+                    self.state["collecting"] = "muc"
+                else:
+                    self.state["collecting"] = None
+                    self.pending_muc_title = False
+            
+            return True
+        return False
+
+    def handle_dieu(self, line):
+        """Xử lý Điều với validation"""
+        match = re.match(r'^\s*(Điều|ĐIỀU|Điệu)\s+(\d+)\s*[.:]?\s*(.*)$', line, re.IGNORECASE)
+        if not match:
+            return False
+        
+        # VALIDATION: Số Điều phải hợp lý (1-999)
         so_dieu = match.group(2)
+        try:
+            dieu_num = int(so_dieu)
+            if not (1 <= dieu_num <= 999):
+                return False
+        except ValueError:
+            return False
+            
         rest_text = match.group(3).strip()
         
         # PHÁT HIỆN ĐIỀU BỊ GỘP NHẦM VÀO TRONG KHOẢN (Lỗi OCR)
         # Pattern: "... Điều 4,Tên điều" hoặc "... Điều 7,Phân cấp..."
-        dieu_in_khoan = re.search(r'[\.\s]+([Điều|ĐIỀU]\s+\d+)\s*[,\.]?\s*([A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴĐ].{5,})', rest_text, re.IGNORECASE)
+        dieu_in_khoan = re.search(r'[\.\s]+((?:Điều|ĐIỀU)\s+\d+)\s*[,\.]?\s*([A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴĐ].{5,})', rest_text, re.IGNORECASE)
         
         if dieu_in_khoan:
             # Tách nội dung điều hiện tại và điều bị gộp
-            dieu_part = rest_text[:dieu_in_khoan.start()].strip()
-            next_dieu_part = rest_text[dieu_in_khoan.start():].strip()
+            dieu_part = rest_text[:dieu_in_khoan.start(1)].strip()
+            next_dieu_part = rest_text[dieu_in_khoan.start(1):].strip()
             
             # Xử lý điều hiện tại trước (nếu có nội dung)
             if dieu_part:
@@ -554,7 +783,7 @@ class LegalParser:
         # PHÁT HIỆN CHƯƠNG GỘP NHẦM VÀO NỘI DUNG ĐIỀU
         # Pattern: "... Chương [I-IX/J]+ TÊN_CHƯƠNG"
         # Có thể có hoặc không có dấu chấm trước "Chương"
-        chuong_in_dieu = re.search(r'[\.\s]+(Chương|CHƯƠNG)\s+([IVXLCDMJ]+)\s+([A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴĐ].{10,})', rest_text, re.IGNORECASE)
+        chuong_in_dieu = re.search(r'[\.\s]+(Chương|CHƯƠNG)\s+([IVXLCDMJ\d]+|IH|Ih|1H)\s+([A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴĐ].{10,})', rest_text, re.IGNORECASE)
         
         if chuong_in_dieu:
             # Tách nội dung điều và tiêu đề chương
@@ -568,6 +797,22 @@ class LegalParser:
                 # Nếu không có nội dung điều, bỏ qua điều này
                 # và xử lý chương sau
                 self.handle_chuong(chuong_part)
+                return True
+        
+        # PHÁT HIỆN MỤC GỘP NHẦM VÀO NỘI DUNG ĐIỀU
+        muc_in_dieu = re.search(
+            r'[\.\s]+(Mục|MỤC)\s+([IVXLCDMJ]+)\s+([A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴĐ].{5,})', 
+            rest_text, re.IGNORECASE
+        )
+        
+        if muc_in_dieu:
+            dieu_part = rest_text[:muc_in_dieu.start()].strip()
+            muc_part = rest_text[muc_in_dieu.start():].strip()
+            
+            if dieu_part:
+                rest_text = dieu_part
+            else:
+                self.handle_muc(muc_part)
                 return True
         
         # LỌC BỎ THAM CHIẾU
@@ -624,7 +869,15 @@ class LegalParser:
             "khoan": []
         }
         
-        if not self.current_chuong:
+        # Thêm Điều vào Mục hoặc Chương (ưu tiên Mục nếu có)
+        if self.current_muc:
+            # Ưu tiên thêm vào Mục nếu đang trong Mục
+            self.current_muc["dieu"].append(self.current_dieu)
+        elif self.current_chuong:
+            # Không có Mục, thêm vào Chương
+            self.current_chuong["dieu"].append(self.current_dieu)
+        else:
+            # Không có Chương, tạo Chương mặc định
             if not self.document["chuong"]:
                 self.document["chuong"].append({
                     "so_chuong": "", 
@@ -632,8 +885,8 @@ class LegalParser:
                     "dieu": []
                 })
             self.current_chuong = self.document["chuong"][-1]
+            self.current_chuong["dieu"].append(self.current_dieu)
         
-        self.current_chuong["dieu"].append(self.current_dieu)
         self.current_khoan = self.current_diem = None
         self.state["collecting"] = "dieu"
 
@@ -643,6 +896,10 @@ class LegalParser:
         # XỬ LÝ CHƯƠNG BỊ GỘP NHẦM (nếu có)
         if chuong_in_dieu:
             self.handle_chuong(chuong_part)
+        
+        # XỬ LÝ MỤC BỊ GỘP NHẦM (nếu có)
+        if muc_in_dieu:
+            self.handle_muc(muc_part)
         
         # XỬ LÝ ĐIỀU TIẾP THEO BỊ GỘP NHẦM (nếu có)
         if hasattr(self, 'pending_next_dieu') and self.pending_next_dieu:
@@ -654,9 +911,67 @@ class LegalParser:
 
     def handle_khoan(self, line):
         """Xử lý Khoản"""
-        match = re.match(r'^(\d+)\.\s*(.+)', line)
+        # Chấp nhận khoảng trắng đầu dòng và dấu phẩy thay vì dấu chấm (lỗi OCR phổ biến)
+        match = re.match(r'^\s*(\d+)\s*[.,]\s*(.+)', line)
         if match and self.current_dieu:
+            
+            # --- LOGIC MỚI: Xử lý trường hợp "Điều" nằm cuối dòng trước ---
+            # Nếu buffer kết thúc bằng "Điều" (hoặc "Điệu"), và dòng này bắt đầu bằng số -> Gộp lại thành Điều
+            if self.buffer:
+                last_buffer_line = self.buffer[-1].strip()
+                # Kiểm tra đuôi buffer có phải là Điều/Điệu không
+                if re.search(r'(Điều|ĐIỀU|Điệu)$', last_buffer_line, re.IGNORECASE):
+                    # Xóa chữ Điều ở buffer cũ
+                    self.buffer[-1] = re.sub(r'\s*(Điều|ĐIỀU|Điệu)$', '', last_buffer_line, flags=re.IGNORECASE)
+                    if not self.buffer[-1].strip():
+                        self.buffer.pop()
+                    self.flush_buffer()
+                    return self.handle_dieu(f"Điều {line}")
+            
             so_khoan = match.group(1)
+            
+            # --- LOGIC MỚI: Tự động phát hiện Điều bị thiếu từ khóa "Điều" ---
+            # Ví dụ: Đang ở Điều 9, gặp dòng "10. Nội dung..." -> Hiểu là Điều 10
+            try:
+                # Lấy số điều hiện tại
+                current_dieu_num = int(re.search(r'\d+', str(self.current_dieu.get('so_dieu', '0'))).group())
+                khoan_num = int(so_khoan)
+                
+                # Nếu số khoản = số điều hiện tại + 1
+                if khoan_num == current_dieu_num + 1:
+                    # Kiểm tra tính liên tục của khoản để tránh nhầm lẫn
+                    last_khoan_num = 0
+                    if self.current_dieu.get('khoan'):
+                        try:
+                            last_khoan_num = int(self.current_dieu['khoan'][-1]['so_khoan'])
+                        except:
+                            pass
+                    
+                    # Ngưỡng nhảy cóc: Nếu nhảy quá 1 đơn vị (ví dụ 3 -> 10) hoặc từ 0 -> 10
+                    if khoan_num > last_khoan_num + 1:
+                        fake_line = f"Điều {line}"
+                        if self.handle_dieu(fake_line):
+                            return True
+                        
+                        # Nếu handle_dieu thất bại (do kiểm tra nghiêm ngặt), nhưng ta chắc chắn đây là Điều (do nhảy số)
+                        # Thì cưỡng chế tạo Điều mới
+                        self.flush_buffer()
+                        self.current_dieu = {
+                            "so_dieu": str(khoan_num),
+                            "noi_dung": match.group(2).strip(),
+                            "khoan": []
+                        }
+                        if self.current_muc: self.current_muc["dieu"].append(self.current_dieu)
+                        elif self.current_chuong: self.current_chuong["dieu"].append(self.current_dieu)
+                        else: self.document["chuong"][-1]["dieu"].append(self.current_dieu) # Fallback
+                        
+                        self.current_khoan = self.current_diem = None
+                        self.state["collecting"] = "dieu"
+                        return True
+            except Exception:
+                pass
+            # ----------------------------------------------------------------
+            
             if not (1 <= int(so_khoan) <= 99):
                 return False
             
@@ -669,12 +984,12 @@ class LegalParser:
             
             # PHÁT HIỆN ĐIỀU BỊ GỘP NHẦM VÀO CUỐI KHOẢN
             # Pattern: "...thực hiện. Điều 4,Tên điều" hoặc "...thực hiện. Điều 7,Phân cấp..."
-            dieu_in_khoan = re.search(r'[\.\s]+([Đđ]i[ềê]u)\s+(\d+)\s*[,\.]?\s*([A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴĐ].{5,})', khoan_content, re.IGNORECASE)
+            dieu_in_khoan = re.search(r'[\.\s]+((?:Điều|ĐIỀU)\s+\d+)\s*[,\.]?\s*([A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴĐ].{5,})', khoan_content, re.IGNORECASE)
             
             if dieu_in_khoan:
                 # Tách nội dung khoản và điều bị gộp
-                khoan_part = khoan_content[:dieu_in_khoan.start()].strip()
-                next_dieu_part = khoan_content[dieu_in_khoan.start():].strip()
+                khoan_part = khoan_content[:dieu_in_khoan.start(1)].strip()
+                next_dieu_part = khoan_content[dieu_in_khoan.start(1):].strip()
                 
                 # Lưu khoản hiện tại với nội dung đã tách
                 self.current_khoan = {
@@ -705,7 +1020,7 @@ class LegalParser:
 
     def handle_diem(self, line):
         """Xử lý Điểm"""
-        match = re.match(r'^([a-zđ])\)\s*(.+)', line, re.IGNORECASE)
+        match = re.match(r'^\s*([a-zđ])\)\s*(.+)', line, re.IGNORECASE)
         if match and self.current_dieu:
             if self.state["collecting"] not in ["dieu", "khoan", "diem"]:
                 return False
@@ -737,99 +1052,34 @@ class LegalParser:
         return self.document
 
 def fix_chapter_numbers(document):
-    """Sửa số chương bị OCR nhận sai."""
-    roman_numerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']
+    """Sửa số chương bị OCR nhận sai (phát hiện duplicate)."""
     chapters = document.get('chuong', [])
     if not chapters:
         return document
+    
+    # Phát hiện duplicate chapter numbers (OCR error: III → II)
+    seen = {}
     for i, chapter in enumerate(chapters):
-        if i < len(roman_numerals):
-            old_num = chapter.get('so_chuong', '')
-            new_num = roman_numerals[i]
-            if old_num != new_num:
-                chapter['so_chuong'] = new_num
-    return document
-
-def fix_missing_dieu_4(document):
-    """
-    Sửa trường hợp Điều bị gộp nhầm vào điều trước (tổng quát cho mọi điều)
-    Phát hiện: Điều có khoản bị lặp số (ví dụ: 1,2,3,2,3 hoặc 1,2,3,1,2)
-    """
-    for chuong in document.get('chuong', []):
-        dieu_list = chuong.get('dieu', [])
-        i = 0
+        so_chuong = chapter.get('so_chuong', '')
         
-        while i < len(dieu_list):
-            dieu = dieu_list[i]
-            khoan_list = dieu.get('khoan', [])
-            
-            if len(khoan_list) < 2:
-                i += 1
-                continue
-            
-            # Tìm vị trí khoản bị lặp số
-            seen_numbers = set()
-            split_index = None
-            
-            for j, khoan in enumerate(khoan_list):
-                so_khoan = khoan.get('so_khoan', '')
-                if so_khoan in seen_numbers:
-                    # Phát hiện số bị lặp - đây là điểm tách
-                    split_index = j
-                    break
-                seen_numbers.add(so_khoan)
-            
-            if split_index:
-                # Tách khoản từ split_index trở đi sang điều mới
-                new_dieu_khoan = khoan_list[split_index:]
-                dieu_list[i]['khoan'] = khoan_list[:split_index]
+        if so_chuong in seen:
+            # Duplicate detected! Fix it
+            # Convert to int, increment, convert back to Roman
+            try:
+                roman_to_int_map = {'I':1, 'II':2, 'III':3, 'IV':4, 'V':5, 'VI':6, 'VII':7, 'VIII':8, 'IX':9, 'X':10}
+                int_to_roman_map = {1:'I', 2:'II', 3:'III', 4:'IV', 5:'V', 6:'VI', 7:'VII', 8:'VIII', 9:'IX', 10:'X'}
                 
-                # Tính số điều mới (số điều hiện tại + 1)
-                try:
-                    so_dieu_hien_tai = int(dieu.get('so_dieu', '0'))
-                    so_dieu_moi = str(so_dieu_hien_tai + 1)
-                except:
-                    so_dieu_moi = str(i + 2)  # Fallback
+                current_num = roman_to_int_map.get(so_chuong, i+1)
+                new_num = current_num + 1
+                new_roman = int_to_roman_map.get(new_num, so_chuong)
                 
-                # Xác định tên điều mới dựa trên ngữ cảnh
-                # Nếu điều hiện tại là "Phân quyền..." thì điều mới có thể là "Phân cấp..."
-                noi_dung_hien_tai = dieu.get('noi_dung', '')
-                if 'Phân quyền' in noi_dung_hien_tai:
-                    noi_dung_moi = noi_dung_hien_tai.replace('Phân quyền', 'Phân cấp')
-                elif 'quy định chung' in noi_dung_hien_tai.lower():
-                    noi_dung_moi = "Quy định cụ thể"
-                else:
-                    # Lấy từ nội dung khoản đầu tiên nếu có
-                    first_khoan_text = new_dieu_khoan[0].get('noi_dung', '') if new_dieu_khoan else ''
-                    # Trích xuất cụm từ chính (thường là động từ + danh từ)
-                    match = re.search(r'^(Việc\s+[^\.]{5,50})', first_khoan_text)
-                    if match:
-                        noi_dung_moi = match.group(1).strip()
-                    else:
-                        noi_dung_moi = f"Quy định về {noi_dung_hien_tai.lower()}" if noi_dung_hien_tai else "Quy định khác"
-                
-                # Tạo điều mới
-                new_dieu = {
-                    "so_dieu": so_dieu_moi,
-                    "noi_dung": noi_dung_moi,
-                    "khoan": new_dieu_khoan
-                }
-                
-                # Fix số khoản cho điều mới (đánh lại từ 1)
-                for j, khoan in enumerate(new_dieu['khoan'], start=1):
-                    khoan['so_khoan'] = str(j)
-                
-                # Chèn điều mới vào đúng vị trí
-                dieu_list.insert(i + 1, new_dieu)
-                
-                print(f"   🔧 Phát hiện và tách Điều {so_dieu_moi} từ Điều {dieu.get('so_dieu')}")
-                
-                # KHÔNG cập nhật số điều sau - để nguyên số gốc từ OCR
-                # Vì có thể Điều 5 đã đúng, chỉ thiếu Điều 4
-                
-                i += 1  # Bỏ qua điều vừa tạo
-            
-            i += 1
+                print(f"  ⚠️  Sửa duplicate: Chương {so_chuong} (thứ {i+1}) → Chương {new_roman}")
+                chapter['so_chuong'] = new_roman
+                seen[new_roman] = i
+            except:
+                pass
+        else:
+            seen[so_chuong] = i
     
     return document
 
@@ -839,5 +1089,4 @@ def parse_legal_document(text):
     parser = LegalParser(cleaned_text)
     document = parser.parse()
     document = fix_chapter_numbers(document)
-    document = fix_missing_dieu_4(document)  # Sửa Điều 4 bị mất
     return document

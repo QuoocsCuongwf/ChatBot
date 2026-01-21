@@ -1,18 +1,14 @@
 import os
 import sys
 import json
-import shutil
 import cv2
 import numpy as np
 import pdfplumber
-import pytesseract
 from pdf2image import convert_from_path
 from PIL import Image
-from tkinter import Tk, filedialog
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
-import glob
-import time
+import gc
 import multiprocessing
 import re
 
@@ -22,11 +18,10 @@ if sys.platform == 'win32':
         sys.stdout.reconfigure(encoding='utf-8')
         sys.stderr.reconfigure(encoding='utf-8')
     except AttributeError:
-        pass  # Python < 3.7, bỏ qua
+        pass
 
 # Import module parser
 try:
-    # Fallback nếu chạy từ thư mục khác
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     from parser import clean_text, parse_legal_document, fix_chapter_numbers
 except ImportError as e:
@@ -35,57 +30,65 @@ except ImportError as e:
     parse_legal_document = None
     fix_chapter_numbers = None
 
+# Import PaddleOCR (primary)
+try:
+    from paddleocr import PaddleOCR
+    PADDLE_OCR = PaddleOCR(use_textline_orientation=True, lang='vi')
+    PADDLE_AVAILABLE = True
+    print("✓ PaddleOCR loaded")
+except Exception as e:
+    PADDLE_OCR = None
+    PADDLE_AVAILABLE = False
+    print(f"⚠ PaddleOCR not available: {e}")
+
+# Import VietOCR (fallback)
+try:
+    from vietocr.tool.predictor import Predictor
+    from vietocr.tool.config import Cfg
+    
+    config = Cfg.load_config_from_name('vgg_transformer')
+    config['device'] = 'cpu'
+    config['predictor']['beamsearch'] = False  # Tắt beam search để nhanh hơn
+    VIET_OCR = Predictor(config)
+    VIET_AVAILABLE = True
+    print("✓ VietOCR loaded")
+except Exception as e:
+    VIET_OCR = None
+    VIET_AVAILABLE = False
+    print(f"⚠ VietOCR not available: {e}")
+
 # ==============================================================================
 # CẤU HÌNH HỆ THỐNG
 # ==============================================================================
 
-# 1. Đường dẫn đến thư mục bin của Poppler.
-#    Để trống nếu đã thêm vào PATH của hệ thống.
+# Đường dẫn đến thư mục bin của Poppler
 POPPLER_PATH = r"D:\apps\Poppler\poppler-25.12.0\Library\bin"
 
-# 2. Đường dẫn đến file thực thi Tesseract OCR.
-#    Để trống nếu đã thêm vào PATH của hệ thống.
-TESSERACT_PATH = r"D:\apps\OCR\tesseract.exe"
-
-# 3. Cấu hình xử lý song song và chất lượng
-MAX_WORKERS = min(2, multiprocessing.cpu_count())  # Giảm số luồng để tiết kiệm RAM
-DPI_SETTING = 300  # DPI mặc định cho PDF text
-SCAN_DPI = 350     # DPI cho scan (Tăng lên để OCR chính xác hơn)
-BATCH_SIZE = 4     # Số trang xử lý mỗi batch
+# Cấu hình xử lý
+MAX_WORKERS = min(2, multiprocessing.cpu_count())
+DPI_SETTING = 300
+SCAN_DPI = 350
+BATCH_SIZE = 4
 
 def check_system_dependencies():
-    """
-    Kiểm tra sự tồn tại của Tesseract và Poppler.
-    Ưu tiên sử dụng biến môi trường PATH, sau đó mới đến đường dẫn hardcode.
-    """
-    global POPPLER_PATH, TESSERACT_PATH
-
-    print("Kiem tra Tesseract va Poppler...")
-
-    # Kiểm tra Tesseract
-    if TESSERACT_PATH and os.path.exists(TESSERACT_PATH):
-        pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
-        print("   - Tesseract: OK (su dung duong dan cau hinh)")
-    elif shutil.which("tesseract"):
-        TESSERACT_PATH = shutil.which("tesseract")
-        pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
-        print("   - Tesseract: OK (tim thay trong PATH he thong)")
-    else:
-        print("   - CANH BAO: Khong tim thay Tesseract OCR. Vui long cai dat va/hoac cap nhat TESSERACT_PATH.")
-        TESSERACT_PATH = None # Đánh dấu là không có sẵn
-
+    """Kiểm tra Poppler và OCR engines"""
+    global POPPLER_PATH
+    
+    print("Kiểm tra dependencies...")
+    
     # Kiểm tra Poppler
     if POPPLER_PATH and os.path.exists(POPPLER_PATH):
-        print("   - Poppler: OK (su dung duong dan cau hinh)")
-    elif any(shutil.which(cmd) for cmd in ["pdftoppm", "pdfinfo"]):
-         # Poppler không cần set path global, pdf2image sẽ tự tìm nếu có trong PATH
-        POPPLER_PATH = None # Đánh dấu là không cần path hardcode
-        print("   - Poppler: OK (tim thay trong PATH he thong)")
+        print("   ✓ Poppler: OK")
     else:
-        print("   - CANH BAO: Khong tim thay Poppler. Vui long cai dat va/hoac cap nhat POPPLER_PATH.")
-        POPPLER_PATH = None
+        print("   ⚠ Poppler: Không tìm thấy")
+    
+    # Kiểm tra OCR
+    if not PADDLE_AVAILABLE and not VIET_AVAILABLE:
+        print("   ❌ Không có OCR engine nào! Cần cài paddleocr hoặc vietocr")
+        return False
+    
+    return True
 
-# Gọi hàm kiểm tra ngay khi khởi chạy
 check_system_dependencies()
 
 
@@ -155,77 +158,145 @@ def preprocess_image_for_ocr(pil_image):
     # Sử dụng GaussianBlur nhẹ để giảm nhiễu trước khi phân ngưỡng
     denoised_gray = cv2.GaussianBlur(gray, (3, 3), 0)
 
-    # Sử dụng Adaptive Thresholding với tham số tối ưu cho DPI 400
-    # Block size 31, C=10 giúp tách chữ tốt hơn, tránh làm rỗng nét
+    # Sử dụng Adaptive Thresholding
+    # Tăng C lên 15 để giữ lại nhiều nét chữ hơn (tránh bị đứt nét)
     binary = cv2.adaptiveThreshold(
-        denoised_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, 5
+        denoised_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, 15
     )
     
     return Image.fromarray(binary)
 
-def ocr_single_page(img_data):
+def ocr_single_page(img_data, engine='hybrid'):
     """
-    OCR một trang đơn lẻ với cấu hình Tesseract tối ưu.
-    - PSM 3: Tự động phân vùng trang (tốt cho trang văn bản đầy đủ).
-    - OEM 1: Sử dụng mạng LSTM.
+    OCR một trang với PaddleOCR hoặc hybrid mode.
+    
+    Args:
+        img_data: PIL Image
+        engine: 'paddle' hoặc 'hybrid' (PaddleOCR detect + VietOCR recognize)
+    
+    Returns:
+        str: Text đã OCR
     """
     try:
-        custom_config = r'--oem 1 --psm 3 -l vie'
-        processed_img = preprocess_image_for_ocr(img_data)
-        text = pytesseract.image_to_string(processed_img, config=custom_config)
-        return text
+        # Hybrid: PaddleOCR detect boxes + VietOCR recognize
+        if engine == 'hybrid' and PADDLE_AVAILABLE and VIET_AVAILABLE:
+            img_np = np.array(img_data)
+            
+            # Step 1: PaddleOCR full OCR to get boxes
+            paddle_result = PADDLE_OCR.ocr(img_np, cls=True)
+            if not paddle_result or not paddle_result[0]:
+                return ""
+            
+            lines = []
+            for item in paddle_result[0]:
+                try:
+                    # item format: [box, (text, confidence)]
+                    box = item[0]  # [[x1,y1], [x2,y2], [x3,y3], [x4,y4]]
+                    
+                    # Get bounding box coordinates
+                    points = np.array(box).astype(np.int32)
+                    x_min = max(0, int(points[:, 0].min()))
+                    y_min = max(0, int(points[:, 1].min()))
+                    x_max = min(img_data.width, int(points[:, 0].max()))
+                    y_max = min(img_data.height, int(points[:, 1].max()))
+                    
+                    # Crop text region
+                    cropped = img_data.crop((x_min, y_min, x_max, y_max))
+                    
+                    # VietOCR recognize
+                    text = VIET_OCR.predict(cropped)
+                    if text and text.strip():
+                        lines.append(text.strip())
+                except Exception:
+                    # Fallback to PaddleOCR result
+                    if len(item) > 1 and item[1]:
+                        lines.append(item[1][0])
+            
+            return "\n".join(lines)
+        
+        # Paddle only (default)
+        if PADDLE_AVAILABLE:
+            img_np = np.array(img_data)
+            result = PADDLE_OCR.ocr(img_np, cls=True)
+            
+            if result and result[0]:
+                lines = [line[1][0] for line in result[0] if line and len(line) > 1]
+                return "\n".join(lines)
+        
+        return ""
+        
     except Exception as e:
-        print(f"OCR Error: {e}")
+        print(f"   OCR Error: {e}")
         return ""
 
 def ocr_from_images_parallel(images, silent=False):
-    """Trích xuất text từ danh sách ảnh với xử lý song song."""
+    """Trích xuất text từ danh sách ảnh với PaddleOCR."""
     total = len(images)
     if total == 0:
         return ""
-    if not TESSERACT_PATH:
-        if not silent: print("\n   Khong the OCR vi khong tim thay Tesseract.")
+    
+    if not PADDLE_AVAILABLE and not VIET_AVAILABLE:
+        if not silent:
+            print("\n   ❌ Không có OCR engine!")
         return ""
     
-    import gc
     results = []
     
-    # Xử lý từng batch để tiết kiệm RAM
+    # Xử lý từng batch
     for batch_start in range(0, total, BATCH_SIZE):
         batch_end = min(batch_start + BATCH_SIZE, total)
         batch_images = images[batch_start:batch_end]
         batch_results = [""] * len(batch_images)
         
-        if len(batch_images) <= 2:
-            # Batch nhỏ: xử lý tuần tự
-            for i, img in enumerate(batch_images):
-                if not silent: 
-                    print(f"   Dang xu ly OCR: {batch_start + i + 1}/{total} trang...", end='\r')
-                batch_results[i] = ocr_single_page(img)
-                del img  # Giải phóng ảnh sau khi xử lý
-        else:
-            # Batch lớn: xử lý song song
-            with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-                future_to_idx = {executor.submit(ocr_single_page, img): idx for idx, img in enumerate(batch_images)}
-                
-                completed_futures = as_completed(future_to_idx)
-                if not silent:
-                    completed_futures = tqdm(completed_futures, total=len(batch_images), 
-                                            desc=f"   OCR batch {batch_start//BATCH_SIZE + 1}", leave=False)
-
-                for future in completed_futures:
-                    idx = future_to_idx[future]
-                    try:
-                        batch_results[idx] = future.result()
-                    except Exception as e:
-                        if not silent: print(f"   ⚠️ Lỗi trang {batch_start + idx + 1}: {str(e)[:50]}")
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+            futures = {executor.submit(ocr_single_page, img, 'auto'): idx 
+                      for idx, img in enumerate(batch_images)}
+            
+            for future in as_completed(futures):
+                idx = futures[future]
+                try:
+                    batch_results[idx] = future.result()
+                except Exception as e:
+                    if not silent:
+                        print(f"   ⚠️ Lỗi trang {batch_start + idx + 1}: {str(e)[:50]}")
         
         results.extend(batch_results)
-        
-        # Giải phóng bộ nhớ sau mỗi batch
         del batch_images
         del batch_results
         gc.collect()
+    
+    return "\n".join(results)
+        
+    if len(batch_images) <= 2:
+        # Batch nhỏ: xử lý tuần tự
+        for i, img in enumerate(batch_images):
+            if not silent: 
+                print(f"   Dang xu ly OCR: {batch_start + i + 1}/{total} trang...", end='\r')
+            batch_results[i] = ocr_single_page(img)
+            del img  # Giải phóng ảnh sau khi xử lý
+    else:
+        # Batch lớn: xử lý song song
+        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+            future_to_idx = {executor.submit(ocr_single_page, img): idx for idx, img in enumerate(batch_images)}
+            
+            completed_futures = as_completed(future_to_idx)
+            if not silent:
+                completed_futures = tqdm(completed_futures, total=len(batch_images), 
+                                        desc=f"   OCR batch {batch_start//BATCH_SIZE + 1}", leave=False)
+
+            for future in completed_futures:
+                idx = future_to_idx[future]
+                try:
+                    batch_results[idx] = future.result()
+                except Exception as e:
+                    if not silent: print(f"   ⚠️ Lỗi trang {batch_start + idx + 1}: {str(e)[:50]}")
+    
+    results.extend(batch_results)
+    
+    # Giải phóng bộ nhớ sau mỗi batch
+    del batch_images
+    del batch_results
+    gc.collect()
     
 
 def process_single_pdf(pdf_path, output_dir=None, dpi=None, silent=False):

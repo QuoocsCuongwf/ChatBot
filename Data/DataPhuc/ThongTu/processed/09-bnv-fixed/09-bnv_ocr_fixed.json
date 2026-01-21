@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "loai_van_ban": "THÔNG TƯ",
+    "so_hieu": "09/2025/TT-BNV",
+    "trich_yeu": "",
+    "co_quan_ban_hanh": "CHÍNH PHỦ",
+    "ngay_ban_hanh": "18/6/2025",
+    "so_trang": 44,
+    "loai_pdf": "scan"
+  },
+  "phan_mo_dau": {
+    "so_hieu": "09/2025/TT-BNV",
+    "ngay_thang_nam": "",
+    "co_quan_ban_hanh": "CHÍNH PHỦ"
+  },
+  "can_cu_phap_ly": [
+    "Căn cứ Quyết định số 40/2011/QĐ-TTg ngày 27 tháng 7 năm 2011 của Thủ tướng Chính phủ quy định về chế độ đối với thanh niên xung phong đã hoàn thành nhiệm vụ trong",
+    "Căn cứ Thông tư liên tịch số 08/2012/TTLT-BLĐTBXH-BTC-BNV ngày l6 tháng 4 năm 2012 của Bộ Lao động - Thương binh và Xã hội, Bộ Nội vụ, Bộ Tài chính hướng dân thực"
+  ],
+  "chuong": [
+    {
+      "so_chuong": "I",
+      "ten_chuong": "QUY ĐỊNH CHUNG",
+      "dieu": []
+    },
+    {
+      "so_chuong": "II",
+      "ten_chuong": "QUY ĐỊNH CỤ THẺ VỀ PHẦN ĐỊNH THẮM QUYỀN",
+      "dieu": [],
+      "muc": [
+        {
+          "so_muc": "D",
+          "ten_muc": "o bảo hiểm y tế chi trả với người",
+          "dieu": []
+        }
+      ]
+    },
+    {
+      "so_chuong": "III",
+      "ten_chuong": "TỔ CHỨC THỰC HIỆN",
+      "dieu": [],
+      "muc": [
+        {
+          "so_muc": "C",
+          "ten_muc": "ÁC BIẾU MẪU. tư số 09/2025/TT-BNV ngày 18/6/2025",
+          "dieu": []
+        }
+      ]
+    }
+  ]
+}

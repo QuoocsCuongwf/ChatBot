@@ -20,7 +20,7 @@ if sys.platform == 'win32':
         sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 # Import từ DataCleaning.py (xử lý OCR)
-from DataCleaning import process_single_pdf, is_text_pdf, extract_text_pdf
+from OCR import process_single_pdf, is_text_pdf, extract_text_pdf
 
 # Import từ parser.py (xử lý parsing và làm sạch)
 from parser import (
