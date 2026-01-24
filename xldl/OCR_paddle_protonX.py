@@ -1,7 +1,9 @@
 """
-OCR Pipeline: PaddleOCR (Text Detection) + ProtonX Legal (Text Recognition)
-Sử dụng PaddleOCR để phát hiện vị trí text boxes, sau đó dùng ProtonX model để nhận dạng text
-Optimized for low memory usage
+OCR Pipeline: PaddleOCR (Detection) + VietOCR (Recognition) + ProtonX (Text Correction)
+- PaddleOCR: Phát hiện vùng text và nhận dạng sơ bộ.
+- VietOCR: Nhận dạng lại text tiếng Việt từ các vùng đã detect (chính xác hơn).
+- ProtonX: Sửa lỗi OCR.
+Optimized for low memory usage & Robust Error Handling.
 """
 import os
 import sys
@@ -11,7 +13,6 @@ import numpy as np
 from PIL import Image
 from pdf2image import convert_from_path
 from paddleocr import PaddleOCR
-from transformers import TrOCRProcessor, VisionEncoderDecoderModel
 from tqdm import tqdm
 import torch
 import gc
@@ -29,174 +30,252 @@ if sys.platform == 'win32':
 os.environ['HF_HOME'] = 'F:/huggingface_cache'
 os.environ['TRANSFORMERS_CACHE'] = 'F:/huggingface_cache'
 
-# Cấu hình
+# === CẤU HÌNH ===
 POPPLER_PATH = r"D:\apps\Poppler\poppler-25.12.0\Library\bin"
 MODEL_NAME = "protonx-models/protonx-legal-tc"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 print("=" * 60)
-print("HYBRID OCR: PaddleOCR (Detect) + ProtonX Legal (Recognize)")
+print("OCR Pipeline: PaddleOCR + VietOCR + ProtonX")
 print("=" * 60)
 
-# Load PaddleOCR cho text detection
+# ------------------------------------------------------------------------------
+# 1. LOAD PADDLE OCR
+# ------------------------------------------------------------------------------
 print("\n1. Loading PaddleOCR for text detection...")
 try:
     paddle_ocr = PaddleOCR(
-        use_angle_cls=False,
+        use_angle_cls=True,
         lang='vi',
         use_gpu=False,
-        show_log=False
+        show_log=False,
+        det_db_thresh=0.1,       # Ngưỡng thấp để bắt text mờ
+        det_db_box_thresh=0.3,
+        det_db_unclip_ratio=2.0,
+        det_limit_side_len=2500, # Tăng size xử lý
+        det_limit_type='max',
+        use_dilation=True,
+        det_db_score_mode='fast'
     )
     print("   ✓ PaddleOCR loaded")
 except Exception as e:
     print(f"   ✗ Error loading PaddleOCR: {e}")
     sys.exit(1)
 
-# Load ProtonX model cho text recognition
-print("\n2. Loading ProtonX Legal OCR model...")
+# ------------------------------------------------------------------------------
+# 2. LOAD VIETOCR (Đã thêm lại phần này)
+# ------------------------------------------------------------------------------
+print("\n2. Loading VietOCR for text recognition...")
+VIETOCR_AVAILABLE = False
+vietocr_predictor = None
+
 try:
-    # ProtonX model là T5-based, cần load khác với VisionEncoderDecoder
+    from vietocr.tool.predictor import Predictor
+    from vietocr.tool.config import Cfg
+    
+    # Load VietOCR config (vgg_transformer hoặc vgg_seq2seq)
+    config = Cfg.load_config_from_name('vgg_transformer') 
+    config['cnn']['pretrained'] = True
+    config['device'] = DEVICE
+    config['predictor']['beamsearch'] = False # Tắt beamsearch cho nhanh
+    
+    vietocr_predictor = Predictor(config)
+    VIETOCR_AVAILABLE = True
+    print(f"   ✓ VietOCR loaded on {DEVICE}")
+except ImportError:
+    print("   ✗ VietOCR not installed. Install with: pip install vietocr")
+    print("   -> Sẽ chỉ dùng PaddleOCR (kém chính xác hơn với tiếng Việt).")
+except Exception as e:
+    print(f"   ✗ Error loading VietOCR: {e}")
+    print("   -> Sẽ chỉ dùng PaddleOCR.")
+
+# ------------------------------------------------------------------------------
+# 3. LOAD PROTONX
+# ------------------------------------------------------------------------------
+print("\n3. Loading ProtonX Text Correction model...")
+PROTONX_AVAILABLE = False
+protonx_tokenizer = None
+protonx_model = None
+
+try:
     from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
     
     print("   Loading tokenizer and model...")
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, cache_dir='F:/huggingface_cache')
-    model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME, cache_dir='F:/huggingface_cache')
-    model.to(DEVICE)
-    model.eval()
+    protonx_tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, cache_dir='F:/huggingface_cache')
+    protonx_model = AutoModelForSeq2SeqLM.from_pretrained(MODEL_NAME, cache_dir='F:/huggingface_cache')
+    protonx_model.to(DEVICE)
+    protonx_model.eval()
     
-    # Processor cho ảnh - sử dụng TrOCR processor
-    processor = TrOCRProcessor.from_pretrained("microsoft/trocr-base-handwritten", cache_dir='F:/huggingface_cache')
-    
-    print(f"   ✓ ProtonX model loaded on {DEVICE}")
+    PROTONX_AVAILABLE = True
+    print(f"   ✓ ProtonX Text Correction model loaded on {DEVICE}")
 except Exception as e:
-    print(f"   ✗ Error loading model: {e}")
-    print("\n   ProtonX model yêu cầu nhiều dung lượng (900MB+)")
-    print("   Fallback: Sử dụng VietOCR thay thế...")
-    
-    # Fallback to VietOCR
+    print(f"   ✗ Error loading ProtonX model: {e}")
+    print("   ProtonX sẽ không được sử dụng.")
+
+
+# ==============================================================================
+# CÁC HÀM XỬ LÝ CHÍNH
+# ==============================================================================
+
+def crop_box_from_image(image, box):
+    """Cắt vùng ảnh chứa chữ dựa trên box (Hỗ trợ cho VietOCR)"""
     try:
-        from vietocr.tool.predictor import Predictor
-        from vietocr.tool.config import Cfg
+        box = np.array(box, dtype=np.float32)
         
-        config = Cfg.load_config_from_name('vgg_transformer')
-        config['device'] = DEVICE
-        config['cnn']['pretrained'] = True
+        # Padding nhẹ
+        padding = 2
+        x_min = int(max(0, min(box[:, 0]) - padding))
+        x_max = int(min(image.shape[1], max(box[:, 0]) + padding))
+        y_min = int(max(0, min(box[:, 1]) - padding))
+        y_max = int(min(image.shape[0], max(box[:, 1]) + padding))
         
-        model = Predictor(config)
-        processor = None
-        tokenizer = None
-        print(f"   ✓ VietOCR loaded on {DEVICE}")
-    except Exception as e3:
-        print(f"   ✗ Failed to load VietOCR: {e3}")
-        sys.exit(1)
+        if x_max <= x_min or y_max <= y_min:
+            return None
+            
+        cropped = image[y_min:y_max, x_min:x_max]
+        if cropped.size == 0: return None
+        
+        # Convert sang PIL Image (RGB) cho VietOCR
+        if len(cropped.shape) == 3 and cropped.shape[2] == 3:
+            cropped = cv2.cvtColor(cropped, cv2.COLOR_BGR2RGB)
+        return Image.fromarray(cropped)
+    except Exception:
+        return None
 
+def correct_text_with_protonx(text, max_tokens=512):
+    """Sử dụng ProtonX model để sửa lỗi OCR trong text"""
+    # Type check an toàn
+    if text is None: return ""
+    if not isinstance(text, str): text = str(text)
+    
+    if not PROTONX_AVAILABLE or len(text.strip()) < 3:
+        return text
+    
+    # Fallback: Nếu text quá dài, trả về gốc để tránh bị cắt
+    if len(text.split()) > 400:
+        return text
 
-def detect_text_boxes(image):
-    """Sử dụng PaddleOCR để phát hiện text boxes"""
-    # Chuyển đổi image nếu cần
+    try:
+        inputs = protonx_tokenizer(
+            text,
+            return_tensors="pt",
+            truncation=True,
+            max_length=max_tokens
+        ).to(DEVICE)
+        
+        with torch.no_grad():
+            outputs = protonx_model.generate(
+                **inputs,
+                num_beams=3,
+                num_return_sequences=1,
+                max_new_tokens=max_tokens,
+                early_stopping=True,
+                repetition_penalty=1.2,    # Chống lặp từ
+                no_repeat_ngram_size=3     # Chống lặp cụm từ
+            )
+        
+        corrected = protonx_tokenizer.decode(outputs[0], skip_special_tokens=True)
+        
+        # Fallback an toàn nếu kết quả quá khác biệt
+        if len(corrected) < len(text) * 0.5 or len(corrected) > len(text) * 1.5:
+            return text
+            
+        return corrected.strip()
+    except Exception as e:
+        return text
+
+def detect_and_recognize_text(image):
+    """
+    LOGIC TỪ SOURCE CỦA BẠN:
+    Sử dụng PaddleOCR để phát hiện và nhận dạng text, xử lý các trường hợp output dị
+    """
     if isinstance(image, Image.Image):
         image = np.array(image)
     
-    # PaddleOCR trả về list[list] hoặc None
-    result = paddle_ocr.ocr(image, cls=False)
+    # print(f"      Image shape: {image.shape}")
     
-    # Debug: kiểm tra kết quả
+    # Chạy Paddle Full (Detect + Rec)
+    result = paddle_ocr.ocr(image, cls=True)
+    
     if not result:
-        print(f"      WARNING: PaddleOCR returned None")
+        # print(f"      WARNING: PaddleOCR returned None")
         return []
     
-    if not result[0]:
-        print(f"      WARNING: PaddleOCR returned empty list")
-        return []
+    # print(f"      Total items in result: {len(result)}")
     
-    boxes = []
-    for line in result[0]:
-        # line = (box, (text, confidence))
-        # Chỉ lấy box
-        if isinstance(line, (list, tuple)) and len(line) >= 1:
-            box = line[0]  # [[x1,y1], [x2,y2], [x3,y3], [x4,y4]]
-            boxes.append(box)
+    results = []
     
-    return boxes
+    if result and len(result) > 0:
+        first_item = result[0]
+        
+        # Case 1: result là list các item [box, (text, conf)]
+        if isinstance(first_item, (list, tuple)) and len(first_item) >= 2:
+            box_candidate = first_item[0]
+            if isinstance(box_candidate, (list, np.ndarray)) and len(box_candidate) == 4:
+                # print(f"      Format: list of [box, (text, conf)] pairs")
+                for item in result:
+                    if isinstance(item, (list, tuple)) and len(item) >= 2:
+                        box = item[0]
+                        text_tuple = item[1]
+                        
+                        # Xử lý text_tuple an toàn
+                        text = ""
+                        conf = 0.0
+                        if isinstance(text_tuple, (list, tuple)):
+                            text = str(text_tuple[0])
+                            conf = float(text_tuple[1]) if len(text_tuple) > 1 else 1.0
+                        elif isinstance(text_tuple, (float, int)): # Lỗi float
+                             conf = float(text_tuple)
+                        else:
+                            text = str(text_tuple)
 
-
-def recognize_text_protonx(image, box):
-    """Sử dụng ProtonX/VietOCR model để nhận dạng text trong box"""
-    try:
-        # Chuyển box coordinates thành bounding box
-        box = np.array(box)
+                        results.append({
+                            "box": box if isinstance(box, list) else box.tolist(),
+                            "text": text,
+                            "confidence": conf
+                        })
         
-        # Kiểm tra box có đúng format không
-        if box.ndim != 2 or box.shape[0] != 4 or box.shape[1] != 2:
-            # Box không đúng format [[x1,y1], [x2,y2], [x3,y3], [x4,y4]]
-            return ""
-        
-        box = box.astype(np.int32)
-        x_min = int(np.min(box[:, 0]))
-        y_min = int(np.min(box[:, 1]))
-        x_max = int(np.max(box[:, 0]))
-        y_max = int(np.max(box[:, 1]))
-        
-        # Kiểm tra box có hợp lệ không
-        if x_max <= x_min or y_max <= y_min:
-            return ""
-        
-        # Crop image
-        if isinstance(image, np.ndarray):
-            # Kiểm tra boundaries
-            h, w = image.shape[:2]
-            x_min = max(0, min(x_min, w-1))
-            x_max = max(0, min(x_max, w))
-            y_min = max(0, min(y_min, h-1))
-            y_max = max(0, min(y_max, h))
-            
-            if x_max <= x_min or y_max <= y_min:
-                return ""
-            
-            cropped = image[y_min:y_max, x_min:x_max]
-            if cropped.size == 0:
-                return ""
-            cropped_pil = Image.fromarray(cv2.cvtColor(cropped, cv2.COLOR_BGR2RGB))
-        else:
-            cropped_pil = image.crop((x_min, y_min, x_max, y_max))
-        
-        # Nhận dạng
-        if processor is not None and tokenizer is not None:
-            # Sử dụng ProtonX T5 model
-            pixel_values = processor(cropped_pil, return_tensors="pt").pixel_values.to(DEVICE)
-            
-            with torch.no_grad():
-                generated_ids = model.generate(pixel_values)
-            
-            generated_text = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
-            return generated_text.strip()
-        else:
-            # Fallback: VietOCR
-            return model.predict(cropped_pil).strip()
+        # Case 2: result[0] mới chứa list các item
+        elif isinstance(first_item, list) and len(first_item) == 4:
+             if isinstance(first_item[0], list) and len(first_item[0]) == 2:
+                # print(f"      Format: list of boxes only - running full OCR again...")
+                # Trường hợp này hiếm, thường Paddle trả về result[0] là list các kết quả
+                result_full = paddle_ocr.ocr(image, cls=True, det=True, rec=True)
+                if result_full and result_full[0]:
+                    for item in result_full[0]:
+                         if isinstance(item, (list, tuple)) and len(item) >= 2:
+                            box = item[0]
+                            text_tuple = item[1]
+                            text = str(text_tuple[0]) if isinstance(text_tuple, (list, tuple)) else str(text_tuple)
+                            conf = float(text_tuple[1]) if isinstance(text_tuple, (list, tuple)) and len(text_tuple) > 1 else 1.0
+                            results.append({
+                                "box": box if isinstance(box, list) else box.tolist(),
+                                "text": text,
+                                "confidence": conf
+                            })
     
-    except Exception as e:
-        # Chỉ in lỗi nếu không phải lỗi thường gặp
-        if "too many indices" not in str(e):
-            print(f"   Error in recognition: {e}")
-        return ""
-
+    # print(f"      Extracted {len(results)} text boxes with text")
+    return results
 
 def ocr_image_hybrid(image_path):
-    """OCR một ảnh sử dụng hybrid approach"""
+    """
+    Pipeline OCR Hợp nhất: 
+    1. Detect bằng Paddle (dùng logic source của bạn) 
+    2. Recognize lại bằng VietOCR (nếu có)
+    3. Correct bằng ProtonX
+    """
     print(f"\nProcessing: {image_path}")
     
-    # Load image
     if isinstance(image_path, str):
         img_cv = cv2.imread(image_path)
-        img_pil = Image.open(image_path)
     else:
         img_pil = image_path
         img_cv = np.array(image_path)
-        if img_cv.shape[2] == 3:  # RGB
+        if len(img_cv.shape) == 3 and img_cv.shape[2] == 3:
             img_cv = cv2.cvtColor(img_cv, cv2.COLOR_RGB2BGR)
     
-    # Resize nếu ảnh quá lớn (tiết kiệm RAM, vẫn giữ chất lượng)
-    max_dim = 1800  # Giảm xuống 1800 để tránh memory leak
+    # Resize ảnh lớn
+    max_dim = 2800
     h, w = img_cv.shape[:2]
     if max(h, w) > max_dim:
         scale = max_dim / max(h, w)
@@ -204,29 +283,52 @@ def ocr_image_hybrid(image_path):
         new_h = int(h * scale)
         print(f"   Resizing from {w}x{h} to {new_w}x{new_h} (saving RAM)...")
         img_cv = cv2.resize(img_cv, (new_w, new_h), interpolation=cv2.INTER_AREA)
-        img_pil = img_pil.resize((new_w, new_h), Image.Resampling.LANCZOS)
     
-    # Clear memory trước khi detect
     gc.collect()
     
-    # Step 1: Detect text boxes
-    print("   1. Detecting text boxes with PaddleOCR...")
-    boxes = detect_text_boxes(img_cv)
-    print(f"      Found {len(boxes)} boxes")
+    # BƯỚC 1: DETECT & INITIAL RECOGNIZE (PADDLE)
+    print("   1. Detecting and recognizing text with PaddleOCR...")
+    ocr_results = detect_and_recognize_text(img_cv)
+    print(f"      Found {len(ocr_results)} text boxes")
     
-    # Step 2: Recognize text in each box
-    print("   2. Recognizing text with ProtonX model...")
-    results = []
-    for i, box in enumerate(tqdm(boxes, desc="   Recognizing")):
-        text = recognize_text_protonx(img_cv, box)
-        if text:
-            results.append({
-                "box": box,
-                "text": text
-            })
-    
-    return results
+    # BƯỚC 2: RECOGNIZE REFINEMENT (VIETOCR)
+    # Đây là phần bạn muốn thêm vào
+    if VIETOCR_AVAILABLE and len(ocr_results) > 0:
+        print("   2. Improving accuracy with VietOCR...")
+        count_improved = 0
+        for item in tqdm(ocr_results, desc="      VietOCR"):
+            box = item["box"]
+            
+            # Cắt ảnh từ box
+            cropped_img = crop_box_from_image(img_cv, box)
+            
+            if cropped_img is not None:
+                try:
+                    # Đọc lại bằng VietOCR
+                    viet_text = vietocr_predictor.predict(cropped_img)
+                    
+                    # Nếu VietOCR đọc ra chữ có nghĩa, dùng nó thay thế Paddle
+                    if viet_text and len(viet_text.strip()) > 0:
+                        # Logic nhỏ: Nếu Paddle đọc ra số năm (2025) mà VietOCR đọc sai thì giữ Paddle
+                        # Nhưng nhìn chung VietOCR tốt hơn với dấu tiếng Việt
+                        item["paddle_text"] = item["text"] # Lưu lại để tham khảo
+                        item["text"] = viet_text
+                        count_improved += 1
+                except Exception:
+                    pass
+        print(f"      -> VietOCR processed {count_improved} boxes.")
 
+    # BƯỚC 3: CORRECTION (PROTONX)
+    if PROTONX_AVAILABLE and len(ocr_results) > 0:
+        print("   3. Correcting OCR errors with ProtonX...")
+        for item in tqdm(ocr_results, desc="      Correcting"):
+            if item["text"] and len(item["text"].split()) > 3: # Chỉ sửa câu dài
+                item["text_original"] = item["text"]
+                item["text"] = correct_text_with_protonx(item["text"])
+    else:
+        print("   3. ProtonX not available or no text found, skipping correction")
+    
+    return ocr_results
 
 def process_pdf(pdf_path, output_path=None):
     """Xử lý toàn bộ PDF - tối ưu memory"""
@@ -234,66 +336,52 @@ def process_pdf(pdf_path, output_path=None):
     print(f"Processing PDF: {pdf_path}")
     print(f"{'='*60}")
     
-    # Đếm số trang trước
-    import pdfplumber
     with pdfplumber.open(pdf_path) as pdf:
         total_pages = len(pdf.pages)
     
     print(f"\nTotal pages: {total_pages}")
     print("Processing page by page to save memory...\n")
     
-    # Xử lý từng trang một
     all_results = {}
     for page_num in range(1, total_pages + 1):
         print(f"\n--- Page {page_num}/{total_pages} ---")
         
-        # Convert chỉ 1 trang (DPI tối ưu cho chất lượng và RAM)
+        kwargs = {'dpi': 300, 'first_page': page_num, 'last_page': page_num, 'fmt': 'jpeg'}
         if os.path.exists(POPPLER_PATH):
-            images = convert_from_path(
-                pdf_path, 
-                dpi=250,  # Tăng từ 200 -> 250 cho chất lượng tốt hơn
-                first_page=page_num,
-                last_page=page_num,
-                poppler_path=POPPLER_PATH
-            )
-        else:
-            images = convert_from_path(
-                pdf_path,
-                dpi=250,
-                first_page=page_num,
-                last_page=page_num
-            )
-        
-        if not images:
+            kwargs['poppler_path'] = POPPLER_PATH
+            
+        try:
+            images = convert_from_path(pdf_path, **kwargs)
+        except Exception as e:
+            print(f"Error converting page {page_num}: {e}")
             continue
             
+        if not images: continue
+            
         image = images[0]
-        
-        # OCR trang này
         results = ocr_image_hybrid(image)
         
-        # Extract text
-        page_text = "\n".join([r["text"] for r in results])
+        # Sắp xếp lại box cho đúng thứ tự đọc (Trên xuống dưới, Trái sang phải)
+        results.sort(key=lambda x: (x['box'][0][1], x['box'][0][0]))
+        
+        page_text = "\n".join([r["text"] for r in results if r.get("text")])
         all_results[f"page_{page_num}"] = {
             "page_number": page_num,
             "text": page_text,
             "boxes": results
         }
         
-        # Giải phóng memory mạnh mẽ
         del images
         del image
         del results
         gc.collect()
         
-        # Mỗi 10 trang, force clear cache
         if page_num % 10 == 0:
             print(f"\n>>> Clearing memory cache (page {page_num})...")
             gc.collect()
             import time
-            time.sleep(0.5)  # Cho hệ thống thời gian release memory
+            time.sleep(0.5)
     
-    # Save results
     if output_path:
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(all_results, f, ensure_ascii=False, indent=2)
@@ -303,25 +391,10 @@ def process_pdf(pdf_path, output_path=None):
 
 
 if __name__ == "__main__":
-    # Test với một trang
-    test_pdf = r"path/to/your/test.pdf"
-    
+    # Test script
     if len(sys.argv) > 1:
-        test_pdf = sys.argv[1]
-    
-    if os.path.exists(test_pdf):
-        output_file = test_pdf.replace('.pdf', '_protonx_ocr.json')
-        results = process_pdf(test_pdf, output_file)
-        
-        # In kết quả
-        print("\n" + "="*60)
-        print("RESULTS PREVIEW")
-        print("="*60)
-        for page_key, page_data in list(results.items())[:2]:  # Hiển thị 2 trang đầu
-            print(f"\n{page_key}:")
-            print(page_data["text"][:500])  # 500 ký tự đầu
+        pdf_file = sys.argv[1]
+        out_file = pdf_file.replace('.pdf', '_protonx_ocr.json')
+        process_pdf(pdf_file, out_file)
     else:
-        print(f"\nUsage: python {sys.argv[0]} <pdf_file>")
-        print(f"Example: python {sys.argv[0]} document.pdf")
-
-import sys
+        print("Usage: python OCR_paddle_protonX.py <pdf_path>")
