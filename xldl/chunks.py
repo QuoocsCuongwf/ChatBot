@@ -1,7 +1,8 @@
 import glob
 import json
 import os
-
+from load_env import load_env, get_env
+load_env()
 folder_path = "./output_nghidinh"   # thư mục chứa các file json
 
 all_data = []
@@ -26,6 +27,7 @@ def build_chunks_from_file(path):
         vb = json.load(f)
 
     ten_vb = vb.get("ten_van_ban", "")
+    print(f"🔹 Xử lý văn bản: {ten_vb}")
 
     for chuong in vb.get("chuong", []):
         chuong_so = chuong.get("chuong_so")
@@ -36,8 +38,7 @@ def build_chunks_from_file(path):
             if not dieu.get("khoan"):
                 # 🔹 Không có khoản → chunk ở mức điều
                 text = (
-                    f"Điều {dieu_so} – {ten_vb}\n"
-                    f"{dieu_nd}"
+                    f"Theo Điều {dieu_so} {ten_vb} {dieu_nd}"
                 )
 
                 chunks.append({
@@ -60,12 +61,11 @@ def build_chunks_from_file(path):
                 # 🔹 Nếu có điểm → chunk theo điểm
                 if khoan.get("diem"):
                     for diem in khoan["diem"]:
-                        diem_so = diem.get("diem_so")
+                        diem_ky_hieu = diem.get("diem_ky_hieu")
                         diem_nd = diem.get("noi_dung", "")
 
                         text = (
-                            f"Điểm {diem_so} Khoản {khoan_so} Điều {dieu_so} – {ten_vb}\n"
-                            f"{diem_nd}"
+                            f"Tại điểm {diem_ky_hieu} Khoản {khoan_so} Điều {dieu_so} {ten_vb} {diem_nd}"
                         )
 
                         chunks.append({
@@ -75,7 +75,7 @@ def build_chunks_from_file(path):
                                 "chuong": chuong_so,
                                 "dieu": dieu_so,
                                 "khoan": khoan_so,
-                                "diem": diem_so,
+                                "diem": diem_ky_hieu,
                                 "source_file": path
                             }
                         })
@@ -83,8 +83,7 @@ def build_chunks_from_file(path):
                 # 🔹 Không có điểm → chunk ở mức khoản
                 else:
                     text = (
-                        f"Khoản {khoan_so} Điều {dieu_so} – {ten_vb}\n"
-                        f"{khoan_nd}"
+                        f"Khoản {khoan_so} Điều {dieu_so} {ten_vb} {khoan_nd}"
                     )
 
                     chunks.append({
@@ -100,9 +99,10 @@ def build_chunks_from_file(path):
                     })
 
     return chunks
-file_chunks = build_chunks_from_file(file_path)
-chunky.extend(file_chunks)
-output_path = "./output_nghidinh/chunks.json"
+for file_path in glob.glob(os.path.join(folder_path, "*final.json")):
+    file_chunks = build_chunks_from_file(file_path)
+    chunky.extend(file_chunks)
+output_path = get_env("FILE_CHUNKS")
 
 with open(output_path, "w", encoding="utf-8") as f:
     json.dump(chunky, f, ensure_ascii=False, indent=2)
