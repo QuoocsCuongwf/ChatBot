@@ -100,3 +100,5 @@ node_modules/
 
 # Test files
 test_output*/
+
+rag_env*/
