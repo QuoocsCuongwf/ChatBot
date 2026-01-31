@@ -13,7 +13,11 @@ build/
 venv/
 env/
 ENV/
+<<<<<<< HEAD
 .venv/
+=======
+.env
+>>>>>>> 0d89a52 (update phoBERT)
 
 # Environment Variables
 .env
