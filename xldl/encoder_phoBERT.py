@@ -9,16 +9,6 @@ import os
 
 # Config & Load Model
 load_env()
-<<<<<<< HEAD
-model_name = "vinai/phobert-base"
-device = "cuda" if torch.cuda.is_available() else "cpu"
-
-print(f"Loading PhoBERT on {device}...")
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModel.from_pretrained(model_name)
-model.to(device)
-model.eval()
-=======
 # model_name = "vinai/phobert-base"
 # device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -28,17 +18,10 @@ model.eval()
 # model = AutoModel.from_pretrained(model_name, use_safetensors=True)
 # model.to(device)
 # model.eval()
->>>>>>> 0d89a52 (update phoBERT)
 
 def preprocess(text):
     if not text: return ""
     return word_tokenize(text, format="text")
-<<<<<<< HEAD
-
-def split_and_embed(text, max_seq_length=256, overlap=32):
-    # Tokenize (no special tokens)
-    inputs = tokenizer(text, return_tensors="pt", add_special_tokens=False)
-=======
 # ... (Phần import giữ nguyên) ...
 
 
@@ -71,7 +54,6 @@ def split_and_embed(text, max_seq_length=256, overlap=32):
     # ... (Phần code xử lý bên dưới giữ nguyên, thay tokenizer/model/device bằng biến local vừa lấy) ...
     inputs = tokenizer(text, return_tensors="pt", add_special_tokens=False)
     # ...
->>>>>>> 0d89a52 (update phoBERT)
     input_ids = inputs["input_ids"][0]
     total_tokens = len(input_ids)
 
@@ -118,69 +100,6 @@ def split_and_embed(text, max_seq_length=256, overlap=32):
 
     return vectors, sub_texts
 
-<<<<<<< HEAD
-# Main execution
-file_path = get_env("FILE_CHUNKS")
-print(f"Reading file: {file_path}")
-
-with open(file_path, "r", encoding="utf-8") as f:
-    chunks = json.load(f)
-
-final_embeddings = []
-final_metadata = []
-
-print(f"Processing {len(chunks)} documents...")
-
-for idx, chunk in enumerate(chunks):
-    raw_text = chunk.get("text", "")
-    if not raw_text.strip(): continue
-
-    preprocessed_text = preprocess(raw_text)
-    vecs, segments = split_and_embed(preprocessed_text)
-    
-    if idx % 10 == 0:
-        print(f"Doc {idx}: {len(vecs)} vectors")
-
-    for i, vec in enumerate(vecs):
-        final_embeddings.append(vec)
-        
-        new_meta = chunk.copy()
-        new_meta["text"] = segments[i]
-        new_meta["chunk_id"] = f"{idx}_{i}"
-        final_metadata.append(new_meta)
-
-# --- SAVE RESULTS ---
-embeddings_matrix = np.array(final_embeddings)
-
-# 1. Save separate files (optional backup)
-embeddings_file = get_env("EMBEDDINGS_FILE")
-metadata_file = get_env("METADATA_FILE")
-
-if embeddings_file:
-    np.save(embeddings_file, embeddings_matrix)
-if metadata_file:
-    with open(metadata_file, "w", encoding="utf-8") as f:
-        json.dump(final_metadata, f, ensure_ascii=False, indent=2)
-
-# 2. Save Combined Vector Store (.pkl)
-vector_store_path = get_env("VECTOR_STORE")
-
-if vector_store_path:
-    # Ensure directory exists
-    os.makedirs(os.path.dirname(vector_store_path), exist_ok=True)
-    
-    print(f"Saving combined vector store to: {vector_store_path}")
-    
-    store_data = {
-        "embeddings": embeddings_matrix,
-        "metadata": final_metadata
-    }
-    
-    with open(vector_store_path, "wb") as f:
-        pickle.dump(store_data, f)
-
-print(f"Completed. Total vectors: {embeddings_matrix.shape[0]}")
-=======
 # ============================================================
 # PHẦN QUAN TRỌNG NHẤT: BỌC CODE CHẠY CHÍNH VÀO IF NAME MAIN
 # ============================================================
@@ -253,4 +172,3 @@ if __name__ == "__main__":
             pickle.dump(store_data, f)
 
     print(f"Completed. Total vectors: {embeddings_matrix.shape[0]}")
->>>>>>> 0d89a52 (update phoBERT)

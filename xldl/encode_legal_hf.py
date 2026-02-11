@@ -5,8 +5,7 @@ from sentence_transformers import SentenceTransformer
 
 # CONFIG 
 CHUNKS_PATH = "output_nghidinh/chunks.json"
-OUT_DIR = "vector _data/legal_hf"
-
+OUT_DIR = "vector_data/legal_hf"
 MODEL_NAME = "Quockhanh05/Vietnam_legal_embeddings"
 
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -16,10 +15,7 @@ chunks = json.load(open(CHUNKS_PATH, "r", encoding="utf-8"))
 texts = [c["text"] for c in chunks]
 
 # LOAD ENCODER 
-encoder = SentenceTransformer(
-    "Quockhanh05/Vietnam_legal_embeddings",
-    device="cuda"   # 👈 BẬT GPU
-)
+encoder = SentenceTransformer(MODEL_NAME, device="cuda")
 
 #  ENCODE 
 embeddings = encoder.encode(
