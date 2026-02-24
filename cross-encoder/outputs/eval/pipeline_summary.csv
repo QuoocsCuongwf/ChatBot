@@ -1,0 +1,9 @@
+metric,value
+total_questions,50
+citation_hit_rate,0.48
+abstain_rate,0.0
+pass_rate,1.0
+refine_rate,0.0
+llm_mode,placeholder
+answer_correctness,null (human eval required)
+avg_latency_ms,147.2
