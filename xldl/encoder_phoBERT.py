@@ -1,96 +1,86 @@
-from transformers import AutoTokenizer, AutoModel
-import torch
+import os
 import json
 import numpy as np
-import pickle  # Thêm thư viện pickle
-from underthesea import word_tokenize
-from load_env import load_env, get_env
-import os
+import torch
+from transformers import AutoTokenizer, AutoModel
 
-# Config & Load Model
-load_env()
-# model_name = "vinai/phobert-base"
-# device = "cuda" if torch.cuda.is_available() else "cpu"
+# =========================
+# CONFIG
+# =========================
+MODEL_NAME = "vinai/phobert-base"
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-# # Chỉ load model khi cần thiết, nhưng để ở đây cũng tạm ổn vì biến global
-# print(f"Loading PhoBERT on {device}...")
-# tokenizer = AutoTokenizer.from_pretrained(model_name)
-# model = AutoModel.from_pretrained(model_name, use_safetensors=True)
-# model.to(device)
-# model.eval()
+INPUT_JSON = r"D:\GitHub\ChatBot\output_nghidinh\chunks_clean.json"          # <-- file input của bạn
+OUT_DIR = os.path.join("vector_data", "phobert")   # thư mục output riêng
 
-def preprocess(text):
-    if not text: return ""
-    return word_tokenize(text, format="text")
-# ... (Phần import giữ nguyên) ...
+MAX_SEQ_LENGTH = 256
+OVERLAP = 32
 
+os.makedirs(OUT_DIR, exist_ok=True)
 
-# KHAI BÁO BIẾN TOÀN CỤC NHƯNG ĐỂ TRỐNG
-global_tokenizer = None
-global_model = None
-global_device = None
+# =========================
+# LOAD MODEL
+# =========================
+print(f"Loading PhoBERT on {DEVICE}...")
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=False)
+model = AutoModel.from_pretrained(MODEL_NAME).to(DEVICE)
+model.eval()
 
-def get_phobert_model():
-    """Hàm này chỉ chạy khi thực sự cần dùng PhoBERT"""
-    global global_tokenizer, global_model, global_device
-    
-    if global_model is None:
-        load_env()
-        model_name = "vinai/phobert-base"
-        global_device = "cuda" if torch.cuda.is_available() else "cpu"
-        
-        print(f"🔄 Lazy Loading PhoBERT on {global_device}...")
-        global_tokenizer = AutoTokenizer.from_pretrained(model_name)
-        global_model = AutoModel.from_pretrained(model_name, use_safetensors=True)
-        global_model.to(global_device)
-        global_model.eval()
-        
-    return global_tokenizer, global_model, global_device
+# =========================
+# EMBEDDING FUNCTIONS
+# =========================
+def split_and_embed(text: str, max_seq_length=256, overlap=32):
+    """
+    Sliding-window embedding with mean pooling (excluding <s>, </s>) + L2 norm.
+    Returns: vectors(list[np.ndarray]), sub_texts(list[str])
+    """
+    if not text or not text.strip():
+        return [], []
 
-def split_and_embed(text, max_seq_length=256, overlap=32):
-    # GỌI HÀM LOAD MODEL Ở ĐÂY
-    tokenizer, model, device = get_phobert_model()
-    
-    # ... (Phần code xử lý bên dưới giữ nguyên, thay tokenizer/model/device bằng biến local vừa lấy) ...
-    inputs = tokenizer(text, return_tensors="pt", add_special_tokens=False)
-    # ...
-    input_ids = inputs["input_ids"][0]
-    total_tokens = len(input_ids)
+    # tokenize without special tokens
+    enc = tokenizer(text, return_tensors="pt", add_special_tokens=False, truncation=False)
+    input_ids = enc["input_ids"][0]  # [T]
+    total_tokens = input_ids.size(0)
 
-    # Sliding Window logic
-    max_tokens_content = max_seq_length - 2  
+    max_tokens_content = max_seq_length - 2  # reserve <s> and </s>
     stride = max_tokens_content - overlap
-    chunks_ids = []
+    if stride <= 0:
+        raise ValueError("OVERLAP must be smaller than max_tokens_content (max_seq_length-2).")
 
+    chunks_ids = []
     if total_tokens <= max_tokens_content:
         chunks_ids.append(input_ids)
     else:
         for i in range(0, total_tokens, stride):
-            chunk = input_ids[i : i + max_tokens_content]
+            chunk = input_ids[i:i + max_tokens_content]
+            if chunk.numel() == 0:
+                continue
             chunks_ids.append(chunk)
 
     vectors = []
     sub_texts = []
 
-    for chunk in chunks_ids:
-        # Add special tokens manually: <s> + content + </s>
-        full_input_ids = torch.cat([
-            torch.tensor([tokenizer.cls_token_id]),
-            chunk,
-            torch.tensor([tokenizer.sep_token_id])
-        ])
+    cls_id = tokenizer.cls_token_id
+    sep_id = tokenizer.sep_token_id
 
-        input_ids_batch = full_input_ids.unsqueeze(0).to(device)
-        attention_mask = torch.ones_like(input_ids_batch).to(device)
+    for chunk in chunks_ids:
+        full_ids = torch.cat([
+            torch.tensor([cls_id], dtype=torch.long),
+            chunk.to(torch.long),
+            torch.tensor([sep_id], dtype=torch.long)
+        ], dim=0)  # [L]
+
+        input_ids_batch = full_ids.unsqueeze(0).to(DEVICE)  # [1, L]
+        attention_mask = torch.ones_like(input_ids_batch, device=DEVICE)
 
         with torch.no_grad():
             outputs = model(input_ids=input_ids_batch, attention_mask=attention_mask)
 
-        # Mean Pooling (excluding CLS/SEP tokens)
-        token_embeddings = outputs.last_hidden_state[:, 1:-1, :] 
-        vec = token_embeddings.mean(dim=1).squeeze().cpu().numpy()
+        # mean pooling excluding special tokens
+        token_embeddings = outputs.last_hidden_state[:, 1:-1, :]  # [1, L-2, H]
+        vec = token_embeddings.mean(dim=1).squeeze(0).cpu().numpy()  # [H]
 
-        # L2 Normalization
+        # L2 normalization
         norm = np.linalg.norm(vec)
         if norm > 0:
             vec = vec / norm
@@ -100,75 +90,51 @@ def split_and_embed(text, max_seq_length=256, overlap=32):
 
     return vectors, sub_texts
 
-# ============================================================
-# PHẦN QUAN TRỌNG NHẤT: BỌC CODE CHẠY CHÍNH VÀO IF NAME MAIN
-# ============================================================
-if __name__ == "__main__":
-    # Main execution
-    file_path = get_env("FILE_CHUNKS")
-    
-    # Kiểm tra xem file có tồn tại không để tránh lỗi crash
-    if not file_path or not os.path.exists(file_path):
-        print(f"[ERROR] Không tìm thấy file dữ liệu tại: {file_path}")
-        print("Vui lòng kiểm tra file .env hoặc đường dẫn.")
-        exit()
+# =========================
+# MAIN
+# =========================
+print(f"Reading input: {INPUT_JSON}")
+with open(INPUT_JSON, "r", encoding="utf-8") as f:
+    chunks = json.load(f)
 
-    print(f"Reading file: {file_path}")
+final_embeddings = []
+final_metadata = []
 
-    with open(file_path, "r", encoding="utf-8") as f:
-        chunks = json.load(f)
+print(f"Processing {len(chunks)} chunks...")
 
-    final_embeddings = []
-    final_metadata = []
+for idx, chunk in enumerate(chunks):
+    raw_text = chunk.get("text", "")
+    if not raw_text or not raw_text.strip():
+        continue
 
-    print(f"Processing {len(chunks)} documents...")
+    vecs, segments = split_and_embed(raw_text, MAX_SEQ_LENGTH, OVERLAP)
 
-    for idx, chunk in enumerate(chunks):
-        raw_text = chunk.get("text", "")
-        if not raw_text.strip(): continue
+    if idx % 10 == 0:
+        print(f"Chunk {idx}: {len(vecs)} vectors")
 
-        preprocessed_text = preprocess(raw_text)
-        vecs, segments = split_and_embed(preprocessed_text)
-        
-        if idx % 10 == 0:
-            print(f"Doc {idx}: {len(vecs)} vectors")
+    for i, vec in enumerate(vecs):
+        final_embeddings.append(vec)
 
-        for i, vec in enumerate(vecs):
-            final_embeddings.append(vec)
-            
-            new_meta = chunk.copy()
-            new_meta["text"] = segments[i]
-            new_meta["chunk_id"] = f"{idx}_{i}"
-            final_metadata.append(new_meta)
+        meta = dict(chunk)  # copy
+        meta["text"] = segments[i]
+        meta["chunk_id"] = f"{idx}_{i}"
+        final_metadata.append(meta)
 
-    # --- SAVE RESULTS ---
-    embeddings_matrix = np.array(final_embeddings)
+embeddings_matrix = np.asarray(final_embeddings, dtype=np.float32)
 
-    # 1. Save separate files (optional backup)
-    embeddings_file = get_env("EMBEDDINGS_FILE")
-    metadata_file = get_env("METADATA_FILE")
+# =========================
+# SAVE OUTPUT (name from input)
+# =========================
+base_name = os.path.splitext(os.path.basename(INPUT_JSON))[0]  # chunks_clean
+emb_path = os.path.join(OUT_DIR, f"{base_name}.embeddings.npy")
+meta_path = os.path.join(OUT_DIR, f"{base_name}.metadata.json")
 
-    if embeddings_file:
-        np.save(embeddings_file, embeddings_matrix)
-    if metadata_file:
-        with open(metadata_file, "w", encoding="utf-8") as f:
-            json.dump(final_metadata, f, ensure_ascii=False, indent=2)
+np.save(emb_path, embeddings_matrix)
 
-    # 2. Save Combined Vector Store (.pkl)
-    vector_store_path = get_env("VECTOR_STORE")
+with open(meta_path, "w", encoding="utf-8") as f:
+    json.dump(final_metadata, f, ensure_ascii=False, indent=2)
 
-    if vector_store_path:
-        # Ensure directory exists
-        os.makedirs(os.path.dirname(vector_store_path), exist_ok=True)
-        
-        print(f"Saving combined vector store to: {vector_store_path}")
-        
-        store_data = {
-            "embeddings": embeddings_matrix,
-            "metadata": final_metadata
-        }
-        
-        with open(vector_store_path, "wb") as f:
-            pickle.dump(store_data, f)
-
-    print(f"Completed. Total vectors: {embeddings_matrix.shape[0]}")
+print("====================================")
+print(f"Saved embeddings: {emb_path}  shape={embeddings_matrix.shape}")
+print(f"Saved metadata  : {meta_path}  items={len(final_metadata)}")
+print("Done.")

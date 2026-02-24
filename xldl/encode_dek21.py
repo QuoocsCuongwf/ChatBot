@@ -4,7 +4,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 
 # ===== CONFIG =====
-CHUNKS_PATH = "output_nghidinh/chunks.json"
+CHUNKS_PATH = r"D:\GitHub\ChatBot\output_nghidinh\chunks_clean.json"
 OUT_DIR = os.path.join("vector_data", "dek21")   # thư mục output riêng
 MODEL_NAME = "huyydangg/DEk21_hcmute_embedding"
 
