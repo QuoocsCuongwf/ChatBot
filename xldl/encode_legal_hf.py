@@ -4,8 +4,8 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 
 # CONFIG 
-CHUNKS_PATH = "output_nghidinh/chunks.json"
-OUT_DIR = "vector _data/legal_hf"
+CHUNKS_PATH = "output_nghidinh/chunks_clean.json"
+OUT_DIR = os.path.join("vector_data", "legal_hf")   # thư mục output riêng
 
 MODEL_NAME = "Quockhanh05/Vietnam_legal_embeddings"
 

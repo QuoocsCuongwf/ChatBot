@@ -4,8 +4,10 @@ import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # ===== CONFIG =====
-CHUNKS_PATH = "output_nghidinh/chunks.json"
-OUT_DIR = "vector_data/tfidf"
+CHUNKS_PATH = "output_nghidinh/chunks_clean.json"
+
+OUT_DIR = os.path.join("vector_data", "tfidf")   # thư mục output riêng
+
 
 os.makedirs(OUT_DIR, exist_ok=True)
 
