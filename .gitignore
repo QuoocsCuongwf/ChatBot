@@ -13,12 +13,8 @@ build/
 venv/
 env/
 ENV/
-<<<<<<< HEAD
-.venv/
-=======
 .env
->>>>>>> 0d89a52 (update phoBERT)
-
+*rag_env/
 # Environment Variables
 .env
 .env.local

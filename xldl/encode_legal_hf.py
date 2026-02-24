@@ -4,8 +4,8 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 
 # CONFIG 
-CHUNKS_PATH = "output_nghidinh/chunks.json"
-OUT_DIR = "vector _data/legal_hf"
+CHUNKS_PATH = "output_nghidinh/chunks_clean.json"
+OUT_DIR = os.path.join("vector_data", "legal_hf")   # thư mục output riêng
 
 MODEL_NAME = "Quockhanh05/Vietnam_legal_embeddings"
 
@@ -16,10 +16,7 @@ chunks = json.load(open(CHUNKS_PATH, "r", encoding="utf-8"))
 texts = [c["text"] for c in chunks]
 
 # LOAD ENCODER 
-encoder = SentenceTransformer(
-    "Quockhanh05/Vietnam_legal_embeddings",
-    device="cuda"   # 👈 BẬT GPU
-)
+encoder = SentenceTransformer(MODEL_NAME, device="cuda")
 
 #  ENCODE 
 embeddings = encoder.encode(
