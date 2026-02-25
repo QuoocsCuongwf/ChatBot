@@ -1,0 +1,20 @@
+{
+  "models": [
+    "legalhf"
+  ],
+  "best_model_base": {
+    "model": "legalhf",
+    "mrr": 0.1578
+  },
+  "best_model_reranked": {
+    "model": "legalhf",
+    "mrr": 0.3165
+  },
+  "improvements": {
+    "legalhf": {
+      "base_mrr": 0.1578,
+      "rerank_mrr": 0.3165,
+      "improvement": 0.1587
+    }
+  }
+}

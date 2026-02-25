@@ -1,0 +1,10 @@
+{
+  "N": 200,
+  "TopK": 10,
+  "match_mode": "dieu_khoan",
+  "Recall@1": 0.06,
+  "Recall@3": 0.095,
+  "Recall@5": 0.12,
+  "Recall@10": 0.185,
+  "MRR": 0.08777579365079363
+}
