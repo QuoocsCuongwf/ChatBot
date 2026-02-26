@@ -28,25 +28,25 @@ model-index:
       type: dev
     metrics:
     - type: accuracy
-      value: 0.8915159944367177
+      value: 0.894297635605007
       name: Accuracy
     - type: accuracy_threshold
-      value: 1.584134817123413
+      value: 1.5023307800292969
       name: Accuracy Threshold
     - type: f1
-      value: 0.8887451487710221
+      value: 0.8935574229691877
       name: F1
     - type: f1_threshold
-      value: -0.18771395087242126
+      value: 1.5023307800292969
       name: F1 Threshold
     - type: precision
-      value: 0.8307134220072552
+      value: 0.8998589562764457
       name: Precision
     - type: recall
-      value: 0.9554937413073713
+      value: 0.8873435326842837
       name: Recall
     - type: average_precision
-      value: 0.9522441932700629
+      value: 0.9517509466698123
       name: Average Precision
 ---
 
@@ -90,11 +90,11 @@ from sentence_transformers import CrossEncoder
 model = CrossEncoder("cross_encoder_model_id")
 # Get scores for pairs of texts
 pairs = [
-    ['Cơ quan nào có thẩm quyền ban hành văn bản, giấy tờ trong lĩnh vực văn hóa, thể thao và du lịch?', 'Khoản 1 Điều 24 NGHỊ ĐỊNH Quy định về phân quyền, phân cấp Giviones ĐẾN Ngày.13.76.12025 trong lĩnh vực văn hóa, thể thao và du lịch Văn bản, giấy tờ đã được cơ quan, người có thẩm quyền ban hành, cấp đang còn hiệu lực hoặc chưa hết thời hạn sử dụng trước khi Nghị định này có hiệu lực thì tiếp tục được sử dụng cho đến khi hết thời hạn ghi trong văn bản, giấy tờ đó.'],
-    ['Điểm b Khoản 1 Điều 4 quy định về điều kiện gì?', 'Tại điểm b Khoản 1 Điều 4 NGHỊ ĐỊNH "Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nội vụ Người hy sinh thuộc cơ quan cấp xã và các trường hợp không thuộc quy định tại khoản 1, 2, 3,4 Điều 16 Nghị định số 131/2021/NĐ-CP và điểma'],
-    ['Quỹ phòng, chống thiên tai được thành lập và quản lý như thế nào theo Nghị định này?', 'Khoản 1 Điều 6 NGHỊ ĐỊNH Quy định phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nông nghiệp và Môi trường Tổ chức quản lý, phát triển chăn nuôi tại địa phương; thống kê, đánh tại điểm c khoản 2 Điều 80 Luật Chăn nuôi.'],
-    ['Căn cứ vào văn bản nào để ban hành Nghị định này?', 'Khoản 3 Điều 16 NGHỊ ĐỊNH Ngày.13.1.6.2025 Quy định về phân quyền, phân cấp; phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực công tác dân tộc, tín ngưỡng, tôn giáo - Căn cứ Luật Tổ chức Chính phủ năm 2025; Trình tự, thủ tục tiếp nhận thông báo danh mục hoạt động tôn giáo quy định tại Mục XI Phụ lục I Nghị định này.'],
-    ['Thẩm quyền phê duyệt nhiệm vụ quy hoạch của ai?', 'Khoản 3 Điều 11 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp, phân quyền, phân cấp trong lĩnh vực quy hoạch đô thị và nông thôn Gi ĐẾN Ngày. 13-16-12925 - Căn cứ Luật Tổ chức Chính phủ 2025; Không tổ chức lập, phê duyệt nhiệm vụ quy hoạch, quy hoạch đô thị và nông thôn đối với đô thị mới có phạm vi quy hoạch liên quan đến địa giới hành chính của từ 02 tỉnh trở lên theo quy định tại điểm a khoản 1 Điều 17 và điểm a khoản 1 điều 41.'],
+    ['Ủy ban nhân dân cấp xã có trách nhiệm gì?', 'Theo Điều 33 NGHỊ ĐỊNH "Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nội vụ Thủ tục hưởng trợ cấp tuất hằng tháng, trợ cấp hưu nuôi dưỡng hằng tháng Thủ tục hưởng Trợ cấp tuất hằng tháng, trợ cấp tuất nuôi dưỡng hằng tháng quy định tại điểm đ khoản 2, khoản 3 Điều 124 Nghị định 131/2021/NĐ-CP thực hiện như sau: Ủy ban nhân dân cấp xã có trách nhiệm kiểm tra, lập danh sách những trường hợp đủ điều kiện hưởng Trợ cấp tuất hằng tháng và trợ cấp tuất nuôi dưỡng hằng tháng kèm đầy đủ các giấy tờ quy định tại các điểm a, b, c khoản 2 Điều 124 Nghị định số 131/2021/NĐ-CP gửi đến sở Nội vụ nơi quản lý hồ sơ.'],
+    ['thời hạn áp dụng nghị định này đến khi nào?', 'Khoản 1 Điều 4 NGHỊ ĐỊNH Giờ...... ĐẾN Quy định về phân cấp thẩm quyền quản lý nhà nước Ngày 13.16.2025 trong lĩnh vực quản lý, sử dụng tài sản công Bộ trưởng, Thủ trưởng cơ quan trung ương, Chủ tịch Ủy ban nhân dân cấp tỉnh phê duyệt phương án sắp xếp lại, xử lý nhà, đất quy định tại điểm a khoản 1 Điều 8 Nghị định số 03/2025/NĐ-CP ngày 01 tháng 01 năm 202 5 của Chính phủ quy định việc sắp xếp lại, xử lý tài sản công (sau đây gọi là Nghị định số 03/2025/NĐ-CP). Trình tự, thủ tục phê duyệt phương án sắp xếp lại, xử lý nhà, đất của Bộ trưởng, Thủ trưởng cơ quan trung ương được thực hiện theo quy định tại Điều 6 Nghị định số 03/2025/NĐ-CP, không phải thực hiện việc báo cáo Thủ tướng Chính phủ quy định tại điểm a khoản 6 Điều 6 Nghị; định số 03/2025/NĐ-CP. Trình tự, thủ tục phê duyệt phương án sắp xếp lại, xử lý nhà, đất của Chủ định số 03/2025/NĐ-CP; không phải thực hiện việc báo cáo Thủ tướng Chính phủ quy định tại điểm a khoản 3 Điều 7 Nghị định số 03/2025/NĐ-CP.Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện nhiệm vụ, quyền hạn của Ủy Ban nhân dân cấp tỉnh quy định tại điểm d khoản 3 Điều 7 Nghị định số 03/2025/NĐ-CP. 2, Chủ tịch Ủy ban nhân dân cấp tỉnh phê duyệt phương án điều chuyển nhà, đất tại cơ quan, tổ chức, đơn vị thuộc phạm vi quản lý sang bộ, cơ quan trung ương, sang địa phương khác quy định tại khoản 2 Điều 8 Nghị định số 03/2025/NĐ-CP. Trình tự, thủ tục phê duyệt phương án sắp xếp lại, xử lý nhà, đất của Chủ định số 03/2025/NĐ-CP; không phải thực hiện việc báo cáo bộ trưởng Bộ Tài chính quy định tại điểm c khoản 3 Điều 7 Nghị định số 03/2025/NĐ-CP.Chủ) Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện nhiệm vụ, quyền hạn của Ủy Ban nhân dân cấp tỉnh quy định tại điểm d khoản 3 Điều 7 Nghị định số 03/2025/NĐ-CP.'],
+    ['Căn cứ vào luật nào để quy định tổ chức các cơ quan chuyên môn?', 'Khoản 8 Điều 4 NGHỊ ĐỊNH Quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc trung ương G13:.. ĐẾN - Căn cứ Luật Tổ chức Chính phủ năm 2025; Hướng dẫn chuyên môn, nghiệp vụ thuộc ngành, lĩnh vực quản lý đối với cơ quan chuyên môn thuộc Ủy ban nhân dân cấp xã.'],
+    ['nghị định nào quy định về thành lập và quản lý quỹ phòng chống thiên tai?', 'Khoản 9 Điều 18 NGHỊ ĐỊNH Quy định phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nông nghiệp và Môi trường Đề xuất nhu cầu hỗ trợ từ Quỹ phòng, chống thiên tai cấp tỉnh theo quy định tại khoản 3 Điều 17 Nghị định số 78/2021/NĐ-CP ngày 01 tháng 8 năm 2021 của Chính phủ về thành lập và quản lý Quỹ phòng, chống thiên tai, đã được sửa đổi, bổ sung một số điều tại Nghị định số 63/2025/NĐ-CP ngày 05 tháng 3 năm 2025 của Chính phủ.'],
+    ['Cơ quan nào được quy định trong Nghị Định này?', 'Tại điểm b Khoản 1 Điều 5 NGHỊ ĐỊNH Quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc trung ương G13:.. ĐẾN - Căn cứ Luật Tổ chức Chính phủ năm 2025; Văn phòng (nếu có);'],
 ]
 scores = model.predict(pairs)
 print(scores.shape)
@@ -102,13 +102,13 @@ print(scores.shape)
 
 # Or rank different texts based on similarity to a single text
 ranks = model.rank(
-    'Cơ quan nào có thẩm quyền ban hành văn bản, giấy tờ trong lĩnh vực văn hóa, thể thao và du lịch?',
+    'Ủy ban nhân dân cấp xã có trách nhiệm gì?',
     [
-        'Khoản 1 Điều 24 NGHỊ ĐỊNH Quy định về phân quyền, phân cấp Giviones ĐẾN Ngày.13.76.12025 trong lĩnh vực văn hóa, thể thao và du lịch Văn bản, giấy tờ đã được cơ quan, người có thẩm quyền ban hành, cấp đang còn hiệu lực hoặc chưa hết thời hạn sử dụng trước khi Nghị định này có hiệu lực thì tiếp tục được sử dụng cho đến khi hết thời hạn ghi trong văn bản, giấy tờ đó.',
-        'Tại điểm b Khoản 1 Điều 4 NGHỊ ĐỊNH "Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nội vụ Người hy sinh thuộc cơ quan cấp xã và các trường hợp không thuộc quy định tại khoản 1, 2, 3,4 Điều 16 Nghị định số 131/2021/NĐ-CP và điểma',
-        'Khoản 1 Điều 6 NGHỊ ĐỊNH Quy định phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nông nghiệp và Môi trường Tổ chức quản lý, phát triển chăn nuôi tại địa phương; thống kê, đánh tại điểm c khoản 2 Điều 80 Luật Chăn nuôi.',
-        'Khoản 3 Điều 16 NGHỊ ĐỊNH Ngày.13.1.6.2025 Quy định về phân quyền, phân cấp; phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực công tác dân tộc, tín ngưỡng, tôn giáo - Căn cứ Luật Tổ chức Chính phủ năm 2025; Trình tự, thủ tục tiếp nhận thông báo danh mục hoạt động tôn giáo quy định tại Mục XI Phụ lục I Nghị định này.',
-        'Khoản 3 Điều 11 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp, phân quyền, phân cấp trong lĩnh vực quy hoạch đô thị và nông thôn Gi ĐẾN Ngày. 13-16-12925 - Căn cứ Luật Tổ chức Chính phủ 2025; Không tổ chức lập, phê duyệt nhiệm vụ quy hoạch, quy hoạch đô thị và nông thôn đối với đô thị mới có phạm vi quy hoạch liên quan đến địa giới hành chính của từ 02 tỉnh trở lên theo quy định tại điểm a khoản 1 Điều 17 và điểm a khoản 1 điều 41.',
+        'Theo Điều 33 NGHỊ ĐỊNH "Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nội vụ Thủ tục hưởng trợ cấp tuất hằng tháng, trợ cấp hưu nuôi dưỡng hằng tháng Thủ tục hưởng Trợ cấp tuất hằng tháng, trợ cấp tuất nuôi dưỡng hằng tháng quy định tại điểm đ khoản 2, khoản 3 Điều 124 Nghị định 131/2021/NĐ-CP thực hiện như sau: Ủy ban nhân dân cấp xã có trách nhiệm kiểm tra, lập danh sách những trường hợp đủ điều kiện hưởng Trợ cấp tuất hằng tháng và trợ cấp tuất nuôi dưỡng hằng tháng kèm đầy đủ các giấy tờ quy định tại các điểm a, b, c khoản 2 Điều 124 Nghị định số 131/2021/NĐ-CP gửi đến sở Nội vụ nơi quản lý hồ sơ.',
+        'Khoản 1 Điều 4 NGHỊ ĐỊNH Giờ...... ĐẾN Quy định về phân cấp thẩm quyền quản lý nhà nước Ngày 13.16.2025 trong lĩnh vực quản lý, sử dụng tài sản công Bộ trưởng, Thủ trưởng cơ quan trung ương, Chủ tịch Ủy ban nhân dân cấp tỉnh phê duyệt phương án sắp xếp lại, xử lý nhà, đất quy định tại điểm a khoản 1 Điều 8 Nghị định số 03/2025/NĐ-CP ngày 01 tháng 01 năm 202 5 của Chính phủ quy định việc sắp xếp lại, xử lý tài sản công (sau đây gọi là Nghị định số 03/2025/NĐ-CP). Trình tự, thủ tục phê duyệt phương án sắp xếp lại, xử lý nhà, đất của Bộ trưởng, Thủ trưởng cơ quan trung ương được thực hiện theo quy định tại Điều 6 Nghị định số 03/2025/NĐ-CP, không phải thực hiện việc báo cáo Thủ tướng Chính phủ quy định tại điểm a khoản 6 Điều 6 Nghị; định số 03/2025/NĐ-CP. Trình tự, thủ tục phê duyệt phương án sắp xếp lại, xử lý nhà, đất của Chủ định số 03/2025/NĐ-CP; không phải thực hiện việc báo cáo Thủ tướng Chính phủ quy định tại điểm a khoản 3 Điều 7 Nghị định số 03/2025/NĐ-CP.Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện nhiệm vụ, quyền hạn của Ủy Ban nhân dân cấp tỉnh quy định tại điểm d khoản 3 Điều 7 Nghị định số 03/2025/NĐ-CP. 2, Chủ tịch Ủy ban nhân dân cấp tỉnh phê duyệt phương án điều chuyển nhà, đất tại cơ quan, tổ chức, đơn vị thuộc phạm vi quản lý sang bộ, cơ quan trung ương, sang địa phương khác quy định tại khoản 2 Điều 8 Nghị định số 03/2025/NĐ-CP. Trình tự, thủ tục phê duyệt phương án sắp xếp lại, xử lý nhà, đất của Chủ định số 03/2025/NĐ-CP; không phải thực hiện việc báo cáo bộ trưởng Bộ Tài chính quy định tại điểm c khoản 3 Điều 7 Nghị định số 03/2025/NĐ-CP.Chủ) Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện nhiệm vụ, quyền hạn của Ủy Ban nhân dân cấp tỉnh quy định tại điểm d khoản 3 Điều 7 Nghị định số 03/2025/NĐ-CP.',
+        'Khoản 8 Điều 4 NGHỊ ĐỊNH Quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc trung ương G13:.. ĐẾN - Căn cứ Luật Tổ chức Chính phủ năm 2025; Hướng dẫn chuyên môn, nghiệp vụ thuộc ngành, lĩnh vực quản lý đối với cơ quan chuyên môn thuộc Ủy ban nhân dân cấp xã.',
+        'Khoản 9 Điều 18 NGHỊ ĐỊNH Quy định phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nông nghiệp và Môi trường Đề xuất nhu cầu hỗ trợ từ Quỹ phòng, chống thiên tai cấp tỉnh theo quy định tại khoản 3 Điều 17 Nghị định số 78/2021/NĐ-CP ngày 01 tháng 8 năm 2021 của Chính phủ về thành lập và quản lý Quỹ phòng, chống thiên tai, đã được sửa đổi, bổ sung một số điều tại Nghị định số 63/2025/NĐ-CP ngày 05 tháng 3 năm 2025 của Chính phủ.',
+        'Tại điểm b Khoản 1 Điều 5 NGHỊ ĐỊNH Quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc trung ương G13:.. ĐẾN - Căn cứ Luật Tổ chức Chính phủ năm 2025; Văn phòng (nếu có);',
     ]
 )
 # [{'corpus_id': ..., 'score': ...}, {'corpus_id': ..., 'score': ...}, ...]
@@ -149,13 +149,13 @@ You can finetune this model on your own dataset.
 
 | Metric                | Value      |
 |:----------------------|:-----------|
-| accuracy              | 0.8915     |
-| accuracy_threshold    | 1.5841     |
-| f1                    | 0.8887     |
-| f1_threshold          | -0.1877    |
-| precision             | 0.8307     |
-| recall                | 0.9555     |
-| **average_precision** | **0.9522** |
+| accuracy              | 0.8943     |
+| accuracy_threshold    | 1.5023     |
+| f1                    | 0.8936     |
+| f1_threshold          | 1.5023     |
+| precision             | 0.8999     |
+| recall                | 0.8873     |
+| **average_precision** | **0.9518** |
 
 <!--
 ## Bias, Risks and Limitations
@@ -178,16 +178,16 @@ You can finetune this model on your own dataset.
 * Size: 13,230 training samples
 * Columns: <code>sentence_0</code>, <code>sentence_1</code>, and <code>label</code>
 * Approximate statistics based on the first 1000 samples:
-  |         | sentence_0                                                                                      | sentence_1                                                                                       | label                                                          |
-  |:--------|:------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|:---------------------------------------------------------------|
-  | type    | string                                                                                          | string                                                                                           | float                                                          |
-  | details | <ul><li>min: 26 characters</li><li>mean: 74.07 characters</li><li>max: 211 characters</li></ul> | <ul><li>min: 95 characters</li><li>mean: 475.6 characters</li><li>max: 1725 characters</li></ul> | <ul><li>min: 0.0</li><li>mean: 0.53</li><li>max: 1.0</li></ul> |
+  |         | sentence_0                                                                                      | sentence_1                                                                                         | label                                                          |
+  |:--------|:------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------|:---------------------------------------------------------------|
+  | type    | string                                                                                          | string                                                                                             | float                                                          |
+  | details | <ul><li>min: 10 characters</li><li>mean: 74.47 characters</li><li>max: 213 characters</li></ul> | <ul><li>min: 145 characters</li><li>mean: 477.88 characters</li><li>max: 1744 characters</li></ul> | <ul><li>min: 0.0</li><li>mean: 0.49</li><li>max: 1.0</li></ul> |
 * Samples:
-  | sentence_0                                                                                                    | sentence_1                                                                                                                                                                                                                                                                                                                                                                                   | label            |
-  |:--------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|
-  | <code>Cơ quan nào có thẩm quyền ban hành văn bản, giấy tờ trong lĩnh vực văn hóa, thể thao và du lịch?</code> | <code>Khoản 1 Điều 24 NGHỊ ĐỊNH Quy định về phân quyền, phân cấp Giviones ĐẾN Ngày.13.76.12025 trong lĩnh vực văn hóa, thể thao và du lịch Văn bản, giấy tờ đã được cơ quan, người có thẩm quyền ban hành, cấp đang còn hiệu lực hoặc chưa hết thời hạn sử dụng trước khi Nghị định này có hiệu lực thì tiếp tục được sử dụng cho đến khi hết thời hạn ghi trong văn bản, giấy tờ đó.</code> | <code>1.0</code> |
-  | <code>Điểm b Khoản 1 Điều 4 quy định về điều kiện gì?</code>                                                  | <code>Tại điểm b Khoản 1 Điều 4 NGHỊ ĐỊNH "Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nội vụ Người hy sinh thuộc cơ quan cấp xã và các trường hợp không thuộc quy định tại khoản 1, 2, 3,4 Điều 16 Nghị định số 131/2021/NĐ-CP và điểma</code>                                                                                | <code>1.0</code> |
-  | <code>Quỹ phòng, chống thiên tai được thành lập và quản lý như thế nào theo Nghị định này?</code>             | <code>Khoản 1 Điều 6 NGHỊ ĐỊNH Quy định phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nông nghiệp và Môi trường Tổ chức quản lý, phát triển chăn nuôi tại địa phương; thống kê, đánh tại điểm c khoản 2 Điều 80 Luật Chăn nuôi.</code>                                                                                                       | <code>0.0</code> |
+  | sentence_0                                                                   | sentence_1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | label            |
+  |:-----------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|
+  | <code>Ủy ban nhân dân cấp xã có trách nhiệm gì?</code>                       | <code>Theo Điều 33 NGHỊ ĐỊNH "Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Nội vụ Thủ tục hưởng trợ cấp tuất hằng tháng, trợ cấp hưu nuôi dưỡng hằng tháng Thủ tục hưởng Trợ cấp tuất hằng tháng, trợ cấp tuất nuôi dưỡng hằng tháng quy định tại điểm đ khoản 2, khoản 3 Điều 124 Nghị định 131/2021/NĐ-CP thực hiện như sau: Ủy ban nhân dân cấp xã có trách nhiệm kiểm tra, lập danh sách những trường hợp đủ điều kiện hưởng Trợ cấp tuất hằng tháng và trợ cấp tuất nuôi dưỡng hằng tháng kèm đầy đủ các giấy tờ quy định tại các điểm a, b, c khoản 2 Điều 124 Nghị định số 131/2021/NĐ-CP gửi đến sở Nội vụ nơi quản lý hồ sơ.</code>                                                                                                                                                                                                                                                                                                                                                | <code>1.0</code> |
+  | <code>thời hạn áp dụng nghị định này đến khi nào?</code>                     | <code>Khoản 1 Điều 4 NGHỊ ĐỊNH Giờ...... ĐẾN Quy định về phân cấp thẩm quyền quản lý nhà nước Ngày 13.16.2025 trong lĩnh vực quản lý, sử dụng tài sản công Bộ trưởng, Thủ trưởng cơ quan trung ương, Chủ tịch Ủy ban nhân dân cấp tỉnh phê duyệt phương án sắp xếp lại, xử lý nhà, đất quy định tại điểm a khoản 1 Điều 8 Nghị định số 03/2025/NĐ-CP ngày 01 tháng 01 năm 202 5 của Chính phủ quy định việc sắp xếp lại, xử lý tài sản công (sau đây gọi là Nghị định số 03/2025/NĐ-CP). Trình tự, thủ tục phê duyệt phương án sắp xếp lại, xử lý nhà, đất của Bộ trưởng, Thủ trưởng cơ quan trung ương được thực hiện theo quy định tại Điều 6 Nghị định số 03/2025/NĐ-CP, không phải thực hiện việc báo cáo Thủ tướng Chính phủ quy định tại điểm a khoản 6 Điều 6 Nghị; định số 03/2025/NĐ-CP. Trình tự, thủ tục phê duyệt phương án sắp xếp lại, xử lý nhà, đất của Chủ định số 03/2025/NĐ-CP; không phải thực hiện việc báo cáo Thủ tướng Chính phủ quy định tại điểm a khoản 3 Điều 7 Nghị định số 03/2025/NĐ-CP.Chủ tịch Ủy ban nhân dâ...</code> | <code>0.0</code> |
+  | <code>Căn cứ vào luật nào để quy định tổ chức các cơ quan chuyên môn?</code> | <code>Khoản 8 Điều 4 NGHỊ ĐỊNH Quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc trung ương G13:.. ĐẾN - Căn cứ Luật Tổ chức Chính phủ năm 2025; Hướng dẫn chuyên môn, nghiệp vụ thuộc ngành, lĩnh vực quản lý đối với cơ quan chuyên môn thuộc Ủy ban nhân dân cấp xã.</code>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | <code>0.0</code> |
 * Loss: [<code>BinaryCrossEntropyLoss</code>](https://sbert.net/docs/package_reference/cross_encoder/losses.html#binarycrossentropyloss) with these parameters:
   ```json
   {
@@ -309,18 +309,18 @@ You can finetune this model on your own dataset.
 ### Training Logs
 | Epoch  | Step | Training Loss | dev_average_precision |
 |:------:|:----:|:-------------:|:---------------------:|
-| 1.0    | 414  | -             | 0.9425                |
-| 1.2077 | 500  | 0.3943        | -                     |
-| 2.0    | 828  | -             | 0.9506                |
-| 2.4155 | 1000 | 0.2558        | -                     |
-| 3.0    | 1242 | -             | 0.9522                |
+| 1.0    | 414  | -             | 0.9416                |
+| 1.2077 | 500  | 0.3919        | -                     |
+| 2.0    | 828  | -             | 0.9491                |
+| 2.4155 | 1000 | 0.2539        | -                     |
+| 3.0    | 1242 | -             | 0.9518                |
 
 
 ### Framework Versions
 - Python: 3.11.14
 - Sentence Transformers: 5.2.3
 - Transformers: 5.2.0
-- PyTorch: 2.5.1+cu121
+- PyTorch: 2.6.0+cu124
 - Accelerate: 1.12.0
 - Datasets: 4.5.0
 - Tokenizers: 0.22.2
