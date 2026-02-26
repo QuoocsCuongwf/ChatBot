@@ -21,13 +21,8 @@ with open(CHUNKS_PATH, "r", encoding="utf-8") as f:
 
 texts = [c["text"] for c in chunks]
 
-# =========================
-# LOAD MODEL
-# =========================
-encoder = SentenceTransformer(
-    MODEL_NAME,
-    device="cuda"
-)
+# LOAD ENCODER 
+encoder = SentenceTransformer(MODEL_NAME, device="cuda")
 
 # =========================
 # ENCODE (COSINE MODE)
