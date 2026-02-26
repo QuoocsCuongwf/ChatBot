@@ -1,0 +1,11 @@
+{
+  "base_model": "Quockhanh05/Vietnam_legal_embeddings",
+  "final_model": "outputs\\models\\legal_hf_finetuned\\final",
+  "epochs": 5,
+  "batch_size": 32,
+  "lr": 2e-05,
+  "warmup_ratio": 0.1,
+  "max_seq_length": 256,
+  "train_pairs": 6615,
+  "training_minutes": 77.0
+}

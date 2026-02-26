@@ -2,13 +2,21 @@
   "best_global_step": null,
   "best_metric": null,
   "best_model_checkpoint": null,
-  "epoch": 1.0,
+  "epoch": 4.0,
   "eval_steps": 0,
-  "global_step": 207,
+  "global_step": 828,
   "is_hyper_param_search": false,
   "is_local_process_zero": true,
   "is_world_process_zero": true,
-  "log_history": [],
+  "log_history": [
+    {
+      "epoch": 2.4154589371980677,
+      "grad_norm": 4.951445579528809,
+      "learning_rate": 1.149946062567422e-05,
+      "loss": 0.4345523681640625,
+      "step": 500
+    }
+  ],
   "logging_steps": 500,
   "max_steps": 1035,
   "num_input_tokens_seen": 0,

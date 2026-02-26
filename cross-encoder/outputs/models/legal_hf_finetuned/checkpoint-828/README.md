@@ -177,9 +177,9 @@ print(embeddings.shape)
 # Get the similarity scores for the embeddings
 similarities = model.similarity(embeddings, embeddings)
 print(similarities)
-# tensor([[1.0000, 0.5611, 0.0287],
-#         [0.5611, 1.0000, 0.1400],
-#         [0.0287, 0.1400, 1.0000]])
+# tensor([[ 1.0000,  0.4739, -0.0443],
+#         [ 0.4739,  1.0000,  0.0074],
+#         [-0.0443,  0.0074,  1.0000]])
 ```
 
 <!--
@@ -357,6 +357,12 @@ You can finetune this model on your own dataset.
 - `learning_rate_mapping`: {}
 
 </details>
+
+### Training Logs
+| Epoch  | Step | Training Loss |
+|:------:|:----:|:-------------:|
+| 2.4155 | 500  | 0.4346        |
+
 
 ### Framework Versions
 - Python: 3.11.14
