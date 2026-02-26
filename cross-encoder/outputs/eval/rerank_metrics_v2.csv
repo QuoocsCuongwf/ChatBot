@@ -1,0 +1,5 @@
+metric,baseline_v1,baseline_v2_phobert
+Recall@1,0.2074,0.2167
+Recall@3,0.3529,0.3003
+Recall@5,0.4087,0.3591
+MRR@10,0.2908,0.2793
