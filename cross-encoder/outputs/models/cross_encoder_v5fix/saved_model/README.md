@@ -24,29 +24,29 @@ model-index:
       type: cross-encoder-binary-classification
       name: Cross Encoder Binary Classification
     dataset:
-      name: dev v5fix
-      type: dev_v5fix
+      name: dev
+      type: dev
     metrics:
     - type: accuracy
-      value: 0.856
+      value: 1.0
       name: Accuracy
     - type: accuracy_threshold
-      value: 0.4263201653957367
+      value: 3.031428813934326
       name: Accuracy Threshold
     - type: f1
-      value: 0.8514664143803217
+      value: 1.0
       name: F1
     - type: f1_threshold
-      value: -1.0017591714859009
+      value: 3.031428813934326
       name: F1 Threshold
     - type: precision
-      value: 0.8078994614003591
+      value: 1.0
       name: Precision
     - type: recall
-      value: 0.9
+      value: 1.0
       name: Recall
     - type: average_precision
-      value: 0.9371583177332863
+      value: 1.0
       name: Average Precision
 ---
 
@@ -90,11 +90,11 @@ from sentence_transformers import CrossEncoder
 model = CrossEncoder("cross_encoder_model_id")
 # Get scores for pairs of texts
 pairs = [
-    ['Những cơ quan, tổ chức nào có liên quan đến việc lấy ý kiến về phê chuẩn điều ước quốc tế?', 'Khoản 7 Điều 4 NGHỊ ĐỊNH Quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc trung ương G13:.. ĐẾN - Căn cứ Luật Tổ chức Chính phủ năm 2025; Thực hiện hợp tác quốc tế về ngành, lĩnh vực quản lý theo quy định của pháp luật.'],
-    ['Thông tin liên quan của đối tượng được xác thực và chuẩn hóa như thế nào?', 'Tại điểm b Khoản 2 Điều 5 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Y tế Trong thời hạn 10 ngày làm việc, kể từ ngày nhận được đề nghị của đối tượng, Chủ tịch Ủy ban nhân dân cấp xã tổ chức xem xét, thực hiện xác thực và chuẩn hoá thông tin liên quan của đối tượng với cơ sở dữ liệu quốc gia về dân cư, quyết định và thực hiện chi trả trợ cấp xã hội hằng tháng, hỗ trợ kinh phí nhận chăm sóc, nuôi dưỡng hằng tháng cho đối tượng, Thời gian hưởng từ tháng Chủ tịch Ủy ban nhân dân cấp xã ký quyết định; Trường hợp đối tượng không đủ điều kiện hưởng, điều chỉnh, Chủ tịch Ủy ban nhân dân cấp xã trả lời bằng văn bản, nêu rõ lý do;'],
-    ['Nghị định này quy định như thế nào về phân định thẩm quyền?', 'Khoản 1 Điều 2 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Y tế Bảo đảm phù hợp với quy định của Hiến pháp, phù hợp Với các nguyên tắc, quy định về phân định thẩm quyền, của Luật Tổ chức Chính phủ năm 2025, Luật Tổ chức chính quyền địa phương năm 2025. phương; bảo đảm phù hợp với nhiệm vụ, quyền hạn và năng lực của cơ quan, người có thẩm quyền thực hiện nhiệm vụ, quyền hạn được phân định.'],
-    ['Nghị định này quy định về việc phân định nhiệm vụ và quyền hạn của chính quyền địa phương cấp tỉnh và cấp xã trong lĩnh vực nào?', 'Khoản 2 Điều 41 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của bộ tài chính - Nhiệm vụ, quyền hạn của Chủ tịch Ủy ban nhân dân cấp huyện được quy định tại Điều 41, khoản 5 Điều 45 Nghị định số 150/2020/NĐ-CP do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện'],
-    ['Cơ quan nào phối hợp với Ủy ban nhân dân cấp xã trong việc cưỡng chế thu hồi nhà ở?', 'Khoản 11 Điều 14 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương cổng thông tin điện tử chính phủ 192 cấp trong lĩnh vực quản lý nhà nước của Bộ Xây dựng ĐẾN Ngày. 13.1.67.2025 Trách nhiệm phê duyệt phương án cưỡng chế và dự toán kinh phí cho hoạt động cưỡng chế của Ủy ban nhân dân cấp huyện quy định tại khoản 2 Điều 56 Nghị định số 100/2024/NĐ-CP ngày 26 tháng 7 năm 202 4 của Chính phủ do Ủy ban nhân dân cấp xã thực hiện.'],
+    ['Lĩnh vực nào quy định mức tiền từ 000.010.200 đồng trở lên?', 'Theo Điều 3 Về phí, lệ phí định của pháp luật về phí, lệ phí thì khi người dân, tổ chức nộp hồ sơ đề nghị giải quyết thủ tục hành chính đồng thời nộp phí, lệ phí cho cơ quan tiếp nhận hồ sơ. Mức phí, lệ phí, việc quản lý, sử dụng phí, Lệ phí thực hiện theo quy định của Chính phủ, Bộ trưởng Bộ Tài chính hoặc Hội đồng nhân dân cấp tỉnh đối với phí, lệ phí tương ứng.'],
+    ['Thời gian hiệu lực của các văn bản quy phạm pháp luật nào?', 'Tại điểm b Khoản 2 Điều 44 Luật, nghị quyết của Quốc hội, pháp lệnh, nghị Quyết của Ủy ban Thường vụ Quốc hội, nghị định, nghị quyết của Chính phủ, quyết định của Thủ tướng Chính phủ có quy định về thẩm quyền, trách nhiệm quản lý nhà nước, trình tự, thủ tục quy định tại Nghị định này được thông qua hoặc ban hành kể từ ngày 01 tháng 7 năm 2025 và có hiệu lực trước ngày 0 1 tháng 3 năm 2827 thì quy định tương ứng trong Nghị định này hết hiệu lực tại thời điểm các văn bản quy phạm pháp luật đó có hiệu lực.'],
+    ['Ai là cơ quan đại diện chủ sở hữu của doanh nghiệp trong trường hợp điều chuyển tài sản kết cấu hạ tầng giao thông đường bộ?', 'Khoản 1 Điều 6 Bộ trưởng Bộ Xây dựng quyết định giao tài sản kết cấu hạ tầng hàng không quy định tại điểm a khoản 2 Điều 5 Nghị định số 44/2018/NĐ-CP ngày 13 tháng 3 năm 2018 của Chính phủ quy định việc quản lý, sử dụng và khai thác tài sản kết cấu hạ tầng hàng không (sau đây gọi là Nghị định số 44/2018/NĐ-CP). Trình tự, thủ tục quyết định giao tài sản kết cấu hạ tầng hàng không thực hiện theo quy định tại khoản 4 Điều 5 Nghị định số 44/2018/NĐ-CP; không phải thực hiện việc báo cáo Thủ tướng Chính phủ xem xét, phê duyệt phương án giao quản lý tài sản kết cấu hạ tầng hàng không quy định tại điểm đ khoản 4 Điều 5 Nghị định số 44/2018/NĐ-CP.'],
+    ['Nghị định này có thể được kéo dài bao lâu?', 'Khoản 3 Điều 75 Trong thời gian các quy định của Nghị định này có hiệu lực, nếu quy định về thẩm quyền, trách nhiệm quản lý nhà nước, trình tự, thủ tục trong Nghị định này khác với các văn bản quy phạm pháp luật có liên quan thì thực hiện theo quy định tại nghị định này.'],
+    ['Bộ trưởng Bộ Tài chính có cần phải xem xét, quyết định điều chuyển tài sản kết cấu hạ tầng đường thủy nội địa không?', 'Khoản 2 Điều 9 Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định điều chuyển tài sản kết cấu hạ tầng thủy lợi quy định tại điểm a khoản 2 Điều 22 Nghị định số 08/2025/NĐ-CP.'],
 ]
 scores = model.predict(pairs)
 print(scores.shape)
@@ -102,13 +102,13 @@ print(scores.shape)
 
 # Or rank different texts based on similarity to a single text
 ranks = model.rank(
-    'Những cơ quan, tổ chức nào có liên quan đến việc lấy ý kiến về phê chuẩn điều ước quốc tế?',
+    'Lĩnh vực nào quy định mức tiền từ 000.010.200 đồng trở lên?',
     [
-        'Khoản 7 Điều 4 NGHỊ ĐỊNH Quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc trung ương G13:.. ĐẾN - Căn cứ Luật Tổ chức Chính phủ năm 2025; Thực hiện hợp tác quốc tế về ngành, lĩnh vực quản lý theo quy định của pháp luật.',
-        'Tại điểm b Khoản 2 Điều 5 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Y tế Trong thời hạn 10 ngày làm việc, kể từ ngày nhận được đề nghị của đối tượng, Chủ tịch Ủy ban nhân dân cấp xã tổ chức xem xét, thực hiện xác thực và chuẩn hoá thông tin liên quan của đối tượng với cơ sở dữ liệu quốc gia về dân cư, quyết định và thực hiện chi trả trợ cấp xã hội hằng tháng, hỗ trợ kinh phí nhận chăm sóc, nuôi dưỡng hằng tháng cho đối tượng, Thời gian hưởng từ tháng Chủ tịch Ủy ban nhân dân cấp xã ký quyết định; Trường hợp đối tượng không đủ điều kiện hưởng, điều chỉnh, Chủ tịch Ủy ban nhân dân cấp xã trả lời bằng văn bản, nêu rõ lý do;',
-        'Khoản 1 Điều 2 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Y tế Bảo đảm phù hợp với quy định của Hiến pháp, phù hợp Với các nguyên tắc, quy định về phân định thẩm quyền, của Luật Tổ chức Chính phủ năm 2025, Luật Tổ chức chính quyền địa phương năm 2025. phương; bảo đảm phù hợp với nhiệm vụ, quyền hạn và năng lực của cơ quan, người có thẩm quyền thực hiện nhiệm vụ, quyền hạn được phân định.',
-        'Khoản 2 Điều 41 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của bộ tài chính - Nhiệm vụ, quyền hạn của Chủ tịch Ủy ban nhân dân cấp huyện được quy định tại Điều 41, khoản 5 Điều 45 Nghị định số 150/2020/NĐ-CP do Chủ tịch Ủy ban nhân dân cấp tỉnh thực hiện',
-        'Khoản 11 Điều 14 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương cổng thông tin điện tử chính phủ 192 cấp trong lĩnh vực quản lý nhà nước của Bộ Xây dựng ĐẾN Ngày. 13.1.67.2025 Trách nhiệm phê duyệt phương án cưỡng chế và dự toán kinh phí cho hoạt động cưỡng chế của Ủy ban nhân dân cấp huyện quy định tại khoản 2 Điều 56 Nghị định số 100/2024/NĐ-CP ngày 26 tháng 7 năm 202 4 của Chính phủ do Ủy ban nhân dân cấp xã thực hiện.',
+        'Theo Điều 3 Về phí, lệ phí định của pháp luật về phí, lệ phí thì khi người dân, tổ chức nộp hồ sơ đề nghị giải quyết thủ tục hành chính đồng thời nộp phí, lệ phí cho cơ quan tiếp nhận hồ sơ. Mức phí, lệ phí, việc quản lý, sử dụng phí, Lệ phí thực hiện theo quy định của Chính phủ, Bộ trưởng Bộ Tài chính hoặc Hội đồng nhân dân cấp tỉnh đối với phí, lệ phí tương ứng.',
+        'Tại điểm b Khoản 2 Điều 44 Luật, nghị quyết của Quốc hội, pháp lệnh, nghị Quyết của Ủy ban Thường vụ Quốc hội, nghị định, nghị quyết của Chính phủ, quyết định của Thủ tướng Chính phủ có quy định về thẩm quyền, trách nhiệm quản lý nhà nước, trình tự, thủ tục quy định tại Nghị định này được thông qua hoặc ban hành kể từ ngày 01 tháng 7 năm 2025 và có hiệu lực trước ngày 0 1 tháng 3 năm 2827 thì quy định tương ứng trong Nghị định này hết hiệu lực tại thời điểm các văn bản quy phạm pháp luật đó có hiệu lực.',
+        'Khoản 1 Điều 6 Bộ trưởng Bộ Xây dựng quyết định giao tài sản kết cấu hạ tầng hàng không quy định tại điểm a khoản 2 Điều 5 Nghị định số 44/2018/NĐ-CP ngày 13 tháng 3 năm 2018 của Chính phủ quy định việc quản lý, sử dụng và khai thác tài sản kết cấu hạ tầng hàng không (sau đây gọi là Nghị định số 44/2018/NĐ-CP). Trình tự, thủ tục quyết định giao tài sản kết cấu hạ tầng hàng không thực hiện theo quy định tại khoản 4 Điều 5 Nghị định số 44/2018/NĐ-CP; không phải thực hiện việc báo cáo Thủ tướng Chính phủ xem xét, phê duyệt phương án giao quản lý tài sản kết cấu hạ tầng hàng không quy định tại điểm đ khoản 4 Điều 5 Nghị định số 44/2018/NĐ-CP.',
+        'Khoản 3 Điều 75 Trong thời gian các quy định của Nghị định này có hiệu lực, nếu quy định về thẩm quyền, trách nhiệm quản lý nhà nước, trình tự, thủ tục trong Nghị định này khác với các văn bản quy phạm pháp luật có liên quan thì thực hiện theo quy định tại nghị định này.',
+        'Khoản 2 Điều 9 Chủ tịch Ủy ban nhân dân cấp tỉnh quyết định điều chuyển tài sản kết cấu hạ tầng thủy lợi quy định tại điểm a khoản 2 Điều 22 Nghị định số 08/2025/NĐ-CP.',
     ]
 )
 # [{'corpus_id': ..., 'score': ...}, {'corpus_id': ..., 'score': ...}, ...]
@@ -144,18 +144,18 @@ You can finetune this model on your own dataset.
 
 #### Cross Encoder Binary Classification
 
-* Dataset: `dev_v5fix`
+* Dataset: `dev`
 * Evaluated with [<code>CEBinaryClassificationEvaluator</code>](https://sbert.net/docs/package_reference/cross_encoder/evaluation.html#sentence_transformers.cross_encoder.evaluation.CEBinaryClassificationEvaluator)
 
-| Metric                | Value      |
-|:----------------------|:-----------|
-| accuracy              | 0.856      |
-| accuracy_threshold    | 0.4263     |
-| f1                    | 0.8515     |
-| f1_threshold          | -1.0018    |
-| precision             | 0.8079     |
-| recall                | 0.9        |
-| **average_precision** | **0.9372** |
+| Metric                | Value   |
+|:----------------------|:--------|
+| accuracy              | 1.0     |
+| accuracy_threshold    | 3.0314  |
+| f1                    | 1.0     |
+| f1_threshold          | 3.0314  |
+| precision             | 1.0     |
+| recall                | 1.0     |
+| **average_precision** | **1.0** |
 
 <!--
 ## Bias, Risks and Limitations
@@ -178,16 +178,16 @@ You can finetune this model on your own dataset.
 * Size: 19,845 training samples
 * Columns: <code>sentence_0</code>, <code>sentence_1</code>, and <code>label</code>
 * Approximate statistics based on the first 1000 samples:
-  |         | sentence_0                                                                                      | sentence_1                                                                                         | label                                                          |
-  |:--------|:------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------|:---------------------------------------------------------------|
-  | type    | string                                                                                          | string                                                                                             | float                                                          |
-  | details | <ul><li>min: 25 characters</li><li>mean: 74.43 characters</li><li>max: 192 characters</li></ul> | <ul><li>min: 152 characters</li><li>mean: 486.31 characters</li><li>max: 2110 characters</li></ul> | <ul><li>min: 0.0</li><li>mean: 0.35</li><li>max: 1.0</li></ul> |
+  |         | sentence_0                                                                                      | sentence_1                                                                                        | label                                                          |
+  |:--------|:------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|:---------------------------------------------------------------|
+  | type    | string                                                                                          | string                                                                                            | float                                                          |
+  | details | <ul><li>min: 23 characters</li><li>mean: 74.81 characters</li><li>max: 182 characters</li></ul> | <ul><li>min: 45 characters</li><li>mean: 380.51 characters</li><li>max: 1725 characters</li></ul> | <ul><li>min: 0.0</li><li>mean: 0.32</li><li>max: 1.0</li></ul> |
 * Samples:
-  | sentence_0                                                                                              | sentence_1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | label            |
-  |:--------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|
-  | <code>Những cơ quan, tổ chức nào có liên quan đến việc lấy ý kiến về phê chuẩn điều ước quốc tế?</code> | <code>Khoản 7 Điều 4 NGHỊ ĐỊNH Quy định tổ chức các cơ quan chuyên môn thuộc Ủy ban nhân dân tỉnh, thành phố trực thuộc trung ương và Ủy ban nhân dân xã, phường, đặc khu thuộc tỉnh, thành phố trực thuộc trung ương G13:.. ĐẾN - Căn cứ Luật Tổ chức Chính phủ năm 2025; Thực hiện hợp tác quốc tế về ngành, lĩnh vực quản lý theo quy định của pháp luật.</code>                                                                                                                                                                                                                                                                                                                                                                         | <code>0.0</code> |
-  | <code>Thông tin liên quan của đối tượng được xác thực và chuẩn hóa như thế nào?</code>                  | <code>Tại điểm b Khoản 2 Điều 5 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Y tế Trong thời hạn 10 ngày làm việc, kể từ ngày nhận được đề nghị của đối tượng, Chủ tịch Ủy ban nhân dân cấp xã tổ chức xem xét, thực hiện xác thực và chuẩn hoá thông tin liên quan của đối tượng với cơ sở dữ liệu quốc gia về dân cư, quyết định và thực hiện chi trả trợ cấp xã hội hằng tháng, hỗ trợ kinh phí nhận chăm sóc, nuôi dưỡng hằng tháng cho đối tượng, Thời gian hưởng từ tháng Chủ tịch Ủy ban nhân dân cấp xã ký quyết định; Trường hợp đối tượng không đủ điều kiện hưởng, điều chỉnh, Chủ tịch Ủy ban nhân dân cấp xã trả lời bằng văn bản, nêu rõ lý do;</code> | <code>1.0</code> |
-  | <code>Nghị định này quy định như thế nào về phân định thẩm quyền?</code>                                | <code>Khoản 1 Điều 2 NGHỊ ĐỊNH Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực quản lý nhà nước của Bộ Y tế Bảo đảm phù hợp với quy định của Hiến pháp, phù hợp Với các nguyên tắc, quy định về phân định thẩm quyền, của Luật Tổ chức Chính phủ năm 2025, Luật Tổ chức chính quyền địa phương năm 2025. phương; bảo đảm phù hợp với nhiệm vụ, quyền hạn và năng lực của cơ quan, người có thẩm quyền thực hiện nhiệm vụ, quyền hạn được phân định.</code>                                                                                                                                                                                                                                                | <code>1.0</code> |
+  | sentence_0                                                                                                                                | sentence_1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | label            |
+  |:------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|
+  | <code>Lĩnh vực nào quy định mức tiền từ 000.010.200 đồng trở lên?</code>                                                                  | <code>Theo Điều 3 Về phí, lệ phí định của pháp luật về phí, lệ phí thì khi người dân, tổ chức nộp hồ sơ đề nghị giải quyết thủ tục hành chính đồng thời nộp phí, lệ phí cho cơ quan tiếp nhận hồ sơ. Mức phí, lệ phí, việc quản lý, sử dụng phí, Lệ phí thực hiện theo quy định của Chính phủ, Bộ trưởng Bộ Tài chính hoặc Hội đồng nhân dân cấp tỉnh đối với phí, lệ phí tương ứng.</code>                                                                                                                                                                                                                                                                                         | <code>0.0</code> |
+  | <code>Thời gian hiệu lực của các văn bản quy phạm pháp luật nào?</code>                                                                   | <code>Tại điểm b Khoản 2 Điều 44 Luật, nghị quyết của Quốc hội, pháp lệnh, nghị Quyết của Ủy ban Thường vụ Quốc hội, nghị định, nghị quyết của Chính phủ, quyết định của Thủ tướng Chính phủ có quy định về thẩm quyền, trách nhiệm quản lý nhà nước, trình tự, thủ tục quy định tại Nghị định này được thông qua hoặc ban hành kể từ ngày 01 tháng 7 năm 2025 và có hiệu lực trước ngày 0 1 tháng 3 năm 2827 thì quy định tương ứng trong Nghị định này hết hiệu lực tại thời điểm các văn bản quy phạm pháp luật đó có hiệu lực.</code>                                                                                                                                           | <code>0.0</code> |
+  | <code>Ai là cơ quan đại diện chủ sở hữu của doanh nghiệp trong trường hợp điều chuyển tài sản kết cấu hạ tầng giao thông đường bộ?</code> | <code>Khoản 1 Điều 6 Bộ trưởng Bộ Xây dựng quyết định giao tài sản kết cấu hạ tầng hàng không quy định tại điểm a khoản 2 Điều 5 Nghị định số 44/2018/NĐ-CP ngày 13 tháng 3 năm 2018 của Chính phủ quy định việc quản lý, sử dụng và khai thác tài sản kết cấu hạ tầng hàng không (sau đây gọi là Nghị định số 44/2018/NĐ-CP). Trình tự, thủ tục quyết định giao tài sản kết cấu hạ tầng hàng không thực hiện theo quy định tại khoản 4 Điều 5 Nghị định số 44/2018/NĐ-CP; không phải thực hiện việc báo cáo Thủ tướng Chính phủ xem xét, phê duyệt phương án giao quản lý tài sản kết cấu hạ tầng hàng không quy định tại điểm đ khoản 4 Điều 5 Nghị định số 44/2018/NĐ-CP.</code> | <code>0.0</code> |
 * Loss: [<code>BinaryCrossEntropyLoss</code>](https://sbert.net/docs/package_reference/cross_encoder/losses.html#binarycrossentropyloss) with these parameters:
   ```json
   {
@@ -199,106 +199,122 @@ You can finetune this model on your own dataset.
 ### Training Hyperparameters
 #### Non-Default Hyperparameters
 
-- `per_device_train_batch_size`: 32
-- `num_train_epochs`: 5
+- `per_device_train_batch_size`: 16
+- `per_device_eval_batch_size`: 16
 - `fp16`: True
-- `per_device_eval_batch_size`: 32
 
 #### All Hyperparameters
 <details><summary>Click to expand</summary>
 
-- `per_device_train_batch_size`: 32
-- `num_train_epochs`: 5
-- `max_steps`: -1
+- `overwrite_output_dir`: False
+- `do_predict`: False
+- `eval_strategy`: no
+- `prediction_loss_only`: True
+- `per_device_train_batch_size`: 16
+- `per_device_eval_batch_size`: 16
+- `per_gpu_train_batch_size`: None
+- `per_gpu_eval_batch_size`: None
+- `gradient_accumulation_steps`: 1
+- `eval_accumulation_steps`: None
+- `torch_empty_cache_steps`: None
 - `learning_rate`: 5e-05
-- `lr_scheduler_type`: linear
-- `lr_scheduler_kwargs`: None
-- `warmup_steps`: 0
-- `optim`: adamw_torch
-- `optim_args`: None
 - `weight_decay`: 0.0
 - `adam_beta1`: 0.9
 - `adam_beta2`: 0.999
 - `adam_epsilon`: 1e-08
-- `optim_target_modules`: None
-- `gradient_accumulation_steps`: 1
-- `average_tokens_across_devices`: True
 - `max_grad_norm`: 1
-- `label_smoothing_factor`: 0.0
+- `num_train_epochs`: 3
+- `max_steps`: -1
+- `lr_scheduler_type`: linear
+- `lr_scheduler_kwargs`: {}
+- `warmup_ratio`: 0.0
+- `warmup_steps`: 0
+- `log_level`: passive
+- `log_level_replica`: warning
+- `log_on_each_node`: True
+- `logging_nan_inf_filter`: True
+- `save_safetensors`: True
+- `save_on_each_node`: False
+- `save_only_model`: False
+- `restore_callback_states_from_checkpoint`: False
+- `no_cuda`: False
+- `use_cpu`: False
+- `use_mps_device`: False
+- `seed`: 42
+- `data_seed`: None
+- `jit_mode_eval`: False
+- `use_ipex`: False
 - `bf16`: False
 - `fp16`: True
+- `fp16_opt_level`: O1
+- `half_precision_backend`: auto
 - `bf16_full_eval`: False
 - `fp16_full_eval`: False
 - `tf32`: None
-- `gradient_checkpointing`: False
-- `gradient_checkpointing_kwargs`: None
-- `torch_compile`: False
-- `torch_compile_backend`: None
-- `torch_compile_mode`: None
-- `use_liger_kernel`: False
-- `liger_kernel_config`: None
-- `use_cache`: False
-- `neftune_noise_alpha`: None
-- `torch_empty_cache_steps`: None
-- `auto_find_batch_size`: False
-- `log_on_each_node`: True
-- `logging_nan_inf_filter`: True
-- `include_num_input_tokens_seen`: no
-- `log_level`: passive
-- `log_level_replica`: warning
-- `disable_tqdm`: False
-- `project`: huggingface
-- `trackio_space_id`: trackio
-- `eval_strategy`: no
-- `per_device_eval_batch_size`: 32
-- `prediction_loss_only`: True
-- `eval_on_start`: False
-- `eval_do_concat_batches`: True
-- `eval_use_gather_object`: False
-- `eval_accumulation_steps`: None
-- `include_for_metrics`: []
-- `batch_eval_metrics`: False
-- `save_only_model`: False
-- `save_on_each_node`: False
-- `enable_jit_checkpoint`: False
-- `push_to_hub`: False
-- `hub_private_repo`: None
-- `hub_model_id`: None
-- `hub_strategy`: every_save
-- `hub_always_push`: False
-- `hub_revision`: None
-- `load_best_model_at_end`: False
-- `ignore_data_skip`: False
-- `restore_callback_states_from_checkpoint`: False
-- `full_determinism`: False
-- `seed`: 42
-- `data_seed`: None
-- `use_cpu`: False
-- `accelerator_config`: {'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None}
-- `parallelism_config`: None
+- `local_rank`: 0
+- `ddp_backend`: None
+- `tpu_num_cores`: None
+- `tpu_metrics_debug`: False
+- `debug`: []
 - `dataloader_drop_last`: False
 - `dataloader_num_workers`: 0
-- `dataloader_pin_memory`: True
-- `dataloader_persistent_workers`: False
 - `dataloader_prefetch_factor`: None
+- `past_index`: -1
+- `disable_tqdm`: False
 - `remove_unused_columns`: True
 - `label_names`: None
-- `train_sampling_strategy`: random
+- `load_best_model_at_end`: False
+- `ignore_data_skip`: False
+- `fsdp`: []
+- `fsdp_min_num_params`: 0
+- `fsdp_config`: {'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False}
+- `fsdp_transformer_layer_cls_to_wrap`: None
+- `accelerator_config`: {'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None}
+- `deepspeed`: None
+- `label_smoothing_factor`: 0.0
+- `optim`: adamw_torch
+- `optim_args`: None
+- `adafactor`: False
+- `group_by_length`: False
 - `length_column_name`: length
 - `ddp_find_unused_parameters`: None
 - `ddp_bucket_cap_mb`: None
 - `ddp_broadcast_buffers`: False
-- `ddp_backend`: None
-- `ddp_timeout`: 1800
-- `fsdp`: []
-- `fsdp_config`: {'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False}
-- `deepspeed`: None
-- `debug`: []
+- `dataloader_pin_memory`: True
+- `dataloader_persistent_workers`: False
 - `skip_memory_metrics`: True
-- `do_predict`: False
+- `use_legacy_prediction_loop`: False
+- `push_to_hub`: False
 - `resume_from_checkpoint`: None
-- `warmup_ratio`: None
-- `local_rank`: -1
+- `hub_model_id`: None
+- `hub_strategy`: every_save
+- `hub_private_repo`: False
+- `hub_always_push`: False
+- `gradient_checkpointing`: False
+- `gradient_checkpointing_kwargs`: None
+- `include_inputs_for_metrics`: False
+- `eval_do_concat_batches`: True
+- `fp16_backend`: auto
+- `push_to_hub_model_id`: None
+- `push_to_hub_organization`: None
+- `mp_parameters`: 
+- `auto_find_batch_size`: False
+- `full_determinism`: False
+- `torchdynamo`: None
+- `ray_scope`: last
+- `ddp_timeout`: 1800
+- `torch_compile`: False
+- `torch_compile_backend`: None
+- `torch_compile_mode`: None
+- `dispatch_batches`: None
+- `split_batches`: None
+- `include_tokens_per_second`: False
+- `include_num_input_tokens_seen`: False
+- `neftune_noise_alpha`: None
+- `optim_target_modules`: None
+- `batch_eval_metrics`: False
+- `eval_on_start`: False
+- `eval_use_gather_object`: False
 - `prompts`: None
 - `batch_sampler`: batch_sampler
 - `multi_dataset_batch_sampler`: proportional
@@ -308,29 +324,28 @@ You can finetune this model on your own dataset.
 </details>
 
 ### Training Logs
-| Epoch  | Step | Training Loss | dev_v5fix_average_precision |
-|:------:|:----:|:-------------:|:---------------------------:|
-| 0.8052 | 500  | 0.5878        | -                           |
-| 1.0    | 621  | -             | 0.9070                      |
-| 1.6103 | 1000 | 0.3594        | -                           |
-| 2.0    | 1242 | -             | 0.9226                      |
-| 2.4155 | 1500 | 0.3227        | -                           |
-| 3.0    | 1863 | -             | 0.9329                      |
-| 3.2206 | 2000 | 0.2912        | -                           |
-| 4.0    | 2484 | -             | 0.9362                      |
-| 4.0258 | 2500 | 0.2705        | -                           |
-| 4.8309 | 3000 | 0.2611        | -                           |
-| 5.0    | 3105 | -             | 0.9372                      |
+| Epoch  | Step | Training Loss | dev_average_precision |
+|:------:|:----:|:-------------:|:---------------------:|
+| 0.4029 | 500  | 0.4162        | -                     |
+| 0.8058 | 1000 | 0.0041        | -                     |
+| 1.0    | 1241 | -             | 1.0                   |
+| 1.2087 | 1500 | 0.0005        | -                     |
+| 1.6116 | 2000 | 0.0018        | -                     |
+| 2.0    | 2482 | -             | 1.0                   |
+| 2.0145 | 2500 | 0.0           | -                     |
+| 2.4174 | 3000 | 0.0           | -                     |
+| 2.8203 | 3500 | 0.0           | -                     |
+| 3.0    | 3723 | -             | 1.0                   |
 
 
 ### Framework Versions
 - Python: 3.11.14
-- Sentence Transformers: 5.2.3
-- Transformers: 5.2.0
+- Sentence Transformers: 5.2.2
+- Transformers: 4.44.1
 - PyTorch: 2.6.0+cu124
 - Accelerate: 1.12.0
-- Datasets: 4.5.0
-- Tokenizers: 0.22.2
+- Datasets: 4.4.1
+- Tokenizers: 0.19.1
 
 ## Citation
 

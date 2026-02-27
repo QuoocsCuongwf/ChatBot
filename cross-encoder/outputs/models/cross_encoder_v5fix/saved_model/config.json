@@ -1,13 +1,10 @@
 {
-  "add_cross_attention": false,
+  "_name_or_path": "cross-encoder/ms-marco-MiniLM-L-6-v2",
   "architectures": [
     "BertForSequenceClassification"
   ],
   "attention_probs_dropout_prob": 0.1,
-  "bos_token_id": null,
   "classifier_dropout": null,
-  "dtype": "float32",
-  "eos_token_id": null,
   "gradient_checkpointing": false,
   "hidden_act": "gelu",
   "hidden_dropout_prob": 0.1,
@@ -17,7 +14,6 @@
   },
   "initializer_range": 0.02,
   "intermediate_size": 1536,
-  "is_decoder": false,
   "label2id": {
     "LABEL_0": 0
   },
@@ -30,11 +26,11 @@
   "position_embedding_type": "absolute",
   "sentence_transformers": {
     "activation_fn": "torch.nn.modules.linear.Identity",
-    "version": "5.2.3"
+    "version": "5.2.2"
   },
-  "tie_word_embeddings": true,
-  "transformers_version": "5.2.0",
+  "torch_dtype": "float32",
+  "transformers_version": "4.44.1",
   "type_vocab_size": 2,
-  "use_cache": false,
+  "use_cache": true,
   "vocab_size": 30522
 }

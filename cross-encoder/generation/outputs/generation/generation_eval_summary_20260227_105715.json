@@ -1,0 +1,21 @@
+{
+  "run_id": "eval_20260227_105715",
+  "timestamp": "2026-02-27T10:57:15.900504",
+  "total_samples": 50,
+  "citation_hit_rate": 0.58,
+  "avg_citation_precision": 0.0,
+  "avg_citation_recall": 0.0,
+  "avg_citation_f1": 0.0,
+  "pass_rate": 0.12,
+  "abstain_rate": 0.7,
+  "ask_back_rate": 0.12,
+  "cautious_rate": 0.06,
+  "answer_supported_rate": null,
+  "avg_latency_retrieve_ms": 0.0,
+  "avg_latency_rerank_ms": 0.0,
+  "avg_latency_llm_ms": 0.02,
+  "avg_latency_total_ms": 0.14,
+  "error_rate": 0.0,
+  "llm_backend": "placeholder",
+  "gating_config": null
+}
