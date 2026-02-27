@@ -31,7 +31,7 @@ class GatingConfig:
     threshold_cautious: float = 1.0       # Giữa abstain và pass → CAUTIOUS
     
     # Margin threshold
-    margin_min: float = 1.0               # top1 - top2 < margin → không rõ ràng
+    margin_min: float = 0.05              # top1 - top2 < margin → không rõ ràng (lowered for sigmoid/logit scores)
     
     # Keyword coverage
     min_keyword_coverage: float = 0.3     # Overlap từ khóa tối thiểu

@@ -109,7 +109,7 @@ GEN_EVAL_DIR = ROOT / "outputs" / "generation"
 
 # Model paths - using actual paths from existing pipeline
 # ROOT.parent = cross-encoder/, so outputs is there
-CE_MODEL = ROOT.parent / "outputs" / "models" / "cross_encoder_v5fix" / "saved_model"
+CE_MODEL = ROOT.parent / "outputs" / "models" / "cross_encoder_faiss_matched" / "saved_model"
 
 # FAISS index and metadata - using legal_hf_cosine (normalized IP index)
 FAISS_INDEX_DIR = PROJECT_ROOT / "vector_data" / "legal_hf_cosine"
@@ -236,14 +236,24 @@ class LegalRetriever:
         scores_faiss = scores_faiss[0].tolist()
         ids = [i for i in ids[0].tolist() if i >= 0 and i < len(self.faiss_mapping)]
         
-        # Get candidate chunks
+        # Get candidate chunks with deduplication
         candidates = []
+        seen_texts = set()  # Deduplicate by text hash
+        
         for i, faiss_id in enumerate(ids):
             mapping = self.faiss_mapping[faiss_id]
+            text = mapping.get("text", "")
+            
+            # Skip duplicates
+            text_hash = hash(text[:200])  # Hash first 200 chars for dedup
+            if text_hash in seen_texts:
+                continue
+            seen_texts.add(text_hash)
+            
             meta = mapping.get("metadata", {})  # nested metadata dict
             chunk = ChunkInfo(
                 chunk_id=faiss_id,
-                text=mapping.get("text", ""),  # use 'text' not 'passage'
+                text=text,
                 score_retrieval=scores_faiss[i] if i < len(scores_faiss) else 0.0,
                 score_rerank=0.0,
                 van_ban=meta.get("van_ban", ""),
@@ -630,16 +640,17 @@ def main():
                 threshold_pass=0.6,
                 threshold_abstain=0.3,
                 threshold_cautious=0.5,
-                margin_min=0.05
+                margin_min=0.05,
+                enable_ask_back=False  # Disable for evaluation
             )
         else:
-            # Cross-encoder mode: trained model outputs negative logits
-            # Note: text format mismatch lowers scores, so use looser thresholds
+            # Cross-encoder mode: new FAISS-matched model outputs positive scores ~(-5 to +11)
             eval_gating_config = GatingConfig(
-                threshold_pass=-8.0,
-                threshold_abstain=-11.5,
-                threshold_cautious=-10.0,
-                margin_min=1.0
+                threshold_pass=8.0,       # High confidence score
+                threshold_abstain=-5.0,   # Very low score
+                threshold_cautious=3.0,   # Moderate score
+                margin_min=0.1,           # Small margin needed
+                enable_ask_back=False     # Disable for evaluation
             )
         eval_gating = GatingStrategy(eval_gating_config)
         

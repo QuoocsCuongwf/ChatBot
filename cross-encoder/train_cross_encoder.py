@@ -31,9 +31,9 @@ from sentence_transformers.cross_encoder.evaluation import CEBinaryClassificatio
 ROOT = Path(__file__).parent
 PROJECT_ROOT = ROOT.parent
 
-# Data paths
-TRAIN_FILE = ROOT / "data" / "train.jsonl"
-DEV_FILE = ROOT / "data" / "dev.jsonl"
+# Data paths - USE FAISS-MATCHED FORMAT
+TRAIN_FILE = ROOT / "data" / "train_faiss.jsonl"
+DEV_FILE = ROOT / "data" / "dev_faiss.jsonl"
 
 # FAISS index for mining hard negatives
 FAISS_INDEX = PROJECT_ROOT / "vector_data" / "legal_hf_cosine" / "index.faiss"
@@ -42,8 +42,8 @@ FAISS_META = PROJECT_ROOT / "vector_data" / "legal_hf_cosine" / "metadata.json"
 # Bi-encoder for encoding queries (same as FAISS index)
 BI_ENCODER = "Quockhanh05/Vietnam_legal_embeddings"
 
-# Output
-CE_OUTPUT = ROOT / "outputs" / "models" / "cross_encoder_v5fix"
+# Output - new model trained on FAISS-matched data
+CE_OUTPUT = ROOT / "outputs" / "models" / "cross_encoder_faiss_matched"
 
 # Training config
 BASE_CE_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"

@@ -1,0 +1,51 @@
+query_id,query,gating_decision,citation_hit,citation_precision,citation_recall,citation_f1,abstain,latency_llm_ms,latency_total_ms,error
+dev_0,Kinh phí thực hiện nhiệm vụ chuyển giao do ai đảm bảo?,cautious,False,0.0,0.0,0.0,False,257.6165199279785,257.6165199279785,HTTP Error 400: Bad Request
+dev_1,Nguồn kinh phí thực hiện nhiệm vụ chuyển giao là gì?,cautious,False,0.0,0.0,0.0,False,246.15120887756348,246.8266487121582,HTTP Error 400: Bad Request
+dev_2,Thẩm quyền của chính quyền địa phương hai cấp trong lĩnh vực quản lý nhà nước quy định ở đâu?,cautious,False,0.0,0.0,0.0,False,258.1026554107666,260.55145263671875,HTTP Error 400: Bad Request
+dev_3,Kinh phí thực hiện nhiệm vụ chuyển giao đảm bảo theo quy định nào?,cautious,False,0.0,0.0,0.0,False,232.4841022491455,232.4841022491455,HTTP Error 400: Bad Request
+dev_4,Ủy ban nhân dân cấp xã làm gì sau khi rà soát trẻ em cần được nhận làm con nuôi?,cautious,True,0.0,0.0,0.0,False,231.0502529144287,231.0502529144287,HTTP Error 400: Bad Request
+dev_5,Nếu không có người nhận trẻ em làm con nuôi trong nước thì Ủy ban nhân dân cấp xã sẽ làm gì?,cautious,False,0.0,0.0,0.0,False,228.69348526000977,228.69348526000977,HTTP Error 400: Bad Request
+dev_6,Thời gian rà soát trẻ em cần được nhận làm con nuôi là bao lâu?,cautious,True,0.0,0.0,0.0,False,248.19016456604004,249.1908073425293,HTTP Error 400: Bad Request
+dev_7,Sở Tư pháp nhận hồ sơ từ đâu về việc nhận trẻ em làm con nuôi?,cautious,False,0.0,0.0,0.0,False,236.17911338806152,236.17911338806152,HTTP Error 400: Bad Request
+dev_8,Người dịch cần làm gì khi đăng ký chữ ký mẫu?,cautious,True,0.0,0.0,0.0,False,224.68185424804688,225.69632530212402,HTTP Error 400: Bad Request
+dev_9,Chủ tịch hoặc Phó Chủ tịch Ủy ban nhân dân cấp xã có nhiệm vụ gì trong quá trình đăng ký chữ ký mẫu?,cautious,True,0.0,0.0,0.0,False,221.47154808044434,221.47154808044434,HTTP Error 400: Bad Request
+dev_10,"Khi đăng ký chữ ký mẫu, người dịch cần nộp những gì?",cautious,True,0.0,0.0,0.0,False,346.74930572509766,347.1815586090088,HTTP Error 400: Bad Request
+dev_11,Bao nhiêu chữ ký mẫu cần ký trong văn bản đề nghị đăng ký chữ ký mẫu?,cautious,True,0.0,0.0,0.0,False,241.04046821594238,242.04158782958984,HTTP Error 400: Bad Request
+dev_12,Giá thị trường để sửa chữa tài sản bị hư hỏng được quy định ở đâu?,cautious,True,0.0,0.0,0.0,False,246.35839462280273,248.36039543151855,HTTP Error 400: Bad Request
+dev_13,Nghị định nào quy định về giá thị trường để khôi phục tài sản bị hư hỏng?,cautious,True,0.0,0.0,0.0,False,264.5072937011719,264.5072937011719,HTTP Error 400: Bad Request
+dev_14,Thị trường cấp xã được áp dụng như thế nào trong việc sửa chữa tài sản?,cautious,False,0.0,0.0,0.0,False,223.80590438842773,223.80590438842773,HTTP Error 400: Bad Request
+dev_15,Lĩnh vực nào trong quản lý nhà nước được quy định trong Nghị định này?,cautious,False,0.0,0.0,0.0,False,215.09599685668945,216.0968780517578,HTTP Error 400: Bad Request
+dev_16,"Nhiệm vụ nào đang thuộc trách nhiệm của Hội đồng phối hợp phổ biến, giáo dục pháp luật cấp huyện?",cautious,False,0.0,0.0,0.0,False,231.8408489227295,231.8408489227295,HTTP Error 400: Bad Request
+dev_17,"Cơ sở vật chất nào đang thuộc trách nhiệm của Hội đồng phối hợp phổ biến, giáo dục pháp luật cấp huyện?",cautious,True,0.0,0.0,0.0,False,249.73630905151367,250.73671340942383,HTTP Error 400: Bad Request
+dev_18,"Kinh phí nào đang thuộc trách nhiệm của Hội đồng phối hợp phổ biến, giáo dục pháp luật cấp huyện?",cautious,False,0.0,0.0,0.0,False,262.7081871032715,262.7081871032715,HTTP Error 400: Bad Request
+dev_19,"Theo hướng dẫn của Bộ Tư pháp, nhiệm vụ, kinh phí và cơ sở vật chất trên sẽ được xử lý như thế nào?",cautious,True,0.0,0.0,0.0,False,222.0461368560791,223.04725646972656,HTTP Error 400: Bad Request
+dev_20,Khoản 7 Điều 2 Nghị Định này quy định gì?,abstain,False,0.0,0.0,0.0,True,0.0,0.0,
+dev_21,Nghị Định này bảo đảm điều gì?,cautious,False,0.0,0.0,0.0,False,231.9328784942627,231.9328784942627,HTTP Error 400: Bad Request
+dev_22,Việc thực hiện Nghị Định này có ảnh hưởng như thế nào không?,cautious,False,0.0,0.0,0.0,False,205.45315742492676,206.2835693359375,HTTP Error 400: Bad Request
+dev_23,Nước Việt Nam sẽ như thế nào khi thực hiện Nghị Định này?,cautious,False,0.0,0.0,0.0,False,262.6161575317383,263.61680030822754,HTTP Error 400: Bad Request
+dev_24,Chấm dứt hoạt động của Trung tâm trọng tài như thế nào?,cautious,True,0.0,0.0,0.0,False,229.67958450317383,230.67975044250488,HTTP Error 400: Bad Request
+dev_25,"Theo nghị định này, trình tự chấm dứt hoạt động của Trung tâm trọng tài là gì?",cautious,True,0.0,0.0,0.0,False,223.9820957183838,223.9820957183838,HTTP Error 400: Bad Request
+dev_26,Thủ tục chấm dứt hoạt động của Trung tâm trọng tài được quy định như thế nào?,cautious,True,0.0,0.0,0.0,False,221.93026542663574,222.9311466217041,HTTP Error 400: Bad Request
+dev_27,Nghị định này quy định về trình tự chấm dứt hoạt động của Trung tâm trọng tài như nào?,cautious,True,0.0,0.0,0.0,False,223.9220142364502,224.92313385009766,HTTP Error 400: Bad Request
+dev_28,Nếu không đồng ý với quyết định của Đoàn luật sư/Liên đoàn Luật sư thì luật sư có thể khiếu nại đến cơ quan nào？,cautious,True,0.0,0.0,0.0,False,222.8410243988037,223.9985466003418,HTTP Error 400: Bad Request
+dev_29,Thời hạn giải quyết khiếu nại của Chủ tịch Ủy ban nhân dân cấp tỉnh trong trường hợp này là bao lâu？,cautious,False,0.0,0.0,0.0,False,232.53774642944336,233.5374355316162,HTTP Error 400: Bad Request
+dev_30,Nếu luật sư có ý kiến về quyết định của Đoàn luật sư/Liên đoàn Luật sư thì bước khiếu nại đầu tiên nên gửi đến đâu？,cautious,True,0.0,0.0,0.0,False,222.0461368560791,223.04606437683105,HTTP Error 400: Bad Request
+dev_31,Cơ quan/người có thẩm quyền thụ lý khiếu nại ở cấp cuối cùng theo đoạn trích là ai？,cautious,False,0.0,0.0,0.0,False,252.33745574951172,252.33745574951172,HTTP Error 400: Bad Request
+dev_32,Kiến nghị cơ quan nào xử lý vi phạm trong giải quyết bồi thường?,cautious,True,0.0,0.0,0.0,False,210.04676818847656,210.52312850952148,HTTP Error 400: Bad Request
+dev_33,Thẩm quyền kiến nghị xử lý vi phạm bồi thường thuộc ai?,cautious,True,0.0,0.0,0.0,False,232.44524002075195,232.44524002075195,HTTP Error 400: Bad Request
+dev_34,Việc thực hiện trách nhiệm hoàn trả có liên quan đến điều gì?,cautious,True,0.0,0.0,0.0,False,237.31684684753418,238.31653594970703,HTTP Error 400: Bad Request
+dev_35,Điểm 1 khoản 2 Điều 73 của Luật Trách nhiệm bồi thường của Nhà nước quy định gì?,cautious,False,0.0,0.0,0.0,False,246.43421173095703,246.43421173095703,HTTP Error 400: Bad Request
+dev_36,"Tổ chức thẩm định, đánh giá chất lượng vụ việc trợ giúp pháp lý thuộc thẩm quyền của ai?",cautious,True,0.0,0.0,0.0,False,246.42062187194824,246.42062187194824,HTTP Error 400: Bad Request
+dev_37,"Thẩm quyền tổ chức thẩm định, đánh giá chất lượng vụ việc trợ giúp pháp lý nằm ở đâu?",cautious,True,0.0,0.0,0.0,False,228.64627838134766,229.64811325073242,HTTP Error 400: Bad Request
+dev_38,Điểm e khoản 1 Điều 40 của Luật Trợ giúp pháp lý năm 2017 quy định gì về thẩm quyền?,cautious,False,0.0,0.0,0.0,False,256.81376457214355,256.81376457214355,HTTP Error 400: Bad Request
+dev_39,"Việc tổ chức thẩm định, đánh giá chất lượng vụ việc trợ giúp pháp lý thuộc thẩm quyền của cơ quan nào?",cautious,True,0.0,0.0,0.0,False,226.77063941955566,226.77063941955566,HTTP Error 400: Bad Request
+dev_40,Chủ tịch Ủy ban nhân dân cấp tỉnh có thẩm quyền làm gì?,cautious,False,0.0,0.0,0.0,False,213.27948570251465,214.49875831604004,HTTP Error 400: Bad Request
+dev_41,Thẩm quyền thu hồi Giấy phép thành lập thuộc ai?,cautious,True,0.0,0.0,0.0,False,232.65957832336426,232.65957832336426,HTTP Error 400: Bad Request
+dev_42,Ai quy định về việc thu hồi Giấy đăng ký hoạt động của Trung tâm trọng tài?,cautious,False,0.0,0.0,0.0,False,253.92889976501465,253.92889976501465,HTTP Error 400: Bad Request
+dev_43,Theo Nghị định nào quy định về thẩm quyền thu hồi Giấy phép thành lập?,cautious,False,0.0,0.0,0.0,False,236.61065101623535,237.6120090484619,HTTP Error 400: Bad Request
+dev_44,Trình tự chấm dứt hoạt động của Chi nhánh như thế nào?,cautious,True,0.0,0.0,0.0,False,242.0182228088379,242.0182228088379,HTTP Error 400: Bad Request
+dev_45,Thủ tục chấm dứt hoạt động của Văn phòng đại diện như nào?,cautious,False,0.0,0.0,0.0,False,209.5479965209961,209.5479965209961,HTTP Error 400: Bad Request
+dev_46,"Nơi quy định trình tự chấm dứt hoạt động của Chi nhánh, Văn phòng đại diện là đâu?",cautious,True,0.0,0.0,0.0,False,203.53150367736816,204.53190803527832,HTTP Error 400: Bad Request
+dev_47,Phụ lục II ban hành kèm theo nghị định này quy định điều gì?,cautious,False,0.0,0.0,0.0,False,208.95004272460938,208.95004272460938,HTTP Error 400: Bad Request
+dev_48,Các hồ sơ nào sẽ được xử lý theo Luật Luật sư?,cautious,False,0.0,0.0,0.0,False,236.50503158569336,236.50503158569336,HTTP Error 400: Bad Request
+dev_49,Nghị định này có hiệu lực từ khi nào?,cautious,False,0.0,0.0,0.0,False,217.40293502807617,218.40405464172363,HTTP Error 400: Bad Request

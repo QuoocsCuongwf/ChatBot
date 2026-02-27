@@ -1,0 +1,40 @@
+{
+  "os":  "Windows-10-10.0.26200-SP0",
+  "python":  "CPython 3.11.14",
+  "startedAt":  "2026-02-27T04:26:30.777054Z",
+  "program":  "D:\\GitHub\\ChatBot\\cross-encoder\\train_cross_encoder.py",
+  "codePath":  "cross-encoder\\train_cross_encoder.py",
+  "codePathLocal":  "cross-encoder\\train_cross_encoder.py",
+  "git":  {
+    "remote":  "https://github.com/QuoocsCuongwf/ChatBot.git",
+    "commit":  "92115a35b77a080eeb71a7c3b076691ca6b75623"
+  },
+  "email":  "phucga150625@gmail.com",
+  "root":  "D:\\GitHub\\ChatBot",
+  "host":  "DESKTOP-5NSFQ6M",
+  "executable":  "C:\\Users\\ADMIN\\.conda\\envs\\ocr311\\python.exe",
+  "cpu_count":  8,
+  "cpu_count_logical":  12,
+  "gpu":  "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "209714147328",
+      "used":  "37487665152"
+    }
+  },
+  "memory":  {
+    "total":  "51142127616"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+      "memoryTotal":  "4294967296",
+      "cudaCores":  2560,
+      "architecture":  "Ampere",
+      "uuid":  "GPU-9e09ddfc-be89-0a52-dc77-0ba9ab80f2bf"
+    }
+  ],
+  "cudaVersion":  "12.7",
+  "writerId":  "1jgclhiju6d9ik98xirajnp0cxzup6ii"
+}
