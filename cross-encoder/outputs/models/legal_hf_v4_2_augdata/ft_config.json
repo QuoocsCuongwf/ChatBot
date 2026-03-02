@@ -1,0 +1,17 @@
+{
+  "version": "v4.2",
+  "base_model": "Quockhanh05/Vietnam_legal_embeddings",
+  "final_model": "outputs\\models\\legal_hf_v4_2_augdata\\final",
+  "data_augmentation": {
+    "round1": "train.jsonl (6,615 pairs, 4 factual queries/chunk)",
+    "round2": "train_aug2.jsonl (6,563 pairs, 4 situational queries/chunk)",
+    "merged": "train_merged.jsonl (13,117 unique pairs — +98% vs v4)"
+  },
+  "epochs": 5,
+  "batch_size": 32,
+  "lr": 2e-05,
+  "warmup_ratio": 0.1,
+  "max_seq_length": 256,
+  "train_pairs": 13117,
+  "training_minutes": 283.1
+}
