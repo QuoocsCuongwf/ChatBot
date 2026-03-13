@@ -1,5 +1,0 @@
-metric,baseline,reranked,bi_encoder,ce
-Recall@1,0.5232,0.5975,D:\SGU\CNTT\NCKH2025_2026\ChatBot\cross-encoder\outputs\models\legal_hf_finetuned\final,D:\SGU\CNTT\NCKH2025_2026\ChatBot\cross-encoder\outputs\models\ce_phobert_v5_1\saved_model
-Recall@3,0.6594,0.7337,D:\SGU\CNTT\NCKH2025_2026\ChatBot\cross-encoder\outputs\models\legal_hf_finetuned\final,D:\SGU\CNTT\NCKH2025_2026\ChatBot\cross-encoder\outputs\models\ce_phobert_v5_1\saved_model
-Recall@5,0.7337,0.7771,D:\SGU\CNTT\NCKH2025_2026\ChatBot\cross-encoder\outputs\models\legal_hf_finetuned\final,D:\SGU\CNTT\NCKH2025_2026\ChatBot\cross-encoder\outputs\models\ce_phobert_v5_1\saved_model
-MRR@10,0.6091,0.678,D:\SGU\CNTT\NCKH2025_2026\ChatBot\cross-encoder\outputs\models\legal_hf_finetuned\final,D:\SGU\CNTT\NCKH2025_2026\ChatBot\cross-encoder\outputs\models\ce_phobert_v5_1\saved_model

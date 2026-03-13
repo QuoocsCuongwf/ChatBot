@@ -1,0 +1,5 @@
+metric,value,version,rrf_k
+Recall@1,0.6368,v7_1,60
+Recall@3,0.8123,v7_1,60
+Recall@5,0.8474,v7_1,60
+MRR@10,0.7258,v7_1,60

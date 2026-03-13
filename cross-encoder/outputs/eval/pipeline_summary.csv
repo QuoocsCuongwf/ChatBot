@@ -1,6 +1,0 @@
-metric,value
-total_questions,50
-citation_hit_rate,0.64
-abstain_rate,0.02
-pass_rate,0.98
-avg_latency_ms,340.8

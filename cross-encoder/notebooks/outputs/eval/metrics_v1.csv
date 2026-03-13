@@ -1,0 +1,5 @@
+metric,value,version,bi_encoder,ce
+Recall@1,0.514,v1,BM25,none
+Recall@3,0.707,v1,BM25,none
+Recall@5,0.7807,v1,BM25,none
+MRR@10,0.619,v1,BM25,none

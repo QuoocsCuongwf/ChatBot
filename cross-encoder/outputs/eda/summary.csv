@@ -1,4 +1,0 @@
-name,rows,pos,neg,label_conflicts,cjk_queries,dup_pairs,missing_fields,avg_q_len,avg_p_len
-train,6615,6615,0,0,4,0,0,74.7,470.3
-dev,719,719,0,0,0,0,0,74.3,487.8
-train_neg,13230,6615,6615,16,8,26,0,74.7,472.7

@@ -1,0 +1,5 @@
+metric,value,version,bi_encoder,ce
+Recall@1,0.5877,v3_2,BAAI/bge-m3,BAAI/bge-reranker-v2-m3
+Recall@3,0.7754,v3_2,BAAI/bge-m3,BAAI/bge-reranker-v2-m3
+Recall@5,0.8053,v3_2,BAAI/bge-m3,BAAI/bge-reranker-v2-m3
+MRR@10,0.6794,v3_2,BAAI/bge-m3,BAAI/bge-reranker-v2-m3
