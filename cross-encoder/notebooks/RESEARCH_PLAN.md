@@ -160,15 +160,17 @@ BM25  Dense  CE   FT-Bi FT-CE
 | **V3.2** | + bge-reranker CE (Multilingual) | 0.588 | 0.805 | — | 0.679 | +0.074 ✅ |
 | **V4** | FT bge-m3 (bi-only) | 0.607 | 0.833 | 0.974 | 0.702 | +0.093 ✅ |
 | **V5** | FT bi + FT CE (hard neg top-20) | 0.612 | 0.851 | — | 0.712 | +0.098 ✅ |
-| **V6** | FT bi + FT CE (hard neg top-5) | **0.637** | **0.854** | — | **0.728** | **+0.123** ✅ |
-| **V7.1** | Hybrid BM25+Dense RRF + V6 CE | 0.637 | 0.847 | — | 0.726 | +0.123 ❌ |
-| **V7.2** | HyDE + V6 CE | | | | | |
-| **V7.3** | Best Combo | | | | | |
+| **V6** | FT bi + FT CE (hard neg top-5) | 0.637 | **0.854** | — | 0.728 | +0.123 ✅ |
+| **V7.1** | Hybrid BM25+Dense RRF + V6 CE | 0.637 | 0.847 | — | 0.726 | ❌ same |
+| **V7.2** | HyDE Qwen3.5-2B (w=0.4/0.6) + V6 CE | **0.640** | 0.851 | — | **0.729** | ✅ slight |
+| **V7.3** | BM25+Dense+HyDE RRF + V6 CE | 0.637 | 0.847 | — | 0.726 | ❌ same |
 
-> **Nhận xét nổi bật:**
-> - **Harder negatives hiệu quả rõ rệt:** V6 top-5 > V5 top-20 (+0.025 R@1), CE improved/worsened: 142/109 (tửng hơn V5: 138/121)
-> - **Gain lớn nhất:** V4 FT bi-encoder (+0.135 vs off-shelf); CE FT bổ sung thêm +0.030 (V6)
-> - **Trend:** hard neg topk ↓ → CE chất lượng ↑ — có thể thử top-3 nếu muốn push thêm
+> **Kết luận nghiên cứu:**
+> - **Best practical system: V6** (R@1=0.637, R@5=0.854) — đơn giản, nhanh, không cần LLM runtime
+> - **Best R@1: V7.2** (0.640) — nhưng chỉ +0.003, cần LLM generation overhead
+> - **Domain FT là intervention quan trọng nhất** (+0.135 R@1 vs off-shelf)
+> - **Diminishing returns:** Hybrid/HyDE/Combo không cải thiện đáng kể trên small corpus (1840p)
+> - **Negative finding có giá trị:** BM25 hybrid không giúp khi FT bi-encoder đã đủ mạnh
 
 ---
 
