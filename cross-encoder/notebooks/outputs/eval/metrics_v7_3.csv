@@ -1,0 +1,5 @@
+metric,value,version,use_hyde
+Recall@1,0.6368,v7_3,True
+Recall@3,0.8123,v7_3,True
+Recall@5,0.8474,v7_3,True
+MRR@10,0.7259,v7_3,True

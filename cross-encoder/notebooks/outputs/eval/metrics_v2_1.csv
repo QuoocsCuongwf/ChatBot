@@ -1,0 +1,6 @@
+metric,value,version,bi_encoder,ce
+Recall@1,0.4614,v2_1,intfloat/multilingual-e5-base,none
+Recall@3,0.6298,v2_1,intfloat/multilingual-e5-base,none
+Recall@5,0.7035,v2_1,intfloat/multilingual-e5-base,none
+MRR@10,0.5543,v2_1,intfloat/multilingual-e5-base,none
+Recall@100,0.907,v2_1,intfloat/multilingual-e5-base,none

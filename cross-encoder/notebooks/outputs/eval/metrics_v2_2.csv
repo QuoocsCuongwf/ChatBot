@@ -1,0 +1,6 @@
+metric,value,version,bi_encoder,ce
+Recall@1,0.3175,v2_2,Quockhanh05/Vietnam_legal_embeddings,none
+Recall@3,0.4737,v2_2,Quockhanh05/Vietnam_legal_embeddings,none
+Recall@5,0.5351,v2_2,Quockhanh05/Vietnam_legal_embeddings,none
+MRR@10,0.402,v2_2,Quockhanh05/Vietnam_legal_embeddings,none
+Recall@100,0.8298,v2_2,Quockhanh05/Vietnam_legal_embeddings,none

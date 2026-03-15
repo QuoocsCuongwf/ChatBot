@@ -1,0 +1,5 @@
+metric,value,version,llm,w_query,w_hypo,hypo_maxlen,temperature
+Recall@1,0.6404,v7_2,Qwen/Qwen3.5-2B-Instruct,0.4,0.6,400,0.3
+Recall@3,0.8158,v7_2,Qwen/Qwen3.5-2B-Instruct,0.4,0.6,400,0.3
+Recall@5,0.8509,v7_2,Qwen/Qwen3.5-2B-Instruct,0.4,0.6,400,0.3
+MRR@10,0.7294,v7_2,Qwen/Qwen3.5-2B-Instruct,0.4,0.6,400,0.3

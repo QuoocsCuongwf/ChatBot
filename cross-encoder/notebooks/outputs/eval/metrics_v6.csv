@@ -1,0 +1,5 @@
+metric,value,version,hard_neg_topk
+Recall@1,0.6368,v6,5
+Recall@3,0.8158,v6,5
+Recall@5,0.8544,v6,5
+MRR@10,0.7282,v6,5
