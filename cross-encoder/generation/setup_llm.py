@@ -8,21 +8,6 @@ Hướng dẫn lấy API key miễn phí:
    - Click "Create API Key"
    - Copy key và set environment variable
 
-<<<<<<< HEAD
-2. OpenRouter (Free tier):
-   - Vào https://openrouter.ai/keys
-   - Đăng ký và tạo API key
-   - Free models: mistralai/mistral-7b-instruct:free, meta-llama/llama-3.2-3b-instruct:free
-
-Usage:
-    # Windows PowerShell
-    $env:GEMINI_API_KEY = "your-key-here"
-    python cross-encoder/generation/run_generation.py --query "..." -v
-    
-    # Hoặc
-    $env:OPENROUTER_API_KEY = "sk-or-v1-..."
-    python cross-encoder/generation/run_generation.py --backend openrouter --model "mistralai/mistral-7b-instruct:free" --query "..."
-=======
 2. OpenRouter — Qwen3 (Free tier):
    - Vào https://openrouter.ai/keys
    - Đăng ký và tạo API key
@@ -46,7 +31,6 @@ Usage:
     
     # Chạy với Qwen3 model cụ thể
     python cross-encoder/generation/run_generation.py --backend qwen --model "qwen/qwen3-235b-a22b" --query "..."
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 """
 
 import os
@@ -60,15 +44,9 @@ def check_api_keys():
     print("=" * 60)
     
     keys = {
-<<<<<<< HEAD
-        "GEMINI_API_KEY": "Google Gemini (gemini-2.0-flash, gemini-pro)",
-        "OPENROUTER_API_KEY": "OpenRouter (Mistral, Llama, etc.)",
-        "OPENAI_API_KEY": "OpenAI (GPT-3.5, GPT-4)",
-=======
         "GEMINI_API_KEY": "Google Gemini (gemini-2.0-flash) — Primary",
         "OPENROUTER_API_KEY": "OpenRouter / Qwen3 (qwen3-30b-a3b:free) — Fallback",
         "OPENAI_API_KEY": "OpenAI (GPT-4o-mini)",
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     }
     
     found = False
@@ -86,17 +64,10 @@ def check_api_keys():
         print("\n⚠ Không có API key nào được cài đặt.")
         print("\nCách cài đặt:")
         print("")
-<<<<<<< HEAD
-        print("  # Gemini (miễn phí):")
-        print('  $env:GEMINI_API_KEY = "AIza..."')
-        print("")
-        print("  # OpenRouter (miễn phí với model :free):")
-=======
         print("  # Gemini (miễn phí) — Primary:")
         print('  $env:GEMINI_API_KEY = "AIza..."')
         print("")
         print("  # OpenRouter / Qwen3 (miễn phí) — Fallback:")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         print('  $env:OPENROUTER_API_KEY = "sk-or-v1-..."')
     
     return found
@@ -135,11 +106,7 @@ def test_gemini():
 
 
 def test_openrouter():
-<<<<<<< HEAD
-    """Test OpenRouter API."""
-=======
     """Test OpenRouter API (Qwen3)."""
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     api_key = os.environ.get("OPENROUTER_API_KEY")
     if not api_key:
@@ -151,11 +118,7 @@ def test_openrouter():
     
     url = "https://openrouter.ai/api/v1/chat/completions"
     body = json.dumps({
-<<<<<<< HEAD
-        "model": "mistralai/mistral-7b-instruct:free",
-=======
         "model": "qwen/qwen3-30b-a3b:free",
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         "messages": [{"role": "user", "content": "Xin chào! Trả lời ngắn gọn bằng tiếng Việt."}],
         "max_tokens": 50
     }).encode()

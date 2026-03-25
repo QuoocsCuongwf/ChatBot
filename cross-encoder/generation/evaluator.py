@@ -21,11 +21,7 @@ from datetime import datetime
 
 from .rag_contract import (
     RAGInput, RAGOutput, ChunkInfo, Citation,
-<<<<<<< HEAD
-    DecisionType, AbstainReason,
-=======
     DecisionType, AbstainReason, LLMTier,
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     create_rag_input, parse_rag_output, compute_citation_correctness
 )
 from .context_builder import ContextBuilder, build_context_for_generation
@@ -65,10 +61,7 @@ class EvalResult:
     # Gating
     gating_decision: Optional[str] = None
     gating_reason: Optional[str] = None
-<<<<<<< HEAD
-=======
     tier: str = ""                  # local / api / none
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     # Generation
     generated_answer: Optional[str] = None
@@ -205,10 +198,7 @@ class GenerationEvaluator:
             gating_decision = self.gating.evaluate(rag_input)
             result.gating_decision = gating_decision.decision.value
             result.gating_reason = gating_decision.reason_detail
-<<<<<<< HEAD
-=======
             result.tier = gating_decision.tier.value if hasattr(gating_decision, 'tier') else ""
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             
             if verbose:
                 print(f"  [Gating] {gating_decision.decision.value}: {gating_decision.reason_detail}")
@@ -505,11 +495,7 @@ class GenerationEvaluator:
         """Save metrics as CSV."""
         
         fieldnames = [
-<<<<<<< HEAD
-            "query_id", "query", "gating_decision", "citation_hit",
-=======
             "query_id", "query", "gating_decision", "tier", "citation_hit",
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             "citation_precision", "citation_recall", "citation_f1",
             "abstain", "latency_llm_ms", "latency_total_ms", "error"
         ]
@@ -523,10 +509,7 @@ class GenerationEvaluator:
                     "query_id": r.query_id,
                     "query": r.query,
                     "gating_decision": r.gating_decision,
-<<<<<<< HEAD
-=======
                     "tier": r.tier,
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
                     "citation_hit": r.citation_hit,
                     "citation_precision": r.citation_precision,
                     "citation_recall": r.citation_recall,

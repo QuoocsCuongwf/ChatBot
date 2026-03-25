@@ -15,10 +15,7 @@ Backends:
 import os
 import json
 import time
-<<<<<<< HEAD
-=======
 import random
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 import subprocess
 import threading
 from typing import Optional, List, Dict, Generator, Any, Callable
@@ -29,8 +26,6 @@ import urllib.request
 import urllib.error
 
 
-<<<<<<< HEAD
-=======
 # ═══════════════════════════════════════════════════════════════════════════════
 # GLOBAL RATE LIMITER — giới hạn tần suất gọi API, tránh 429
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -74,17 +69,13 @@ class _GlobalRateLimiter:
 _rate_limiter = _GlobalRateLimiter(min_interval=1.5)
 
 
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 class LLMBackend(Enum):
     """Các backend LLM được hỗ trợ."""
     LLAMA_CPP = "llama_cpp"             # Local llama.cpp
     OPENROUTER = "openrouter"           # OpenRouter API
     OPENAI = "openai"                   # OpenAI API
     GEMINI = "gemini"                   # Google Gemini
-<<<<<<< HEAD
-=======
     QWEN = "qwen"                       # Qwen3 via OpenRouter (fallback khi Gemini hết quota)
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     HUGGINGFACE = "huggingface"         # HuggingFace Transformers
     PLACEHOLDER = "placeholder"         # Placeholder for testing
 
@@ -120,10 +111,7 @@ class LLMConfig:
     # API settings
     api_key: Optional[str] = None
     api_base_url: Optional[str] = None
-<<<<<<< HEAD
-=======
     require_json: bool = True           # Bắt buộc trả về JSON (hỗ trợ Gemini/OpenAI JSON mode)
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     # Timeout
     timeout_seconds: int = 60
@@ -146,8 +134,6 @@ class LLMResponse:
     latency_ms: float = 0.0
     error: Optional[str] = None
     raw_response: Optional[Dict] = None
-<<<<<<< HEAD
-=======
     
     # ── Anti-429 metadata ──
     api_failed: bool = False             # True nếu API gọi thất bại (429/5xx/timeout)
@@ -227,7 +213,6 @@ def select_local_model_for_vram(reserved_vram_gb: float = 1.0) -> str:
         return model
     except Exception:
         return f"Qwen/{series}-1.5B-Instruct" if "2.5" in series else f"Qwen/{series}-1.7B"
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 
 class LLMClient:
@@ -235,14 +220,6 @@ class LLMClient:
     Unified LLM Client cho Legal RAG.
     
     Auto-detect backend từ environment hoặc config.
-<<<<<<< HEAD
-    """
-    
-    def __init__(self, config: Optional[LLMConfig] = None):
-        self.config = config or self._auto_detect_config()
-        self._llama_process = None
-        self._initialize_backend()
-=======
     
     Anti-429 features:
     - Global rate limiter (min 1.5s giữa 2 lần gọi API)
@@ -268,7 +245,6 @@ class LLMClient:
         # Stats tracking
         self._api_fail_count = 0
         self._fallback_count = 0
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     def _auto_detect_config(self) -> LLMConfig:
         """Auto-detect config từ environment."""
@@ -276,12 +252,6 @@ class LLMClient:
         config = LLMConfig()
         
         # Check API keys
-<<<<<<< HEAD
-        if os.environ.get("OPENROUTER_API_KEY"):
-            config.backend = LLMBackend.OPENROUTER
-            config.api_key = os.environ["OPENROUTER_API_KEY"]
-            config.model_name = "mistralai/mistral-7b-instruct"
-=======
         if os.environ.get("GEMINI_API_KEY"):
             config.backend = LLMBackend.GEMINI
             config.api_key = os.environ["GEMINI_API_KEY"]
@@ -291,18 +261,10 @@ class LLMClient:
             config.backend = LLMBackend.QWEN
             config.api_key = os.environ["OPENROUTER_API_KEY"]
             config.model_name = "qwen/qwen3-30b-a3b:free"
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         elif os.environ.get("OPENAI_API_KEY"):
             config.backend = LLMBackend.OPENAI
             config.api_key = os.environ["OPENAI_API_KEY"]
             config.model_name = "gpt-3.5-turbo"
-<<<<<<< HEAD
-        elif os.environ.get("GEMINI_API_KEY"):
-            config.backend = LLMBackend.GEMINI
-            config.api_key = os.environ["GEMINI_API_KEY"]
-            config.model_name = "gemini-pro"
-=======
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         else:
             # Check for local llama.cpp model
             model_paths = [
@@ -355,22 +317,6 @@ class LLMClient:
         import shutil
         return shutil.which(program)
     
-<<<<<<< HEAD
-    def _init_huggingface(self):
-        """Initialize HuggingFace transformers."""
-        try:
-            from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
-            import torch
-            
-            self._hf_pipeline = pipeline(
-                "text-generation",
-                model=self.config.model_path or self.config.model_name,
-                torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-                device_map="auto"
-            )
-        except ImportError:
-            print("[LLMClient] HuggingFace transformers not available")
-=======
     @staticmethod
     def _guess_model_size_gb(model_id: str) -> float:
         """Estimate model size in billions of params from model name."""
@@ -492,15 +438,12 @@ class LLMClient:
             self.config.backend = LLMBackend.PLACEHOLDER
         except Exception as e:
             print(f"[LLMClient] Failed to load HF model: {e}")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             self.config.backend = LLMBackend.PLACEHOLDER
     
     # ═══════════════════════════════════════════════════════════════════════════
     # GENERATION METHODS
     # ═══════════════════════════════════════════════════════════════════════════
     
-<<<<<<< HEAD
-=======
     @property
     def _is_api_backend(self) -> bool:
         """Check if current backend calls external API (cần rate limit + retry)."""
@@ -530,7 +473,6 @@ class LLMClient:
             return True
         return False
     
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     def generate(
         self,
         prompt: str,
@@ -538,9 +480,6 @@ class LLMClient:
         **kwargs
     ) -> LLMResponse:
         """
-<<<<<<< HEAD
-        Generate response từ LLM.
-=======
         Generate response từ LLM — với retry + rate limit + fallback.
         
         Flow:
@@ -549,7 +488,6 @@ class LLMClient:
         3. Nếu 429/5xx → retry với exponential backoff + jitter (tối đa 5 lần)
         4. Nếu vẫn fail → fallback sang local_client (nếu có)
         5. Nếu fallback cũng fail → trả error
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         Args:
             prompt: User prompt
@@ -557,38 +495,6 @@ class LLMClient:
             **kwargs: Override generation params
         
         Returns:
-<<<<<<< HEAD
-            LLMResponse
-        """
-        
-        start_time = time.time()
-        
-        try:
-            if self.config.backend == LLMBackend.PLACEHOLDER:
-                response = self._generate_placeholder(prompt)
-            elif self.config.backend == LLMBackend.LLAMA_CPP:
-                response = self._generate_llama_cpp(prompt, system_prompt, **kwargs)
-            elif self.config.backend == LLMBackend.OPENROUTER:
-                response = self._generate_openrouter(prompt, system_prompt, **kwargs)
-            elif self.config.backend == LLMBackend.OPENAI:
-                response = self._generate_openai(prompt, system_prompt, **kwargs)
-            elif self.config.backend == LLMBackend.GEMINI:
-                response = self._generate_gemini(prompt, system_prompt, **kwargs)
-            elif self.config.backend == LLMBackend.HUGGINGFACE:
-                response = self._generate_huggingface(prompt, system_prompt, **kwargs)
-            else:
-                response = self._generate_placeholder(prompt)
-            
-            response.latency_ms = (time.time() - start_time) * 1000
-            return response
-            
-        except Exception as e:
-            return LLMResponse(
-                text="",
-                error=str(e),
-                latency_ms=(time.time() - start_time) * 1000
-            )
-=======
             LLMResponse (với api_failed / fallback_to_local metadata)
         """
         
@@ -740,7 +646,6 @@ class LLMClient:
             return self._generate_huggingface(prompt, system_prompt, **kwargs)
         else:
             return self._generate_placeholder(prompt)
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     def generate_stream(
         self,
@@ -936,25 +841,6 @@ class LLMClient:
         system_prompt: Optional[str] = None,
         **kwargs
     ) -> LLMResponse:
-<<<<<<< HEAD
-        """Generate using Google Gemini API."""
-        
-        full_prompt = prompt
-        if system_prompt:
-            full_prompt = f"{system_prompt}\n\n{prompt}"
-        
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{self.config.model_name}:generateContent?key={self.config.api_key}"
-        body = json.dumps({
-            "contents": [{"parts": [{"text": full_prompt}]}],
-            "generationConfig": {
-                "maxOutputTokens": kwargs.get("max_tokens", self.config.max_tokens),
-                "temperature": kwargs.get("temperature", self.config.temperature),
-            }
-        }).encode()
-        
-        req = urllib.request.Request(url, data=body, headers={
-            "Content-Type": "application/json"
-=======
         """Generate using Google Gemini API (retry handled by generate())."""
         
         # ── Safety settings: tắt block cho legal content ──
@@ -989,19 +875,12 @@ class LLMClient:
         
         req = urllib.request.Request(url, data=body, headers={
             "Content-Type": "application/json; charset=utf-8"
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         })
         
         try:
             with urllib.request.urlopen(req, timeout=self.config.timeout_seconds) as r:
                 resp = json.loads(r.read())
                 
-<<<<<<< HEAD
-                content = resp["candidates"][0]["content"]["parts"][0]["text"]
-                
-                return LLMResponse(
-                    text=content,
-=======
                 # Check for blocked/empty responses
                 candidates = resp.get("candidates", [])
                 if not candidates:
@@ -1052,13 +931,10 @@ class LLMClient:
                 
                 return LLMResponse(
                     text=content_str,
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
                     finish_reason="stop",
                     raw_response=resp
                 )
                 
-<<<<<<< HEAD
-=======
         except urllib.error.HTTPError as e:
             error_body = ""
             try:
@@ -1141,7 +1017,6 @@ class LLMClient:
             except Exception:
                 pass
             return LLMResponse(text="", error=f"Qwen HTTP {e.code}: {error_body}")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         except Exception as e:
             return LLMResponse(text="", error=str(e))
     
@@ -1151,31 +1026,6 @@ class LLMClient:
         system_prompt: Optional[str] = None,
         **kwargs
     ) -> LLMResponse:
-<<<<<<< HEAD
-        """Generate using HuggingFace Transformers."""
-        
-        if not hasattr(self, '_hf_pipeline'):
-            return self._generate_placeholder(prompt)
-        
-        full_prompt = prompt
-        if system_prompt:
-            full_prompt = f"{system_prompt}\n\n{prompt}"
-        
-        try:
-            outputs = self._hf_pipeline(
-                full_prompt,
-                max_new_tokens=kwargs.get("max_tokens", self.config.max_tokens),
-                temperature=kwargs.get("temperature", self.config.temperature),
-                do_sample=True,
-                return_full_text=False
-            )
-            
-            return LLMResponse(
-                text=outputs[0]["generated_text"],
-                finish_reason="stop"
-            )
-            
-=======
         """
         Generate using HuggingFace Transformers.
         
@@ -1258,7 +1108,6 @@ class LLMClient:
         except torch.cuda.OutOfMemoryError:
             import gc; gc.collect(); torch.cuda.empty_cache()
             return LLMResponse(text="", error="CUDA OOM — reduce context_length or max_tokens")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         except Exception as e:
             return LLMResponse(text="", error=str(e))
     
@@ -1349,8 +1198,6 @@ class LLMClient:
             "latency_ms": latency,
             "error": response.error
         }
-<<<<<<< HEAD
-=======
     
     def get_failure_stats(self) -> Dict[str, Any]:
         """Thống kê API failures + fallback."""
@@ -1361,7 +1208,6 @@ class LLMClient:
             "fallback_backend": self.fallback_client.config.backend.value if self.fallback_client else None,
             "rate_limiter": _rate_limiter.get_stats(),
         }
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 
 # ═══════════════════════════════════════════════════════════════════════════════

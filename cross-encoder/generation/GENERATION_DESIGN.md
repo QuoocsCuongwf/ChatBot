@@ -22,11 +22,7 @@
 
 ## 1. Tổng Quan Hệ Thống
 
-<<<<<<< HEAD
-### 1.1 Architecture
-=======
 ### 1.1 Architecture (2-Tier Implementation)
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -39,20 +35,6 @@
 │  └──────────┘    └──────────┘    └──────────┘    └──────────────┘  │
 │                                                          │          │
 │                                                          ▼          │
-<<<<<<< HEAD
-│  ┌──────────────┐              ┌──────────┐    ┌──────────────┐    │
-│  │   Output     │◀────────────│   LLM    │◀───│   Gating     │    │
-│  │   Parser     │              │ Generate │    │  Decision    │    │
-│  └──────────────┘              └──────────┘    └──────────────┘    │
-│          │                                             │            │
-│          ▼                                             ▼            │
-│  ┌──────────────┐                              ┌──────────────┐    │
-│  │  Fallback    │                              │   Abstain/   │    │
-│  │  Handler     │                              │   Ask-back   │    │
-│  └──────────────┘                              └──────────────┘    │
-│          │                                                          │
-│          ▼                                                          │
-=======
 │  ┌──────────────┐          Tier Routing        ┌──────────────┐    │
 │  │   Output     │◀───┬─────────────────────────┤   Gating     │    │
 │  │   Parser     │    │                         │  Decision    │    │
@@ -65,7 +47,6 @@
 │  └──────────────┘    └──┤ T2: API LLM  │       └──────────────┘    │
 │          │              │ (Gemini/Qwen)│                           │
 │          ▼              └──────────────┘                           │
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 │  ┌──────────────────────────────────────────────────────────────┐  │
 │  │                     RAGOutput (JSON)                          │  │
 │  │  { answer, citations, abstain, reason, confidence }           │  │
@@ -286,20 +267,6 @@ def trim_span(chunk, query, context_window=150):
     return extract_text(chunk.text, merged)
 ```
 
-<<<<<<< HEAD
-#### (c) Metadata Injection
-
-**Vấn đề:** LLM không biết citation nằm ở đâu
-
-**Giải pháp:** Inject header metadata vào trước mỗi chunk
-
-```
-[VB: Nghị định về xây dựng, Chương II, Điều 5, Khoản 2, Điểm a]
-Nội dung chunk ở đây...
-```
-
-→ LLM sẽ trích dẫn chuẩn hơn vì metadata rõ ràng
-=======
 #### (c) Metadata Injection & Enrichment
 
 **Vấn đề:** LLM không biết citation nằm ở đâu, hoặc đôi khi quên ghi tên văn bản vào JSON response.
@@ -313,7 +280,6 @@ Nội dung chunk ở đây...
 2. **Post-Enrichment (`_enrich_citations`)**: Sau khi AI trả lời, hệ thống thực hiện đối chiếu Điều/Khoản từ AI trả về với metadata gốc của Chunks. Nếu AI quên điền `van_ban` (Tên Nghị định), hệ thống sẽ tự động điền vào dựa trên nguồn gốc của đoạn văn bản đó.
 
 → Đảm bảo trích dẫn luôn đầy đủ thông tin pháp lý.
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 ---
 
@@ -325,38 +291,6 @@ Nội dung chunk ở đây...
 - 36% query không hit đúng citation → cần biết khi nào KHÔNG nên trả lời
 - Giảm hallucination bằng cách abstain đúng lúc
 
-<<<<<<< HEAD
-### 5.2 Các Rules Gating
-
-| Rule | Điều kiện | Action |
-|------|-----------|--------|
-| 1 | `score_top1 < 0.5` | ABSTAIN |
-| 2 | `(top1 - top2) < margin` | ASK_BACK (không rõ ràng) |
-| 3 | Keyword coverage < 30% | ASK_BACK |
-| 4 | Query type không match context | ABSTAIN |
-| 5 | Query ambiguous | ASK_BACK |
-| 6 | `0.5 <= score < 2.0` | CAUTIOUS (trả lời + cảnh báo) |
-| 7 | `score >= 2.0` | PASS |
-
-### 5.3 Decision Types
-
-```python
-class DecisionType(Enum):
-    ANSWER = "answer"           # Trả lời đầy đủ
-    ABSTAIN = "abstain"         # Không đủ căn cứ
-    ASK_BACK = "ask_back"       # Cần thêm thông tin
-    CAUTIOUS = "cautious"       # Trả lời + cảnh báo
-```
-
-### 5.4 Calibration
-
-```python
-# Score distribution từ dev set
-threshold_pass = percentile_75(scores)     # ~2.0
-threshold_abstain = percentile_10(scores)  # ~0.5
-threshold_cautious = percentile_50(scores) # ~1.0
-```
-=======
 ### 5.2 Các Rules Gating & Tier Routing
 
 | Rule | Điều kiện | Action |
@@ -377,7 +311,6 @@ Hệ thống phân cấp xử lý để tối ưu giữa **Tốc độ** (Local)
 *   **Tier 2 (API LLM)**: Sử dụng Gemini 2.5 Flash / Qwen-Cloud khi kết quả tìm kiếm có độ nhiễu hoặc cần khả năng lập luận phức tạp hơn.
 *   **Auto-Fallback**: Nếu API gặp lỗi (429/Quota), hệ thống tự động đẩy job sang Local Model để đảm bảo không bị gián đoạn service.
 
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 ---
 
@@ -394,13 +327,6 @@ Hệ thống phân cấp xử lý để tối ưu giữa **Tốc độ** (Local)
 
 | Backend | Ưu điểm | Nhược điểm |
 |---------|---------|------------|
-<<<<<<< HEAD
-| **llama.cpp** | Local, free, privacy | Cần GPU |
-| **OpenRouter** | Nhiều model, dễ dùng | Tốn phí |
-| **OpenAI** | Quality cao | Đắt |
-| **Gemini** | Free tier | Rate limit |
-| **HuggingFace** | Flexible | Setup phức tạp |
-=======
 | **llama.cpp** | Local, free, privacy | Cần GPU/Setup GGUF |
 | **OpenRouter** | Nhiều model (Qwen, DeepSeek), dễ dùng | Tốn phí |
 | **Gemini** | Google Flash 2.5 cực nhanh, free tier | Rate limit cao |
@@ -415,7 +341,6 @@ Hệ thống phân cấp xử lý để tối ưu giữa **Tốc độ** (Local)
    - > 3GB VRAM: Qwen3-4B / Qwen2.5-3B
    - < 1.5GB VRAM: Qwen3-0.6B / Qwen2.5-0.5B
 3. **Quantization**: Tự động dùng **4-bit NF4 (bitsandbytes)** cho các model > 3B để tiết kiệm bộ nhớ mà vẫn giữ được độ chính xác pháp lý.
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 ### 6.3 Config Example
 
@@ -553,18 +478,6 @@ from generation import (
     LLMClient, LLMConfig, LLMMode
 )
 
-<<<<<<< HEAD
-# Initialize
-retriever = LegalRetriever()
-pipeline = GenerationPipeline(retriever=retriever)
-
-# Generate
-output, metadata = pipeline.generate("Ai có thẩm quyền cấp phép xây dựng?")
-
-print(f"Answer: {output.answer}")
-print(f"Citations: {[c.to_str() for c in output.citations]}")
-print(f"Latency: {metadata['timestamps']['total']:.0f}ms")
-=======
 # Initialize with 2-Tier Strategy
 # Local (Tier 1) fallback to API (Tier 2)
 local_client = LLMClient(LLMConfig(backend=LLMBackend.HUGGINGFACE))
@@ -582,7 +495,6 @@ output, metadata = pipeline.generate("Ai có thẩm quyền cấp phép xây d�
 print(f"Tier Used: {metadata['tier']}")
 print(f"Answer: {output.answer}")
 print(f"Citations: {[c.to_str() for c in output.citations]}")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 ```
 
 ### 9.3 CLI Commands

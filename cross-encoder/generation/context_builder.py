@@ -102,44 +102,13 @@ class ContextBuilder:
         self,
         chunk: ChunkInfo,
         query: str,
-<<<<<<< HEAD
-        context_window: int = 150,
-=======
         context_window: int = 250,
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         min_overlap_ratio: float = 0.1
     ) -> ChunkInfo:
         """
         Cắt chunk giữ lại phần liên quan đến query.
         
         Strategy:
-<<<<<<< HEAD
-        1. Tìm keyword matches trong chunk
-        2. Expand mỗi match với context_window chars
-        3. Merge overlapping spans
-        4. Nếu không tìm thấy matches, giữ nguyên
-        """
-        
-        text = chunk.text
-        query_keywords = self._extract_keywords(query)
-        
-        if not query_keywords:
-            # Không có keywords → giữ nguyên
-            chunk.trimmed_text = text
-            return chunk
-        
-        # Tìm tất cả keyword positions
-        spans = []
-        for keyword in query_keywords:
-            pattern = re.escape(keyword)
-            for match in re.finditer(pattern, text, re.IGNORECASE):
-                start = max(0, match.start() - context_window)
-                end = min(len(text), match.end() + context_window)
-                spans.append((start, end))
-        
-        if not spans:
-            # Không tìm thấy keywords → giữ nguyên
-=======
         1. Tìm keyword matches (compound + single) trong chunk
         2. Expand mỗi match tới ranh giới câu (sentence boundary)
         3. Merge overlapping spans
@@ -178,7 +147,6 @@ class ContextBuilder:
             spans.append(legal_block)
         
         if not spans:
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             chunk.trimmed_text = text
             return chunk
         
@@ -189,10 +157,6 @@ class ContextBuilder:
         trimmed_parts = []
         for start, end in merged_spans:
             part = text[start:end]
-<<<<<<< HEAD
-            # Clean up boundaries
-=======
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             if start > 0:
                 part = "..." + part.lstrip()
             if end < len(text):
@@ -204,32 +168,6 @@ class ContextBuilder:
         
         return chunk
     
-<<<<<<< HEAD
-    def _extract_keywords(self, text: str, min_length: int = 2) -> List[str]:
-        """Extract keywords từ text."""
-        # Remove common Vietnamese stopwords
-        stopwords = {
-            "của", "và", "là", "được", "có", "trong", "cho", "với", "theo",
-            "các", "những", "này", "đó", "để", "về", "từ", "tại", "khi",
-            "nào", "gì", "như", "thế", "nào", "sao", "ai", "đâu", "bao"
-        }
-        
-        # Tokenize
-        words = re.findall(r'\b\w+\b', text.lower())
-        
-        # Filter
-        keywords = [w for w in words if len(w) >= min_length and w not in stopwords]
-        
-        # Unique while preserving order
-        seen = set()
-        unique_keywords = []
-        for kw in keywords:
-            if kw not in seen:
-                seen.add(kw)
-                unique_keywords.append(kw)
-        
-        return unique_keywords
-=======
     def _snap_to_sentence_start(self, text: str, pos: int, max_expand: int) -> int:
         """Mở rộng về trước tới đầu câu gần nhất (. hoặc \\n)."""
         search_start = max(0, pos - max_expand)
@@ -355,7 +293,6 @@ class ContextBuilder:
                 keywords.append(w)
         
         return keywords
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     def _merge_spans(self, spans: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
         """Merge overlapping spans."""

@@ -30,29 +30,20 @@ sys.path.append(str(Path(__file__).parent.parent))
 # Imports
 from generation.rag_contract import (
     RAGInput, RAGOutput, ChunkInfo, Citation, RAGPolicy,
-<<<<<<< HEAD
-    create_rag_input, parse_rag_output, DecisionType
-=======
     create_rag_input, parse_rag_output, DecisionType, LLMTier
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 )
 from generation.context_builder import ContextBuilder, build_context_for_generation
 from generation.prompt_templates import LegalPromptBuilder, PromptConfig, PromptStyle
 from generation.gating import GatingStrategy, GatingConfig, GatingDecision
 from generation.llm_client import LLMClient, LLMConfig, LLMBackend, LLMMode
 from generation.fallback import FallbackStrategy, apply_fallback_if_needed
-<<<<<<< HEAD
-=======
 from generation.pipeline_logger import PipelineLogger, PipelineLogEntry
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 from generation.evaluator import (
     GenerationEvaluator, EvalSample, EvalResult, EvalSummary,
     load_goldset, create_goldset_from_eval_qa
 )
 
 
-<<<<<<< HEAD
-=======
 def load_reranked_jsonl(path: Path) -> List[Dict]:
     """
     Load pre-reranked pipeline_results JSONL.
@@ -95,7 +86,6 @@ def reranked_record_to_chunks(record: Dict) -> List["ChunkInfo"]:
     return chunks
 
 
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 def load_dev_jsonl(dev_path: Path) -> List["EvalSample"]:
     """
     Load dev.jsonl format (from cross-encoder/data/).
@@ -185,16 +175,12 @@ EVAL_QA_FILE = ROOT.parent / "data" / "dev.jsonl"
 
 class LegalRetriever:
     """
-<<<<<<< HEAD
-    Retriever wrapper that uses existing FAISS index and Cross-encoder.
-=======
     Hybrid Retriever: BM25 (keyword) + FAISS (dense) + Cross-encoder rerank.
     
     Pipeline:
     1. BM25 top-k (keyword match) + FAISS top-k (semantic) song song
     2. RRF merge (Reciprocal Rank Fusion) → loại bỏ duplicate
     3. Cross-encoder rerank top candidates
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     """
     
     def __init__(
@@ -209,11 +195,8 @@ class LegalRetriever:
         self.faiss_mapping = None
         self.bi_encoder = None
         self.ce_model = None
-<<<<<<< HEAD
-=======
         self.bm25 = None            # BM25 index
         self.bm25_corpus = None     # tokenized corpus cho BM25
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         # Try to load existing components
         self._load_components(faiss_index_path, faiss_mapping_path, ce_model_path)
@@ -243,25 +226,12 @@ class LegalRetriever:
             mapping_path = faiss_mapping_path or FAISS_METADATA_FILE
             if mapping_path.exists():
                 with open(mapping_path, "r", encoding="utf-8") as f:
-<<<<<<< HEAD
-                    raw_data = json.load(f)
-                # Convert format: [{text, metadata}, ...] -> [{passage, van_ban, ...}, ...]
-                self.faiss_mapping = []
-                for item in raw_data:
-                    entry = {
-                        "passage": item.get("text", ""),
-                        **item.get("metadata", {})
-                    }
-                    self.faiss_mapping.append(entry)
-                print(f"[Retriever] Loaded metadata: {len(self.faiss_mapping)} entries")
-=======
                     self.faiss_mapping = json.load(f)
                 # Format: [{text: "...", metadata: {van_ban, dieu, khoan, ...}}, ...]
                 print(f"[Retriever] Loaded metadata: {len(self.faiss_mapping)} entries")
                 
                 # Build BM25 index from corpus texts
                 self._build_bm25_index()
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             else:
                 print(f"[Retriever] Warning: Metadata not found at {mapping_path}")
             
@@ -281,19 +251,6 @@ class LegalRetriever:
         except Exception as e:
             print(f"[Retriever] Warning: Could not load components: {e}")
     
-<<<<<<< HEAD
-    def retrieve_and_rerank(
-        self,
-        query: str,
-        top_k_retrieve: int = 50,
-        top_k_rerank: int = 10
-    ) -> List[ChunkInfo]:
-        """
-        Retrieve and rerank chunks for a query.
-        
-        Returns:
-            List of ChunkInfo sorted by rerank score
-=======
     # ── BM25 helpers ─────────────────────────────────────────────────────────
     
     @staticmethod
@@ -359,7 +316,6 @@ class LegalRetriever:
         2. FAISS top-k (dense / semantic)
         3. RRF merge → deduplicated candidates
         4. Cross-encoder rerank → final top-k
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         """
         
         if not self.faiss_index or not self.faiss_mapping:
@@ -368,9 +324,6 @@ class LegalRetriever:
         
         import numpy as np
         
-<<<<<<< HEAD
-        # Encode query
-=======
         n_docs = len(self.faiss_mapping)
         BM25_K = min(top_k_retrieve, n_docs)
         DENSE_K = min(top_k_retrieve, n_docs)
@@ -384,30 +337,12 @@ class LegalRetriever:
             print(f"[Retriever] BM25 top-1 score={bm25_scores[bm25_ids[0]]:.3f}" if bm25_ids else "")
         
         # ── 2. FAISS dense retrieve ──────────────────────────────────────────
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         q_emb = self.bi_encoder.encode(
             [query],
             normalize_embeddings=True,
             convert_to_numpy=True
         ).astype("float32")
         
-<<<<<<< HEAD
-        # Search FAISS
-        scores_faiss, ids = self.faiss_index.search(q_emb, top_k_retrieve)
-        scores_faiss = scores_faiss[0].tolist()
-        ids = [i for i in ids[0].tolist() if i >= 0 and i < len(self.faiss_mapping)]
-        
-        # Get candidate chunks with deduplication
-        candidates = []
-        seen_texts = set()  # Deduplicate by text hash
-        
-        for i, faiss_id in enumerate(ids):
-            mapping = self.faiss_mapping[faiss_id]
-            text = mapping.get("text", "")
-            
-            # Skip duplicates
-            text_hash = hash(text[:200])  # Hash first 200 chars for dedup
-=======
         scores_faiss, faiss_raw_ids = self.faiss_index.search(q_emb, DENSE_K)
         dense_ids = [i for i in faiss_raw_ids[0].tolist() if 0 <= i < n_docs]
         
@@ -440,24 +375,15 @@ class LegalRetriever:
             text = mapping.get("text", "")
             
             text_hash = hash(text[:200])
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             if text_hash in seen_texts:
                 continue
             seen_texts.add(text_hash)
             
-<<<<<<< HEAD
-            meta = mapping.get("metadata", {})  # nested metadata dict
-            chunk = ChunkInfo(
-                chunk_id=faiss_id,
-                text=text,
-                score_retrieval=scores_faiss[i] if i < len(scores_faiss) else 0.0,
-=======
             meta = mapping.get("metadata", {})
             chunk = ChunkInfo(
                 chunk_id=doc_id,
                 text=text,
                 score_retrieval=float(faiss_score_map.get(doc_id, 0.0)),
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
                 score_rerank=0.0,
                 van_ban=meta.get("van_ban", ""),
                 chuong=meta.get("chuong"),
@@ -468,11 +394,7 @@ class LegalRetriever:
             )
             candidates.append(chunk)
         
-<<<<<<< HEAD
-        # Rerank
-=======
         # ── 5. Cross-encoder rerank ──────────────────────────────────────────
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         if self.ce_model and candidates:
             pairs = [[query, c.text] for c in candidates]
             rerank_scores = self.ce_model.predict(pairs, batch_size=32)
@@ -480,15 +402,8 @@ class LegalRetriever:
             for i, score in enumerate(rerank_scores):
                 candidates[i].score_rerank = float(score)
             
-<<<<<<< HEAD
-            # Sort by rerank score
             candidates.sort(key=lambda x: x.score_rerank, reverse=True)
         else:
-            # No cross-encoder: use retrieval scores as rerank scores
-=======
-            candidates.sort(key=lambda x: x.score_rerank, reverse=True)
-        else:
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             for c in candidates:
                 c.score_rerank = c.score_retrieval
             candidates.sort(key=lambda x: x.score_rerank, reverse=True)
@@ -515,43 +430,24 @@ class LegalRetriever:
 
 class GenerationPipeline:
     """
-<<<<<<< HEAD
-    End-to-end Legal RAG Generation Pipeline.
-=======
     End-to-end Legal RAG Generation Pipeline — 2-Tier Architecture.
     
     Tầng 1 (LOCAL): trả lời nhanh, rẻ — score cao + margin lớn
     Tầng 2 (API):   chất lượng cao  — score trung bình / cautious / cần tổng hợp
     NONE:            abstain/ask_back — score thấp, không gọi LLM
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     Pipeline:
     1. Retrieve & Rerank
     2. Context Building
-<<<<<<< HEAD
-    3. Gating Decision
-    4. LLM Generation
-    5. Fallback (if needed)
-    6. Output Parsing
-=======
     3. Gating Decision + Tier Routing
     4. LLM Generation (LOCAL hoặc API)
     5. Fallback (if needed)
     6. Output Parsing + Logging
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     """
     
     def __init__(
         self,
         retriever: Optional[LegalRetriever] = None,
-<<<<<<< HEAD
-        llm_client: Optional[LLMClient] = None,
-        mode: LLMMode = LLMMode.DEV
-    ):
-        # Initialize components
-        self.retriever = retriever or LegalRetriever()
-        self.llm_client = llm_client or LLMClient()
-=======
         local_client: Optional[LLMClient] = None,
         api_client: Optional[LLMClient] = None,
         logger: Optional[PipelineLogger] = None,
@@ -576,33 +472,11 @@ class GenerationPipeline:
             self.local_client = self.api_client
         elif self.api_client is None:
             self.api_client = self.local_client
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         # Pipeline components
         self.context_builder = ContextBuilder()
         self.prompt_builder = LegalPromptBuilder()
         
-<<<<<<< HEAD
-        # Adjust gating thresholds based on whether cross-encoder is loaded
-        if self.retriever.ce_model is not None:
-            # Cross-encoder mode: trained model outputs negative logits
-            # Note: text format mismatch lowers scores, so use looser thresholds
-            gating_config = GatingConfig(
-                threshold_pass=-8.0,      # > -8 is likely relevant
-                threshold_abstain=-11.5,  # < -11.5 is clearly not relevant
-                threshold_cautious=-10.0, # uncertain zone
-                margin_min=1.0            # require 1.0 logit gap
-            )
-        else:
-            # Bi-encoder only mode: cosine scores are 0-1
-            gating_config = GatingConfig(
-                threshold_pass=0.6,      # Lowered for cosine
-                threshold_abstain=0.3,   # Lowered for cosine  
-                threshold_cautious=0.5,  # Lowered for cosine
-                margin_min=0.05          # Much smaller for cosine
-            )
-            print("[Pipeline] Using bi-encoder only mode (adjusted gating thresholds)")
-=======
         # Logger
         self.logger = logger or PipelineLogger()
         
@@ -671,7 +545,6 @@ class GenerationPipeline:
                 score_is_sigmoid=True     # Cosine is also 0-1
             )
             print("[Pipeline] Using bi-encoder only mode (calibrated thresholds for 0-1 scores)")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         self.gating = GatingStrategy(gating_config)
         self.fallback = FallbackStrategy()
@@ -680,14 +553,9 @@ class GenerationPipeline:
         self.mode = mode
         self.top_k_chunks = 5
         
-<<<<<<< HEAD
-        print(f"[Pipeline] Initialized in {mode.value} mode")
-        print(f"[Pipeline] LLM backend: {self.llm_client.config.backend.value}")
-=======
         print(f"[Pipeline] Initialized 2-Tier in {mode.value} mode")
         print(f"[Pipeline] Tier 1 (LOCAL): {self.local_client.config.backend.value}")
         print(f"[Pipeline] Tier 2 (API):   {self.api_client.config.backend.value}")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     def generate(
         self,
@@ -695,15 +563,11 @@ class GenerationPipeline:
         verbose: bool = False
     ) -> Tuple[RAGOutput, Dict]:
         """
-<<<<<<< HEAD
-        Generate answer for a query.
-=======
         Generate answer for a query with 2-tier routing.
         
         Tier 1 (LOCAL): score cao + margin cao → fast local LLM
         Tier 2 (API):   score trung bình / cautious → API LLM
         NONE:            score thấp → abstain / ask_back (no LLM call)
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         Returns:
             (RAGOutput, metadata_dict)
@@ -715,12 +579,9 @@ class GenerationPipeline:
             "decisions": {}
         }
         
-<<<<<<< HEAD
-=======
         # Prepare log entry
         log_entry = PipelineLogEntry(query=query)
         
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         start_time = time.time()
         
         # ─────────────────────────────────────────────────────────────────────
@@ -728,10 +589,6 @@ class GenerationPipeline:
         # ─────────────────────────────────────────────────────────────────────
         
         t0 = time.time()
-<<<<<<< HEAD
-        chunks = self.retriever.retrieve_and_rerank(query, top_k_rerank=self.top_k_chunks * 2)
-        metadata["timestamps"]["retrieve_rerank"] = (time.time() - t0) * 1000
-=======
         if self.retriever is None:
             raise RuntimeError("Retriever not initialized. Use generate_from_reranked() with --reranked-input instead.")
         chunks = self.retriever.retrieve_and_rerank(query, top_k_rerank=self.top_k_chunks * 2)
@@ -746,7 +603,6 @@ class GenerationPipeline:
             log_entry.score_rerank_top1 = chunks[0].score_rerank
             if len(chunks) > 1:
                 log_entry.score_rerank_top2 = chunks[1].score_rerank
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         if verbose:
             print(f"[1] Retrieved {len(chunks)} chunks, top score: {chunks[0].score_rerank:.2f}" if chunks else "[1] No chunks")
@@ -763,21 +619,14 @@ class GenerationPipeline:
         )
         metadata["timestamps"]["context_build"] = (time.time() - t0) * 1000
         metadata["context_tokens_est"] = int(len(context_string) / 1.5)
-<<<<<<< HEAD
-=======
         log_entry.latency_context_ms = metadata["timestamps"]["context_build"]
         log_entry.num_chunks_after_dedup = len(processed_chunks)
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         if verbose:
             print(f"[2] Context built: {len(processed_chunks)} chunks, ~{metadata['context_tokens_est']} tokens")
         
         # ─────────────────────────────────────────────────────────────────────
-<<<<<<< HEAD
-        # Step 3: Gating Decision
-=======
         # Step 3: Gating Decision + Tier Routing
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         # ─────────────────────────────────────────────────────────────────────
         
         rag_input = RAGInput(
@@ -789,28 +638,6 @@ class GenerationPipeline:
         gating_decision = self.gating.evaluate(rag_input)
         metadata["decisions"]["gating"] = gating_decision.to_dict()
         
-<<<<<<< HEAD
-        if verbose:
-            print(f"[3] Gating: {gating_decision.decision.value} (confidence: {gating_decision.confidence:.2f})")
-        
-        # ─────────────────────────────────────────────────────────────────────
-        # Step 4: Generate or Fallback
-        # ─────────────────────────────────────────────────────────────────────
-        
-        if not self.gating.should_generate(gating_decision):
-            # Early exit with gating response
-            output = self.gating.build_gated_output(gating_decision)
-            metadata["timestamps"]["total"] = (time.time() - start_time) * 1000
-            metadata["skipped_generation"] = True
-            
-            if verbose:
-                print(f"[4] Skipped generation (gating: {gating_decision.decision.value})")
-            
-            return output, metadata
-        
-        # Build prompt
-        prompt = self.prompt_builder.build_full_prompt(
-=======
         # Extract tier and margin
         tier = gating_decision.tier
         margin = gating_decision.margin
@@ -890,23 +717,12 @@ class GenerationPipeline:
         use_compact = active_client.config.backend in (LLMBackend.QWEN, LLMBackend.HUGGINGFACE)
         system_prompt = self.prompt_builder.build_system_prompt(compact=use_compact)
         user_prompt = self.prompt_builder.build_user_prompt(
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             question=query,
             context=context_string
         )
         
         # Generate
         t0 = time.time()
-<<<<<<< HEAD
-        llm_response = self.llm_client.generate(prompt)
-        metadata["timestamps"]["llm"] = (time.time() - t0) * 1000
-        
-        if verbose:
-            print(f"[4] LLM generated in {metadata['timestamps']['llm']:.0f}ms")
-        
-        # Parse response
-        output = parse_rag_output(llm_response.text)
-=======
         llm_response = active_client.generate(user_prompt, system_prompt=system_prompt)
         metadata["timestamps"]["llm"] = (time.time() - t0) * 1000
         log_entry.latency_llm_ms = metadata["timestamps"]["llm"]
@@ -937,13 +753,10 @@ class GenerationPipeline:
         # Enrich citations with document names from retrieved chunks
         self._enrich_citations(output, chunks)
         
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         output.latency_llm_ms = metadata["timestamps"]["llm"]
         output.raw_response = llm_response.text
         
         # ─────────────────────────────────────────────────────────────────────
-<<<<<<< HEAD
-=======
         # Step 4b: Quality Gate — escalate to API if local response is poor
         # ─────────────────────────────────────────────────────────────────────
         
@@ -996,7 +809,6 @@ class GenerationPipeline:
         log_entry.citations_str = ", ".join(c.to_str() for c in output.citations)
         
         # ─────────────────────────────────────────────────────────────────────
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         # Step 5: Apply Fallback if needed
         # ─────────────────────────────────────────────────────────────────────
         
@@ -1016,11 +828,6 @@ class GenerationPipeline:
                     print(f"[5] Applied fallback: {fallback_decision.fallback_type.value}")
         
         metadata["timestamps"]["total"] = (time.time() - start_time) * 1000
-<<<<<<< HEAD
-        
-        return output, metadata
-    
-=======
         metadata["tier"] = tier.value
         log_entry.latency_total_ms = metadata["timestamps"]["total"]
         if not log_entry.status or log_entry.status == "ok":
@@ -1333,7 +1140,6 @@ class GenerationPipeline:
         self.logger.log(log_entry)
         return output, metadata
 
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     def generate_batch(
         self,
         queries: List[str],
@@ -1358,11 +1164,7 @@ class GenerationPipeline:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def parse_args():
-<<<<<<< HEAD
-    parser = argparse.ArgumentParser(description="Legal RAG Generation Pipeline")
-=======
     parser = argparse.ArgumentParser(description="Legal RAG Generation Pipeline — 2-Tier")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     # Mode
     parser.add_argument("--mode", choices=["dev", "demo"], default="dev",
@@ -1380,14 +1182,6 @@ def parse_args():
     parser.add_argument("--goldset", type=str, default=None,
                        help="Path to goldset JSONL file")
     
-<<<<<<< HEAD
-    # LLM config
-    parser.add_argument("--backend", type=str, default=None,
-                       choices=["llama_cpp", "openrouter", "openai", "gemini", "placeholder"],
-                       help="LLM backend")
-    parser.add_argument("--model", type=str, default=None,
-                       help="Model name or path")
-=======
     # LLM config — 2 Tier
     parser.add_argument("--backend", type=str, default=None,
                        choices=["llama_cpp", "openrouter", "openai", "gemini", "qwen", "huggingface", "placeholder"],
@@ -1399,15 +1193,12 @@ def parse_args():
                        help="Model name or path (for API tier)")
     parser.add_argument("--local-model", type=str, default=None,
                        help="Model path for local tier (e.g. GGUF file)")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     # Output
     parser.add_argument("--verbose", "-v", action="store_true",
                        help="Verbose output")
     parser.add_argument("--output", type=str, default=None,
                        help="Output file path")
-<<<<<<< HEAD
-=======
     parser.add_argument("--log-dir", type=str, default=None,
                        help="Directory for pipeline logs (Excel/CSV)")
     parser.add_argument("--log-append", action="store_true",
@@ -1423,7 +1214,6 @@ def parse_args():
     parser.add_argument("--reranked-input", type=str, default=None,
                        help="Path to pre-reranked JSONL (pipeline_results_*.jsonl). "
                             "Skips retrieval+rerank, chỉ chạy context→gating→LLM→eval.")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     return parser.parse_args()
 
@@ -1434,36 +1224,6 @@ def main():
     # Setup directories
     GEN_EVAL_DIR.mkdir(parents=True, exist_ok=True)
     
-<<<<<<< HEAD
-    # Configure LLM
-    llm_config = LLMConfig(
-        mode=LLMMode.DEV if args.mode == "dev" else LLMMode.DEMO,
-        max_tokens=256 if args.mode == "dev" else 512,
-        context_length=2048 if args.mode == "dev" else 4096,
-        temperature=0.1
-    )
-    
-    if args.backend:
-        llm_config.backend = LLMBackend(args.backend)
-    if args.model:
-        if args.backend == "llama_cpp":
-            llm_config.model_path = args.model
-        else:
-            llm_config.model_name = args.model
-    
-    llm_client = LLMClient(llm_config)
-    
-    # Initialize pipeline
-    print("=" * 60)
-    print("Legal RAG Generation Pipeline")
-    print("=" * 60)
-    
-    retriever = LegalRetriever()
-    pipeline = GenerationPipeline(
-        retriever=retriever,
-        llm_client=llm_client,
-        mode=LLMMode.DEV if args.mode == "dev" else LLMMode.DEMO
-=======
     # ─── Configure 2-Tier LLM Clients ───
     
     # Tier 1 (LOCAL): fast, cheap
@@ -1598,15 +1358,12 @@ def main():
         mode=LLMMode.DEV if args.mode == "dev" else LLMMode.DEMO,
         local_first=getattr(args, 'local_first', False),
         ce_sigmoid_mode=bool(args.reranked_input)
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     )
     
     # ─────────────────────────────────────────────────────────────────────────
     # Mode: Single Query
     # ─────────────────────────────────────────────────────────────────────────
     
-<<<<<<< HEAD
-=======
     # ─────────────────────────────────────────────────────────────────────────
     # Mode: Pre-reranked Input (skip retrieval, chạy gen trên rerank có sẵn)
     # ─────────────────────────────────────────────────────────────────────────
@@ -1704,19 +1461,14 @@ def main():
     # Mode: Single Query
     # ─────────────────────────────────────────────────────────────────────────
 
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     if args.query:
         print(f"\nQuery: {args.query}\n")
         
         output, metadata = pipeline.generate(args.query, verbose=args.verbose)
         
         print("\n" + "=" * 40)
-<<<<<<< HEAD
-        print("RESULT:")
-=======
         tier_str = metadata.get("tier", "?").upper()
         print(f"RESULT (Tier: {tier_str}):")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         print("=" * 40)
         
         if output.abstain:
@@ -1742,11 +1494,8 @@ def main():
                 json.dump(result, f, ensure_ascii=False, indent=2)
             print(f"\nSaved to {args.output}")
         
-<<<<<<< HEAD
-=======
         # Close logger
         logger.close()
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         return
     
     # ─────────────────────────────────────────────────────────────────────────
@@ -1755,11 +1504,7 @@ def main():
     
     if args.eval:
         print("\n" + "=" * 40)
-<<<<<<< HEAD
-        print("EVALUATION MODE")
-=======
         print("EVALUATION MODE — 2-Tier")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         print("=" * 40)
         
         # Load goldset (dev.jsonl from cross-encoder/data/)
@@ -1777,59 +1522,6 @@ def main():
             samples = samples[:args.max_samples]
             print(f"Using first {len(samples)} samples")
         
-<<<<<<< HEAD
-        # Create gating config adjusted for bi-encoder only mode if CE not loaded
-        if retriever.ce_model is None:
-            eval_gating_config = GatingConfig(
-                threshold_pass=0.6,
-                threshold_abstain=0.3,
-                threshold_cautious=0.5,
-                margin_min=0.05,
-                enable_ask_back=False  # Disable for evaluation
-            )
-        else:
-            # Cross-encoder mode: new FAISS-matched model outputs positive scores ~(-5 to +11)
-            eval_gating_config = GatingConfig(
-                threshold_pass=8.0,       # High confidence score
-                threshold_abstain=-5.0,   # Very low score
-                threshold_cautious=3.0,   # Moderate score
-                margin_min=0.1,           # Small margin needed
-                enable_ask_back=False     # Disable for evaluation
-            )
-        eval_gating = GatingStrategy(eval_gating_config)
-        
-        # Create evaluator with adjusted gating
-        evaluator = GenerationEvaluator(
-            llm_client=llm_client,
-            output_dir=GEN_EVAL_DIR,
-            gating_strategy=eval_gating
-        )
-        
-        # Run evaluation
-        def retriever_fn(query: str) -> List[ChunkInfo]:
-            return retriever.retrieve_and_rerank(query)
-        
-        results, summary = evaluator.evaluate_batch(
-            samples=samples,
-            retriever_fn=retriever_fn,
-            verbose=args.verbose,
-            max_samples=args.max_samples
-        )
-        
-        # Print summary
-        print("\n" + "=" * 40)
-        print("EVALUATION SUMMARY")
-        print("=" * 40)
-        print(f"Total samples: {summary.total_samples}")
-        print(f"Citation Hit Rate: {summary.citation_hit_rate:.2%}")
-        print(f"Avg Citation F1: {summary.avg_citation_f1:.4f}")
-        print(f"Pass Rate: {summary.pass_rate:.2%}")
-        print(f"Abstain Rate: {summary.abstain_rate:.2%}")
-        print(f"Avg Latency: {summary.avg_latency_total_ms:.0f}ms")
-        
-        # Save results
-        saved_paths = evaluator.save_results(results, summary)
-=======
         # Run evaluation through pipeline (2-tier routing + logging)
         print(f"\nRunning 2-tier evaluation on {len(samples)} samples...\n")
         
@@ -1904,7 +1596,6 @@ def main():
         
         # Close logger → writes Excel
         logger.close()
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         return
     
@@ -1912,11 +1603,7 @@ def main():
     # Interactive mode
     # ─────────────────────────────────────────────────────────────────────────
     
-<<<<<<< HEAD
-    print("\nInteractive mode. Type 'quit' to exit.\n")
-=======
     print("\nInteractive mode (2-Tier). Type 'quit' to exit.\n")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     while True:
         try:
@@ -1930,38 +1617,25 @@ def main():
             
             output, metadata = pipeline.generate(query, verbose=args.verbose)
             
-<<<<<<< HEAD
-=======
             tier_str = metadata.get("tier", "?").upper()
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             print("\n" + "-" * 40)
             if output.abstain:
                 print(f"[{output.decision.value.upper()}] {output.reason_detail}")
                 if output.clarification_question:
                     print(f"❓ {output.clarification_question}")
             else:
-<<<<<<< HEAD
-                print(f"Answer: {output.answer}")
-                if output.citations:
-                    print(f"Citations: {', '.join(c.to_str() for c in output.citations)}")
-            print(f"[{metadata['timestamps']['total']:.0f}ms]")
-=======
                 print(f"[Tier: {tier_str}] Answer: {output.answer}")
                 if output.citations:
                     print(f"Citations: {', '.join(c.to_str() for c in output.citations)}")
             print(f"[{metadata['timestamps']['total']:.0f}ms | Tier: {tier_str}]")
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             print("-" * 40 + "\n")
             
         except KeyboardInterrupt:
             print("\nExiting...")
             break
-<<<<<<< HEAD
-=======
     
     # Close logger on exit
     logger.close()
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 
 if __name__ == "__main__":

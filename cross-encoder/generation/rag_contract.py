@@ -18,8 +18,6 @@ import re
 # 1. ENUMS & CONSTANTS
 # ═══════════════════════════════════════════════════════════════════════════════
 
-<<<<<<< HEAD
-=======
 class LLMTier(Enum):
     """Tầng LLM để xử lý query."""
     LOCAL = "local"             # Tầng 1: Local model, nhanh, rẻ
@@ -27,7 +25,6 @@ class LLMTier(Enum):
     NONE = "none"               # Không cần LLM (abstain/ask_back)
 
 
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 class DecisionType(Enum):
     ANSWER = "answer"           # Trả lời đầy đủ với citation
     ABSTAIN = "abstain"         # Không đủ căn cứ để trả lời
@@ -183,19 +180,6 @@ class Citation:
     
     def matches(self, expected: Dict) -> bool:
         """Kiểm tra citation có khớp với expected không."""
-<<<<<<< HEAD
-        # Exact match on dieu/khoan/diem
-        if self.dieu and expected.get("dieu"):
-            if str(self.dieu) != str(expected.get("dieu")):
-                return False
-        if self.khoan and expected.get("khoan"):
-            if str(self.khoan) != str(expected.get("khoan")):
-                return False
-        if self.diem and expected.get("diem"):
-            if str(self.diem) != str(expected.get("diem")):
-                return False
-        return True
-=======
         # Phải có ít nhất 1 field để match — không match nếu cả 2 bên đều rỗng
         has_any_field = False
         
@@ -219,7 +203,6 @@ class Citation:
         
         # Phải có ít nhất 1 trường được so khớp
         return has_any_field
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     def to_str(self) -> str:
         parts = []
@@ -229,17 +212,10 @@ class Citation:
             parts.append(f"Khoản {self.khoan}")
         if self.diem:
             parts.append(f"Điểm {self.diem}")
-<<<<<<< HEAD
-        citation = ", ".join(parts) if parts else "N/A"
-        if self.van_ban:
-            citation += f" ({self.van_ban})"
-        return citation
-=======
         cite_loc = ", ".join(parts) if parts else "N/A"
         if self.van_ban and self.van_ban != "N/A":
             return f"**{self.van_ban}**: {cite_loc}"
         return cite_loc
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -323,87 +299,14 @@ def parse_rag_output(raw_response: str, expected_format: str = "structured") -> 
     """
     Parse response từ LLM thành RAGOutput.
     
-<<<<<<< HEAD
-    Hỗ trợ 2 format:
-    1. structured: JSON có cấu trúc
-    2. natural: Text tự nhiên với markers
-=======
     Hỗ trợ nhiều format:
     1. JSON trong markdown code block (```json ... ```)
     2. Raw JSON object
     3. Natural text với citation markers
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     """
     
     output = RAGOutput(raw_response=raw_response)
     
-<<<<<<< HEAD
-    # Thử parse JSON trước
-    try:
-        # Tìm JSON block trong response
-        json_match = re.search(r'\{[\s\S]*\}', raw_response)
-        if json_match:
-            data = json.loads(json_match.group())
-            
-            # Parse answer
-            output.answer = data.get("answer") or data.get("ket_luan")
-            
-            # Parse abstain
-            output.abstain = data.get("abstain", False)
-            if output.abstain:
-                output.decision = DecisionType.ABSTAIN
-                reason = data.get("reason") or data.get("ly_do")
-                if reason:
-                    output.reason_detail = reason
-            
-            # Parse citations
-            citations_data = data.get("citations") or data.get("trich_dan") or []
-            for cit in citations_data:
-                citation = Citation(
-                    van_ban=cit.get("van_ban", ""),
-                    dieu=cit.get("dieu"),
-                    khoan=cit.get("khoan"),
-                    diem=cit.get("diem"),
-                    quoted_text=cit.get("quoted_text") or cit.get("noi_dung")
-                )
-                output.citations.append(citation)
-            
-            return output
-            
-    except (json.JSONDecodeError, AttributeError):
-        pass
-    
-    # Fallback: parse natural text
-    output.answer = raw_response
-    
-    # Tìm các pattern citation trong text
-    # Pattern: Điều X, Khoản Y, Điểm Z
-    citation_patterns = [
-        r'(?:Điều|điều)\s*(\d+)',
-        r'(?:Khoản|khoản)\s*(\d+)',
-        r'(?:Điểm|điểm)\s*([a-zđ])'
-    ]
-    
-    dieu_matches = re.findall(r'(?:Điều|điều)\s*(\d+)', raw_response)
-    khoan_matches = re.findall(r'(?:Khoản|khoản)\s*(\d+)', raw_response)
-    diem_matches = re.findall(r'(?:Điểm|điểm)\s*([a-zđ])', raw_response)
-    
-    # Tạo citations từ các matches
-    if dieu_matches:
-        for dieu in set(dieu_matches):
-            citation = Citation(van_ban="", dieu=dieu)
-            output.citations.append(citation)
-    
-    # Kiểm tra abstain markers
-    abstain_markers = [
-        "không tìm thấy", "không đủ căn cứ", "không có thông tin",
-        "thiếu thông tin", "không thể xác định", "cần thêm thông tin"
-    ]
-    if any(marker in raw_response.lower() for marker in abstain_markers):
-        output.abstain = True
-        output.decision = DecisionType.ABSTAIN
-        output.reason_detail = "Detected abstain marker in response"
-=======
     if not raw_response or not raw_response.strip():
         output.abstain = True
         output.decision = DecisionType.ABSTAIN
@@ -601,7 +504,6 @@ def parse_rag_output(raw_response: str, expected_format: str = "structured") -> 
         output.decision = DecisionType.ABSTAIN
         if not output.reason_detail:
             output.reason_detail = clean_text # Dùng chính câu trả lời làm reason
->>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     return output
 
