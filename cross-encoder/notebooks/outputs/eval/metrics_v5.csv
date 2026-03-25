@@ -1,0 +1,5 @@
+metric,value,version
+Recall@1,0.6123,v5
+Recall@3,0.8053,v5
+Recall@5,0.8509,v5
+MRR@10,0.7119,v5
