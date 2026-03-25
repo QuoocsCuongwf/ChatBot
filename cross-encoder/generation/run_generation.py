@@ -30,19 +30,72 @@ sys.path.append(str(Path(__file__).parent.parent))
 # Imports
 from generation.rag_contract import (
     RAGInput, RAGOutput, ChunkInfo, Citation, RAGPolicy,
+<<<<<<< HEAD
     create_rag_input, parse_rag_output, DecisionType
+=======
+    create_rag_input, parse_rag_output, DecisionType, LLMTier
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 )
 from generation.context_builder import ContextBuilder, build_context_for_generation
 from generation.prompt_templates import LegalPromptBuilder, PromptConfig, PromptStyle
 from generation.gating import GatingStrategy, GatingConfig, GatingDecision
 from generation.llm_client import LLMClient, LLMConfig, LLMBackend, LLMMode
 from generation.fallback import FallbackStrategy, apply_fallback_if_needed
+<<<<<<< HEAD
+=======
+from generation.pipeline_logger import PipelineLogger, PipelineLogEntry
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 from generation.evaluator import (
     GenerationEvaluator, EvalSample, EvalResult, EvalSummary,
     load_goldset, create_goldset_from_eval_qa
 )
 
 
+<<<<<<< HEAD
+=======
+def load_reranked_jsonl(path: Path) -> List[Dict]:
+    """
+    Load pre-reranked pipeline_results JSONL.
+    
+    Format per line:
+        {"id": "eval_xxxx", "query": "...", "expected_citations": [...],
+         "top5_reranked": [{"rank": 1, "hit": bool, "ce_score": float,
+                            "van_ban": ..., "dieu": ..., "khoan": ...,
+                            "chunk_index": int, "passage": str}, ...]}
+    Returns list of dicts, one per query.
+    """
+    records = []
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                records.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+    return records
+
+
+def reranked_record_to_chunks(record: Dict) -> List["ChunkInfo"]:
+    """Convert a pre-reranked record's top5_reranked → list of ChunkInfo."""
+    chunks = []
+    for item in record.get("top5_reranked", []):
+        chunk = ChunkInfo(
+            chunk_id=item.get("chunk_index", -1),
+            text=item.get("passage", ""),
+            score_retrieval=0.0,
+            score_rerank=float(item.get("ce_score", 0.0)),
+            van_ban=item.get("van_ban", ""),
+            dieu=str(item["dieu"]) if item.get("dieu") is not None else None,
+            khoan=str(item["khoan"]) if item.get("khoan") is not None else None,
+            diem=str(item.get("diem")) if item.get("diem") is not None else None,
+        )
+        chunks.append(chunk)
+    return chunks
+
+
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 def load_dev_jsonl(dev_path: Path) -> List["EvalSample"]:
     """
     Load dev.jsonl format (from cross-encoder/data/).
@@ -132,7 +185,16 @@ EVAL_QA_FILE = ROOT.parent / "data" / "dev.jsonl"
 
 class LegalRetriever:
     """
+<<<<<<< HEAD
     Retriever wrapper that uses existing FAISS index and Cross-encoder.
+=======
+    Hybrid Retriever: BM25 (keyword) + FAISS (dense) + Cross-encoder rerank.
+    
+    Pipeline:
+    1. BM25 top-k (keyword match) + FAISS top-k (semantic) song song
+    2. RRF merge (Reciprocal Rank Fusion) → loại bỏ duplicate
+    3. Cross-encoder rerank top candidates
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     """
     
     def __init__(
@@ -147,6 +209,11 @@ class LegalRetriever:
         self.faiss_mapping = None
         self.bi_encoder = None
         self.ce_model = None
+<<<<<<< HEAD
+=======
+        self.bm25 = None            # BM25 index
+        self.bm25_corpus = None     # tokenized corpus cho BM25
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         # Try to load existing components
         self._load_components(faiss_index_path, faiss_mapping_path, ce_model_path)
@@ -176,6 +243,7 @@ class LegalRetriever:
             mapping_path = faiss_mapping_path or FAISS_METADATA_FILE
             if mapping_path.exists():
                 with open(mapping_path, "r", encoding="utf-8") as f:
+<<<<<<< HEAD
                     raw_data = json.load(f)
                 # Convert format: [{text, metadata}, ...] -> [{passage, van_ban, ...}, ...]
                 self.faiss_mapping = []
@@ -186,6 +254,14 @@ class LegalRetriever:
                     }
                     self.faiss_mapping.append(entry)
                 print(f"[Retriever] Loaded metadata: {len(self.faiss_mapping)} entries")
+=======
+                    self.faiss_mapping = json.load(f)
+                # Format: [{text: "...", metadata: {van_ban, dieu, khoan, ...}}, ...]
+                print(f"[Retriever] Loaded metadata: {len(self.faiss_mapping)} entries")
+                
+                # Build BM25 index from corpus texts
+                self._build_bm25_index()
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             else:
                 print(f"[Retriever] Warning: Metadata not found at {mapping_path}")
             
@@ -205,6 +281,7 @@ class LegalRetriever:
         except Exception as e:
             print(f"[Retriever] Warning: Could not load components: {e}")
     
+<<<<<<< HEAD
     def retrieve_and_rerank(
         self,
         query: str,
@@ -216,6 +293,73 @@ class LegalRetriever:
         
         Returns:
             List of ChunkInfo sorted by rerank score
+=======
+    # ── BM25 helpers ─────────────────────────────────────────────────────────
+    
+    @staticmethod
+    def _tokenize_vi(text: str) -> list:
+        """Tokenize đơn giản cho tiếng Việt: lowercase + regex split giữ chữ+số."""
+        import re as _re
+        text = text.lower()
+        tokens = _re.findall(
+            r'[a-záàảãạăắằẳẵặâấầẩẫậéèẻẽẹêếềểễệíìỉĩịóòỏõọôốồổỗộơớờởỡợúùủũụưứừửữựýỳỷỹỵđ0-9]+',
+            text,
+        )
+        return tokens if tokens else text.split()
+    
+    def _build_bm25_index(self):
+        """Build BM25Okapi index từ self.faiss_mapping texts."""
+        try:
+            from rank_bm25 import BM25Okapi
+            
+            t0 = time.perf_counter()
+            self.bm25_corpus = [
+                self._tokenize_vi(entry.get("text", ""))
+                for entry in self.faiss_mapping
+            ]
+            self.bm25 = BM25Okapi(self.bm25_corpus)
+            elapsed = time.perf_counter() - t0
+            avg_tok = sum(len(t) for t in self.bm25_corpus) / max(len(self.bm25_corpus), 1)
+            print(f"[Retriever] BM25 index built: {len(self.bm25_corpus)} docs, "
+                  f"avg {avg_tok:.0f} tokens/doc, {elapsed:.1f}s")
+        except ImportError:
+            print("[Retriever] Warning: rank_bm25 not installed → BM25 disabled")
+            self.bm25 = None
+        except Exception as e:
+            print(f"[Retriever] Warning: BM25 build failed: {e}")
+            self.bm25 = None
+    
+    @staticmethod
+    def _rrf_merge(list_a: list, list_b: list, k: int = 60) -> list:
+        """
+        Reciprocal Rank Fusion — merge 2 ranked id lists.
+        
+        Returns list of (doc_id, rrf_score) sorted descending.
+        """
+        scores: Dict[int, float] = {}
+        for rank, doc_id in enumerate(list_a, 1):
+            scores[doc_id] = scores.get(doc_id, 0) + 1.0 / (k + rank)
+        for rank, doc_id in enumerate(list_b, 1):
+            scores[doc_id] = scores.get(doc_id, 0) + 1.0 / (k + rank)
+        return sorted(scores.items(), key=lambda x: x[1], reverse=True)
+    
+    # ── Main retrieval ───────────────────────────────────────────────────────
+    
+    def retrieve_and_rerank(
+        self,
+        query: str,
+        top_k_retrieve: int = 100,
+        top_k_rerank: int = 10
+    ) -> List[ChunkInfo]:
+        """
+        Hybrid retrieve (BM25 + FAISS) → RRF merge → Cross-encoder rerank.
+        
+        Steps:
+        1. BM25 top-k (keyword match)
+        2. FAISS top-k (dense / semantic)
+        3. RRF merge → deduplicated candidates
+        4. Cross-encoder rerank → final top-k
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         """
         
         if not self.faiss_index or not self.faiss_mapping:
@@ -224,13 +368,30 @@ class LegalRetriever:
         
         import numpy as np
         
+<<<<<<< HEAD
         # Encode query
+=======
+        n_docs = len(self.faiss_mapping)
+        BM25_K = min(top_k_retrieve, n_docs)
+        DENSE_K = min(top_k_retrieve, n_docs)
+        
+        # ── 1. BM25 retrieve ─────────────────────────────────────────────────
+        bm25_ids = []
+        if self.bm25 is not None:
+            q_tokens = self._tokenize_vi(query)
+            bm25_scores = self.bm25.get_scores(q_tokens)
+            bm25_ids = np.argsort(bm25_scores)[::-1][:BM25_K].tolist()
+            print(f"[Retriever] BM25 top-1 score={bm25_scores[bm25_ids[0]]:.3f}" if bm25_ids else "")
+        
+        # ── 2. FAISS dense retrieve ──────────────────────────────────────────
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         q_emb = self.bi_encoder.encode(
             [query],
             normalize_embeddings=True,
             convert_to_numpy=True
         ).astype("float32")
         
+<<<<<<< HEAD
         # Search FAISS
         scores_faiss, ids = self.faiss_index.search(q_emb, top_k_retrieve)
         scores_faiss = scores_faiss[0].tolist()
@@ -246,15 +407,57 @@ class LegalRetriever:
             
             # Skip duplicates
             text_hash = hash(text[:200])  # Hash first 200 chars for dedup
+=======
+        scores_faiss, faiss_raw_ids = self.faiss_index.search(q_emb, DENSE_K)
+        dense_ids = [i for i in faiss_raw_ids[0].tolist() if 0 <= i < n_docs]
+        
+        # ── 3. RRF merge ─────────────────────────────────────────────────────
+        if bm25_ids:
+            merged = self._rrf_merge(bm25_ids, dense_ids, k=60)
+            candidate_ids = [doc_id for doc_id, _ in merged]
+            print(f"[Retriever] Hybrid: BM25={len(bm25_ids)} + Dense={len(dense_ids)} → RRF={len(candidate_ids)} candidates")
+        else:
+            # Fallback: BM25 unavailable, use dense only
+            candidate_ids = dense_ids
+            print(f"[Retriever] Dense only: {len(candidate_ids)} candidates (BM25 unavailable)")
+        
+        # Limit candidates for CE rerank (CE is expensive)
+        MAX_CE_CANDIDATES = 150
+        candidate_ids = candidate_ids[:MAX_CE_CANDIDATES]
+        
+        # ── 4. Build ChunkInfo list ──────────────────────────────────────────
+        # Build a quick lookup for FAISS retrieval scores
+        faiss_score_map = {}
+        for i, fid in enumerate(faiss_raw_ids[0].tolist()):
+            if 0 <= fid < n_docs:
+                faiss_score_map[fid] = scores_faiss[0][i]
+        
+        candidates = []
+        seen_texts = set()
+        
+        for doc_id in candidate_ids:
+            mapping = self.faiss_mapping[doc_id]
+            text = mapping.get("text", "")
+            
+            text_hash = hash(text[:200])
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             if text_hash in seen_texts:
                 continue
             seen_texts.add(text_hash)
             
+<<<<<<< HEAD
             meta = mapping.get("metadata", {})  # nested metadata dict
             chunk = ChunkInfo(
                 chunk_id=faiss_id,
                 text=text,
                 score_retrieval=scores_faiss[i] if i < len(scores_faiss) else 0.0,
+=======
+            meta = mapping.get("metadata", {})
+            chunk = ChunkInfo(
+                chunk_id=doc_id,
+                text=text,
+                score_retrieval=float(faiss_score_map.get(doc_id, 0.0)),
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
                 score_rerank=0.0,
                 van_ban=meta.get("van_ban", ""),
                 chuong=meta.get("chuong"),
@@ -265,7 +468,11 @@ class LegalRetriever:
             )
             candidates.append(chunk)
         
+<<<<<<< HEAD
         # Rerank
+=======
+        # ── 5. Cross-encoder rerank ──────────────────────────────────────────
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         if self.ce_model and candidates:
             pairs = [[query, c.text] for c in candidates]
             rerank_scores = self.ce_model.predict(pairs, batch_size=32)
@@ -273,10 +480,15 @@ class LegalRetriever:
             for i, score in enumerate(rerank_scores):
                 candidates[i].score_rerank = float(score)
             
+<<<<<<< HEAD
             # Sort by rerank score
             candidates.sort(key=lambda x: x.score_rerank, reverse=True)
         else:
             # No cross-encoder: use retrieval scores as rerank scores
+=======
+            candidates.sort(key=lambda x: x.score_rerank, reverse=True)
+        else:
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             for c in candidates:
                 c.score_rerank = c.score_retrieval
             candidates.sort(key=lambda x: x.score_rerank, reverse=True)
@@ -303,31 +515,74 @@ class LegalRetriever:
 
 class GenerationPipeline:
     """
+<<<<<<< HEAD
     End-to-end Legal RAG Generation Pipeline.
+=======
+    End-to-end Legal RAG Generation Pipeline — 2-Tier Architecture.
+    
+    Tầng 1 (LOCAL): trả lời nhanh, rẻ — score cao + margin lớn
+    Tầng 2 (API):   chất lượng cao  — score trung bình / cautious / cần tổng hợp
+    NONE:            abstain/ask_back — score thấp, không gọi LLM
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     Pipeline:
     1. Retrieve & Rerank
     2. Context Building
+<<<<<<< HEAD
     3. Gating Decision
     4. LLM Generation
     5. Fallback (if needed)
     6. Output Parsing
+=======
+    3. Gating Decision + Tier Routing
+    4. LLM Generation (LOCAL hoặc API)
+    5. Fallback (if needed)
+    6. Output Parsing + Logging
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     """
     
     def __init__(
         self,
         retriever: Optional[LegalRetriever] = None,
+<<<<<<< HEAD
         llm_client: Optional[LLMClient] = None,
         mode: LLMMode = LLMMode.DEV
     ):
         # Initialize components
         self.retriever = retriever or LegalRetriever()
         self.llm_client = llm_client or LLMClient()
+=======
+        local_client: Optional[LLMClient] = None,
+        api_client: Optional[LLMClient] = None,
+        logger: Optional[PipelineLogger] = None,
+        mode: LLMMode = LLMMode.DEV,
+        local_first: bool = False,
+        ce_sigmoid_mode: bool = False
+    ):
+        # Initialize components
+        self.retriever = retriever  # Can be None when using --reranked-input
+        self.ce_sigmoid_mode = ce_sigmoid_mode
+        
+        # ─── 2-Tier LLM Clients ───
+        self.local_client = local_client   # Tier 1: local (llama.cpp / placeholder)
+        self.api_client = api_client       # Tier 2: API (Gemini / OpenAI)
+        
+        # Fallback: nếu chỉ truyền 1 client, dùng cho cả 2 tier
+        if self.local_client is None and self.api_client is None:
+            fallback_client = LLMClient()
+            self.local_client = fallback_client
+            self.api_client = fallback_client
+        elif self.local_client is None:
+            self.local_client = self.api_client
+        elif self.api_client is None:
+            self.api_client = self.local_client
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         # Pipeline components
         self.context_builder = ContextBuilder()
         self.prompt_builder = LegalPromptBuilder()
         
+<<<<<<< HEAD
         # Adjust gating thresholds based on whether cross-encoder is loaded
         if self.retriever.ce_model is not None:
             # Cross-encoder mode: trained model outputs negative logits
@@ -347,6 +602,76 @@ class GenerationPipeline:
                 margin_min=0.05          # Much smaller for cosine
             )
             print("[Pipeline] Using bi-encoder only mode (adjusted gating thresholds)")
+=======
+        # Logger
+        self.logger = logger or PipelineLogger()
+        
+        # Adjust gating thresholds based on score type
+        if self.ce_sigmoid_mode:
+            # ── CE post-sigmoid mode (--reranked-input) ──
+            # Scores are 0-1 (post-sigmoid from cross-encoder)
+            # Key trait: positive chunks cluster at 0.95-1.0, negatives at 0.0-0.01
+            # Margins can be trivially small (0.0001) or huge (0.99)
+            gating_config = GatingConfig(
+                threshold_pass=0.5,       # sigmoid > 0.5 = CE positive
+                threshold_abstain=0.05,   # sigmoid < 0.05 = very weak
+                threshold_cautious=0.3,   # 0.05~0.5 → cautious
+                margin_min=0.001,         # Norm margin — CE sigmoid margins are tiny
+                margin_scale=100.0,       # Aggressive scale: 0.01 norm_margin → 0.5 conf
+                tier_local_min_score=0.9,     # Score >= 0.9 → eligible for LOCAL
+                tier_local_min_margin=0.005,  # Absolute margin >= 0.005 → LOCAL
+                                              # (77.7% queries have score>=0.99, many with margin < 0.01
+                                              #  but multiple relevant chunks is not ambiguity)
+                tier_api_min_score=0.05,      # Score >= 0.05 → API
+                enable_ask_back=False,
+                score_is_sigmoid=True         # ★ flag for gating calculations
+            )
+            print("[Pipeline] ★ CE post-sigmoid mode (--reranked-input): thresholds tuned for 0-1 CE scores")
+        elif self.retriever is not None and self.retriever.ce_model is not None:
+            # Cross-encoder mode: FAISS-matched model → scores ~(-5 to +11)
+            if local_first:
+                # ── LOCAL-FIRST: hạ ngưỡng → ~70-90% queries chạy local ──
+                # Chỉ route API cho câu thực sự khó (margin nhỏ, score trung bình)
+                gating_config = GatingConfig(
+                    threshold_pass=2.0,       # Score >= 2 → ANSWER (hạ từ 3)
+                    threshold_abstain=-5.0,   # Score < -5 → ABSTAIN
+                    threshold_cautious=-1.0,  # -1 ~ 2 → CAUTIOUS (hạ từ 0)
+                    margin_min=0.001,         # Normalized margin rất nhỏ mới ASK_BACK
+                    margin_scale=50.0,
+                    tier_local_min_score=3.0,     # Score >= 3 → LOCAL (hạ từ 8!)
+                    tier_local_min_margin=0.005,  # Norm margin >= 0.5% → LOCAL (hạ từ 3%)
+                    tier_api_min_score=-1.0,      # Score >= -1 → API
+                    enable_ask_back=False
+                )
+                print("[Pipeline] ★ LOCAL-FIRST mode: tier_local_min_score=3.0, ~70-90% queries local")
+            else:
+                gating_config = GatingConfig(
+                    threshold_pass=3.0,       # Score >= 3 → ANSWER
+                    threshold_abstain=-5.0,   # Score < -5 → ABSTAIN
+                    threshold_cautious=0.0,   # 0 ~ 3 → CAUTIOUS (route to API)
+                    margin_min=0.003,         # Normalized margin tối thiểu (0.3%)
+                    margin_scale=50.0,        # Scale cho sigmoid(norm_margin)
+                    tier_local_min_score=8.0,     # Score >= 8 → eligible for LOCAL
+                    tier_local_min_margin=0.03,   # Norm margin >= 3% → LOCAL
+                    tier_api_min_score=-5.0,      # Score >= -5 → API
+                    enable_ask_back=False     # Disable for pipeline
+                )
+        else:
+            # Bi-encoder only mode: cosine scores are 0-1
+            gating_config = GatingConfig(
+                threshold_pass=0.8,       # Changed from 0.6 if it was causing issues, or ensuring it's not 2.0
+                threshold_abstain=0.2,
+                threshold_cautious=0.4,
+                margin_min=0.01,          # Normalized margin
+                margin_scale=20.0,
+                tier_local_min_score=0.9,
+                tier_local_min_margin=0.05,
+                tier_api_min_score=0.2,
+                enable_ask_back=False,
+                score_is_sigmoid=True     # Cosine is also 0-1
+            )
+            print("[Pipeline] Using bi-encoder only mode (calibrated thresholds for 0-1 scores)")
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         self.gating = GatingStrategy(gating_config)
         self.fallback = FallbackStrategy()
@@ -355,8 +680,14 @@ class GenerationPipeline:
         self.mode = mode
         self.top_k_chunks = 5
         
+<<<<<<< HEAD
         print(f"[Pipeline] Initialized in {mode.value} mode")
         print(f"[Pipeline] LLM backend: {self.llm_client.config.backend.value}")
+=======
+        print(f"[Pipeline] Initialized 2-Tier in {mode.value} mode")
+        print(f"[Pipeline] Tier 1 (LOCAL): {self.local_client.config.backend.value}")
+        print(f"[Pipeline] Tier 2 (API):   {self.api_client.config.backend.value}")
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     def generate(
         self,
@@ -364,7 +695,15 @@ class GenerationPipeline:
         verbose: bool = False
     ) -> Tuple[RAGOutput, Dict]:
         """
+<<<<<<< HEAD
         Generate answer for a query.
+=======
+        Generate answer for a query with 2-tier routing.
+        
+        Tier 1 (LOCAL): score cao + margin cao → fast local LLM
+        Tier 2 (API):   score trung bình / cautious → API LLM
+        NONE:            score thấp → abstain / ask_back (no LLM call)
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         Returns:
             (RAGOutput, metadata_dict)
@@ -376,6 +715,12 @@ class GenerationPipeline:
             "decisions": {}
         }
         
+<<<<<<< HEAD
+=======
+        # Prepare log entry
+        log_entry = PipelineLogEntry(query=query)
+        
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         start_time = time.time()
         
         # ─────────────────────────────────────────────────────────────────────
@@ -383,8 +728,25 @@ class GenerationPipeline:
         # ─────────────────────────────────────────────────────────────────────
         
         t0 = time.time()
+<<<<<<< HEAD
         chunks = self.retriever.retrieve_and_rerank(query, top_k_rerank=self.top_k_chunks * 2)
         metadata["timestamps"]["retrieve_rerank"] = (time.time() - t0) * 1000
+=======
+        if self.retriever is None:
+            raise RuntimeError("Retriever not initialized. Use generate_from_reranked() with --reranked-input instead.")
+        chunks = self.retriever.retrieve_and_rerank(query, top_k_rerank=self.top_k_chunks * 2)
+        metadata["timestamps"]["retrieve_rerank"] = (time.time() - t0) * 1000
+        log_entry.latency_retrieve_ms = metadata["timestamps"]["retrieve_rerank"]
+        log_entry.num_chunks_retrieved = len(chunks)
+        
+        if chunks:
+            log_entry.top1_chunk_id = chunks[0].chunk_id
+            log_entry.top1_text_preview = chunks[0].text[:100]
+            log_entry.score_retrieval_top1 = chunks[0].score_retrieval
+            log_entry.score_rerank_top1 = chunks[0].score_rerank
+            if len(chunks) > 1:
+                log_entry.score_rerank_top2 = chunks[1].score_rerank
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         if verbose:
             print(f"[1] Retrieved {len(chunks)} chunks, top score: {chunks[0].score_rerank:.2f}" if chunks else "[1] No chunks")
@@ -401,12 +763,21 @@ class GenerationPipeline:
         )
         metadata["timestamps"]["context_build"] = (time.time() - t0) * 1000
         metadata["context_tokens_est"] = int(len(context_string) / 1.5)
+<<<<<<< HEAD
+=======
+        log_entry.latency_context_ms = metadata["timestamps"]["context_build"]
+        log_entry.num_chunks_after_dedup = len(processed_chunks)
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         if verbose:
             print(f"[2] Context built: {len(processed_chunks)} chunks, ~{metadata['context_tokens_est']} tokens")
         
         # ─────────────────────────────────────────────────────────────────────
+<<<<<<< HEAD
         # Step 3: Gating Decision
+=======
+        # Step 3: Gating Decision + Tier Routing
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         # ─────────────────────────────────────────────────────────────────────
         
         rag_input = RAGInput(
@@ -418,6 +789,7 @@ class GenerationPipeline:
         gating_decision = self.gating.evaluate(rag_input)
         metadata["decisions"]["gating"] = gating_decision.to_dict()
         
+<<<<<<< HEAD
         if verbose:
             print(f"[3] Gating: {gating_decision.decision.value} (confidence: {gating_decision.confidence:.2f})")
         
@@ -438,12 +810,94 @@ class GenerationPipeline:
         
         # Build prompt
         prompt = self.prompt_builder.build_full_prompt(
+=======
+        # Extract tier and margin
+        tier = gating_decision.tier
+        margin = gating_decision.margin
+        
+        log_entry.gating_decision = gating_decision.decision.value
+        log_entry.gating_reason = gating_decision.reason_detail
+        log_entry.gating_confidence = gating_decision.confidence
+        log_entry.tier = tier.value
+        log_entry.margin = margin
+        log_entry.tier_reason = self._tier_reason(tier, gating_decision)
+        
+        # Enhanced metrics from gating
+        log_entry.confidence_final = getattr(gating_decision, 'confidence_final', 0.0)
+        log_entry.semantic_similarity = getattr(gating_decision, 'semantic_similarity', 0.0)
+        log_entry.query_type = getattr(gating_decision, 'query_type', '')
+        log_entry.context_token_length = getattr(gating_decision, 'context_token_length', 0)
+        log_entry.lexical_overlap = getattr(gating_decision, 'lexical_overlap', 0.0)
+        
+        if verbose:
+            tier_label = {"local": "T1-LOCAL", "api": "T2-API", "none": "NONE"}
+            print(f"[3] Gating: {gating_decision.decision.value} | "
+                  f"Tier: {tier_label.get(tier.value, tier.value)} | "
+                  f"Score: {gating_decision.confidence:.2f} | "
+                  f"Margin: {margin:.2f}")
+        
+        # ─────────────────────────────────────────────────────────────────────
+        # Step 4: Generate (routed by tier) or Fallback
+        # ─────────────────────────────────────────────────────────────────────
+        
+        if not self.gating.should_generate(gating_decision):
+            # ABSTAIN / ASK_BACK → no LLM call
+            output = self.gating.build_gated_output(gating_decision)
+            log_entry.status = gating_decision.decision.value
+            log_entry.latency_total_ms = (time.time() - start_time) * 1000
+            metadata["timestamps"]["total"] = log_entry.latency_total_ms
+            metadata["skipped_generation"] = True
+            metadata["tier"] = tier.value
+            
+            if verbose:
+                print(f"[4] Skipped generation → {gating_decision.decision.value}")
+            
+            self.logger.log(log_entry)
+            return output, metadata
+        
+        # Select LLM client based on tier (smart fallback between tiers)
+        if tier == LLMTier.LOCAL:
+            # Nếu local là placeholder → tự động route sang API (tránh output rỗng)
+            if self.local_client.config.backend == LLMBackend.PLACEHOLDER:
+                active_client = self.api_client
+                tier = LLMTier.API  # override tier
+                log_entry.llm_backend = self.api_client.config.backend.value
+                log_entry.llm_model = self.api_client.config.model_name or ""
+                if verbose:
+                    print(f"[4] LOCAL is placeholder → auto-route to API ({self.api_client.config.backend.value})")
+            else:
+                active_client = self.local_client
+                log_entry.llm_backend = self.local_client.config.backend.value
+                log_entry.llm_model = self.local_client.config.model_name or ""
+        else:
+            # API tier (default for CAUTIOUS too)
+            # Nếu API là placeholder nhưng local thật → dùng local thay vì placeholder
+            if (self.api_client.config.backend == LLMBackend.PLACEHOLDER
+                    and self.local_client.config.backend != LLMBackend.PLACEHOLDER):
+                active_client = self.local_client
+                tier = LLMTier.LOCAL  # override tier
+                log_entry.tier = tier.value  # ★ sync log entry
+                log_entry.llm_backend = self.local_client.config.backend.value
+                log_entry.llm_model = self.local_client.config.model_name or ""
+                if verbose:
+                    print(f"[4] API is placeholder → using LOCAL ({self.local_client.config.backend.value})")
+            else:
+                active_client = self.api_client
+                log_entry.llm_backend = self.api_client.config.backend.value
+                log_entry.llm_model = self.api_client.config.model_name or ""
+        
+        # Build prompt — use compact prompt for smaller models (Qwen, HuggingFace)
+        use_compact = active_client.config.backend in (LLMBackend.QWEN, LLMBackend.HUGGINGFACE)
+        system_prompt = self.prompt_builder.build_system_prompt(compact=use_compact)
+        user_prompt = self.prompt_builder.build_user_prompt(
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             question=query,
             context=context_string
         )
         
         # Generate
         t0 = time.time()
+<<<<<<< HEAD
         llm_response = self.llm_client.generate(prompt)
         metadata["timestamps"]["llm"] = (time.time() - t0) * 1000
         
@@ -452,10 +906,97 @@ class GenerationPipeline:
         
         # Parse response
         output = parse_rag_output(llm_response.text)
+=======
+        llm_response = active_client.generate(user_prompt, system_prompt=system_prompt)
+        metadata["timestamps"]["llm"] = (time.time() - t0) * 1000
+        log_entry.latency_llm_ms = metadata["timestamps"]["llm"]
+        
+        if verbose:
+            if llm_response.error:
+                print(f"[4] LLM [{tier.value.upper()}] FAILED in {metadata['timestamps']['llm']:.0f}ms")
+                err_short = llm_response.error[:120].replace('\n', ' ')
+                print(f"    ERROR: {err_short}")
+            else:
+                print(f"[4] LLM [{tier.value.upper()}] generated in {metadata['timestamps']['llm']:.0f}ms")
+        
+        if llm_response.error:
+            log_entry.error = llm_response.error
+            log_entry.status = "error"
+        
+        # Anti-429 metadata
+        log_entry.api_failed = getattr(llm_response, 'api_failed', False)
+        log_entry.fallback_to_local = getattr(llm_response, 'fallback_to_local', False)
+        log_entry.retry_count = getattr(llm_response, 'retry_count', 0)
+        
+        if llm_response.fallback_to_local and verbose:
+            print(f"[4] ⚠ API failed → fallback to local (retries={llm_response.retry_count})")
+        
+        # Parse response
+        output = parse_rag_output(llm_response.text)
+        
+        # Enrich citations with document names from retrieved chunks
+        self._enrich_citations(output, chunks)
+        
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         output.latency_llm_ms = metadata["timestamps"]["llm"]
         output.raw_response = llm_response.text
         
         # ─────────────────────────────────────────────────────────────────────
+<<<<<<< HEAD
+=======
+        # Step 4b: Quality Gate — escalate to API if local response is poor
+        # ─────────────────────────────────────────────────────────────────────
+        
+        if (tier == LLMTier.LOCAL
+                and active_client is self.local_client
+                and self.api_client is not self.local_client
+                and self.api_client.config.backend != LLMBackend.PLACEHOLDER
+                and self._should_escalate_to_api(output, llm_response)):
+            
+            if verbose:
+                reason = self._escalation_reason(output, llm_response)
+                print(f"[4b] Local quality low ({reason}) → escalating to API")
+            
+            # Build prompt for API (non-compact since API can handle it)
+            api_system = self.prompt_builder.build_system_prompt(compact=False)
+            api_user = self.prompt_builder.build_user_prompt(
+                question=query, context=context_string
+            )
+            
+            t0_api = time.time()
+            llm_response = self.api_client.generate(api_user, system_prompt=api_system)
+            api_latency = (time.time() - t0_api) * 1000
+            metadata["timestamps"]["llm_api_escalation"] = api_latency
+            metadata["timestamps"]["llm"] += api_latency
+            metadata["escalated_to_api"] = True
+            
+            # Re-parse
+            output = parse_rag_output(llm_response.text)
+            
+            # Enrich citations
+            self._enrich_citations(output, chunks)
+            
+            output.latency_llm_ms = metadata["timestamps"]["llm"]
+            output.raw_response = llm_response.text
+            tier = LLMTier.API
+            log_entry.tier = tier.value
+            log_entry.llm_backend = self.api_client.config.backend.value
+            log_entry.llm_model = self.api_client.config.model_name or ""
+            log_entry.latency_llm_ms = metadata["timestamps"]["llm"]
+            
+            if verbose:
+                if llm_response.error:
+                    print(f"[4b] API escalation FAILED: {llm_response.error[:100]}")
+                else:
+                    print(f"[4b] API re-generated in {api_latency:.0f}ms")
+        
+        log_entry.generated_answer = (output.answer or "")[:500]
+        log_entry.answer_length = len(output.answer or "")
+        log_entry.num_citations = len(output.citations)
+        log_entry.citations_str = ", ".join(c.to_str() for c in output.citations)
+        
+        # ─────────────────────────────────────────────────────────────────────
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         # Step 5: Apply Fallback if needed
         # ─────────────────────────────────────────────────────────────────────
         
@@ -475,9 +1016,324 @@ class GenerationPipeline:
                     print(f"[5] Applied fallback: {fallback_decision.fallback_type.value}")
         
         metadata["timestamps"]["total"] = (time.time() - start_time) * 1000
+<<<<<<< HEAD
         
         return output, metadata
     
+=======
+        metadata["tier"] = tier.value
+        log_entry.latency_total_ms = metadata["timestamps"]["total"]
+        if not log_entry.status or log_entry.status == "ok":
+            log_entry.status = "ok"
+        
+        # Log entry
+        self.logger.log(log_entry)
+        
+        return output, metadata
+    
+    def _should_escalate_to_api(self, output: 'RAGOutput', llm_response) -> bool:
+        """
+        Quality gate: kiểm tra local LLM response có đủ chất lượng không.
+        Nếu không → escalate sang API tier.
+        
+        Triggers:
+        - LLM error
+        - Empty / quá ngắn (< 20 chars)
+        - Placeholder response
+        - Có answer nhưng 0 citations (domain pháp lý bắt buộc citation)
+        """
+        # Error in generation
+        if llm_response.error:
+            return True
+        # Empty answer
+        if not output.answer or len(output.answer.strip()) < 20:
+            return True
+        # Placeholder response (chưa load model xong)
+        if "[Placeholder]" in (output.answer or ""):
+            return True
+        # Has answer but zero citations → legal domain requires citations
+        if output.answer and not output.abstain and len(output.citations) == 0:
+            return True
+        return False
+    
+    def _escalation_reason(self, output: 'RAGOutput', llm_response) -> str:
+        """Mô tả ngắn lý do escalate."""
+        if llm_response.error:
+            return f"error: {llm_response.error[:60]}"
+        if not output.answer or len(output.answer.strip()) < 20:
+            return "answer empty/too short"
+        if "[Placeholder]" in (output.answer or ""):
+            return "placeholder response"
+        if output.answer and not output.abstain and len(output.citations) == 0:
+            return "no citations"
+        return "unknown"
+    
+    def _enrich_citations(self, output: RAGOutput, chunks: List[ChunkInfo]):
+        """
+        Enrich citations with document names (van_ban) from retrieved chunks.
+        Matches by Dieu and Khoan.
+        """
+        if not output.citations or not chunks:
+            return
+            
+        for citation in output.citations:
+            # Nếu đã có van_ban thì bỏ qua
+            if citation.van_ban and citation.van_ban != "N/A":
+                continue
+                
+            # Tìm chunk khớp nhất (ưu tiên khớp cả Dieu và Khoan)
+            best_match = None
+            
+            # 1. Thử khớp cả Dieu và Khoan
+            for chunk in chunks:
+                if (chunk.dieu and citation.dieu and str(chunk.dieu) == str(citation.dieu) and 
+                    chunk.khoan and citation.khoan and str(chunk.khoan) == str(citation.khoan)):
+                    best_match = chunk
+                    break
+            
+            # 2. Nếu không thấy, thử khớp chỉ Dieu (nếu Dieu tồn tại)
+            if not best_match and citation.dieu:
+                for chunk in chunks:
+                    if chunk.dieu and str(chunk.dieu) == str(citation.dieu):
+                        best_match = chunk
+                        break
+            
+            # 3. Nếu vẫn không thấy, dùng chunk top 1 nếu nó có van_ban
+            if not best_match and chunks[0].van_ban:
+                best_match = chunks[0]
+                
+            if best_match and best_match.van_ban:
+                citation.van_ban = best_match.van_ban
+
+    def _tier_reason(self, tier: LLMTier, decision: GatingDecision) -> str:
+        """Giải thích lý do chọn tier."""
+        if tier == LLMTier.LOCAL:
+            if self.ce_sigmoid_mode:
+                return f"Score {decision.confidence:.4f} >= {self.gating.config.tier_local_min_score}, AbsMargin {decision.margin:.4f} >= {self.gating.config.tier_local_min_margin}"
+            return f"Score {decision.confidence:.1f} >= {self.gating.config.tier_local_min_score}, Margin {decision.margin:.1f} >= {self.gating.config.tier_local_min_margin}"
+        elif tier == LLMTier.API:
+            if decision.decision == DecisionType.CAUTIOUS:
+                return "CAUTIOUS → route to API for better generation"
+            if self.ce_sigmoid_mode:
+                return f"Score {decision.confidence:.4f} OK but AbsMargin {decision.margin:.4f} < {self.gating.config.tier_local_min_margin} → API"
+            return f"Score {decision.confidence:.1f} (trung bình) or Margin {decision.margin:.1f} thấp → API"
+        else:
+            return f"Score thấp / Abstain → không gọi LLM"
+    
+    def generate_from_reranked(
+        self,
+        query: str,
+        chunks: List[ChunkInfo],
+        query_id: str = "",
+        verbose: bool = False
+    ) -> Tuple[RAGOutput, Dict]:
+        """
+        Generate answer from pre-reranked chunks (skip retrieval+rerank).
+        Used when running on pipeline_results_*.jsonl that already has top5_reranked.
+        """
+        metadata = {
+            "query": query,
+            "query_id": query_id,
+            "timestamps": {},
+            "decisions": {},
+            "source": "pre-reranked"
+        }
+
+        log_entry = PipelineLogEntry(query=query, query_id=query_id)
+        start_time = time.time()
+
+        # ── Step 1: Skip retrieval — use provided chunks directly ──
+        metadata["timestamps"]["retrieve_rerank"] = 0.0
+        log_entry.latency_retrieve_ms = 0.0
+        log_entry.num_chunks_retrieved = len(chunks)
+
+        if chunks:
+            log_entry.top1_chunk_id = chunks[0].chunk_id
+            log_entry.top1_text_preview = chunks[0].text[:100]
+            log_entry.score_retrieval_top1 = chunks[0].score_retrieval
+            log_entry.score_rerank_top1 = chunks[0].score_rerank
+            if len(chunks) > 1:
+                log_entry.score_rerank_top2 = chunks[1].score_rerank
+
+        if verbose:
+            print(f"  [1] Pre-reranked: {len(chunks)} chunks loaded"
+                  + (f", top CE={chunks[0].score_rerank:.4f}" if chunks else ""))
+
+        # ── Step 2: Context Building ──
+        t0 = time.time()
+        processed_chunks, context_string = self.context_builder.build(
+            chunks=chunks,
+            query=query,
+            max_chunks=self.top_k_chunks
+        )
+        ctx_ms = (time.time() - t0) * 1000
+        metadata["timestamps"]["context_build"] = ctx_ms
+        metadata["context_tokens_est"] = int(len(context_string) / 1.5)
+        log_entry.latency_context_ms = ctx_ms
+        log_entry.num_chunks_after_dedup = len(processed_chunks)
+
+        if verbose:
+            print(f"  [2] Context: {len(processed_chunks)} chunks, ~{metadata['context_tokens_est']} tokens")
+
+        # ── Step 3: Gating Decision + Tier Routing ──
+        rag_input = RAGInput(
+            question=query,
+            top_k_chunks=processed_chunks,
+            policy=RAGPolicy()
+        )
+        gating_decision = self.gating.evaluate(rag_input)
+        metadata["decisions"]["gating"] = gating_decision.to_dict()
+
+        tier = gating_decision.tier
+        margin = gating_decision.margin
+
+        log_entry.gating_decision = gating_decision.decision.value
+        log_entry.gating_reason = gating_decision.reason_detail
+        log_entry.gating_confidence = gating_decision.confidence
+        log_entry.tier = tier.value
+        log_entry.margin = margin
+        log_entry.tier_reason = self._tier_reason(tier, gating_decision)
+        log_entry.confidence_final = getattr(gating_decision, 'confidence_final', 0.0)
+        log_entry.semantic_similarity = getattr(gating_decision, 'semantic_similarity', 0.0)
+        log_entry.query_type = getattr(gating_decision, 'query_type', '')
+        log_entry.context_token_length = getattr(gating_decision, 'context_token_length', 0)
+        log_entry.lexical_overlap = getattr(gating_decision, 'lexical_overlap', 0.0)
+
+        if verbose:
+            tier_label = {"local": "T1-LOCAL", "api": "T2-API", "none": "NONE"}
+            print(f"  [3] Gating: {gating_decision.decision.value} | "
+                  f"Tier: {tier_label.get(tier.value, tier.value)} | "
+                  f"Score: {gating_decision.confidence:.2f} | "
+                  f"Margin: {margin:.2f}")
+
+        # ── Step 4: Generate or Skip ──
+        if not self.gating.should_generate(gating_decision):
+            output = self.gating.build_gated_output(gating_decision)
+            log_entry.status = gating_decision.decision.value
+            log_entry.latency_total_ms = (time.time() - start_time) * 1000
+            metadata["timestamps"]["total"] = log_entry.latency_total_ms
+            metadata["skipped_generation"] = True
+            metadata["tier"] = tier.value
+            if verbose:
+                print(f"  [4] Skipped generation → {gating_decision.decision.value}")
+            self.logger.log(log_entry)
+            return output, metadata
+
+        # Select LLM client (same tier logic as generate())
+        if tier == LLMTier.LOCAL:
+            if self.local_client.config.backend == LLMBackend.PLACEHOLDER:
+                active_client = self.api_client
+                tier = LLMTier.API
+                log_entry.llm_backend = self.api_client.config.backend.value
+                log_entry.llm_model = self.api_client.config.model_name or ""
+            else:
+                active_client = self.local_client
+                log_entry.llm_backend = self.local_client.config.backend.value
+                log_entry.llm_model = self.local_client.config.model_name or ""
+        else:
+            if (self.api_client.config.backend == LLMBackend.PLACEHOLDER
+                    and self.local_client.config.backend != LLMBackend.PLACEHOLDER):
+                active_client = self.local_client
+                tier = LLMTier.LOCAL
+                log_entry.tier = tier.value
+                log_entry.llm_backend = self.local_client.config.backend.value
+                log_entry.llm_model = self.local_client.config.model_name or ""
+            else:
+                active_client = self.api_client
+                log_entry.llm_backend = self.api_client.config.backend.value
+                log_entry.llm_model = self.api_client.config.model_name or ""
+
+        use_compact = active_client.config.backend in (LLMBackend.QWEN, LLMBackend.HUGGINGFACE)
+        system_prompt = self.prompt_builder.build_system_prompt(compact=use_compact)
+        user_prompt = self.prompt_builder.build_user_prompt(
+            question=query,
+            context=context_string
+        )
+
+        t0 = time.time()
+        llm_response = active_client.generate(user_prompt, system_prompt=system_prompt)
+        llm_ms = (time.time() - t0) * 1000
+        metadata["timestamps"]["llm"] = llm_ms
+        log_entry.latency_llm_ms = llm_ms
+
+        if verbose:
+            if llm_response.error:
+                print(f"  [4] LLM [{tier.value.upper()}] FAILED in {llm_ms:.0f}ms")
+            else:
+                ans_preview = (llm_response.text or "")[:80].replace("\n", " ")
+                print(f"  [4] LLM [{tier.value.upper()}] generated in {llm_ms:.0f}ms — {ans_preview}...")
+
+        if llm_response.error:
+            log_entry.error = llm_response.error
+            log_entry.status = "error"
+
+        log_entry.api_failed = getattr(llm_response, 'api_failed', False)
+        log_entry.fallback_to_local = getattr(llm_response, 'fallback_to_local', False)
+        log_entry.retry_count = getattr(llm_response, 'retry_count', 0)
+
+        output = parse_rag_output(llm_response.text)
+        # Enrich citations with document names from retrieved chunks
+        self._enrich_citations(output, chunks)
+        output.latency_llm_ms = llm_ms
+        output.raw_response = llm_response.text
+
+        # ── Step 4b: Quality Gate — escalate if needed ──
+        if (tier == LLMTier.LOCAL
+                and active_client is self.local_client
+                and self.api_client is not self.local_client
+                and self.api_client.config.backend != LLMBackend.PLACEHOLDER
+                and self._should_escalate_to_api(output, llm_response)):
+            if verbose:
+                reason = self._escalation_reason(output, llm_response)
+                print(f"  [4b] Escalating to API ({reason})")
+            api_system = self.prompt_builder.build_system_prompt(compact=False)
+            api_user = self.prompt_builder.build_user_prompt(question=query, context=context_string)
+            t0_api = time.time()
+            llm_response = self.api_client.generate(api_user, system_prompt=api_system)
+            api_ms = (time.time() - t0_api) * 1000
+            metadata["timestamps"]["llm_api_escalation"] = api_ms
+            metadata["timestamps"]["llm"] += api_ms
+            output = parse_rag_output(llm_response.text)
+            # Enrich citations with document names from retrieved chunks
+            self._enrich_citations(output, chunks)
+            output.latency_llm_ms = metadata["timestamps"]["llm"]
+            output.raw_response = llm_response.text
+            tier = LLMTier.API
+            log_entry.tier = tier.value
+            log_entry.llm_backend = self.api_client.config.backend.value
+            log_entry.llm_model = self.api_client.config.model_name or ""
+            log_entry.latency_llm_ms = metadata["timestamps"]["llm"]
+            if verbose:
+                print(f"  [4b] API re-generated in {api_ms:.0f}ms")
+
+        log_entry.generated_answer = (output.answer or "")[:500]
+        log_entry.answer_length = len(output.answer or "")
+        log_entry.num_citations = len(output.citations)
+        log_entry.citations_str = ", ".join(c.to_str() for c in output.citations)
+
+        # ── Step 5: Fallback ──
+        if gating_decision.decision == DecisionType.CAUTIOUS:
+            fallback_decision = self.fallback.evaluate(query, processed_chunks)
+            if fallback_decision.fallback_type.value != "none":
+                output = self.fallback.build_cautious_response(
+                    fallback_decision,
+                    output.answer or "",
+                    output.citations
+                )
+                metadata["decisions"]["fallback"] = fallback_decision.to_dict()
+                if verbose:
+                    print(f"  [5] Fallback: {fallback_decision.fallback_type.value}")
+
+        metadata["timestamps"]["total"] = (time.time() - start_time) * 1000
+        metadata["tier"] = tier.value
+        log_entry.latency_total_ms = metadata["timestamps"]["total"]
+        if not log_entry.status or log_entry.status == "ok":
+            log_entry.status = "ok"
+
+        self.logger.log(log_entry)
+        return output, metadata
+
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     def generate_batch(
         self,
         queries: List[str],
@@ -502,7 +1358,11 @@ class GenerationPipeline:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def parse_args():
+<<<<<<< HEAD
     parser = argparse.ArgumentParser(description="Legal RAG Generation Pipeline")
+=======
+    parser = argparse.ArgumentParser(description="Legal RAG Generation Pipeline — 2-Tier")
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     # Mode
     parser.add_argument("--mode", choices=["dev", "demo"], default="dev",
@@ -520,18 +1380,50 @@ def parse_args():
     parser.add_argument("--goldset", type=str, default=None,
                        help="Path to goldset JSONL file")
     
+<<<<<<< HEAD
     # LLM config
     parser.add_argument("--backend", type=str, default=None,
                        choices=["llama_cpp", "openrouter", "openai", "gemini", "placeholder"],
                        help="LLM backend")
     parser.add_argument("--model", type=str, default=None,
                        help="Model name or path")
+=======
+    # LLM config — 2 Tier
+    parser.add_argument("--backend", type=str, default=None,
+                       choices=["llama_cpp", "openrouter", "openai", "gemini", "qwen", "huggingface", "placeholder"],
+                       help="LLM backend for Tier 2 (API)")
+    parser.add_argument("--local-backend", type=str, default="huggingface",
+                       choices=["llama_cpp", "placeholder", "huggingface"],
+                       help="LLM backend for Tier 1 (LOCAL) — default: huggingface (Qwen3)")
+    parser.add_argument("--model", type=str, default=None,
+                       help="Model name or path (for API tier)")
+    parser.add_argument("--local-model", type=str, default=None,
+                       help="Model path for local tier (e.g. GGUF file)")
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     # Output
     parser.add_argument("--verbose", "-v", action="store_true",
                        help="Verbose output")
     parser.add_argument("--output", type=str, default=None,
                        help="Output file path")
+<<<<<<< HEAD
+=======
+    parser.add_argument("--log-dir", type=str, default=None,
+                       help="Directory for pipeline logs (Excel/CSV)")
+    parser.add_argument("--log-append", action="store_true",
+                       help="Append vào 1 file log cố định thay vì tạo file mới mỗi lần chạy")
+    
+    # Local-first / hybrid mode
+    parser.add_argument("--local-first", action="store_true", default=None,
+                       help="Local-first mode: ~70-90%% queries chạy local, chỉ API cho câu khó (auto-enabled khi local=huggingface)")
+    parser.add_argument("--no-local-first", action="store_true",
+                       help="Disable auto local-first mode")
+    
+    # Pre-reranked input (skip retrieval, use existing rerank results)
+    parser.add_argument("--reranked-input", type=str, default=None,
+                       help="Path to pre-reranked JSONL (pipeline_results_*.jsonl). "
+                            "Skips retrieval+rerank, chỉ chạy context→gating→LLM→eval.")
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     return parser.parse_args()
 
@@ -542,6 +1434,7 @@ def main():
     # Setup directories
     GEN_EVAL_DIR.mkdir(parents=True, exist_ok=True)
     
+<<<<<<< HEAD
     # Configure LLM
     llm_config = LLMConfig(
         mode=LLMMode.DEV if args.mode == "dev" else LLMMode.DEMO,
@@ -570,19 +1463,260 @@ def main():
         retriever=retriever,
         llm_client=llm_client,
         mode=LLMMode.DEV if args.mode == "dev" else LLMMode.DEMO
+=======
+    # ─── Configure 2-Tier LLM Clients ───
+    
+    # Tier 1 (LOCAL): fast, cheap
+    local_config = LLMConfig(
+        mode=LLMMode.DEV,
+        max_tokens=256,
+        context_length=2048,
+        temperature=0.1
+    )
+    local_config.backend = LLMBackend(args.local_backend)
+    if args.local_model:
+        local_config.model_path = args.local_model
+        # Nếu chỉ định model path nhưng chưa chọn backend, auto-detect
+        if args.local_backend == "placeholder" and args.local_model:
+            if args.local_model.endswith(".gguf"):
+                local_config.backend = LLMBackend.LLAMA_CPP
+            else:
+                local_config.backend = LLMBackend.HUGGINGFACE
+                local_config.model_name = args.local_model
+            print(f"[INFO] Auto-detected local backend: {local_config.backend.value}")
+    
+    # Nếu backend là huggingface nhưng chưa có model, auto-select dựa trên VRAM
+    if local_config.backend == LLMBackend.HUGGINGFACE and not local_config.model_path:
+        if not args.local_model:
+            from generation.llm_client import select_local_model_for_vram
+            local_config.model_name = select_local_model_for_vram(reserved_vram_gb=1.0)
+        else:
+            local_config.model_name = args.local_model
+    
+    # Tier 2 (API): quality, accurate
+    api_config = LLMConfig(
+        mode=LLMMode.DEV if args.mode == "dev" else LLMMode.DEMO,
+        max_tokens=512 if args.mode == "demo" else 256,
+        context_length=4096 if args.mode == "demo" else 2048,
+        temperature=0.1
+    )
+    if args.backend:
+        api_config.backend = LLMBackend(args.backend)
+        # Auto-fill API key from env if backend specified
+        if args.backend == "gemini" and not api_config.api_key:
+            import os as _os
+            api_config.api_key = _os.environ.get("GEMINI_API_KEY", "")
+            api_config.model_name = args.model or "gemini-2.0-flash"
+        elif args.backend == "qwen" and not api_config.api_key:
+            import os as _os
+            api_config.api_key = _os.environ.get("OPENROUTER_API_KEY", "")
+            api_config.model_name = args.model or "qwen/qwen3-30b-a3b:free"
+        elif args.backend == "openai" and not api_config.api_key:
+            import os as _os
+            api_config.api_key = _os.environ.get("OPENAI_API_KEY", "")
+            api_config.model_name = args.model or "gpt-4o-mini"
+        elif args.backend == "openrouter" and not api_config.api_key:
+            import os as _os
+            api_config.api_key = _os.environ.get("OPENROUTER_API_KEY", "")
+            api_config.model_name = args.model or "mistralai/mistral-7b-instruct"
+        elif args.backend == "huggingface":
+            # HuggingFace local — dùng Qwen3 local trên GPU
+            from generation.llm_client import select_local_model_for_vram
+            api_config.model_name = args.model or select_local_model_for_vram(reserved_vram_gb=1.0)
+            api_config.model_path = api_config.model_name
+    if args.model:
+        if args.backend == "llama_cpp":
+            api_config.model_path = args.model
+        else:
+            api_config.model_name = args.model
+    
+    # ── Auto-enable local_first khi dùng HuggingFace local backend ──
+    if not getattr(args, 'no_local_first', False):
+        if args.local_first is None and local_config.backend == LLMBackend.HUGGINGFACE:
+            args.local_first = True
+            print(f"[INFO] Auto-enabled local-first mode (local backend = huggingface)")
+    else:
+        args.local_first = False
+    if args.local_first is None:
+        args.local_first = False
+    
+    local_client = LLMClient(local_config)
+    
+    # ── Build fallback chain: API → Qwen3 → Local ──
+    # Nếu backend chính là Gemini, tự động dùng Qwen3 làm fallback
+    qwen_fallback = None
+    if api_config.backend == LLMBackend.GEMINI:
+        import os as _os
+        or_key = _os.environ.get("OPENROUTER_API_KEY", "")
+        if or_key:
+            qwen_config = LLMConfig(
+                backend=LLMBackend.QWEN,
+                api_key=or_key,
+                model_name="qwen/qwen3-30b-a3b:free",
+                max_tokens=api_config.max_tokens,
+                context_length=api_config.context_length,
+                temperature=api_config.temperature,
+                mode=api_config.mode,
+            )
+            qwen_fallback = LLMClient(qwen_config, fallback_client=local_client)
+            print(f"[INFO] Fallback chain: Gemini \u2192 Qwen3 (OpenRouter) \u2192 {local_client.config.backend.value}")
+    
+    # API client v\u1edbi fallback \u2192 qwen3 ho\u1eb7c local khi 429/5xx/400 sau retries
+    effective_fallback = qwen_fallback or local_client
+    api_client = LLMClient(api_config, fallback_client=effective_fallback)
+    
+    # Verify LLM is actually attached (warn if placeholder)
+    if local_client.config.backend == LLMBackend.PLACEHOLDER:
+        print("[WARN] Tier 1 LOCAL is PLACEHOLDER — set --local-backend llama_cpp --local-model <path>")
+    if api_client.config.backend == LLMBackend.PLACEHOLDER:
+        print("[WARN] Tier 2 API is PLACEHOLDER — set --backend gemini and $env:GEMINI_API_KEY")
+    else:
+        print(f"[INFO] API 429 protection: retry={LLMClient.MAX_RETRIES}x + backoff + jitter → fallback to {local_client.config.backend.value}")
+    
+    # ─── Logger ───
+    # Nếu dùng --reranked-input thì mặc định append mode (ghi tiếp, kh tạo file mới)
+    force_append = getattr(args, 'log_append', False) or bool(args.reranked_input)
+    log_dir = args.log_dir or str(GEN_EVAL_DIR / "logs")
+    logger = PipelineLogger(log_dir=log_dir, append=force_append)
+    
+    # Initialize pipeline
+    print("=" * 60)
+    print("Legal RAG Generation Pipeline — 2-Tier Architecture")
+    print("=" * 60)
+    
+    # Skip full retriever init when using pre-reranked input (no need for FAISS/CE)
+    if args.reranked_input:
+        retriever = None  # not needed — chunks already reranked
+    else:
+        retriever = LegalRetriever()
+    
+    pipeline = GenerationPipeline(
+        retriever=retriever,
+        local_client=local_client,
+        api_client=api_client,
+        logger=logger,
+        mode=LLMMode.DEV if args.mode == "dev" else LLMMode.DEMO,
+        local_first=getattr(args, 'local_first', False),
+        ce_sigmoid_mode=bool(args.reranked_input)
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     )
     
     # ─────────────────────────────────────────────────────────────────────────
     # Mode: Single Query
     # ─────────────────────────────────────────────────────────────────────────
     
+<<<<<<< HEAD
+=======
+    # ─────────────────────────────────────────────────────────────────────────
+    # Mode: Pre-reranked Input (skip retrieval, chạy gen trên rerank có sẵn)
+    # ─────────────────────────────────────────────────────────────────────────
+
+    if args.reranked_input:
+        reranked_path = Path(args.reranked_input)
+        if not reranked_path.exists():
+            print(f"Error: Reranked input not found: {reranked_path}")
+            return
+
+        records = load_reranked_jsonl(reranked_path)
+        print(f"\n[RERANKED MODE] Loaded {len(records)} queries from {reranked_path}")
+        print(f"[RERANKED MODE] Skipping retrieval+rerank → context → gating → LLM → log")
+        print(f"[RERANKED MODE] Log append: {logger.jsonl_path}\n")
+
+        if args.max_samples:
+            records = records[:args.max_samples]
+            print(f"Using first {len(records)} samples\n")
+
+        tier_counts = {"local": 0, "api": 0, "none": 0}
+        citation_hits = 0
+        pass_count = 0
+        error_count = 0
+        n = len(records)
+
+        for i, rec in enumerate(records):
+            qid = rec.get("id", f"q_{i}")
+            query = rec.get("query", "")
+            expected = rec.get("expected_citations", [])
+            chunks = reranked_record_to_chunks(rec)
+
+            if args.verbose:
+                print(f"\n{'='*60}")
+                print(f"[{i+1}/{n}] {qid}: {query[:70]}...")
+
+            output, metadata = pipeline.generate_from_reranked(
+                query=query,
+                chunks=chunks,
+                query_id=qid,
+                verbose=args.verbose
+            )
+
+            # Rate limit: sleep between API calls
+            tier = metadata.get("tier", "none")
+            if tier == "api" and i < n - 1:
+                time.sleep(1.5)
+
+            tier_counts[tier] = tier_counts.get(tier, 0) + 1
+
+            gating = metadata.get("decisions", {}).get("gating", {})
+            if gating.get("decision") in ("answer", "cautious"):
+                pass_count += 1
+
+            # Citation hit check
+            if not output.abstain and output.citations:
+                for cit in output.citations:
+                    for ec in expected:
+                        if cit.matches(ec):
+                            citation_hits += 1
+                            if logger.entries:
+                                logger.entries[-1].citation_hit = True
+                            break
+
+            if output.raw_response and not output.answer:
+                error_count += 1
+
+            # Progress (compact khi không verbose)
+            if not args.verbose and (i + 1) % 10 == 0:
+                print(f"  ... processed {i+1}/{n} queries")
+
+        # Summary
+        print("\n" + "=" * 60)
+        print("  RERANKED-INPUT GENERATION SUMMARY")
+        print("=" * 60)
+        print(f"  Input file:        {reranked_path.name}")
+        print(f"  Total queries:     {n}")
+        print(f"  Citation Hit Rate: {citation_hits/n:.2%}" if n else "")
+        print(f"  Pass Rate:         {pass_count/n:.2%}" if n else "")
+        print(f"  Error Rate:        {error_count/n:.2%}" if n else "")
+        print()
+        print("  ┌─ TIER ROUTING ─────────────────────────┐")
+        for tier_name, count in tier_counts.items():
+            label = {"local": "T1 LOCAL (free)", "api": "T2 API (paid)", "none": "NONE (skip)  "}
+            bar = "█" * int(count / n * 30) if n else ""
+            print(f"  │ {label.get(tier_name, tier_name):16s}  {count:4d}  {count/n:.1%}  {bar}")
+        savings = (tier_counts.get("local", 0) + tier_counts.get("none", 0)) / n * 100 if n else 0
+        print(f"  │ API savings: {savings:.1f}%")
+        print("  └─────────────────────────────────────────┘")
+        print(f"\n  Log: {logger.jsonl_path}")
+
+        logger.close()
+        return
+
+    # ─────────────────────────────────────────────────────────────────────────
+    # Mode: Single Query
+    # ─────────────────────────────────────────────────────────────────────────
+
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     if args.query:
         print(f"\nQuery: {args.query}\n")
         
         output, metadata = pipeline.generate(args.query, verbose=args.verbose)
         
         print("\n" + "=" * 40)
+<<<<<<< HEAD
         print("RESULT:")
+=======
+        tier_str = metadata.get("tier", "?").upper()
+        print(f"RESULT (Tier: {tier_str}):")
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         print("=" * 40)
         
         if output.abstain:
@@ -608,6 +1742,11 @@ def main():
                 json.dump(result, f, ensure_ascii=False, indent=2)
             print(f"\nSaved to {args.output}")
         
+<<<<<<< HEAD
+=======
+        # Close logger
+        logger.close()
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         return
     
     # ─────────────────────────────────────────────────────────────────────────
@@ -616,7 +1755,11 @@ def main():
     
     if args.eval:
         print("\n" + "=" * 40)
+<<<<<<< HEAD
         print("EVALUATION MODE")
+=======
+        print("EVALUATION MODE — 2-Tier")
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         print("=" * 40)
         
         # Load goldset (dev.jsonl from cross-encoder/data/)
@@ -634,6 +1777,7 @@ def main():
             samples = samples[:args.max_samples]
             print(f"Using first {len(samples)} samples")
         
+<<<<<<< HEAD
         # Create gating config adjusted for bi-encoder only mode if CE not loaded
         if retriever.ce_model is None:
             eval_gating_config = GatingConfig(
@@ -685,6 +1829,82 @@ def main():
         
         # Save results
         saved_paths = evaluator.save_results(results, summary)
+=======
+        # Run evaluation through pipeline (2-tier routing + logging)
+        print(f"\nRunning 2-tier evaluation on {len(samples)} samples...\n")
+        
+        tier_counts = {"local": 0, "api": 0, "none": 0}
+        citation_hits = 0
+        pass_count = 0
+        error_count = 0
+        
+        for i, sample in enumerate(samples):
+            if args.verbose:
+                print(f"\n[{i+1}/{len(samples)}] {sample.query[:60]}...")
+            
+            # Generate through 2-tier pipeline
+            output, metadata = pipeline.generate(sample.query, verbose=args.verbose)
+            
+            # Rate limit: sleep between API calls to avoid 429
+            tier = metadata.get("tier", "none")
+            if tier == "api" and i < len(samples) - 1:
+                time.sleep(1.5)  # Gemini Flash rate limit ~15 RPM free tier
+            
+            # Track tier
+            tier_counts[tier] = tier_counts.get(tier, 0) + 1
+            
+            # Track gating decisions
+            gating = metadata.get("decisions", {}).get("gating", {})
+            if gating.get("decision") in ("answer", "cautious"):
+                pass_count += 1
+            
+            # Track citation hits
+            if not output.abstain and output.citations:
+                for cit in output.citations:
+                    for ec in sample.expected_citations:
+                        if cit.matches(ec):
+                            citation_hits += 1
+                            # update logger entry
+                            if logger.entries:
+                                logger.entries[-1].citation_hit = True
+                            break
+            
+            if output.raw_response and not output.answer:
+                error_count += 1
+        
+        # Print 2-tier summary
+        n = len(samples)
+        print("\n" + "=" * 60)
+        print("  2-TIER EVALUATION SUMMARY")
+        print("=" * 60)
+        print(f"  Total samples:     {n}")
+        print(f"  Citation Hit Rate: {citation_hits/n:.2%}")
+        print(f"  Pass Rate:         {pass_count/n:.2%}")
+        print(f"  Error Rate:        {error_count/n:.2%}")
+        print()
+        print("  ┌─ TIER ROUTING ─────────────────────────┐")
+        for tier_name, count in tier_counts.items():
+            label = {"local": "T1 LOCAL (free)", "api": "T2 API (paid)", "none": "NONE (skip)  "}
+            bar = "█" * int(count / n * 30) if n else ""
+            print(f"  │ {label.get(tier_name, tier_name):16s}  {count:4d}  {count/n:.1%}  {bar}")
+        savings = (tier_counts.get("local", 0) + tier_counts.get("none", 0)) / n * 100 if n else 0
+        print(f"  │ API savings: {savings:.1f}%")
+        print("  └─────────────────────────────────────────┘")
+        
+        # Anti-429 stats
+        api_stats = api_client.get_failure_stats()
+        rl_stats = api_stats.get("rate_limiter", {})
+        if api_stats["api_fail_count"] > 0 or rl_stats.get("total_waits", 0) > 0:
+            print()
+            print("  ┌─ ANTI-429 STATS ────────────────────────┐")
+            print(f"  │ API failures:     {api_stats['api_fail_count']}")
+            print(f"  │ Fallbacks:        {api_stats['fallback_count']}")
+            print(f"  │ Rate limit waits: {rl_stats.get('total_waits', 0)} ({rl_stats.get('total_wait_time_s', 0)}s total)")
+            print("  └─────────────────────────────────────────┘")
+        
+        # Close logger → writes Excel
+        logger.close()
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         return
     
@@ -692,7 +1912,11 @@ def main():
     # Interactive mode
     # ─────────────────────────────────────────────────────────────────────────
     
+<<<<<<< HEAD
     print("\nInteractive mode. Type 'quit' to exit.\n")
+=======
+    print("\nInteractive mode (2-Tier). Type 'quit' to exit.\n")
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     while True:
         try:
@@ -706,21 +1930,38 @@ def main():
             
             output, metadata = pipeline.generate(query, verbose=args.verbose)
             
+<<<<<<< HEAD
+=======
+            tier_str = metadata.get("tier", "?").upper()
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             print("\n" + "-" * 40)
             if output.abstain:
                 print(f"[{output.decision.value.upper()}] {output.reason_detail}")
                 if output.clarification_question:
                     print(f"❓ {output.clarification_question}")
             else:
+<<<<<<< HEAD
                 print(f"Answer: {output.answer}")
                 if output.citations:
                     print(f"Citations: {', '.join(c.to_str() for c in output.citations)}")
             print(f"[{metadata['timestamps']['total']:.0f}ms]")
+=======
+                print(f"[Tier: {tier_str}] Answer: {output.answer}")
+                if output.citations:
+                    print(f"Citations: {', '.join(c.to_str() for c in output.citations)}")
+            print(f"[{metadata['timestamps']['total']:.0f}ms | Tier: {tier_str}]")
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             print("-" * 40 + "\n")
             
         except KeyboardInterrupt:
             print("\nExiting...")
             break
+<<<<<<< HEAD
+=======
+    
+    # Close logger on exit
+    logger.close()
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 
 if __name__ == "__main__":

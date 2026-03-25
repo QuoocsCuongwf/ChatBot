@@ -102,13 +102,18 @@ class ContextBuilder:
         self,
         chunk: ChunkInfo,
         query: str,
+<<<<<<< HEAD
         context_window: int = 150,
+=======
+        context_window: int = 250,
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         min_overlap_ratio: float = 0.1
     ) -> ChunkInfo:
         """
         Cắt chunk giữ lại phần liên quan đến query.
         
         Strategy:
+<<<<<<< HEAD
         1. Tìm keyword matches trong chunk
         2. Expand mỗi match với context_window chars
         3. Merge overlapping spans
@@ -134,6 +139,46 @@ class ContextBuilder:
         
         if not spans:
             # Không tìm thấy keywords → giữ nguyên
+=======
+        1. Tìm keyword matches (compound + single) trong chunk
+        2. Expand mỗi match tới ranh giới câu (sentence boundary)
+        3. Merge overlapping spans
+        4. Nếu chunk chứa legal header (Điều/Khoản/Điểm) → giữ cả block
+        5. Nếu không tìm thấy matches → giữ nguyên
+        """
+        
+        text = chunk.text
+        
+        # Chunk ngắn → giữ nguyên (tránh cắt mất thông tin)
+        if len(text) <= 400:
+            chunk.trimmed_text = text
+            return chunk
+        
+        query_keywords = self._extract_keywords(query)
+        
+        if not query_keywords:
+            chunk.trimmed_text = text
+            return chunk
+        
+        # Tìm tất cả keyword positions (compound trước, single sau)
+        spans = []
+        text_lower = text.lower()
+        
+        for keyword in query_keywords:
+            pattern = re.escape(keyword)
+            for match in re.finditer(pattern, text_lower):
+                # Expand tới sentence boundary thay vì fixed chars
+                start = self._snap_to_sentence_start(text, match.start(), context_window)
+                end = self._snap_to_sentence_end(text, match.end(), context_window)
+                spans.append((start, end))
+        
+        # Nếu chunk chứa legal structure (Điều X, Khoản Y) → giữ toàn bộ block
+        legal_block = self._find_legal_block(text, spans)
+        if legal_block:
+            spans.append(legal_block)
+        
+        if not spans:
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             chunk.trimmed_text = text
             return chunk
         
@@ -144,7 +189,10 @@ class ContextBuilder:
         trimmed_parts = []
         for start, end in merged_spans:
             part = text[start:end]
+<<<<<<< HEAD
             # Clean up boundaries
+=======
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             if start > 0:
                 part = "..." + part.lstrip()
             if end < len(text):
@@ -156,6 +204,7 @@ class ContextBuilder:
         
         return chunk
     
+<<<<<<< HEAD
     def _extract_keywords(self, text: str, min_length: int = 2) -> List[str]:
         """Extract keywords từ text."""
         # Remove common Vietnamese stopwords
@@ -180,6 +229,133 @@ class ContextBuilder:
                 unique_keywords.append(kw)
         
         return unique_keywords
+=======
+    def _snap_to_sentence_start(self, text: str, pos: int, max_expand: int) -> int:
+        """Mở rộng về trước tới đầu câu gần nhất (. hoặc \\n)."""
+        search_start = max(0, pos - max_expand)
+        region = text[search_start:pos]
+        # Tìm dấu kết câu gần nhất phía trước
+        for delim in ['\n', '. ', '.\n']:
+            idx = region.rfind(delim)
+            if idx != -1:
+                return search_start + idx + len(delim)
+        return search_start
+    
+    def _snap_to_sentence_end(self, text: str, pos: int, max_expand: int) -> int:
+        """Mở rộng về sau tới cuối câu gần nhất."""
+        search_end = min(len(text), pos + max_expand)
+        region = text[pos:search_end]
+        for delim in ['.\n', '. ', '\n']:
+            idx = region.find(delim)
+            if idx != -1:
+                return pos + idx + len(delim)
+        return search_end
+    
+    def _find_legal_block(self, text: str, keyword_spans: list) -> tuple:
+        """
+        Nếu keyword nằm trong 1 block Điều/Khoản → trả về span bao trùm block đó.
+        Giữ nguyên cả đơn vị pháp lý thay vì cắt giữa chừng.
+        """
+        if not keyword_spans:
+            return None
+        # Tìm tất cả header pháp lý
+        headers = list(re.finditer(
+            r'(?:^|\n)\s*(?:Điều|Khoản|Điểm)\s+\d+',
+            text, re.MULTILINE
+        ))
+        if not headers:
+            return None
+        
+        # Với mỗi keyword span, tìm block chứa nó
+        first_kw_start = keyword_spans[0][0]
+        last_kw_end = keyword_spans[-1][1]
+        
+        block_start = 0
+        block_end = len(text)
+        
+        for i, h in enumerate(headers):
+            if h.start() <= first_kw_start:
+                block_start = h.start()
+            if h.start() > last_kw_end:
+                block_end = h.start()
+                break
+        
+        # Chỉ trả về nếu block không quá dài (tránh giữ nguyên chunk 2000+ chars)
+        if block_end - block_start <= 800:
+            return (block_start, block_end)
+        return None
+    
+    # Vietnamese stopwords — bao gồm cả từ pháp lý phổ biến không mang nghĩa phân biệt
+    _VN_STOPWORDS = {
+        "của", "và", "là", "được", "có", "trong", "cho", "với", "theo",
+        "các", "những", "này", "đó", "để", "về", "từ", "tại", "khi",
+        "nào", "gì", "như", "thế", "sao", "ai", "đâu", "bao",
+        "không", "hay", "hoặc", "mà", "thì", "cũng", "đã", "sẽ",
+        "rất", "lại", "nếu", "vì", "do", "bởi", "một", "người",
+        "trên", "dưới", "sau", "trước", "đến", "bị", "phải",
+        "còn", "nên", "đều", "chỉ", "ra", "vào", "lên",
+    }
+
+    # Compound từ pháp lý phổ biến (2-3 từ) — match trước khi tách đơn lẻ
+    _LEGAL_COMPOUNDS = [
+        # 3-gram trước
+        "ủy ban nhân dân", "hội đồng nhân dân", "bảo hiểm xã hội",
+        "bảo hiểm y tế", "quyền sử dụng đất", "giấy chứng nhận",
+        "cơ quan nhà nước", "trách nhiệm hình sự", "trách nhiệm dân sự",
+        "thi hành án", "cấp giấy phép", "đăng ký kinh doanh",
+        "an ninh quốc gia", "an toàn giao thông", "bảo vệ môi trường",
+        "giải quyết tranh chấp", "quyền sở hữu", "sở hữu trí tuệ",
+        # 2-gram
+        "thẩm quyền", "xử phạt", "vi phạm", "nghị định", "thông tư",
+        "quyết định", "văn bản", "pháp luật", "quy định", "điều kiện",
+        "thủ tục", "hồ sơ", "đăng ký", "cấp phép", "giấy phép",
+        "lệ phí", "thuế thu", "thu nhập", "doanh nghiệp", "tổ chức",
+        "cá nhân", "hộ gia đình", "thời hạn", "thời hiệu",
+        "hình sự", "dân sự", "hành chính", "lao động", "bồi thường",
+        "khiếu nại", "tố cáo", "xử lý", "trách nhiệm",
+        "chế tài", "biện pháp", "quy hoạch", "xây dựng",
+        "đất đai", "nhà ở", "giao thông", "môi trường",
+        "sở hữu", "chuyển nhượng", "thừa kế", "hợp đồng",
+        "bảo hiểm", "ngân sách", "tài chính", "kinh doanh",
+        "đầu tư", "xuất khẩu", "nhập khẩu", "hải quan",
+    ]
+
+    def _extract_keywords(self, text: str, min_length: int = 2) -> List[str]:
+        """
+        Extract keywords từ text, hỗ trợ tiếng Việt compound words.
+        
+        Strategy:
+        1. Match compound pháp lý trước (2-3 từ: "thẩm quyền", "ủy ban nhân dân")
+        2. Sau đó tách single tokens cho phần còn lại
+        3. Ưu tiên compound → single (compound match trước khi search)
+        """
+        text_lower = text.lower()
+        keywords = []
+        seen = set()
+        
+        # Phase 1: Match compound keywords (ưu tiên dài trước)
+        remaining = text_lower
+        for compound in self._LEGAL_COMPOUNDS:
+            if compound in text_lower and compound not in seen:
+                seen.add(compound)
+                keywords.append(compound)
+        
+        # Phase 2: Single-word tokens (bỏ stopwords, bỏ từ đã nằm trong compound)
+        words = re.findall(r'[\w]+', text_lower)
+        compound_words = set()
+        for c in keywords:
+            compound_words.update(c.split())
+        
+        for w in words:
+            if (len(w) >= min_length
+                    and w not in self._VN_STOPWORDS
+                    and w not in seen
+                    and w not in compound_words):
+                seen.add(w)
+                keywords.append(w)
+        
+        return keywords
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     def _merge_spans(self, spans: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
         """Merge overlapping spans."""

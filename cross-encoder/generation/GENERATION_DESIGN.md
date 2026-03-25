@@ -22,7 +22,11 @@
 
 ## 1. Tổng Quan Hệ Thống
 
+<<<<<<< HEAD
 ### 1.1 Architecture
+=======
+### 1.1 Architecture (2-Tier Implementation)
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -35,6 +39,7 @@
 │  └──────────┘    └──────────┘    └──────────┘    └──────────────┘  │
 │                                                          │          │
 │                                                          ▼          │
+<<<<<<< HEAD
 │  ┌──────────────┐              ┌──────────┐    ┌──────────────┐    │
 │  │   Output     │◀────────────│   LLM    │◀───│   Gating     │    │
 │  │   Parser     │              │ Generate │    │  Decision    │    │
@@ -47,6 +52,20 @@
 │  └──────────────┘                              └──────────────┘    │
 │          │                                                          │
 │          ▼                                                          │
+=======
+│  ┌──────────────┐          Tier Routing        ┌──────────────┐    │
+│  │   Output     │◀───┬─────────────────────────┤   Gating     │    │
+│  │   Parser     │    │                         │  Decision    │    │
+│  └──────────────┘    │  ┌──────────────┐       └──────────────┘    │
+│          │           ├──┤ T1: Local LLM│               │            │
+│          ▼           │  │ (VRAM Optimized)             ▼            │
+│  ┌──────────────┐    │  └──────────────┘       ┌──────────────┐    │
+│  │ Citation     │    │                         │   Abstain/   │    │
+│  │ Enrichment   │    │  ┌──────────────┐       │   Ask-back   │    │
+│  └──────────────┘    └──┤ T2: API LLM  │       └──────────────┘    │
+│          │              │ (Gemini/Qwen)│                           │
+│          ▼              └──────────────┘                           │
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 │  ┌──────────────────────────────────────────────────────────────┐  │
 │  │                     RAGOutput (JSON)                          │  │
 │  │  { answer, citations, abstain, reason, confidence }           │  │
@@ -267,6 +286,7 @@ def trim_span(chunk, query, context_window=150):
     return extract_text(chunk.text, merged)
 ```
 
+<<<<<<< HEAD
 #### (c) Metadata Injection
 
 **Vấn đề:** LLM không biết citation nằm ở đâu
@@ -279,6 +299,21 @@ Nội dung chunk ở đây...
 ```
 
 → LLM sẽ trích dẫn chuẩn hơn vì metadata rõ ràng
+=======
+#### (c) Metadata Injection & Enrichment
+
+**Vấn đề:** LLM không biết citation nằm ở đâu, hoặc đôi khi quên ghi tên văn bản vào JSON response.
+
+**Giải pháp:** 
+1. **Injection**: Chèn header metadata vào trước mỗi chunk trong Context.
+   ```
+   [VB: Nghị định về xây dựng, Chương II, Điều 5, Khoản 2, Điểm a]
+   Nội dung chunk ở đây...
+   ```
+2. **Post-Enrichment (`_enrich_citations`)**: Sau khi AI trả lời, hệ thống thực hiện đối chiếu Điều/Khoản từ AI trả về với metadata gốc của Chunks. Nếu AI quên điền `van_ban` (Tên Nghị định), hệ thống sẽ tự động điền vào dựa trên nguồn gốc của đoạn văn bản đó.
+
+→ Đảm bảo trích dẫn luôn đầy đủ thông tin pháp lý.
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 ---
 
@@ -290,6 +325,7 @@ Nội dung chunk ở đây...
 - 36% query không hit đúng citation → cần biết khi nào KHÔNG nên trả lời
 - Giảm hallucination bằng cách abstain đúng lúc
 
+<<<<<<< HEAD
 ### 5.2 Các Rules Gating
 
 | Rule | Điều kiện | Action |
@@ -320,6 +356,28 @@ threshold_pass = percentile_75(scores)     # ~2.0
 threshold_abstain = percentile_10(scores)  # ~0.5
 threshold_cautious = percentile_50(scores) # ~1.0
 ```
+=======
+### 5.2 Các Rules Gating & Tier Routing
+
+| Rule | Điều kiện | Action |
+|------|-----------|--------|
+| 1 | `score_top1 < 0.5` | **ABSTAIN** |
+| 2 | `(top1 - top2) < 0.3%` | **ASK_BACK** (Ambiguous) |
+| 3 | Lexical overlap < 5% | **CAUTIOUS (API)** - Tránh CE Hallucination |
+| 4 | `0.5 <= score < 2.0` | **CAUTIOUS (API)** |
+| 5 | `Score >= 2.0` nhưng `overlap < 15%` | **CAUTIOUS (API)** |
+| 6 | **`Score >= 6.0` và `Margin >= 3%`** | **PASS (LOCAL)** - Tier 1 |
+| 7 | `Score >= 2.0` nhưng `Margin < 3%` | **PASS (API)** - Tier 2 |
+
+### 5.3 Tier Routing Logic
+
+Hệ thống phân cấp xử lý để tối ưu giữa **Tốc độ** (Local) và **Chất lượng** (API):
+
+*   **Tier 1 (Local LLM)**: Sử dụng Qwen3 (vừa với VRAM) khi kết quả tìm kiếm cực kỳ rõ ràng (Score cao, Margin áp đảo). Trả lời nhanh, không tốn phí API.
+*   **Tier 2 (API LLM)**: Sử dụng Gemini 2.5 Flash / Qwen-Cloud khi kết quả tìm kiếm có độ nhiễu hoặc cần khả năng lập luận phức tạp hơn.
+*   **Auto-Fallback**: Nếu API gặp lỗi (429/Quota), hệ thống tự động đẩy job sang Local Model để đảm bảo không bị gián đoạn service.
+
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 ---
 
@@ -336,11 +394,28 @@ threshold_cautious = percentile_50(scores) # ~1.0
 
 | Backend | Ưu điểm | Nhược điểm |
 |---------|---------|------------|
+<<<<<<< HEAD
 | **llama.cpp** | Local, free, privacy | Cần GPU |
 | **OpenRouter** | Nhiều model, dễ dùng | Tốn phí |
 | **OpenAI** | Quality cao | Đắt |
 | **Gemini** | Free tier | Rate limit |
 | **HuggingFace** | Flexible | Setup phức tạp |
+=======
+| **llama.cpp** | Local, free, privacy | Cần GPU/Setup GGUF |
+| **OpenRouter** | Nhiều model (Qwen, DeepSeek), dễ dùng | Tốn phí |
+| **Gemini** | Google Flash 2.5 cực nhanh, free tier | Rate limit cao |
+| **HuggingFace** | **Auto-VRAM Selection**: Tự động chọn size (0.5B -> 8B/Qwen3) dựa trên GPU hiện có | Cần VRAM trống |
+
+### 6.4 Auto-VRAM & Quantization Logic (HuggingFace)
+
+Để tối ưu tài nguyên local, `LLMClient` tích hợp logic tự động cấu hình:
+1. **Detect VRAM**: Tính toán VRAM khả dụng (trừ đi phần đã dùng cho Bi-Encoder & Cross-Encoder).
+2. **Model Selection**: 
+   - > 6GB VRAM: Qwen3-8B / Qwen2.5-7B
+   - > 3GB VRAM: Qwen3-4B / Qwen2.5-3B
+   - < 1.5GB VRAM: Qwen3-0.6B / Qwen2.5-0.5B
+3. **Quantization**: Tự động dùng **4-bit NF4 (bitsandbytes)** cho các model > 3B để tiết kiệm bộ nhớ mà vẫn giữ được độ chính xác pháp lý.
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 ### 6.3 Config Example
 
@@ -478,6 +553,7 @@ from generation import (
     LLMClient, LLMConfig, LLMMode
 )
 
+<<<<<<< HEAD
 # Initialize
 retriever = LegalRetriever()
 pipeline = GenerationPipeline(retriever=retriever)
@@ -488,6 +564,25 @@ output, metadata = pipeline.generate("Ai có thẩm quyền cấp phép xây d�
 print(f"Answer: {output.answer}")
 print(f"Citations: {[c.to_str() for c in output.citations]}")
 print(f"Latency: {metadata['timestamps']['total']:.0f}ms")
+=======
+# Initialize with 2-Tier Strategy
+# Local (Tier 1) fallback to API (Tier 2)
+local_client = LLMClient(LLMConfig(backend=LLMBackend.HUGGINGFACE))
+api_client = LLMClient(LLMConfig(backend=LLMBackend.GEMINI))
+
+pipeline = GenerationPipeline(
+    local_client=local_client,
+    api_client=api_client,
+    top_k_chunks=5
+)
+
+# Generate (Auto-routes between Tier 1 and Tier 2)
+output, metadata = pipeline.generate("Ai có thẩm quyền cấp phép xây dựng?")
+
+print(f"Tier Used: {metadata['tier']}")
+print(f"Answer: {output.answer}")
+print(f"Citations: {[c.to_str() for c in output.citations]}")
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 ```
 
 ### 9.3 CLI Commands

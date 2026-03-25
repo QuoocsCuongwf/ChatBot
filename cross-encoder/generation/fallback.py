@@ -136,7 +136,11 @@ class FallbackStrategy:
         top_score = chunks[0].score_rerank if chunks else 0
         
         # Very low score → Likely need more info
+<<<<<<< HEAD
         if top_score < 0.5:
+=======
+        if top_score < 0.3:
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             # Check what info might be missing
             missing_type, question = self._detect_missing_info(query)
             
@@ -154,7 +158,11 @@ class FallbackStrategy:
                 )
         
         # Medium score → Cautious answer
+<<<<<<< HEAD
         if top_score < 2.0:
+=======
+        if top_score < 0.7:
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             # Check keyword coverage
             coverage = self._compute_keyword_coverage(query, chunks)
             
@@ -295,10 +303,30 @@ class FallbackStrategy:
         generated_answer: str,
         citations: List[Citation]
     ) -> RAGOutput:
+<<<<<<< HEAD
         """Build cautious response with warning."""
         
         # Wrap answer with cautious prefix and warning
         cautious_answer = f"{decision.cautious_prefix}\n\n{generated_answer}\n\n{decision.cautious_warning}"
+=======
+        """Build cautious response with warning.
+        
+        Cải tiến: Giữ nguyên answer của LLM nếu có, chỉ thêm warning nhẹ.
+        Không wrap bằng cautious_prefix nếu LLM đã trả lời đầy đủ.
+        """
+        
+        if generated_answer and generated_answer.strip():
+            # LLM đã trả lời → giữ nguyên, chỉ thêm warning ngắn
+            cautious_answer = generated_answer.strip()
+            if citations:
+                # Có citation → không cần warning nặng
+                cautious_answer += "\n\n⚠️ Lưu ý: Vui lòng kiểm tra lại với văn bản gốc."
+            else:
+                cautious_answer += f"\n\n{decision.cautious_warning or ''}"
+        else:
+            # LLM không trả lời được → dùng template
+            cautious_answer = f"{decision.cautious_prefix or ''}\n\n{decision.cautious_warning or ''}"
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         return RAGOutput(
             answer=cautious_answer,

@@ -10,13 +10,21 @@ Rules:
 4. Fallback: ASK_BACK hoặc CAUTIOUS answer
 """
 
+<<<<<<< HEAD
+=======
+import math
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 from typing import List, Dict, Optional, Tuple
 from dataclasses import dataclass, field
 from enum import Enum
 
 from .rag_contract import (
     ChunkInfo, RAGInput, RAGOutput, RAGPolicy,
+<<<<<<< HEAD
     DecisionType, AbstainReason, Citation
+=======
+    DecisionType, AbstainReason, Citation, LLMTier
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 )
 from .context_builder import ContextBuilder
 
@@ -30,18 +38,44 @@ class GatingConfig:
     threshold_abstain: float = 0.5        # Score < này → ABSTAIN
     threshold_cautious: float = 1.0       # Giữa abstain và pass → CAUTIOUS
     
+<<<<<<< HEAD
     # Margin threshold
     margin_min: float = 0.05              # top1 - top2 < margin → không rõ ràng (lowered for sigmoid/logit scores)
+=======
+    # Margin threshold (normalized: margin / |score|)
+    margin_min: float = 0.003            # Normalized margin < này → ambiguous
+    margin_scale: float = 50.0           # Hệ số scale cho sigmoid(norm_margin)
+    
+    # ═══ 2-TIER ROUTING ═══
+    # Tier 1 (LOCAL): score cao + relative margin cao → trả lời nhanh, local
+    # Tier 2 (API):   score trung bình / margin thấp / cautious → cần API
+    # NONE:           score thấp → abstain/ask_back, không gọi LLM
+    tier_local_min_score: float = 6.0     # Score tối thiểu để dùng local
+    tier_local_min_margin: float = 0.03   # Normalized margin tối thiểu cho LOCAL (3%)
+    tier_api_min_score: float = 0.0       # Score tối thiểu để gọi API
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     # Keyword coverage
     min_keyword_coverage: float = 0.3     # Overlap từ khóa tối thiểu
     
+<<<<<<< HEAD
     # Legal keyword requirements
     require_legal_keyword: bool = True    # Bắt buộc có từ khóa pháp lý
+=======
+    # Lexical overlap (thay thế hard keyword check)
+    min_lexical_overlap: float = 0.15     # Ngưỡng tối thiểu lexical overlap query↔context
+    require_legal_keyword: bool = False   # Đã tắt — dùng lexical overlap thay thế
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     # Ask-back triggers
     enable_ask_back: bool = True
     ask_back_on_ambiguous: bool = True
+<<<<<<< HEAD
+=======
+    
+    # Score type flag
+    score_is_sigmoid: bool = False        # True khi scores là post-sigmoid CE (0-1)
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
 
 
 class GatingDecision:
@@ -53,13 +87,34 @@ class GatingDecision:
         reason: Optional[AbstainReason] = None,
         reason_detail: str = "",
         confidence: float = 0.0,
+<<<<<<< HEAD
         clarification_question: Optional[str] = None
+=======
+        clarification_question: Optional[str] = None,
+        tier: LLMTier = LLMTier.NONE,
+        margin: float = 0.0,
+        confidence_final: float = 0.0,
+        semantic_similarity: float = 0.0,
+        query_type: str = "",
+        context_token_length: int = 0,
+        lexical_overlap: float = 0.0
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     ):
         self.decision = decision
         self.reason = reason
         self.reason_detail = reason_detail
         self.confidence = confidence
         self.clarification_question = clarification_question
+<<<<<<< HEAD
+=======
+        self.tier = tier
+        self.margin = margin
+        self.confidence_final = confidence_final  # sigmoid(margin)
+        self.semantic_similarity = semantic_similarity  # rerank score normalized
+        self.query_type = query_type
+        self.context_token_length = context_token_length
+        self.lexical_overlap = lexical_overlap
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     
     def to_dict(self) -> Dict:
         return {
@@ -67,7 +122,18 @@ class GatingDecision:
             "reason": self.reason.value if self.reason else None,
             "reason_detail": self.reason_detail,
             "confidence": self.confidence,
+<<<<<<< HEAD
             "clarification_question": self.clarification_question
+=======
+            "confidence_final": round(self.confidence_final, 4),
+            "clarification_question": self.clarification_question,
+            "tier": self.tier.value,
+            "margin": round(self.margin, 4),
+            "semantic_similarity": round(self.semantic_similarity, 4),
+            "query_type": self.query_type,
+            "context_token_length": self.context_token_length,
+            "lexical_overlap": round(self.lexical_overlap, 4)
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         }
 
 
@@ -79,13 +145,20 @@ class GatingStrategy:
     1. Check score threshold
     2. Check score margin (top1 - top2)
     3. Check keyword coverage
+<<<<<<< HEAD
     4. Check legal keyword presence
     5. Check query ambiguity
+=======
+    4. Lexical overlap query↔context (thay thế hard keyword check)
+    5. Check query ambiguity
+    6. Final: confidence = sigmoid(margin), tier routing
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     """
     
     def __init__(self, config: Optional[GatingConfig] = None):
         self.config = config or GatingConfig()
         self.context_builder = ContextBuilder()
+<<<<<<< HEAD
         
         # Legal keywords phải có trong context cho mỗi query type
         self.legal_keyword_requirements = {
@@ -97,6 +170,100 @@ class GatingStrategy:
             "thời hạn": ["thời hạn", "trong vòng", "ngày", "tháng", "kể từ"]
         }
     
+=======
+    
+    # ─── Helpers ─────────────────────────────────────────────────────────────
+    
+    @staticmethod
+    def _sigmoid(x: float) -> float:
+        """Sigmoid function, clamped to avoid overflow."""
+        x = max(-10.0, min(10.0, x))
+        return 1.0 / (1.0 + math.exp(-x))
+    
+    @staticmethod
+    def _compute_lexical_overlap(query: str, context: str) -> float:
+        """
+        Tính lexical overlap giữa query và context.
+        = |query_tokens ∩ context_tokens| / |query_tokens|
+        
+        Hỗ trợ Vietnamese compound words (2-gram, 3-gram từ pháp lý).
+        """
+        import re as _re
+        from .context_builder import ContextBuilder
+        
+        _builder = ContextBuilder()
+        q_tokens = set(_builder._extract_keywords(query))
+        c_tokens = set(_builder._extract_keywords(context))
+        
+        if not q_tokens:
+            return 1.0  # empty query → no check
+        
+        # Exact overlap
+        overlap = q_tokens & c_tokens
+        
+        # Partial overlap: nếu compound query token xuất hiện dạng single trong context
+        # VD: query "thẩm quyền" vs context chứa "thẩm" + "quyền" riêng lẻ
+        context_lower = context.lower()
+        for qt in q_tokens - overlap:
+            if qt in context_lower:
+                overlap.add(qt)
+        
+        return len(overlap) / len(q_tokens)
+    
+    def _build_common_fields(
+        self, top1_score: float, margin: float, query: str, chunks: List[ChunkInfo]
+    ) -> Dict:
+        """Tính các trường phụ dùng chung cho mọi GatingDecision."""
+        
+        if self.config.score_is_sigmoid:
+            # ── CE post-sigmoid mode ──
+            # Scores are 0-1 (post-sigmoid), margins can be tiny (0.0001) or large (0.99)
+            # Use absolute margin directly (not normalized), since score is bounded
+            abs_margin = margin  # already in 0-1
+            
+            # Confidence final: sigmoid scale on absolute margin
+            # margin ~0    → sigmoid(-1.5) = 0.18 (low — ambiguous top-k)
+            # margin ~0.01 → sigmoid(-0.5) = 0.38
+            # margin ~0.5  → sigmoid(+48.5) ≈ 1.0 (clear winner)
+            # margin ~0.99 → sigmoid(+97.5) ≈ 1.0
+            confidence_final = self._sigmoid(
+                abs_margin * self.config.margin_scale - 1.5
+            )
+            
+            # Semantic similarity: score IS already 0-1, use directly
+            semantic_similarity = top1_score
+        else:
+            # ── Raw score mode (CE logits or cosine) ──
+            # Normalize margin theo scale của score
+            norm_margin = margin / max(abs(top1_score), 1.0)
+            confidence_final = self._sigmoid(
+                norm_margin * self.config.margin_scale - 1.5
+            )
+            # Semantic similarity: normalize cross-encoder score → [0,1]
+            semantic_similarity = self._sigmoid(top1_score / 5.0)
+        
+        # Query type
+        query_types = self.context_builder.detect_query_type(query)
+        query_type = ",".join(query_types) if query_types else "general"
+        
+        # Context token length estimate
+        all_text = " ".join(c.text for c in chunks[:5])
+        context_token_length = int(len(all_text) / 1.5)
+        
+        # Lexical overlap
+        lexical_overlap = self._compute_lexical_overlap(query, all_text)
+        
+        return {
+            "confidence_final": confidence_final,
+            "semantic_similarity": semantic_similarity,
+            "query_type": query_type,
+            "context_token_length": context_token_length,
+            "lexical_overlap": lexical_overlap,
+        }
+    
+    # ─── Main evaluate ───────────────────────────────────────────────────────
+    
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     def evaluate(self, rag_input: RAGInput) -> GatingDecision:
         """
         Đánh giá và đưa ra gating decision.
@@ -113,7 +280,13 @@ class GatingStrategy:
                 decision=DecisionType.ABSTAIN,
                 reason=AbstainReason.NO_RELEVANT_CHUNK,
                 reason_detail="Không tìm thấy chunk liên quan",
+<<<<<<< HEAD
                 confidence=0.0
+=======
+                confidence=0.0,
+                tier=LLMTier.NONE,
+                margin=0.0
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             )
         
         # Get scores
@@ -122,6 +295,12 @@ class GatingStrategy:
         top2_score = scores[1] if len(scores) > 1 else 0.0
         margin = top1_score - top2_score
         
+<<<<<<< HEAD
+=======
+        # Pre-compute common fields (sigmoid confidence, semantic sim, etc.)
+        extras = self._build_common_fields(top1_score, margin, query, chunks)
+        
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         # ─────────────────────────────────────────────────────────────────────
         # Rule 1: Score threshold check
         # ─────────────────────────────────────────────────────────────────────
@@ -131,26 +310,66 @@ class GatingStrategy:
                 decision=DecisionType.ABSTAIN,
                 reason=AbstainReason.LOW_CONFIDENCE,
                 reason_detail=f"Top-1 score ({top1_score:.2f}) < threshold ({self.config.threshold_abstain})",
+<<<<<<< HEAD
                 confidence=top1_score
+=======
+                confidence=top1_score,
+                tier=LLMTier.NONE,
+                margin=margin,
+                **extras
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             )
         
         # ─────────────────────────────────────────────────────────────────────
         # Rule 2: Margin check
+<<<<<<< HEAD
         # ─────────────────────────────────────────────────────────────────────
         
         if margin < self.config.margin_min and self.config.enable_ask_back:
             # Scores quá gần nhau → không chắc chắn
+=======
+        #   BYPASS khi score >= threshold_pass (CE sigmoid mode):
+        #   High CE score = highly relevant context. Low margin = multiple
+        #   relevant chunks (not ambiguity).  38%+ of queries have margin < 0.001
+        #   but score >= 0.99 — these should PASS, not get blocked.
+        # ─────────────────────────────────────────────────────────────────────
+        
+        skip_margin_check = (
+            self.config.score_is_sigmoid and top1_score >= self.config.threshold_pass
+        )
+        
+        if self.config.score_is_sigmoid:
+            # CE sigmoid: use absolute margin (scores are bounded 0-1)
+            effective_margin = margin
+        else:
+            # Raw scores: normalize by score magnitude
+            effective_margin = margin / max(abs(top1_score), 1.0)
+        
+        if (not skip_margin_check
+                and effective_margin < self.config.margin_min
+                and self.config.enable_ask_back):
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             if self.config.ask_back_on_ambiguous:
                 return GatingDecision(
                     decision=DecisionType.ASK_BACK,
                     reason=AbstainReason.AMBIGUOUS_QUERY,
+<<<<<<< HEAD
                     reason_detail=f"Margin ({margin:.2f}) < threshold ({self.config.margin_min}), kết quả không rõ ràng",
                     confidence=top1_score,
                     clarification_question="Bạn có thể cho biết thêm chi tiết về câu hỏi?"
+=======
+                    reason_detail=f"Margin ({effective_margin:.4f}) < threshold ({self.config.margin_min}), kết quả không rõ ràng",
+                    confidence=top1_score,
+                    clarification_question="Bạn có thể cho biết thêm chi tiết về câu hỏi?",
+                    tier=LLMTier.NONE,
+                    margin=margin,
+                    **extras
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
                 )
         
         # ─────────────────────────────────────────────────────────────────────
         # Rule 3: Keyword coverage check
+<<<<<<< HEAD
         # ─────────────────────────────────────────────────────────────────────
         
         coverage_info = self.context_builder.check_keyword_coverage(query, chunks)
@@ -192,6 +411,79 @@ class GatingStrategy:
                             reason_detail=f"Query type '{qtype}' nhưng context thiếu keywords: {required_keywords}",
                             confidence=top1_score
                         )
+=======
+        #   BYPASS khi cross-encoder score cao (>= threshold_pass):
+        #   Cross-encoder đã làm semantic matching, score cao = context liên quan.
+        #   Tránh false-CAUTIOUS khi query không dấu / paraphrase.
+        # ─────────────────────────────────────────────────────────────────────
+        
+        if top1_score < self.config.threshold_pass:
+            coverage_info = self.context_builder.check_keyword_coverage(query, chunks)
+            
+            if coverage_info["coverage"] < self.config.min_keyword_coverage:
+                if self.config.enable_ask_back:
+                    return GatingDecision(
+                        decision=DecisionType.ASK_BACK,
+                        reason=AbstainReason.MISSING_LEGAL_KEYWORD,
+                        reason_detail=f"Keyword coverage ({coverage_info['coverage']:.2%}) thấp. Missing: {coverage_info['missing'][:5]}",
+                        confidence=top1_score,
+                        clarification_question=self._generate_clarification_question(query, coverage_info),
+                        tier=LLMTier.NONE,
+                        margin=margin,
+                        **extras
+                    )
+                else:
+                    return GatingDecision(
+                        decision=DecisionType.CAUTIOUS,
+                        reason=AbstainReason.MISSING_LEGAL_KEYWORD,
+                        reason_detail=f"Keyword coverage thấp: {coverage_info['coverage']:.2%}",
+                        confidence=top1_score,
+                        tier=LLMTier.API,
+                        margin=margin,
+                        **extras
+                    )
+        
+        # ─────────────────────────────────────────────────────────────────────
+        # Rule 4: Lexical overlap check (thay thế hard keyword check cũ)
+        #   Kiểm tra query↔context có chung từ vựng không.
+        #   4a) overlap ≈ 0 → context chắc chắn sai domain → CAUTIOUS (API)
+        #   4b) overlap thấp + score thấp → CAUTIOUS
+        # ─────────────────────────────────────────────────────────────────────
+        
+        lex_overlap = extras["lexical_overlap"]
+        
+        # 4a: Near-zero overlap = sai domain (VD: query "xây dựng" → chunk "đình công")
+        #     Không tin CE score khi 0 từ trùng — dù CE cho 10+ điểm
+        if lex_overlap < 0.05:
+            return GatingDecision(
+                decision=DecisionType.CAUTIOUS,
+                reason=AbstainReason.MISSING_LEGAL_KEYWORD,
+                reason_detail=(
+                    f"Lexical overlap ≈ 0 ({lex_overlap:.2%}) → context có thể sai domain, "
+                    f"route API dù CE score={top1_score:.2f}"
+                ),
+                confidence=top1_score,
+                tier=LLMTier.API,
+                margin=margin,
+                **extras
+            )
+        
+        # 4b: Overlap thấp + score không cao → route qua API (diễn đạt tốt hơn)
+        if lex_overlap < self.config.min_lexical_overlap and top1_score < self.config.tier_local_min_score:
+            return GatingDecision(
+                decision=DecisionType.CAUTIOUS,
+                reason=AbstainReason.MISSING_LEGAL_KEYWORD,
+                reason_detail=(
+                    f"Lexical overlap thấp ({lex_overlap:.2%}) + "
+                    f"score ({top1_score:.2f}) < {self.config.tier_local_min_score} "
+                    f"→ route API"
+                ),
+                confidence=top1_score,
+                tier=LLMTier.API,
+                margin=margin,
+                **extras
+            )
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         
         # ─────────────────────────────────────────────────────────────────────
         # Rule 5: Query ambiguity check
@@ -205,6 +497,7 @@ class GatingStrategy:
                 reason=AbstainReason.AMBIGUOUS_QUERY,
                 reason_detail="Query cần được làm rõ",
                 confidence=top1_score,
+<<<<<<< HEAD
                 clarification_question=clarify_question
             )
         
@@ -212,24 +505,61 @@ class GatingStrategy:
         # Final decision
         # ─────────────────────────────────────────────────────────────────────
         
+=======
+                clarification_question=clarify_question,
+                tier=LLMTier.NONE,
+                margin=margin,
+                **extras
+            )
+        
+        # ─────────────────────────────────────────────────────────────────────
+        # Final decision + Tier routing
+        # confidence_final = sigmoid(margin): tổng hợp margin thành [0,1]
+        # ─────────────────────────────────────────────────────────────────────
+        
+        tier = self._determine_tier(top1_score, margin)
+        
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
         if top1_score >= self.config.threshold_pass:
             return GatingDecision(
                 decision=DecisionType.ANSWER,
                 confidence=top1_score,
+<<<<<<< HEAD
                 reason_detail="Passed all checks"
+=======
+                reason_detail=f"Passed all checks → Tier {tier.value} (conf={extras['confidence_final']:.2f})",
+                tier=tier,
+                margin=margin,
+                **extras
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             )
         elif top1_score >= self.config.threshold_cautious:
             return GatingDecision(
                 decision=DecisionType.CAUTIOUS,
+<<<<<<< HEAD
                 reason_detail=f"Score ({top1_score:.2f}) trong khoảng cautious",
                 confidence=top1_score
+=======
+                reason_detail=f"Score ({top1_score:.2f}) cautious → Tier API (conf={extras['confidence_final']:.2f})",
+                confidence=top1_score,
+                tier=LLMTier.API,
+                margin=margin,
+                **extras
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             )
         else:
             return GatingDecision(
                 decision=DecisionType.ABSTAIN,
                 reason=AbstainReason.LOW_CONFIDENCE,
                 reason_detail=f"Score ({top1_score:.2f}) thấp hơn pass threshold",
+<<<<<<< HEAD
                 confidence=top1_score
+=======
+                confidence=top1_score,
+                tier=LLMTier.NONE,
+                margin=margin,
+                **extras
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
             )
     
     def _generate_clarification_question(
@@ -257,6 +587,38 @@ class GatingStrategy:
         else:
             return "Bạn có thể mô tả chi tiết hơn về câu hỏi?"
     
+<<<<<<< HEAD
+=======
+    def _determine_tier(self, top1_score: float, margin: float) -> LLMTier:
+        """
+        Xác định tầng LLM dựa trên score và margin.
+        
+        Tier 1 (LOCAL): score cao + margin cao → trả lời nhanh, chuẩn
+        Tier 2 (API):   score trung bình / margin thấp → cần diễn đạt tốt hơn
+        NONE:           score thấp → abstain / ask_back
+        """
+        if self.config.score_is_sigmoid:
+            # CE sigmoid mode: use absolute margin (not normalized)
+            # margin >= 0.5 means top-1 is clearly better than top-2
+            if (top1_score >= self.config.tier_local_min_score and
+                margin >= self.config.tier_local_min_margin):
+                return LLMTier.LOCAL
+            elif top1_score >= self.config.tier_api_min_score:
+                return LLMTier.API
+            else:
+                return LLMTier.NONE
+        else:
+            # Raw score mode: use normalized margin
+            norm_margin = margin / max(abs(top1_score), 1.0)
+            if (top1_score >= self.config.tier_local_min_score and 
+                norm_margin >= self.config.tier_local_min_margin):
+                return LLMTier.LOCAL
+            elif top1_score >= self.config.tier_api_min_score:
+                return LLMTier.API
+            else:
+                return LLMTier.NONE
+    
+>>>>>>> 0d62988bfb6afdb6df42b0356b536b98e0b96922
     def should_generate(self, decision: GatingDecision) -> bool:
         """Kiểm tra có nên gọi LLM để generate không."""
         return decision.decision in [DecisionType.ANSWER, DecisionType.CAUTIOUS]

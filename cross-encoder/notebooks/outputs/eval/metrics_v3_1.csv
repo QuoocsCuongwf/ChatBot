@@ -1,0 +1,5 @@
+metric,value,version,bi_encoder,ce
+Recall@1,0.3596,v3_1,BAAI/bge-m3,cross-encoder/ms-marco-MiniLM-L6-v2
+Recall@3,0.5333,v3_1,BAAI/bge-m3,cross-encoder/ms-marco-MiniLM-L6-v2
+Recall@5,0.6105,v3_1,BAAI/bge-m3,cross-encoder/ms-marco-MiniLM-L6-v2
+MRR@10,0.4541,v3_1,BAAI/bge-m3,cross-encoder/ms-marco-MiniLM-L6-v2
